@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{7FD1C2EB-FA2E-4739-A57E-B25458992485}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{D344AA61-B7CE-4F3E-AD0A-3ABC6FA4DCD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7E96DB3D-9B41-443A-85E7-DE77120EA945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Client", "Client\PetsWonderland.Client\PetsWonderland.Client.csproj", "{249F99BA-7350-4C9A-9D54-9EF9FF6C7153}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{853CC983-24EB-4FCF-AE69-8AFC86AC0AAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{C4C5465C-B21F-470D-AFDB-9D2AD69333C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Client.Tests", "Tests\Client\PetsWonderland.Client.Tests\PetsWonderland.Client.Tests.csproj", "{52FA7AE7-184F-466F-8515-7A4A7C1AA5E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Business.Tests", "Tests\Business\PetsWonderland.Business.Tests\PetsWonderland.Business.Tests.csproj", "{A9DDFEED-22B7-43D3-983C-1C9885350597}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Business.Data", "Business\PetsWonderland.Business.Data\PetsWonderland.Business.Data.csproj", "{84BEF435-1813-4162-871C-7FB56F503E62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Business.Common", "Business\PetsWonderland.Business.Common\PetsWonderland.Business.Common.csproj", "{E84A9ADD-2A6B-4453-B54A-4282EF22A2F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Business.Container", "Business\PetsWonderland.Business.Container\PetsWonderland.Business.Container.csproj", "{0F5047BB-123B-4FBD-8B11-C56E1B152A9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Business.Core", "Business\PetsWonderland.Business.Core\PetsWonderland.Business.Core.csproj", "{A751DD95-DDC2-4340-8A64-AAAD8B7B7559}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Business.Presenter", "Business\PetsWonderland.Business.Presenter\PetsWonderland.Business.Presenter.csproj", "{C92F0E4C-855E-4A5D-A79A-1389CF5C85B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{249F99BA-7350-4C9A-9D54-9EF9FF6C7153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{249F99BA-7350-4C9A-9D54-9EF9FF6C7153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{249F99BA-7350-4C9A-9D54-9EF9FF6C7153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{249F99BA-7350-4C9A-9D54-9EF9FF6C7153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52FA7AE7-184F-466F-8515-7A4A7C1AA5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52FA7AE7-184F-466F-8515-7A4A7C1AA5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52FA7AE7-184F-466F-8515-7A4A7C1AA5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52FA7AE7-184F-466F-8515-7A4A7C1AA5E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9DDFEED-22B7-43D3-983C-1C9885350597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9DDFEED-22B7-43D3-983C-1C9885350597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9DDFEED-22B7-43D3-983C-1C9885350597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9DDFEED-22B7-43D3-983C-1C9885350597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84BEF435-1813-4162-871C-7FB56F503E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84BEF435-1813-4162-871C-7FB56F503E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84BEF435-1813-4162-871C-7FB56F503E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84BEF435-1813-4162-871C-7FB56F503E62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E84A9ADD-2A6B-4453-B54A-4282EF22A2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E84A9ADD-2A6B-4453-B54A-4282EF22A2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E84A9ADD-2A6B-4453-B54A-4282EF22A2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E84A9ADD-2A6B-4453-B54A-4282EF22A2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5047BB-123B-4FBD-8B11-C56E1B152A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5047BB-123B-4FBD-8B11-C56E1B152A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5047BB-123B-4FBD-8B11-C56E1B152A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5047BB-123B-4FBD-8B11-C56E1B152A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A751DD95-DDC2-4340-8A64-AAAD8B7B7559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A751DD95-DDC2-4340-8A64-AAAD8B7B7559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A751DD95-DDC2-4340-8A64-AAAD8B7B7559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A751DD95-DDC2-4340-8A64-AAAD8B7B7559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C92F0E4C-855E-4A5D-A79A-1389CF5C85B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92F0E4C-855E-4A5D-A79A-1389CF5C85B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92F0E4C-855E-4A5D-A79A-1389CF5C85B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92F0E4C-855E-4A5D-A79A-1389CF5C85B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{249F99BA-7350-4C9A-9D54-9EF9FF6C7153} = {D344AA61-B7CE-4F3E-AD0A-3ABC6FA4DCD9}
+		{853CC983-24EB-4FCF-AE69-8AFC86AC0AAA} = {7E96DB3D-9B41-443A-85E7-DE77120EA945}
+		{C4C5465C-B21F-470D-AFDB-9D2AD69333C5} = {7E96DB3D-9B41-443A-85E7-DE77120EA945}
+		{52FA7AE7-184F-466F-8515-7A4A7C1AA5E0} = {853CC983-24EB-4FCF-AE69-8AFC86AC0AAA}
+		{A9DDFEED-22B7-43D3-983C-1C9885350597} = {C4C5465C-B21F-470D-AFDB-9D2AD69333C5}
+		{84BEF435-1813-4162-871C-7FB56F503E62} = {7FD1C2EB-FA2E-4739-A57E-B25458992485}
+		{E84A9ADD-2A6B-4453-B54A-4282EF22A2F8} = {7FD1C2EB-FA2E-4739-A57E-B25458992485}
+		{0F5047BB-123B-4FBD-8B11-C56E1B152A9A} = {7FD1C2EB-FA2E-4739-A57E-B25458992485}
+		{A751DD95-DDC2-4340-8A64-AAAD8B7B7559} = {7FD1C2EB-FA2E-4739-A57E-B25458992485}
+		{C92F0E4C-855E-4A5D-A79A-1389CF5C85B6} = {7FD1C2EB-FA2E-4739-A57E-B25458992485}
+	EndGlobalSection
+EndGlobal
