@@ -2,7 +2,7 @@ using System.Data.Entity.Migrations;
 
 namespace PetsWonderland.Business.Data.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<PetsWonderlandDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<PetsWonderlandDbContext>
     {
         public Configuration()
         {

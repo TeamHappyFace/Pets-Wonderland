@@ -63,7 +63,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PetsWonderland.Business.Models\PetsWonderland.Business.Models.csproj">
+      <Project>{33c1f9d0-befa-4992-9955-cd2613e319f7}</Project>
+      <Name>PetsWonderland.Business.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
