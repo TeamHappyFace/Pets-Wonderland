@@ -402,6 +402,7 @@
     </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectBIndings\DataBindings.cs" />
+    <Compile Include="App_Start\NinjectBIndings\ServicesBindings.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -459,6 +460,10 @@
     <ProjectReference Include="..\..\Business\PetsWonderland.Business.Models\PetsWonderland.Business.Models.csproj">
       <Project>{33c1f9d0-befa-4992-9955-cd2613e319f7}</Project>
       <Name>PetsWonderland.Business.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PetsWonderland.Business.Services\PetsWonderland.Business.Services.csproj">
+      <Project>{11D14EDC-C3BA-4A1B-9BEC-4563E56A1009}</Project>
+      <Name>PetsWonderland.Business.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
