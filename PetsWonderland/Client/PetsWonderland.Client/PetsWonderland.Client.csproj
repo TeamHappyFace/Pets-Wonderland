@@ -401,6 +401,7 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectBIndings\DataBindings.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -449,6 +450,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\PetsWonderland.Business.Data\PetsWonderland.Business.Data.csproj">
+      <Project>{84bef435-1813-4162-871c-7fb56f503e62}</Project>
+      <Name>PetsWonderland.Business.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\PetsWonderland.Business.Models\PetsWonderland.Business.Models.csproj">
+      <Project>{33c1f9d0-befa-4992-9955-cd2613e319f7}</Project>
+      <Name>PetsWonderland.Business.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

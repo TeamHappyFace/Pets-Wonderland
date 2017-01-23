@@ -1,11 +1,10 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(PetsWonderland.Client.App_Start.NinjectWeb), "Start")]
+using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+using Ninject.Web;
 
-namespace PetsWonderland.Client.App_Start
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(PetsWonderland.Client.NinjectWeb), "Start")]
+
+namespace PetsWonderland.Client
 {
-    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
-    using Ninject.Web;
-
     public static class NinjectWeb 
     {
         /// <summary>
