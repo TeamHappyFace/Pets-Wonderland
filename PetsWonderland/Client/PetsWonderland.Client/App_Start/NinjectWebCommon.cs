@@ -3,6 +3,7 @@ using System.Web;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
+using PetsWonderland.Client.NinjectBIndings;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(PetsWonderland.Client.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(PetsWonderland.Client.NinjectWebCommon), "Stop")]
@@ -59,6 +60,10 @@ namespace PetsWonderland.Client
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Load(
+                new DataBindings(),
+                new ServicesBindings());
         }        
     }
 }
+        
