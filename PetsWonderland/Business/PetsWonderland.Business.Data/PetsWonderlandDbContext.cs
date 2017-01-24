@@ -13,7 +13,7 @@ namespace PetsWonderland.Business.Data
         public PetsWonderlandDbContext()
                 : base("PetsWonderland")
         {
-			//Database.SetInitializer(new MigrateDatabaseToLatestVersion<PetsWonderlandDbContext, Configuration>());
+			Database.SetInitializer(new MigrateDatabaseToLatestVersion<PetsWonderlandDbContext, Configuration>());
 		}
 
         public new IDbSet<T> Set<T>() where T : class

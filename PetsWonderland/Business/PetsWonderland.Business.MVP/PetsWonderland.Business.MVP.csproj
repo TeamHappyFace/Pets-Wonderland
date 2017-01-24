@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C92F0E4C-855E-4A5D-A79A-1389CF5C85B6}</ProjectGuid>
+    <ProjectGuid>{91BEC5DE-B638-420E-9465-C47C3993E3FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PetsWonderland.Business.Presenter</RootNamespace>
-    <AssemblyName>PetsWonderland.Business.Presenter</AssemblyName>
+    <RootNamespace>PetsWonderland.Business.MVP</RootNamespace>
+    <AssemblyName>PetsWonderland.Business.MVP</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,14 +38,31 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AnimalModel.cs" />
+    <Compile Include="Presenters\AnimalPresenter.cs" />
+    <Compile Include="Views\Contracts\IAnimalView.cs" />
+    <Compile Include="Args\FindAnimalArgs.cs" />
+    <Compile Include="Args\GetAllAnimalsArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Presenters\" />
-    <Folder Include="Views\" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetsWonderland.Business.Data\PetsWonderland.Business.Data.csproj">
+      <Project>{84bef435-1813-4162-871c-7fb56f503e62}</Project>
+      <Name>PetsWonderland.Business.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetsWonderland.Business.Models\PetsWonderland.Business.Models.csproj">
+      <Project>{33c1f9d0-befa-4992-9955-cd2613e319f7}</Project>
+      <Name>PetsWonderland.Business.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

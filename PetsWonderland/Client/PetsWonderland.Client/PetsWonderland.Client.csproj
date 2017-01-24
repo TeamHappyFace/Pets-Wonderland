@@ -226,6 +226,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AnimalControl.ascx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -392,6 +393,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AnimalControl.ascx.cs">
+      <DependentUpon>AnimalControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnimalControl.ascx.designer.cs">
+      <DependentUpon>AnimalControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -461,8 +469,12 @@
       <Project>{33c1f9d0-befa-4992-9955-cd2613e319f7}</Project>
       <Name>PetsWonderland.Business.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\PetsWonderland.Business.Services\PetsWonderland.Business.Services.csproj">
-      <Project>{11D14EDC-C3BA-4A1B-9BEC-4563E56A1009}</Project>
+    <ProjectReference Include="..\..\Business\PetsWonderland.Business.MVP\PetsWonderland.Business.MVP.csproj">
+      <Project>{91bec5de-b638-420e-9465-c47c3993e3fe}</Project>
+      <Name>PetsWonderland.Business.MVP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\PetsWonderland.Business.Services\PetsWonderland.Business.Services.csproj">
+      <Project>{88a839d2-5bf3-443b-95f3-7c088542cc15}</Project>
       <Name>PetsWonderland.Business.Services</Name>
     </ProjectReference>
   </ItemGroup>
