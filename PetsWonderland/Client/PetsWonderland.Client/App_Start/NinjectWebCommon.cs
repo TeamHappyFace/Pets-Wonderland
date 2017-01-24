@@ -60,9 +60,10 @@ namespace PetsWonderland.Client
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-			kernel.Load(
-new DataBindings(),
-new ServicesBindings());
-		}        
+            kernel.Load(
+                new DataBindings(),
+                new ServicesBindings());
+        }        
     }
 }
+        
