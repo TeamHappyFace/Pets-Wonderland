@@ -16,7 +16,7 @@ namespace PetsWonderland.Business.Services
 
         public IQueryable<Animal> GetAllAnimals()
         {
-            return this._animalRepository.Entities;
+            return this._animalRepository.All();
         }
     }
 }

@@ -25,6 +25,7 @@ namespace PetsWonderland.Business.MVP.Presenters
 		private void GetAllAnimals(object sender, GetAllAnimalsArgs e)
 		{
 			var allAnimals = this.animalService.GetAllAnimals().ToList();
+
 			View.Model.Animals = allAnimals;
 			View.Model.ShowResults = true;
 		}
