@@ -11,7 +11,7 @@ using WebFormsMvp.Web;
 namespace PetsWonderland.Client
 {
 	[PresenterBinding(typeof(AnimalPresenter))]
-	public partial class AnimalControl : MvpUserControl<AnimalModel>, IAnimalView
+	public partial class AnimalControl : MvpUserControl<AnimalViewModel>, IAnimalView
 	{
 		public event EventHandler<FindAnimalArgs> Finding;
 		public event EventHandler<GetAllAnimalsArgs> GetAll;

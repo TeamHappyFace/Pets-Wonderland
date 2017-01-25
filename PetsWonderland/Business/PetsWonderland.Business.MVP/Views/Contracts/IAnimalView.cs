@@ -5,7 +5,7 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Views.Contracts
 {
-	public interface IAnimalView : IView<AnimalModel>
+	public interface IAnimalView : IView<AnimalViewModel>
 	{
 		event EventHandler<FindAnimalArgs> Finding;
 		event EventHandler<GetAllAnimalsArgs> GetAll;

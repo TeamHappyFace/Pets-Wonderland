@@ -9,7 +9,7 @@
 	</p>
 </fieldset>
 <div>
-	<asp:DetailsView ID="results" runat="server" ItemType=""/>
+	<asp:DetailsView ID="results" runat="server" DataSource="<%# Model.Animals %>"/>
 </div>
 	<asp:GridView ID="GridView1" runat="server"  DataSource="<%# Model.Animals %>"></asp:GridView>
 </div>

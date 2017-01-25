@@ -5,7 +5,7 @@ using PetsWonderland.Business.Models.Animals;
 
 namespace PetsWonderland.Business.MVP.Models
 {
-	public class AnimalModel
+	public class AnimalViewModel
 	{
 		public bool ShowResults { get; set; }
 
