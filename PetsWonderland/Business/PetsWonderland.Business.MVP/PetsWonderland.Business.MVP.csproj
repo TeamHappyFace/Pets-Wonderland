@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,6 +66,10 @@
     <ProjectReference Include="..\PetsWonderland.Business.Models\PetsWonderland.Business.Models.csproj">
       <Project>{33c1f9d0-befa-4992-9955-cd2613e319f7}</Project>
       <Name>PetsWonderland.Business.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetsWonderland.Business.Services\PetsWonderland.Business.Services.csproj">
+      <Project>{88a839d2-5bf3-443b-95f3-7c088542cc15}</Project>
+      <Name>PetsWonderland.Business.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

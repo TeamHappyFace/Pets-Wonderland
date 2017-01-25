@@ -4,6 +4,7 @@ using PetsWonderland.Business.MVP.Models;
 using PetsWonderland.Business.MVP.Presenters;
 using PetsWonderland.Business.MVP.Views;
 using PetsWonderland.Business.MVP.Views.Contracts;
+using PetsWonderland.Business.Services.Contracts;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
@@ -38,5 +39,6 @@ namespace PetsWonderland.Client
 			GridView1.Visible = true;
 			GetAll(this, new GetAllAnimalsArgs());
 		}
+	    
 	}
 }

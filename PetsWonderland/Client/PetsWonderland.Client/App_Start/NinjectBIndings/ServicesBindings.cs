@@ -10,6 +10,7 @@ namespace PetsWonderland.Client.NinjectBIndings
         {
             this.Bind<IAuthService>().To<AuthService>();
             this.Bind<IUserService>().To<UserService>();
+            this.Bind<IAnimalService>().To<AnimalService>();
         }
     }
 }

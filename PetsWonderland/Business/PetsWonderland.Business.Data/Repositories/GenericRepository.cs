@@ -11,10 +11,6 @@ namespace PetsWonderland.Business.Data.Repositories
         private readonly IPetsWonderlandDbContext context;
         private readonly IDbSet<T> dbSet;
 
-		public GenericRepository()
-		{
-
-		}
         public GenericRepository(IPetsWonderlandDbContext context)
         {
             if (context == null)
@@ -26,7 +22,10 @@ namespace PetsWonderland.Business.Data.Repositories
             this.dbSet = this.context.Set<T>();           
         }
 
-        public IQueryable<T> Entities => this.dbSet;
+        public IQueryable<T> Entities
+        {
+            get { return this.dbSet; }
+        }
 
         public virtual IQueryable<T> All()
         {

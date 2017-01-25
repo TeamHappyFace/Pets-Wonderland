@@ -236,9 +236,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -410,7 +407,10 @@
     </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectBIndings\DataBindings.cs" />
+    <Compile Include="App_Start\NinjectBIndings\MvpBindings.cs" />
     <Compile Include="App_Start\NinjectBIndings\ServicesBindings.cs" />
+    <Compile Include="App_Start\NinjectFactories\Contracts\INinjectPresenterFactory.cs" />
+    <Compile Include="App_Start\NinjectFactories\NinjectPresenterFactory.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

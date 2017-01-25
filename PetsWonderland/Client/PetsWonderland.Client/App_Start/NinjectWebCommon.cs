@@ -11,8 +11,10 @@ using PetsWonderland.Client.NinjectBIndings;
 namespace PetsWonderland.Client
 {   
     public static class NinjectWebCommon 
-    {
+    {           
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
+
+        public static IKernel Kernel { get; private set; }
 
         /// <summary>
         /// Starts the application
@@ -39,6 +41,8 @@ namespace PetsWonderland.Client
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
+            Kernel = kernel;
+
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
@@ -60,9 +64,9 @@ namespace PetsWonderland.Client
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-
             kernel.Load(
                 new DataBindings(),
+                new MvpBindings(),
                 new ServicesBindings());
         }        
     }
