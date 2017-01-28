@@ -12,7 +12,15 @@
                 You've authenticated with <strong><%: ProviderName %></strong>. Please enter an email below for the current site
                 and click the Log in button.
             </p>
-
+<%--			<div class="form-group">
+                <asp:Label runat="server" AssociatedControlID="username" CssClass="col-md-2 control-label">Username</asp:Label>
+                <div class="col-md-10">
+                    <asp:TextBox runat="server" ID="username" CssClass="form-control" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="username"
+                        Display="Dynamic" CssClass="text-danger" ErrorMessage="Username is required" />
+                    <asp:ModelErrorMessage runat="server" ModelStateKey="username" CssClass="text-error" />
+                </div>
+            </div>--%>
             <div class="form-group">
                 <asp:Label runat="server" AssociatedControlID="email" CssClass="col-md-2 control-label">Email</asp:Label>
                 <div class="col-md-10">

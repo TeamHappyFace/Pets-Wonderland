@@ -13,7 +13,6 @@ namespace PetsWonderland.Business.Data
         public PetsWonderlandDbContext()
                 : base("PetsWonderland")
         {
-			//Database.SetInitializer(new MigrateDatabaseToLatestVersion<PetsWonderlandDbContext, Configuration>());
 		}
 
         public new IDbSet<T> Set<T>() where T : class
@@ -35,9 +34,9 @@ namespace PetsWonderland.Business.Data
 		public virtual DbSet<UserHotel> UserHotels { get; set; }
 		public virtual DbSet<UserBoardingRequest> UserBoardingRequests { get; set; }
 		public virtual DbSet<UserHotelRegistrationRequest> UserHotelRegistrationRequests { get; set; }
-		public virtual DbSet<UserProfile> UserProfiles { get; set; }
-		public virtual DbSet<User> Users { get; set; }
-		public virtual DbSet<HotelManager> HotelManagers { get; set; }
-		public virtual DbSet<Admin> Admins { get; set; }
+		//public virtual DbSet<UserProfile> UserProfiles { get; set; }
+		//public virtual DbSet<User> Users { get; set; }
+		//public virtual DbSet<HotelManager> HotelManagers { get; set; }
+		//public virtual DbSet<Admin> Admins { get; set; }
 	}
 }

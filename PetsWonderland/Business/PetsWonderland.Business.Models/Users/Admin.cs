@@ -4,7 +4,7 @@ using PetsWonderland.Business.Models.Requests;
 
 namespace PetsWonderland.Business.Models.Users
 {
-	public class Admin : UserProfile
+	public class Admin 
 	{
 		private ICollection<UserHotelRegistrationRequest> userHotelRegistrationRequests;
 

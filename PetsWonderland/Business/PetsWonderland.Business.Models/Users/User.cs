@@ -4,7 +4,7 @@ using PetsWonderland.Business.Models.Animals;
 
 namespace PetsWonderland.Business.Models.Users
 {
-	public class User : UserProfile
+	public class User 
 	{
 		private ICollection<UserAnimal> animals;
 

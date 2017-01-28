@@ -432,6 +432,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\RoleActions.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -461,6 +462,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Business\PetsWonderland.Business.Common\PetsWonderland.Business.Common.csproj">
+      <Project>{e84a9add-2a6b-4453-b54a-4282ef22a2f8}</Project>
+      <Name>PetsWonderland.Business.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Business\PetsWonderland.Business.Data\PetsWonderland.Business.Data.csproj">
       <Project>{84bef435-1813-4162-871c-7fb56f503e62}</Project>
       <Name>PetsWonderland.Business.Data</Name>

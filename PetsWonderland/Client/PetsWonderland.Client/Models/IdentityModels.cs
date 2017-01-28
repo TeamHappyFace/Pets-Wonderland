@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -6,14 +8,27 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using PetsWonderland.Client.Models;
+using PetsWonderland.Business.Common.Constants;
 
 namespace PetsWonderland.Client.Models
 {
     // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
+		[MinLength(ValidationConstants.NameMinLength)]
+		[MaxLength(ValidationConstants.NameMaxLength)]
+		public string FirstName { get; set; }
+		
+		[MinLength(ValidationConstants.NameMinLength)]
+		[MaxLength(ValidationConstants.NameMaxLength)]
+		public string LastName { get; set; }
+
+		[Range(ValidationConstants.MinAge, ValidationConstants.MaxAge)]
+		public int Age { get; set; }
+
+		public string AvatarUrl { get; set; }
+
+		public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
@@ -30,11 +45,23 @@ namespace PetsWonderland.Client.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("PetsWonderland", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create()
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		{
+			base.OnModelCreating(modelBuilder);
+
+			modelBuilder.Entity<IdentityUser>().ToTable("MyUsers");
+			modelBuilder.Entity<ApplicationUser>().ToTable("MyUsers");
+			modelBuilder.Entity<IdentityUserRole>().ToTable("UserRoles");
+			modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogins");
+			modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaims");
+			modelBuilder.Entity<IdentityRole>().ToTable("Roles");
+		}
+
+		public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
