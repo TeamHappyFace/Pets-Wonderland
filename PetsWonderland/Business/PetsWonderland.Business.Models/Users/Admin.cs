@@ -6,6 +6,12 @@ namespace PetsWonderland.Business.Models.Users
 {
 	public class Admin 
 	{
+		[Key]
+		public int Id { get; set; }
+
+		public int? UserProfileId { get; set; }
+		public virtual UserProfile UserProfile { get; set; }
+
 		private ICollection<UserHotelRegistrationRequest> userHotelRegistrationRequests;
 
 		public Admin()
@@ -14,7 +20,7 @@ namespace PetsWonderland.Business.Models.Users
 		}
 
 		[Required]
-		public virtual ICollection<UserHotelRegistrationRequest> Animals
+		public virtual ICollection<UserHotelRegistrationRequest> UserHotelRegistrationRequests
 		{
 			get
 			{

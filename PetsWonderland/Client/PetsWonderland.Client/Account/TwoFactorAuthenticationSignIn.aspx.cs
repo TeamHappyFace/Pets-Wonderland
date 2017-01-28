@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using PetsWonderland.Business.Models.Users;
 using PetsWonderland.Client.Models;
 
 namespace PetsWonderland.Client.Account
@@ -24,7 +25,7 @@ namespace PetsWonderland.Client.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var userId = signinManager.GetVerifiedUserId<ApplicationUser, string>();
+            var userId = signinManager.GetVerifiedUserId<UserProfile, string>();
             if (userId == null)
             {
                 Response.Redirect("/Account/Error", true);
@@ -39,7 +40,7 @@ namespace PetsWonderland.Client.Account
             bool rememberMe = false;
             bool.TryParse(Request.QueryString["RememberMe"], out rememberMe);
             
-            var result = signinManager.TwoFactorSignIn<ApplicationUser, string>(SelectedProvider.Value, Code.Text, isPersistent: rememberMe, rememberBrowser: RememberBrowser.Checked);
+            var result = signinManager.TwoFactorSignIn<UserProfile, string>(SelectedProvider.Value, Code.Text, isPersistent: rememberMe, rememberBrowser: RememberBrowser.Checked);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -63,7 +64,7 @@ namespace PetsWonderland.Client.Account
                 Response.Redirect("/Account/Error");
             }
 
-            var user = manager.FindById(signinManager.GetVerifiedUserId<ApplicationUser, string>());
+            var user = manager.FindById(signinManager.GetVerifiedUserId<UserProfile, string>());
             if (user != null)
             {
                 var code = manager.GenerateTwoFactorToken(user.Id, Providers.SelectedValue);

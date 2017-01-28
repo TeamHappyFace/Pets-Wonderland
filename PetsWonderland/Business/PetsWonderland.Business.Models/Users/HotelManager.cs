@@ -7,6 +7,12 @@ namespace PetsWonderland.Business.Models.Users
 {
 	public class HotelManager 
 	{
+		[Key]
+		public int Id { get; set; }
+
+		public int? UserProfileId { get; set; }
+		public virtual UserProfile UserProfile { get; set; }
+
 		private ICollection<Hotel> hotels;
 		private ICollection<UserBoardingRequest> userBoardingRequests;
 

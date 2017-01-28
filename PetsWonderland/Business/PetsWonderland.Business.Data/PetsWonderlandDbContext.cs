@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Data.Migrations;
 using PetsWonderland.Business.Models.Animals;
@@ -8,7 +9,7 @@ using PetsWonderland.Business.Models.Users;
 
 namespace PetsWonderland.Business.Data
 {
-    public class PetsWonderlandDbContext : DbContext, IPetsWonderlandDbContext
+    public class PetsWonderlandDbContext : IdentityDbContext, IPetsWonderlandDbContext
     {
         public PetsWonderlandDbContext()
                 : base("PetsWonderland")
@@ -34,9 +35,12 @@ namespace PetsWonderland.Business.Data
 		public virtual DbSet<UserHotel> UserHotels { get; set; }
 		public virtual DbSet<UserBoardingRequest> UserBoardingRequests { get; set; }
 		public virtual DbSet<UserHotelRegistrationRequest> UserHotelRegistrationRequests { get; set; }
-		//public virtual DbSet<UserProfile> UserProfiles { get; set; }
-		//public virtual DbSet<User> Users { get; set; }
-		//public virtual DbSet<HotelManager> HotelManagers { get; set; }
-		//public virtual DbSet<Admin> Admins { get; set; }
+		public virtual DbSet<UserProfile> UserProfiles { get; set; }
+
+
+		public static PetsWonderlandDbContext Create()
+		{
+			return new PetsWonderlandDbContext();
+		}
 	}
 }
