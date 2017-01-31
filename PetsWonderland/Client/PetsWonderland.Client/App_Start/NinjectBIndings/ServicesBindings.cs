@@ -8,7 +8,6 @@ namespace PetsWonderland.Client.NinjectBIndings
     {
         public override void Load()
         {
-            this.Bind<IAuthService>().To<AuthService>();
             this.Bind<IUserService>().To<UserService>();
             this.Bind<IAnimalService>().To<AnimalService>();
         }

@@ -26,8 +26,7 @@ namespace PetsWonderland.Business.MVP.Presenters
 		public void GetAllAnimals(object sender, GetAllAnimalsArgs e)
 		{
 			var allAnimals = this.animalService.GetAllAnimals().ToList();
-			//var allAnimals = new List<Animal>();
-		   
+
 			View.Model.Animals = allAnimals;
 			View.Model.ShowResults = true;
 		}
@@ -40,8 +39,8 @@ namespace PetsWonderland.Business.MVP.Presenters
 			}
 			if (e.Id.HasValue && e.Id > 0)
 			{
-				//Animal animal = this.animalService.GetById((int)e.Id);
-				//View.Model.Animals.Add(animal);
+				Animal animal = this.animalService.GetById((int)e.Id);
+				View.Model.Animals.Add(animal);
 			}
 
 			View.Model.ShowResults = true;

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PetsWonderland.Client._Default" %>
 
-<%@ Register Src="~/AnimalControl.ascx" TagPrefix="uc" TagName="LookupAnimals" %>
+<%@ Register Src="~/Controls/AnimalControl.ascx" TagPrefix="uc" TagName="LookupAnimals" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 

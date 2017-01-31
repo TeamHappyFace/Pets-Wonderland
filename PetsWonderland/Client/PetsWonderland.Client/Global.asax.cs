@@ -3,8 +3,8 @@ using System.Data.Entity;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Ninject;
-using WebFormsMvp.Binder;
+using PetsWonderland.Business.Data;
+using PetsWonderland.Business.Data.Migrations;
 
 namespace PetsWonderland.Client
 {
@@ -15,13 +15,9 @@ namespace PetsWonderland.Client
 			// Code that runs on application startup
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            this.RegisterNinjectPresenterFactory();
-		}
 
-        protected void RegisterNinjectPresenterFactory()
-        {
-            var ninjectPresenterFactory = NinjectWebCommon.Kernel.Get<IPresenterFactory>();
-            PresenterBinder.Factory = ninjectPresenterFactory;
-        }
+			//Initialize database
+			Database.SetInitializer(new MigrateDatabaseToLatestVersion<PetsWonderlandDbContext, Configuration>());
+		}
 	}
 }

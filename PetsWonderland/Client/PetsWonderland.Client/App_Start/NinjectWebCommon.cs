@@ -4,6 +4,7 @@ using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
 using PetsWonderland.Client.NinjectBIndings;
+using WebFormsMvp.Binder;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(PetsWonderland.Client.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(PetsWonderland.Client.NinjectWebCommon), "Stop")]
@@ -68,7 +69,10 @@ namespace PetsWonderland.Client
                 new DataBindings(),
                 new MvpBindings(),
                 new ServicesBindings());
-        }        
+
+			var ninjectPresenterFactory = kernel.Get<IPresenterFactory>();
+			PresenterBinder.Factory = ninjectPresenterFactory;
+		}        
     }
 }
         

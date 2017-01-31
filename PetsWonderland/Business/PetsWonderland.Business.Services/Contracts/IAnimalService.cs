@@ -6,5 +6,6 @@ namespace PetsWonderland.Business.Services.Contracts
     public interface IAnimalService
     {
         IQueryable<Animal> GetAllAnimals();
-    }
+		Animal GetById(int id);
+	}
 }

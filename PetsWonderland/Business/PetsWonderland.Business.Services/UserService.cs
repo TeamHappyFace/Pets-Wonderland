@@ -7,11 +7,11 @@ namespace PetsWonderland.Business.Services
 {
     public class UserService : IUserService
     {
-        private readonly IRepository<User> _userRepository;
+        private readonly IRepository<User> userRepository;
 
         public UserService(IRepository<User> userRepository)
         {
-            this._userRepository = userRepository;
+            this.userRepository = userRepository;
         }
 
         public void CreateBoardingRequest()
