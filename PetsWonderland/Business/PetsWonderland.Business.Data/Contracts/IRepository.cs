@@ -10,7 +10,9 @@ namespace PetsWonderland.Business.Data.Contracts
 
         T GetById(object id);
 
-        void Add(T entity);
+        T GetByName(object name);
+
+		void Add(T entity);
 
         void Update(T entity);
 

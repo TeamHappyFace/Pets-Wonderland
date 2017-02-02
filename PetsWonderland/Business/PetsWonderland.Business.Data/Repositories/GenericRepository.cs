@@ -37,7 +37,12 @@ namespace PetsWonderland.Business.Data.Repositories
             return this.dbSet.Find(id);
         }
 
-        public virtual void Add(T entity)
+		public T GetByName(object name)
+		{
+			return this.dbSet.Find(name);
+		}
+
+		public virtual void Add(T entity)
         {
             var entry = this.context.Entry(entity);
             if (entry.State != EntityState.Detached)
@@ -90,5 +95,5 @@ namespace PetsWonderland.Business.Data.Repositories
             var entry = this.context.Entry(entity);
             entry.State = EntityState.Detached;
         }
-    }
+	}
 }
