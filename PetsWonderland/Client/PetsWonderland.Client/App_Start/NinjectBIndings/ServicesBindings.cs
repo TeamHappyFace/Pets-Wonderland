@@ -9,6 +9,10 @@ namespace PetsWonderland.Client.NinjectBIndings
         public override void Load()
         {
             this.Bind<IAnimalService>().To<AnimalService>();
+			this.Bind<IHotelService>().To<HotelService>();
+			this.Bind<IUserHotelService>().To<UserHotelService>();
+			this.Bind<IHotelRegistrationRequestService>().To<HotelRegistrationRequestService>();
+			this.Bind<IBoardingRequestService>().To<BoardingRequestService>();
         }
     }
 }
