@@ -57,15 +57,34 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AnimalService\AddAnimal_Should.cs" />
+    <Compile Include="Services\Mocks\MockedAnimalService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Data\PetsWonderland.Business.Data.csproj">
+      <Project>{84bef435-1813-4162-871c-7fb56f503e62}</Project>
+      <Name>PetsWonderland.Business.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Models\PetsWonderland.Business.Models.csproj">
+      <Project>{33c1f9d0-befa-4992-9955-cd2613e319f7}</Project>
+      <Name>PetsWonderland.Business.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Services\PetsWonderland.Business.Services.csproj">
+      <Project>{88a839d2-5bf3-443b-95f3-7c088542cc15}</Project>
+      <Name>PetsWonderland.Business.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
