@@ -1,4 +1,5 @@
 ﻿using System;
+using Bytes2you.Validation;
 
 namespace PetsWonderland.Business.MVP.Args
 {
@@ -11,6 +12,8 @@ namespace PetsWonderland.Business.MVP.Args
 
 		public FindAnimalArgs(int id, string name)
 		{
+			Guard.WhenArgument(name, "Name is null!").IsNullOrEmpty();
+
 			this.Id = id;
 			this.Name = name;
 		}

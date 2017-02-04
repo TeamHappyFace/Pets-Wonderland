@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.Services.Contracts;
@@ -12,24 +13,33 @@ namespace PetsWonderland.Business.Services
 
 		public HotelService(IRepository<Hotel> hotelRepository, IUnitOfWork unitOfWork)
 		{
+			Guard.WhenArgument(hotelRepository, "Hotel repository is null!").IsNull();
+			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull();
+
 			this.hotelRepository = hotelRepository;
 			this.unitOfWork = unitOfWork;
 		}
 
 		public void AddHotel(Hotel hotelToAdd)
 		{
+			Guard.WhenArgument(hotelToAdd, "Hotel to add is null!").IsNull();
+
 			this.hotelRepository.Add(hotelToAdd);
 			this.unitOfWork.SaveChanges();
 		}
 
 		public void DeleteHotel(Hotel hotelToDelete)
 		{
+			Guard.WhenArgument(hotelToDelete, "Hotel to delete is null!").IsNull();
+
 			this.hotelRepository.Delete(hotelToDelete);
 			this.unitOfWork.SaveChanges();
 		}
 
 		public void DeleteHotelById(object hotelId)
 		{
+			Guard.WhenArgument(hotelId, "Cannot delete hotel with id=null!").IsNull();
+
 			this.hotelRepository.Delete(hotelId);
 			this.unitOfWork.SaveChanges();
 		}

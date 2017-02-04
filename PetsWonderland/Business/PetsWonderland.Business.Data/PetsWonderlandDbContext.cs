@@ -35,8 +35,6 @@ namespace PetsWonderland.Business.Data
 		public virtual DbSet<UserHotel> UserHotels { get; set; }
 		public virtual DbSet<UserBoardingRequest> UserBoardingRequests { get; set; }
 		public virtual DbSet<UserHotelRegistrationRequest> UserHotelRegistrationRequests { get; set; }
-		public virtual DbSet<UserProfile> UserProfiles { get; set; }
-
 
 		public static PetsWonderlandDbContext Create()
 		{

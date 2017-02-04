@@ -1,6 +1,6 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
+using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 
 namespace PetsWonderland.Business.Data.Repositories
@@ -13,10 +13,7 @@ namespace PetsWonderland.Business.Data.Repositories
 
         public GenericRepository(IPetsWonderlandDbContext context)
         {
-            if (context == null)
-            {
-                throw new ArgumentException("An instance of DbContext is required to use this repository.", nameof(context));
-            }
+			Guard.WhenArgument(context, "Db context is null!").IsNull();
 
             this.context = context;    
             this.dbSet = this.context.Set<T>();           

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 
 namespace PetsWonderland.Business.Data.UnitOfWork
@@ -9,10 +9,7 @@ namespace PetsWonderland.Business.Data.UnitOfWork
 
         public UnitOfWork(IPetsWonderlandDbContext context)
         {
-            if (context == null)
-            {
-                throw new ArgumentException("An instance of DbContext is required to use the unit of work.", nameof(context));
-            }
+			Guard.WhenArgument(context, "Db context is null!").IsNull();
 
             this.context = context;
         }

@@ -2,6 +2,7 @@
 using WebFormsMvp;
 using WebFormsMvp.Binder;
 using PetsWonderland.Client.NinjectFactories.Contracts;
+using Bytes2you.Validation;
 
 namespace PetsWonderland.Client.NinjectFactories
 {
@@ -11,17 +12,18 @@ namespace PetsWonderland.Client.NinjectFactories
 
         public NinjectPresenterFactory(INinjectPresenterFactory presenterFactory)
         {
-            if (presenterFactory == null)
-            {
-                throw new ArgumentException("An instance of presenter factory is required", nameof(presenterFactory));
-            }
+			Guard.WhenArgument(presenterFactory, "An instance of presenter factory is required").IsNull();
 
             this.presenterFactory = presenterFactory;
         }
 
         public IPresenter Create(Type presenterType, Type viewType, IView viewInstance)
         {
-            var presenter = this.presenterFactory.GetPresenter(presenterType, viewType, viewInstance);
+			Guard.WhenArgument(presenterType, "Presenter type is required!").IsNull();
+			Guard.WhenArgument(viewType, "View type is required!").IsNull();
+			Guard.WhenArgument(viewInstance, "View instance is required!").IsNull();
+
+			var presenter = this.presenterFactory.GetPresenter(presenterType, viewType, viewInstance);
             return presenter;
         }
 

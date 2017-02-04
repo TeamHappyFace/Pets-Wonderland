@@ -5,14 +5,8 @@ using PetsWonderland.Business.Models.Requests;
 
 namespace PetsWonderland.Business.Models.Users
 {
-	public class HotelManager 
+	public class HotelManager : UserProfile
 	{
-		[Key]
-		public int Id { get; set; }
-
-		public int? UserProfileId { get; set; }
-		public virtual UserProfile UserProfile { get; set; }
-
 		private ICollection<Hotel> hotels;
 		private ICollection<UserBoardingRequest> userBoardingRequests;
 

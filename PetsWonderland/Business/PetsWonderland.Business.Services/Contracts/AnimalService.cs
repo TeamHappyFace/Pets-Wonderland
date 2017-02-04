@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Animals;
 using PetsWonderland.Business.Services.Contracts;
@@ -12,24 +13,33 @@ namespace PetsWonderland.Business.Services
 
         public AnimalService(IRepository<Animal> animalRepository, IUnitOfWork unitOfWork)
         {
+			Guard.WhenArgument(animalRepository, "Animal repository is null!").IsNull();
+			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull();
+
             this.animalRepository = animalRepository;
 			this.unitOfWork = unitOfWork;
         }
 
 		public void AddAnimal(Animal animalToAdd)
 		{
+			Guard.WhenArgument(animalToAdd, "Animal to add is null!").IsNull();
+
 			this.animalRepository.Add(animalToAdd);
 			this.unitOfWork.SaveChanges();
 		}
 
 		public void DeleteAnimal(Animal animalToDelete)
 		{
+			Guard.WhenArgument(animalToDelete, "Animal to delete is null!").IsNull();
+
 			this.animalRepository.Delete(animalToDelete);
 			this.unitOfWork.SaveChanges();
 		}
 
 		public void DeleteAnimalById(object animalId)
 		{
+			Guard.WhenArgument(animalId, "Cannot delete animal with id=null!").IsNull();
+
 			this.animalRepository.Delete(animalId);
 			this.unitOfWork.SaveChanges();
 		}

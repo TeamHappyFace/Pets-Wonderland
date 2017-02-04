@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Bytes2you.Validation;
 using PetsWonderland.Business.Models.Animals;
 using PetsWonderland.Business.MVP.Args;
 using PetsWonderland.Business.MVP.Presenters.Contracts;
@@ -16,8 +17,12 @@ namespace PetsWonderland.Business.MVP.Presenters
 
 		public AnimalPresenter(IAnimalView view, IAnimalService animalService)
 			: base(view)
-		{           
+		{
+			Guard.WhenArgument(view, "View is null!").IsNull();
+			Guard.WhenArgument(animalService, "AnimalService is null!").IsNull();
+
 		    this.animalService = animalService;
+
             View.Finding += Finding;
             View.GetAll += GetAllAnimals;
             View.Model.Animals = new List<Animal>();
