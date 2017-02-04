@@ -7,7 +7,7 @@ namespace PetsWonderland.Client.NinjectFactories
 {
     public class NinjectPresenterFactory : IPresenterFactory
     {
-        private readonly INinjectPresenterFactory _presenterFactory;
+        private readonly INinjectPresenterFactory presenterFactory;
 
         public NinjectPresenterFactory(INinjectPresenterFactory presenterFactory)
         {
@@ -16,17 +16,23 @@ namespace PetsWonderland.Client.NinjectFactories
                 throw new ArgumentException("An instance of presenter factory is required", nameof(presenterFactory));
             }
 
-            this._presenterFactory = presenterFactory;
+            this.presenterFactory = presenterFactory;
         }
 
         public IPresenter Create(Type presenterType, Type viewType, IView viewInstance)
         {
-            var presenter = this._presenterFactory.GetPresenter(presenterType, viewType, viewInstance);
+            var presenter = this.presenterFactory.GetPresenter(presenterType, viewType, viewInstance);
             return presenter;
         }
 
         public void Release(IPresenter presenter)
         {
+			var disposable = presenter as IDisposable;
+
+			if (disposable != null)
+			{
+				disposable.Dispose();
+			}
         }
     }
 }

@@ -20,7 +20,9 @@ namespace PetsWonderland.Client.NinjectBIndings
         public override void Load()
         {
             this.Bind<INinjectPresenterFactory>().ToFactory().InSingletonScope();
+
             this.Bind<IPresenterFactory>().To<NinjectPresenterFactory>().InSingletonScope();
+
             this.Bind<IPresenter>()
                 .ToMethod(this.PresenterFactoryMethod)
                 .NamedLikeFactoryMethod((INinjectPresenterFactory factory) => factory.GetPresenter(null, null, null));

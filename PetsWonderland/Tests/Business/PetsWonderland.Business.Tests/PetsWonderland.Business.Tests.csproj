@@ -65,8 +65,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AnimalService\AddAnimal_Should.cs" />
-    <Compile Include="Services\Mocks\MockedAnimalService.cs" />
+    <Compile Include="Services\AnimalServiceTests\AddAnimal_Should.cs" />
+    <Compile Include="Services\HotelServiceTests\AddHotel_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

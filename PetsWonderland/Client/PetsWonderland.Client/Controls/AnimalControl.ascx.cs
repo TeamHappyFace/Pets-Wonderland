@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using PetsWonderland.Business.MVP.Args;
 using PetsWonderland.Business.MVP.Models;
 using PetsWonderland.Business.MVP.Presenters;
@@ -29,14 +28,14 @@ namespace PetsWonderland.Client
 		{
 			GridView1.Visible = false;
 			results.Visible = true;
-			Finding(this, new FindAnimalArgs(id) { Id = id });
+			this.Finding(this, new FindAnimalArgs(id) { Id = id });
 		}
 
 		protected void FindAll(object sender, EventArgs e)
 		{
 			results.Visible = false;
 			GridView1.Visible = true;
-			GetAll(this, new GetAllAnimalsArgs());
+			this.GetAll(this, new GetAllAnimalsArgs());
 		}
 	    
 	}

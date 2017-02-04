@@ -15,8 +15,6 @@ namespace PetsWonderland.Client
     {           
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
-        public static IKernel Kernel { get; private set; }
-
         /// <summary>
         /// Starts the application
         /// </summary>
@@ -42,7 +40,6 @@ namespace PetsWonderland.Client
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
-            Kernel = kernel;
 
             try
             {
