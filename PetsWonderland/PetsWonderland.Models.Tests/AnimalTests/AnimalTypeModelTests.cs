@@ -7,6 +7,7 @@ using PetsWonderland.Business.Common.Constants;
 
 namespace PetsWonderland.Models.Tests.AnimalTests
 {
+    [TestFixture]
     public class AnimalTypeModelTests
     {
         [Test]
@@ -29,10 +30,10 @@ namespace PetsWonderland.Models.Tests.AnimalTests
         public void Id_ShouldGetAndSetDataCorrectly(int testId)
         {
             // Arrange & Act
-            var animal = new AnimalType { Id = testId };
+            var animalType = new AnimalType { Id = testId };
 
             //Assert
-            Assert.AreEqual(testId, animal.Id);
+            Assert.AreEqual(testId, animalType.Id);
         }
 
         [Test]
@@ -85,10 +86,10 @@ namespace PetsWonderland.Models.Tests.AnimalTests
         public void Name_ShouldGetAndSetDataCorrectly(string testName)
         {
             // Arrange & Act
-            var animal = new AnimalType { Name = testName };
+            var animalType = new AnimalType { Name = testName };
 
             //Assert
-            Assert.AreEqual(testName, animal.Name);
+            Assert.AreEqual(testName, animalType.Name);
         }
 
         [TestCase(true)]
@@ -96,10 +97,10 @@ namespace PetsWonderland.Models.Tests.AnimalTests
         public void IsDeleted_ShouldGetAndSetDataCorrectly(bool testIsDeleted)
         {
             // Arrange & Act
-            var animal = new Animal { IsDeleted = testIsDeleted };
+            var animalType = new AnimalType { IsDeleted = testIsDeleted };
 
             //Assert
-            Assert.AreEqual(testIsDeleted, animal.IsDeleted);
+            Assert.AreEqual(testIsDeleted, animalType.IsDeleted);
         }
     }
 }
