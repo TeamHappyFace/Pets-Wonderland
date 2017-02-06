@@ -1,20 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using NUnit.Framework;
-
 using PetsWonderland.Business.Models.Animals;
-using PetsWonderland.Business.Models.Users;
+using PetsWonderland.Business.Models.Hotels;
 
-namespace PetsWonderland.Models.Tests.AnimalTests
+namespace PetsWonderland.Models.Tests.AnimalsTests
 {
     [TestFixture]
-    public class UserAnimalTests
+    public class HotelAnimalTests
     {
         [Test]
         public void Id_ShouldHaveKeyAttribute()
         {
             // Arrange
-            var idProperty = typeof(UserAnimal).GetProperty("Id");
+            var idProperty = typeof(HotelAnimal).GetProperty("Id");
 
             // Act
             var keyAttribute = idProperty.GetCustomAttributes(typeof(KeyAttribute), true)
@@ -30,33 +29,33 @@ namespace PetsWonderland.Models.Tests.AnimalTests
         public void Id_ShouldGetAndSetDataCorrectly(int testId)
         {
             // Arrange & Act
-            var userAnimal = new UserAnimal { Id = testId };
+            var hotelAnimal = new HotelAnimal { Id = testId };
 
             //Assert
-            Assert.AreEqual(testId, userAnimal.Id);
+            Assert.AreEqual(testId, hotelAnimal.Id);
         }
 
         [TestCase(15)]
         [TestCase(20)]
-        public void UserId_ShouldGetAndSetDataCorrectly(int testUserId)
+        public void HotelId_ShouldGetAndSetDataCorrectly(int testHotelId)
         {
             // Arrange & Act
-            var userAnimal = new UserAnimal { UserId = testUserId };
+            var hotelAnimal = new HotelAnimal { HotelId = testHotelId };
 
             //Assert
-            Assert.AreEqual(userAnimal.UserId, testUserId);
+            Assert.AreEqual(testHotelId, hotelAnimal.HotelId);
         }
 
-        [TestCase("Gosho")]
-        [TestCase("Mosho")]
-        public void User_ShouldGetAndSetDataCorrectly(string testFirstname)
+        [TestCase("CatsWonderland")]
+        [TestCase("DogsWonderland")]
+        public void Hotel_ShouldGetAndSetDataCorrectly(string testHotelName)
         {
             // Arrange & Act         
-            var user = new User() { FirstName = testFirstname };
-            var userAnimal = new UserAnimal() { User = user };
+            var hotel = new Hotel { Name = testHotelName };
+            var hotelAnimal = new HotelAnimal() { Hotel = hotel };
 
             //Assert
-            Assert.AreEqual(userAnimal.User.FirstName, testFirstname);
+            Assert.AreEqual(hotelAnimal.Hotel.Name, testHotelName);
         }
 
         [TestCase(15)]
@@ -64,10 +63,10 @@ namespace PetsWonderland.Models.Tests.AnimalTests
         public void AnimalId_ShouldGetAndSetDataCorrectly(int testAnimalId)
         {
             // Arrange & Act
-            var userAnimal = new UserAnimal() { AnimalId = testAnimalId };
+            var hotelAnimal = new HotelAnimal { AnimalId = testAnimalId };
 
             //Assert
-            Assert.AreEqual(userAnimal.AnimalId, testAnimalId);
+            Assert.AreEqual(hotelAnimal.AnimalId, testAnimalId);
         }
 
         [TestCase("Doggy1")]
@@ -76,10 +75,10 @@ namespace PetsWonderland.Models.Tests.AnimalTests
         {
             // Arrange & Act         
             var animal = new Animal { Name = testAnimalName };
-            var userAnimal = new UserAnimal() { Animal = animal };
+            var hotelAnimal = new HotelAnimal() { Animal = animal };
 
             //Assert
-            Assert.AreEqual(userAnimal.Animal.Name, testAnimalName);
+            Assert.AreEqual(hotelAnimal.Animal.Name, testAnimalName);
         }
 
         [TestCase(true)]
@@ -87,10 +86,10 @@ namespace PetsWonderland.Models.Tests.AnimalTests
         public void IsDeleted_ShouldGetAndSetDataCorrectly(bool testIsDeleted)
         {
             // Arrange & Act
-            var userAnimal = new UserAnimal() { IsDeleted = testIsDeleted };
+            var hotelAnimal = new HotelAnimal() { IsDeleted = testIsDeleted };
 
             //Assert
-            Assert.AreEqual(testIsDeleted, userAnimal.IsDeleted);
+            Assert.AreEqual(testIsDeleted, hotelAnimal.IsDeleted);
         }
     }
 }

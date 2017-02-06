@@ -74,10 +74,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AnimalTests\AnimalModelTests.cs" />
-    <Compile Include="AnimalTests\AnimalTypeModelTests.cs" />
-    <Compile Include="AnimalTests\HotelAnimalModelTests.cs" />
-    <Compile Include="AnimalTests\UserAnimalTests.cs" />
+    <Compile Include="AnimalsTests\AnimalTests.cs" />
+    <Compile Include="AnimalsTests\AnimalTypeTests.cs" />
+    <Compile Include="AnimalsTests\HotelAnimalTests.cs" />
+    <Compile Include="AnimalsTests\UserAnimalTests.cs" />
+    <Compile Include="HotelsTests\HotelLocationTests.cs" />
+    <Compile Include="HotelsTests\HotelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

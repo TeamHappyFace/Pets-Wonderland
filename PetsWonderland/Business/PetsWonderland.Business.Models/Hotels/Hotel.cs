@@ -15,14 +15,14 @@ namespace PetsWonderland.Business.Models.Hotels
 		[MaxLength(ValidationConstants.MaxHotelLength)]
 		public string Name { get; set; }
 
-		public string HotelImageUrl { get; set; }
+		public string ImageUrl { get; set; }
 
 		[MinLength(ValidationConstants.MinHotelDescription)]
 		[MaxLength(ValidationConstants.MaxHotelDescription)]
 		public string Description { get; set; }
 
-		public int? HotelLocationId { get; set; }
-		public virtual HotelLocation HotelLocation { get; set; }
+		public int? LocationId { get; set; }
+		public virtual HotelLocation Location { get; set; }
 
 		public bool IsDeleted { get; set; }
 	}
