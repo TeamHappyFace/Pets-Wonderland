@@ -1,11 +1,9 @@
 ﻿using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using PetsWonderland.Business.Data.Contracts;
-using PetsWonderland.Business.Data.Migrations;
 using PetsWonderland.Business.Models.Animals;
 using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.Models.Requests;
-using PetsWonderland.Business.Models.Users;
 
 namespace PetsWonderland.Business.Data
 {
@@ -26,6 +24,11 @@ namespace PetsWonderland.Business.Data
             base.SaveChanges();
         }
 
+		public static PetsWonderlandDbContext Create()
+		{
+			return new PetsWonderlandDbContext();
+		}
+
 		public virtual DbSet<Animal> Animals { get; set; }
 		public virtual DbSet<AnimalType> AnimalTypes { get; set; }
 		public virtual DbSet<HotelAnimal> HotelAnimals { get; set; }
@@ -38,10 +41,5 @@ namespace PetsWonderland.Business.Data
 
 		//public virtual DbSet<HotelManager> HotelManagers { get; set; }
 		//public virtual DbSet<Admin> Admins { get; set; }
-
-		public static PetsWonderlandDbContext Create()
-		{
-			return new PetsWonderlandDbContext();
-		}
 	}
 }

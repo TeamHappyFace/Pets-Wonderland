@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using PetsWonderland.Business.Models.Users;
-using PetsWonderland.Client.Models;
+using PetsWonderland.Client.Identity;
 
 namespace PetsWonderland.Client.Account
 {
-    public partial class TwoFactorAuthenticationSignIn : System.Web.UI.Page
+    public partial class TwoFactorAuthenticationSignIn : Page
     {
         private ApplicationSignInManager signinManager;
         private ApplicationUserManager manager;

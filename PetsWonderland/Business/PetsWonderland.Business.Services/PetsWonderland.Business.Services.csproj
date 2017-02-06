@@ -56,7 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\AnimalService.cs" />
+    <Compile Include="AnimalService.cs" />
     <Compile Include="BoardingRequestService.cs" />
     <Compile Include="Contracts\IAnimalService.cs" />
     <Compile Include="Contracts\IBoardingRequestService.cs" />

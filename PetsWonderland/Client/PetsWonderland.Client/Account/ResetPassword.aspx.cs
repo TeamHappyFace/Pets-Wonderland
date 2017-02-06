@@ -5,7 +5,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using PetsWonderland.Client.Models;
+using PetsWonderland.Client.Identity;
 
 namespace PetsWonderland.Client.Account
 {

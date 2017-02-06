@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
@@ -9,7 +8,7 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using PetsWonderland.Business.Data;
 using PetsWonderland.Business.Models.Users;
-using PetsWonderland.Client.Models;
+using PetsWonderland.Client.Identity;
 
 namespace PetsWonderland.Client
 {
@@ -18,10 +17,11 @@ namespace PetsWonderland.Client
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301883
         public void ConfigureAuth(IAppBuilder app)
         {
-            // Configure the db context, user manager and signin manager to use a single instance per request
+            // Configure the db context, user manager, signin and role manager to use a single instance per request
             app.CreatePerOwinContext(PetsWonderlandDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+			app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
 
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider

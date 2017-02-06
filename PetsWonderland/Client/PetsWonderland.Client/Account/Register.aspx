@@ -10,7 +10,14 @@
         <h4>Create a new account</h4>
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
-<%--		<div class="form-group">
+
+		<div class="form-group">
+            <div class="col-md-10">
+				<asp:DropDownList ID="UserType" runat="server"></asp:DropDownList>
+            </div>
+        </div>
+
+<%--	<div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Username" CssClass="col-md-2 control-label">Username</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Username" CssClass="form-control"/>
