@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Business.MVP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Business.Services", "Business\PetsWonderland.Business.Services\PetsWonderland.Business.Services.csproj", "{88A839D2-5BF3-443B-95F3-7C088542CC15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Models.Tests", "PetsWonderland.Models.Tests\PetsWonderland.Models.Tests.csproj", "{C8A64656-58B7-49B3-A787-2FEA698BF2B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsWonderland.Models.Tests", "Tests\Business\PetsWonderland.Models.Tests\PetsWonderland.Models.Tests.csproj", "{C8A64656-58B7-49B3-A787-2FEA698BF2B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

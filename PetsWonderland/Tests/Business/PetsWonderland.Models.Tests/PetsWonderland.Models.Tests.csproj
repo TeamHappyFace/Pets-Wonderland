@@ -76,11 +76,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\PetsWonderland.Business.Common\PetsWonderland.Business.Common.csproj">
+    <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Common\PetsWonderland.Business.Common.csproj">
       <Project>{e84a9add-2a6b-4453-b54a-4282ef22a2f8}</Project>
       <Name>PetsWonderland.Business.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Business\PetsWonderland.Business.Models\PetsWonderland.Business.Models.csproj">
+    <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Models\PetsWonderland.Business.Models.csproj">
       <Project>{33c1f9d0-befa-4992-9955-cd2613e319f7}</Project>
       <Name>PetsWonderland.Business.Models</Name>
     </ProjectReference>
