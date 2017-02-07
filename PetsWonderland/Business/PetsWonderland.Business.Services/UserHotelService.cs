@@ -61,7 +61,7 @@ namespace PetsWonderland.Business.Services
 
 		public HotelLocation GetHotelLocation(UserHotel hotel)
 		{
-			return hotel.Hotel.HotelLocation;
+			return hotel.Hotel.Location;
 		}
 	}
 }

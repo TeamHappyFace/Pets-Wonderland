@@ -1,15 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using NUnit.Framework;
-
 using PetsWonderland.Business.Models.Animals;
-using PetsWonderland.Business.Common.Constants;
 using PetsWonderland.Business.Models.Hotels;
 
-namespace PetsWonderland.Models.Tests.AnimalTests
+namespace PetsWonderland.Models.Tests.AnimalsTests
 {
     [TestFixture]
-    public class HotelAnimalModelTests
+    public class HotelAnimalTests
     {
         [Test]
         public void Id_ShouldHaveKeyAttribute()
