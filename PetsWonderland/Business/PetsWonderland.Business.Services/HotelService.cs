@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Hotels;
@@ -26,6 +27,11 @@ namespace PetsWonderland.Business.Services
 
 			this.hotelRepository.Add(hotelToAdd);
 			this.unitOfWork.SaveChanges();
+		}
+
+		public int Count()
+		{
+			return this.hotelRepository.All().Count();
 		}
 
 		public void DeleteHotel(Hotel hotelToDelete)

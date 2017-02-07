@@ -66,8 +66,9 @@
   <ItemGroup>
     <Compile Include="AnimalTests\AddAnimal_Should.cs" />
     <Compile Include="AnimalTests\Constructor_Should.cs" />
+    <Compile Include="AnimalTests\Count_Should.cs" />
     <Compile Include="HotelTests\AddHotel_Should.cs" />
-    <Compile Include="HotelTests\Constructort_Should.cs" />
+    <Compile Include="HotelTests\Constructor_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

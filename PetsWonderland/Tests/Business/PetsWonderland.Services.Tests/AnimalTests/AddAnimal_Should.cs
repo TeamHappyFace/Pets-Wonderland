@@ -4,6 +4,7 @@ using PetsWonderland.Business.Services;
 using PetsWonderland.Business.Data.Contracts;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 
 namespace PetsWonderland.Business.Tests.Services.AnimalServiceTests
 {
@@ -23,7 +24,7 @@ namespace PetsWonderland.Business.Tests.Services.AnimalServiceTests
 			animalService.AddAnimal(validAnimal.Object);
 
 			//Assert
-			Assert.IsNotNull(mockedRepository.Object); 
+			mockedRepository.Verify(repository => repository.Add(validAnimal.Object));
 		}
 
 		[Test]
@@ -36,10 +37,26 @@ namespace PetsWonderland.Business.Tests.Services.AnimalServiceTests
 
 			//Act
 			var validAnimal = new Mock<Animal>();
+			mockedRepository.Setup(x => x.Add(validAnimal.Object));
+
+			//Assert
+			Assert.AreEqual(validAnimal.Object, animalService.GetAllAnimals());
+		}
+
+		[Test]
+		public void InvokeAddMethodOnce_WhenParamsAreCorrect()
+		{
+			//Arrange
+			var mockedRepository = new Mock<IRepository<Animal>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
+
+			//Act
+			var validAnimal = new Mock<Animal>();
 			animalService.AddAnimal(validAnimal.Object);
 
 			//Assert
-			Assert.AreEqual(1, animalService.Count());
+			mockedRepository.Verify(repository => repository.Add(It.IsAny<Animal>()), Times.Once);
 		}
 
 		[Test]
