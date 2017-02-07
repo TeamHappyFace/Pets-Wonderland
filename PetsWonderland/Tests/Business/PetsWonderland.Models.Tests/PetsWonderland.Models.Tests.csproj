@@ -82,6 +82,9 @@
     <Compile Include="RequestsTests\UserBoardingrequestTests.cs" />
     <Compile Include="RequestsTests\UserRegistrationRequestTests.cs" />
     <Compile Include="UserRolesTests\ApplicationRoleTests.cs" />
+    <Compile Include="UsersTests\AdminTests.cs" />
+    <Compile Include="UsersTests\HotelManagerTests.cs" />
+    <Compile Include="UsersTests\UserTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
