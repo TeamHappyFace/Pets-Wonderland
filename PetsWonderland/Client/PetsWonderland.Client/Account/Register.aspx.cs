@@ -35,8 +35,21 @@ namespace PetsWonderland.Client.Account
 			var roleManager = Context.GetOwinContext().Get<ApplicationRoleManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
 
-            var user = new UserProfile() { UserName = Email.Text, Email = Email.Text };
-            IdentityResult result = manager.Create(user, Password.Text);
+			var user = new UserProfile();
+
+			switch (UserType.SelectedItem.Value)
+			{
+				case "User":
+					user = new User() { FirstName = FirstName.Text, LastName = LastName.Text, UserName = Username.Text, Email = Email.Text };
+					break;
+				case "Hotel manager":
+					user = new HotelManager() { FirstName = FirstName.Text, LastName = LastName.Text, UserName = Username.Text, Email = Email.Text };
+					break;
+				default:
+					break;
+			}
+
+			IdentityResult result = manager.Create(user, Password.Text);
 
 			if (result.Succeeded)
             {

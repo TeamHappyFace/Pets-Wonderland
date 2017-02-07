@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Animals;
@@ -26,6 +27,11 @@ namespace PetsWonderland.Business.Services
 
 			this.animalRepository.Add(animalToAdd);
 			this.unitOfWork.SaveChanges();
+		}
+
+		public int Count()
+		{
+			return this.animalRepository.All().Count();
 		}
 
 		public void DeleteAnimal(Animal animalToDelete)

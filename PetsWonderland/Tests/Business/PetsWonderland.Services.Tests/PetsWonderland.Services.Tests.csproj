@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A9DDFEED-22B7-43D3-983C-1C9885350597}</ProjectGuid>
+    <ProjectGuid>{1ECD09A3-55D8-441F-8D31-0CC4DD1199CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PetsWonderland.Business.Tests</RootNamespace>
-    <AssemblyName>PetsWonderland.Business.Tests</AssemblyName>
+    <RootNamespace>PetsWonderland.Services.Tests</RootNamespace>
+    <AssemblyName>PetsWonderland.Services.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -64,14 +64,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AnimalTests\AddAnimal_Should.cs" />
+    <Compile Include="AnimalTests\Constructor_Should.cs" />
+    <Compile Include="HotelTests\AddHotel_Should.cs" />
+    <Compile Include="HotelTests\Constructort_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AnimalServiceTests\AddAnimal_Should.cs" />
-    <Compile Include="Services\HotelServiceTests\AddHotel_Should.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Data\PetsWonderland.Business.Data.csproj">
       <Project>{84bef435-1813-4162-871c-7fb56f503e62}</Project>

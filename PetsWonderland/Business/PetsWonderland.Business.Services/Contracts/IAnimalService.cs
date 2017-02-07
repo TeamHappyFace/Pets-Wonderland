@@ -11,6 +11,8 @@ namespace PetsWonderland.Business.Services.Contracts
 
 		AnimalType GetAnimalType(Animal animal);
 
+		int Count();
+
 		void AddAnimal(Animal animalToAdd);
 		void DeleteAnimal(Animal animalToDelete);
 		void DeleteAnimalById(object animalId);

@@ -1,17 +1,17 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using NUnit.Framework;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.Services;
 
 namespace PetsWonderland.Business.Tests.Services.HotelServiceTests
 {
-	[TestClass]
+	[TestFixture]
 	public class AddHotel_Should
 	{
-		[TestMethod]
-		public void TestMethod1()
+		[Test]
+		public void AddHotelCorrectly_WhenParamsAreValid()
 		{
 			var mockedRepository = new Mock<IRepository<Hotel>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
