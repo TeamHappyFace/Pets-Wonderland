@@ -2,9 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
 using PetsWonderland.Business.Common.Constants;
-using PetsWonderland.Business.Models.Animals;
 using PetsWonderland.Business.Models.Hotels;
 
 namespace PetsWonderland.Models.Tests.HotelsTests
@@ -87,7 +85,7 @@ namespace PetsWonderland.Models.Tests.HotelsTests
         public void Name_ShouldHaveCorrectMaxLength()
         {
             // Arrange
-            var nameProperty = typeof(AnimalType).GetProperty("Name");
+            var nameProperty = typeof(Hotel).GetProperty("Name");
 
             // Act
             var maxLengthAttribute = nameProperty.GetCustomAttributes(typeof(MaxLengthAttribute), false)
