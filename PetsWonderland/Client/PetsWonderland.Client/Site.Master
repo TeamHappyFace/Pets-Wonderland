@@ -12,6 +12,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
+	<%--<link href="~/Content/Site.css" rel="stylesheet" type="text/css" media="screen" runat="server" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -46,10 +47,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="nav navbar-brand" runat="server" href="~/">Pets Wonderland</a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav ">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
@@ -78,8 +79,15 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
+                <p class="text-center">&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+				<span class="wsite-text">
+					<span class="text-center" style="text-decoration:none; font-style:normal; font-weight:300; color:rgb(117, 117, 117); ">
+						<a href="~/">Home </a> &nbsp; &nbsp; I &nbsp; &nbsp; 
+						<a href="~/About.aspx">About</a> &nbsp; &nbsp; I &nbsp;&nbsp;&nbsp;
+						<a href="~/Contact.aspx"> Contact</a>s 
+					</span>
+				</span>
+			</footer>
         </div>
     </form>
 </body>

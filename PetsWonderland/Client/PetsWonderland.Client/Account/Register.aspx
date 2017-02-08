@@ -9,8 +9,6 @@
     <div class="form-horizontal">
         <h4>Create a new account</h4>
         <hr />
-        <asp:ValidationSummary runat="server" CssClass="text-danger" />
-
 		<div class="form-group">
             <div class="col-md-10">
 				<asp:DropDownList ID="UserType" runat="server"></asp:DropDownList>
@@ -46,6 +44,9 @@
                 <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
                     CssClass="text-danger" ErrorMessage="The email field is required." />
+				<asp:RegularExpressionValidator runat="server" ControlToValidate="Email" 
+					ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+					CssClass="text-danger" ErrorMessage="Invalid Email!" />
             </div>
         </div>
         <div class="form-group">

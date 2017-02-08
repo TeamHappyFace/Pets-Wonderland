@@ -12,7 +12,7 @@ namespace PetsWonderland.Business.Tests.Services.AnimalServiceTests
 	public class AddAnimal_Should
 	{
 		[Test]
-		public void AddAnimalCorrectly_WhenAnimalIsValid()
+		public void InvokeAddMethod_WhenAnimalIsValid()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<Animal>>();
@@ -28,23 +28,7 @@ namespace PetsWonderland.Business.Tests.Services.AnimalServiceTests
 		}
 
 		[Test]
-		public void AddOnlyOneAnimal_WhenAnimalIsValid()
-		{
-			//Arange
-			var mockedRepository = new Mock<IRepository<Animal>>();
-			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
-
-			//Act
-			var validAnimal = new Mock<Animal>();
-			mockedRepository.Setup(x => x.Add(validAnimal.Object));
-
-			//Assert
-			Assert.AreEqual(validAnimal.Object, animalService.GetAllAnimals());
-		}
-
-		[Test]
-		public void InvokeAddMethodOnce_WhenParamsAreCorrect()
+		public void InvokeAddMethodOnceForAnimal_WhenParamsAreCorrect()
 		{
 			//Arrange
 			var mockedRepository = new Mock<IRepository<Animal>>();
@@ -57,6 +41,22 @@ namespace PetsWonderland.Business.Tests.Services.AnimalServiceTests
 
 			//Assert
 			mockedRepository.Verify(repository => repository.Add(It.IsAny<Animal>()), Times.Once);
+		}
+
+		[Test]
+		public void CallSaveChangesOnce_WhenAnimalIsValid()
+		{
+			//Arange
+			var mockedRepository = new Mock<IRepository<Animal>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
+
+			//Act
+			var validAnimal = new Mock<Animal>();
+			animalService.AddAnimal(validAnimal.Object);
+
+			//Assert
+			mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);
 		}
 
 		[Test]

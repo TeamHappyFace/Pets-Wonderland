@@ -19,10 +19,10 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 
 			//Act
-			var hotelService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
+			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 
 			//Assert
-			Assert.That(hotelService, Is.InstanceOf<AnimalService>());
+			Assert.That(animalService, Is.InstanceOf<AnimalService>());
 		}
 
 		[Test]

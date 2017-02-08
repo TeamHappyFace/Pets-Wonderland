@@ -11,7 +11,7 @@ namespace PetsWonderland.Business.Tests.Services.HotelServiceTests
 	public class AddHotel_Should
 	{
 		[Test]
-		public void AddHotelCorrectly_WhenParamsAreValid()
+		public void InvokeAddMethod_WhenParamsAreValid()
 		{
 			//Arrange
 			var mockedRepository = new Mock<IRepository<Hotel>>();
@@ -27,23 +27,7 @@ namespace PetsWonderland.Business.Tests.Services.HotelServiceTests
 		}
 
 		[Test]
-		public void AddOnlyOneHotel_WhenHotelIsValid()
-		{
-			//Arange
-			var mockedRepository = new Mock<IRepository<Hotel>>();
-			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-			var hotelService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
-			
-			//Act
-			var validHotel = new Mock<Hotel>();
-			mockedRepository.Setup(x => x.Add(validHotel.Object));
-
-			//Assert
-			Assert.AreEqual(validHotel.Object, hotelService.GetAllHotels());
-		}
-
-		[Test]
-		public void InvokeAddMethodOnce_WhenParamsAreCorrect()
+		public void InvokeAddMethodOnceForHotel_WhenParamsAreCorrect()
 		{
 			//Arrange
 			var mockedRepository = new Mock<IRepository<Hotel>>();
@@ -56,6 +40,22 @@ namespace PetsWonderland.Business.Tests.Services.HotelServiceTests
 
 			//Assert
 			mockedRepository.Verify(repository => repository.Add(It.IsAny<Hotel>()), Times.Once);
+		}
+
+		[Test]
+		public void CallSaveChangesOnce_WhenHotelIsValid()
+		{
+			//Arange
+			var mockedRepository = new Mock<IRepository<Hotel>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var hotelService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
+
+			//Act
+			var validHotel = new Mock<Hotel>();
+			hotelService.AddHotel(validHotel.Object);
+
+			//Assert
+			mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);
 		}
 
 		[Test]

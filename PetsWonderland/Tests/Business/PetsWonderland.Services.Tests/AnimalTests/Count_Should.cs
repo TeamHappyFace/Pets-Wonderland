@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Data.Contracts;
@@ -14,7 +12,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 	public class Count_Should
 	{
 		[Test]
-		public void ReturnCorrectCount_WhenInvoked()
+		public void CallCountMethod_WhenParamsAreValid()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<Animal>>();
@@ -23,10 +21,27 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 
 			//Act
 			var validAnimal = new Mock<Animal>();
-			mockedRepository.Setup(repository => repository.Add(validAnimal.Object));
+			animalService.AddAnimal(validAnimal.Object);
+			animalService.Count();
 
 			//Assert
-			Assert.Positive(animalService.Count());
+			mockedRepository.Verify(repository => repository.All(), Times.Once);
+		}
+
+		[Test]
+		public void NotCallCountMethod_WhenParamsAreValid()
+		{
+			//Arange
+			var mockedRepository = new Mock<IRepository<Animal>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
+
+			//Act
+			var validAnimal = new Mock<Animal>();
+			animalService.AddAnimal(validAnimal.Object);
+
+			//Assert
+			mockedRepository.Verify(repository => repository.All(), Times.Never);
 		}
 	}
 }
