@@ -3,7 +3,6 @@ using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Animals;
-using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.Services;
 
 namespace PetsWonderland.Services.Tests.AnimalTests

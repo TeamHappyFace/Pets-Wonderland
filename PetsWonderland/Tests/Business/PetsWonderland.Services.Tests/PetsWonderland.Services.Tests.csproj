@@ -70,6 +70,9 @@
     <Compile Include="AnimalTests\DeleteAnimalById_Should.cs" />
     <Compile Include="AnimalTests\DeleteAnimal_Should.cs" />
     <Compile Include="AnimalTests\GetAllAnimals_Should.cs" />
+    <Compile Include="AnimalTests\GetAnimalType_Should.cs" />
+    <Compile Include="AnimalTests\GetById_Should.cs" />
+    <Compile Include="AnimalTests\GetByName_Should.cs" />
     <Compile Include="HotelTests\AddHotel_Should.cs" />
     <Compile Include="HotelTests\Constructor_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

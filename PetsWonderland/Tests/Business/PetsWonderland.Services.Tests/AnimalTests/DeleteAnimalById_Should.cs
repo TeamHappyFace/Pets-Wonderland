@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Data.Contracts;
@@ -12,7 +11,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 	public class DeleteAnimalById_Should
 	{
 		[Test]
-		public void InvokeDeleteByIdMethod_WhenAnimaltoDeleteIsValid()
+		public void BeInvoked_WhenAnimaltoDeleteIsValid()
 		{
 			//Arrange
 			var mockedRepository = new Mock<IRepository<Animal>>();
@@ -29,7 +28,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 		}
 
 		[Test]
-		public void InvokeDeleteByIdMethodOnceForAnimal_WhenParamsAreCorrect()
+		public void BeInvokedOnceForTypeAnimal_WhenParamsAreCorrect()
 		{
 			//Arrange
 			var mockedRepository = new Mock<IRepository<Animal>>();

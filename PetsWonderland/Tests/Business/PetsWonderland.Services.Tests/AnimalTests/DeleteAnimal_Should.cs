@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
 using NUnit.Framework;
 using PetsWonderland.Business.Services;
 using PetsWonderland.Business.Data.Contracts;
@@ -13,7 +11,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 	public class DeleteAnimal_Should
 	{
 		[Test]
-		public void InvokeDeleteMethod_WhenAnimaltoDeleteIsValid()
+		public void BeInvoked_WhenAnimaltoDeleteIsValid()
 		{
 			//Arrange
 			var mockedRepository = new Mock<IRepository<Animal>>();
@@ -30,7 +28,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 		}
 
 		[Test]
-		public void InvokeDeleteMethodOnceForAnimal_WhenParamsAreCorrect()
+		public void BeInvokedOnceForAnimal_WhenParamsAreCorrect()
 		{
 			//Arrange
 			var mockedRepository = new Mock<IRepository<Animal>>();
@@ -61,6 +59,20 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 
 			//Assert
 			mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Exactly(2));
+		}
+
+		[Test]
+		public void NotCallSaveChanges_WhenAnimalIsNotDeleted()
+		{
+			//Arange
+			var mockedRepository = new Mock<IRepository<Animal>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
+		
+			var animal = new Mock<Animal>();
+
+			//Act, Assert
+			mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Never);
 		}
 
 		[Test]

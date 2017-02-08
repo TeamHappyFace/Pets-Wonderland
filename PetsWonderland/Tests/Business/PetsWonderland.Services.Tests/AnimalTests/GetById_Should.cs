@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Data.Contracts;
@@ -10,7 +8,7 @@ using PetsWonderland.Business.Services;
 namespace PetsWonderland.Services.Tests.AnimalTests
 {
 	[TestFixture]
-	public class GetAllAnimals_Should
+	public class GetById_Should
 	{
 		[Test]
 		public void BeCalled_WhenParamsAreValid()
@@ -21,10 +19,11 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 
 			//Act
-			animalService.GetAllAnimals();
+			var animal = new Mock<Animal>();
+			animalService.GetById(animal.Object.Id);
 
 			//Assert
-			mockedRepository.Verify(repository => repository.All(), Times.Once);
+			mockedRepository.Verify(repository => repository.GetById(animal.Object.Id), Times.Once);
 		}
 
 		[Test]
@@ -34,24 +33,24 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			var mockedRepository = new Mock<IRepository<Animal>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
-			
+
 			//Act, Assert
-			mockedRepository.Verify(repository => repository.All(), Times.Never);
+			mockedRepository.Verify(repository => repository.GetById(1), Times.Never);
 		}
 
 		[Test]
-		public void ReturnIqueriable_WhenInvoked()
+		public void ReturnAnimal_WhenInvoked()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<Animal>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-			IEnumerable<Animal> result = new List<Animal>() { new Animal(), new Animal(), new Animal() };
-			mockedRepository.Setup(repo => repo.All()).Returns(() => result.AsQueryable());
+			var animal = new Mock<Animal>();
+			mockedRepository.Setup(repo => repo.GetById(animal.Object.Id)).Returns(() => animal.Object);
 
 			//Act, Assert
-			Assert.IsInstanceOf<IQueryable<Animal>>(animalService.GetAllAnimals());
+			Assert.IsInstanceOf<Animal>(animalService.GetById(animal.Object.Id));
 		}
 
 		[Test]
@@ -63,15 +62,15 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 
 			//Act
-			IEnumerable<Animal> result = new List<Animal>() { new Animal(), new Animal(), new Animal() };
-			mockedRepository.Setup(repo => repo.All()).Returns(() => result.AsQueryable());
+			var animal = new Mock<Animal>();
+			mockedRepository.Setup(repo => repo.GetById(animal.Object.Id)).Returns(() => animal.Object);
 
 			//Assert
-			Assert.AreEqual(animalService.GetAllAnimals(), result);
+			Assert.AreEqual(animalService.GetById(animal.Object.Id), animal.Object);
 		}
 
 		[Test]
-		public void ReturnEmptyCollection_WhenNoAnimals()
+		public void ReturnCorrectAnimal_WhenInvoked()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<Animal>>();
@@ -79,11 +78,27 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 
 			//Act
-			IEnumerable<Animal> result = new List<Animal>();
-			mockedRepository.Setup(repo => repo.All()).Returns(() => result.AsQueryable());
+			var animal = new Mock<Animal>();
+			var animalToCompare = new Mock<Animal>();
+			mockedRepository.Setup(repo => repo.GetById(animal.Object.Id)).Returns(() => animal.Object);
 
 			//Assert
-			Assert.IsEmpty(animalService.GetAllAnimals());
+			Assert.AreNotEqual(animalService.GetById(animal.Object.Id), animalToCompare.Object);
+		}
+
+		[Test]
+		public void NotReturnAnimal_WhenNoSuchAnimal()
+		{
+			//Arange
+			var mockedRepository = new Mock<IRepository<Animal>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
+
+			//Act
+			mockedRepository.Setup(repo => repo.GetById(0)).Returns(() => null);
+
+			//Assert
+			Assert.IsNull(animalService.GetById(0));
 		}
 
 		[Test]
@@ -95,11 +110,10 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 
 			//Act
-			IEnumerable<Animal> result = null;
-			mockedRepository.Setup(repo => repo.All()).Returns(() => result.AsQueryable());
+			Mock<Animal> animal = null;
 
 			//Assert
-			Assert.Throws<ArgumentNullException>(() => animalService.GetAllAnimals());
+			Assert.Throws<NullReferenceException>(()=>animalService.GetById(animal.Object.Id));
 		}
 	}
 }
