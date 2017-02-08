@@ -34,5 +34,7 @@ namespace PetsWonderland.Business.Models.Users
 		{
 			return Task.FromResult(GenerateUserIdentity(manager));
 		}
+
+
 	}
 }
