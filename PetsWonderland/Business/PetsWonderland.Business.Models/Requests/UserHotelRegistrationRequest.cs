@@ -12,7 +12,7 @@ namespace PetsWonderland.Business.Models.Requests
 
 		public DateTime DateOfRequest { get; set; }
 
-		public int? HotelManagerId { get; set; }
+		public string HotelManagerId { get; set; }
 		public virtual HotelManager HotelManager { get; set; }
 
 		public int? HotelId { get; set; }

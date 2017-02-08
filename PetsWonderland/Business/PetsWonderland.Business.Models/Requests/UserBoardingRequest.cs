@@ -13,7 +13,7 @@ namespace PetsWonderland.Business.Models.Requests
 
 		public DateTime DateOfRequest { get; set; }
 
-		public int? UserId { get; set; }
+		public string UserId { get; set; }
 		public virtual User User { get; set; }
 
 		public int? HotelId { get; set; }
