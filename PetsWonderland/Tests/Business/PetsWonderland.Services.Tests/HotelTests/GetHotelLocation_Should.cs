@@ -16,7 +16,7 @@ namespace PetsWonderland.Services.Tests.HotelTests
 			//Arrange
 			var mockedRepository = new Mock<IRepository<Hotel>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-			var animalService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
+			var hotelService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
 
 			//Act
 			var validHotel = new Mock<Hotel>();
@@ -24,7 +24,7 @@ namespace PetsWonderland.Services.Tests.HotelTests
 			validHotel.Setup(hotel => hotel.Location).Returns(location);
 
 			//Assert
-			Assert.AreEqual(location, animalService.GetHotelLocation(validHotel.Object));
+			Assert.AreEqual(location, hotelService.GetHotelLocation(validHotel.Object));
 		}
 
 		[Test]
@@ -33,7 +33,7 @@ namespace PetsWonderland.Services.Tests.HotelTests
 			//Arange
 			var mockedRepository = new Mock<IRepository<Hotel>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-			var animalService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
+			var hotelService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
 
 			//Act
 			var validHotel = new Mock<Hotel>();
@@ -45,7 +45,7 @@ namespace PetsWonderland.Services.Tests.HotelTests
 		}
 
 		[Test]
-		public void ReturnsNull_WhenNoHotelLocationIsNotAssigned()
+		public void ReturnsNull_WhenHotelLocationIsNotAssigned()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<Hotel>>();

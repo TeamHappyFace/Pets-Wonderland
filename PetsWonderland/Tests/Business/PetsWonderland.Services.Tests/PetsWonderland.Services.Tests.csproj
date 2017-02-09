@@ -83,6 +83,14 @@
     <Compile Include="HotelTests\GetByName_Should.cs" />
     <Compile Include="HotelTests\GetHotelLocation_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserHotelTests\AddUserHotel_Should.cs" />
+    <Compile Include="UserHotelTests\Constructor_Should.cs" />
+    <Compile Include="UserHotelTests\DeleteUserHotelById_Should.cs" />
+    <Compile Include="UserHotelTests\DeleteUserHotel_Should.cs" />
+    <Compile Include="UserHotelTests\GetAllUserHotels_Should.cs" />
+    <Compile Include="UserHotelTests\GetById_Should.cs" />
+    <Compile Include="UserHotelTests\GetByName_Should.cs" />
+    <Compile Include="UserHotelTests\GetUserHotelLocation_Should.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

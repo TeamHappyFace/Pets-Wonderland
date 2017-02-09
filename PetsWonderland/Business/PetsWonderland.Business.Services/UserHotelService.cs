@@ -20,31 +20,31 @@ namespace PetsWonderland.Business.Services
 			this.unitOfWork = unitOfWork;
 		}
 
-		public void AddHotel(UserHotel hotelToAdd)
+		public void AddUserHotel(UserHotel userHotelToAdd)
 		{
-			Guard.WhenArgument(hotelToAdd, "User hotel to add is null!").IsNull();
+			Guard.WhenArgument(userHotelToAdd, "User hotel to add is null!").IsNull();
 
-			this.userHotelRepository.Add(hotelToAdd);
+			this.userHotelRepository.Add(userHotelToAdd);
 			this.unitOfWork.SaveChanges();
 		}
 
-		public void DeleteHotel(UserHotel hotelToDelete)
+		public void DeleteUserHotel(UserHotel userHotelToDelete)
 		{
-			Guard.WhenArgument(hotelToDelete, "User hotel to delete is null!").IsNull();
+			Guard.WhenArgument(userHotelToDelete, "User hotel to delete is null!").IsNull();
 
-			this.userHotelRepository.Delete(hotelToDelete);
+			this.userHotelRepository.Delete(userHotelToDelete);
 			this.unitOfWork.SaveChanges();
 		}
 
-		public void DeleteHotelById(object hotelId)
+		public void DeleteUserHotelById(object userHotelId)
 		{
-			Guard.WhenArgument(hotelId, "Cannot delete user hotel with id=null!").IsNull();
+			Guard.WhenArgument(userHotelId, "Cannot delete user hotel with id=null!").IsNull();
 
-			this.userHotelRepository.Delete(hotelId);
+			this.userHotelRepository.Delete(userHotelId);
 			this.unitOfWork.SaveChanges();
 		}
 
-		public IQueryable<UserHotel> GetAllHotels()
+		public IQueryable<UserHotel> GetAllUserHotels()
 		{
 			return this.userHotelRepository.All();
 		}
@@ -59,9 +59,9 @@ namespace PetsWonderland.Business.Services
 			return this.userHotelRepository.GetByName(name);
 		}
 
-		public HotelLocation GetHotelLocation(UserHotel hotel)
+		public HotelLocation GetUserHotelLocation(UserHotel userHotel)
 		{
-			return hotel.Hotel.Location;
+			return userHotel.Hotel.Location;
 		}
 	}
 }

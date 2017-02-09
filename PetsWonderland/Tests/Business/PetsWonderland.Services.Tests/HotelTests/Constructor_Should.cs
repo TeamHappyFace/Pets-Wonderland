@@ -16,11 +16,9 @@ namespace PetsWonderland.Services.Tests.HotelTests
 			//Arrange
 			var mockedRepository = new Mock<IRepository<Hotel>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-
-			//Act
 			var hotelService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-			//Assert
+			//Act, Assert
 			Assert.That(hotelService, Is.InstanceOf<HotelService>());
 		}
 

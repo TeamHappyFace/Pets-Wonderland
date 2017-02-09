@@ -47,7 +47,8 @@ namespace PetsWonderland.Services.Tests.HotelTests
 			var hotelService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
 
 			var hotel = new Mock<Hotel>();
-			mockedRepository.Setup(repository => repository.GetById(hotel.Object.Id)).Returns(() => hotel.Object);
+			mockedRepository.Setup(repository => repository.GetById(hotel.Object.Id))
+				.Returns(() => hotel.Object);
 
 			//Act, Assert
 			Assert.IsInstanceOf<Hotel>(hotelService.GetById(hotel.Object.Id));
@@ -63,7 +64,8 @@ namespace PetsWonderland.Services.Tests.HotelTests
 
 			//Act
 			var hotel = new Mock<Hotel>();
-			mockedRepository.Setup(repository => repository.GetById(hotel.Object.Id)).Returns(() => hotel.Object);
+			mockedRepository.Setup(repository => repository.GetById(hotel.Object.Id))
+				.Returns(() => hotel.Object);
 
 			//Assert
 			Assert.AreEqual(hotelService.GetById(hotel.Object.Id), hotel.Object);
@@ -80,7 +82,8 @@ namespace PetsWonderland.Services.Tests.HotelTests
 			//Act
 			var hotel = new Mock<Hotel>();
 			var hotelToCompare = new Mock<Hotel>();
-			mockedRepository.Setup(repository => repository.GetById(hotel.Object.Id)).Returns(() => hotel.Object);
+			mockedRepository.Setup(repository => repository.GetById(hotel.Object.Id))
+				.Returns(() => hotel.Object);
 
 			//Assert
 			Assert.AreNotEqual(hotelService.GetById(hotel.Object.Id), hotelToCompare.Object);

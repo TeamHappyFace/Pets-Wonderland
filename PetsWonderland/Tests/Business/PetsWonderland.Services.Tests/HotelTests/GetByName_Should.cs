@@ -48,7 +48,8 @@ namespace PetsWonderland.Services.Tests.HotelTests
 
 			//Act
 			var hotel = new Mock<Hotel>();
-			mockedRepository.Setup(repository => repository.GetByName(hotel.Object.Name)).Returns(() => hotel.Object);
+			mockedRepository.Setup(repository => repository.GetByName(hotel.Object.Name))
+				.Returns(() => hotel.Object);
 
 			//Assert
 			Assert.IsInstanceOf<Hotel>(hotelService.GetByName(hotel.Object.Name));
@@ -64,7 +65,8 @@ namespace PetsWonderland.Services.Tests.HotelTests
 
 			//Act
 			var hotel = new Mock<Hotel>();
-			mockedRepository.Setup(repository => repository.GetByName(hotel.Object.Name)).Returns(() => hotel.Object);
+			mockedRepository.Setup(repository => repository.GetByName(hotel.Object.Name))
+				.Returns(() => hotel.Object);
 
 			//Assert
 			Assert.AreEqual(hotelService.GetByName(hotel.Object.Name), hotel.Object);
@@ -81,7 +83,8 @@ namespace PetsWonderland.Services.Tests.HotelTests
 			//Act
 			var hotel = new Mock<Hotel>();
 			var hotelToCompare = new Mock<Hotel>();
-			mockedRepository.Setup(repository => repository.GetByName(hotel.Object.Name)).Returns(() => hotel.Object);
+			mockedRepository.Setup(repository => repository.GetByName(hotel.Object.Name))
+				.Returns(() => hotel.Object);
 
 			//Assert
 			Assert.AreNotEqual(hotelService.GetByName(hotel.Object.Name), hotelToCompare.Object);
