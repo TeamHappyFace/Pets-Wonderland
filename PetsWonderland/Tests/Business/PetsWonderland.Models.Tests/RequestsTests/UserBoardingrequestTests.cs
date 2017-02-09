@@ -64,7 +64,7 @@ namespace PetsWonderland.Models.Tests.RequestsTests
         public void User_ShouldGetAndSetDataCorrectly(string testUserFirstname)
         {
             // Arrange & Act         
-            var user = new User { FirstName = testUserFirstname };
+            var user = new RegularUser { FirstName = testUserFirstname };
             var userBoardingRequest = new UserBoardingRequest { User = user };
 
             //Assert

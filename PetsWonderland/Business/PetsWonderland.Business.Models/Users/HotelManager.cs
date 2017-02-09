@@ -2,10 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.Models.Requests;
+using PetsWonderland.Business.Models.Users.Contracts;
 
 namespace PetsWonderland.Business.Models.Users
 {
-	public class HotelManager : UserProfile
+	public class HotelManager : UserProfile, IHotelManager
 	{
 		private ICollection<Hotel> hotels;
 		private ICollection<UserBoardingRequest> userBoardingRequests;

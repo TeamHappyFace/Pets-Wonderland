@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using PetsWonderland.Business.Common.Constants;
+using PetsWonderland.Business.Models.Animals.Contracts;
 
 namespace PetsWonderland.Business.Models.Animals
 {
-	public class Animal
+	public class Animal : IAnimal
 	{
 		[Key]
 		public int Id { get; set; }

@@ -40,7 +40,7 @@ namespace PetsWonderland.Client.Account
 			switch (UserType.SelectedItem.Value)
 			{
 				case "User":
-					user = new User() { FirstName = FirstName.Text, LastName = LastName.Text, UserName = Username.Text, Email = Email.Text };
+					user = new RegularUser() { FirstName = FirstName.Text, LastName = LastName.Text, UserName = Username.Text, Email = Email.Text };
 					break;
 				case "Hotel manager":
 					user = new HotelManager() { FirstName = FirstName.Text, LastName = LastName.Text, UserName = Username.Text, Email = Email.Text };

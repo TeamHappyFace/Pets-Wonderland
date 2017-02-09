@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using PetsWonderland.Business.Common.Constants;
+using PetsWonderland.Business.Models.Hotels.Contracts;
 
 namespace PetsWonderland.Business.Models.Hotels
 {
-	public class Hotel
+	public class Hotel : IHotel
 	{
 		[Key]
 		public int Id { get; set; }

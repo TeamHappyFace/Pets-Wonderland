@@ -2,11 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using PetsWonderland.Business.Models.Animals;
 using PetsWonderland.Business.Models.Hotels;
+using PetsWonderland.Business.Models.Requests.Contracts;
 using PetsWonderland.Business.Models.Users;
 
 namespace PetsWonderland.Business.Models.Requests
 {
-	public class UserBoardingRequest
+	public class UserBoardingRequest : IUserBoardingRequest
 	{
 		[Key]
 		public int Id { get; set; }
@@ -14,7 +15,7 @@ namespace PetsWonderland.Business.Models.Requests
 		public DateTime DateOfRequest { get; set; }
 
 		public string UserId { get; set; }
-		public virtual User User { get; set; }
+		public virtual RegularUser User { get; set; }
 
 		public int? HotelId { get; set; }
 		public virtual Hotel Hotel { get; set; }

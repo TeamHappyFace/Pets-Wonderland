@@ -51,7 +51,7 @@ namespace PetsWonderland.Models.Tests.AnimalsTests
         public void User_ShouldGetAndSetDataCorrectly(string testFirstname)
         {
             // Arrange & Act         
-            var user = new User() { FirstName = testFirstname };
+            var user = new RegularUser() { FirstName = testFirstname };
             var userAnimal = new UserAnimal() { User = user };
 
             //Assert

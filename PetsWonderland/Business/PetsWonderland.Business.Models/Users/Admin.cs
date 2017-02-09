@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using PetsWonderland.Business.Models.Requests;
+using PetsWonderland.Business.Models.Users.Contracts;
 
 namespace PetsWonderland.Business.Models.Users
 {
-	public class Admin : UserProfile
+	public class Admin : UserProfile, IAdmin
 	{
 		private ICollection<UserHotelRegistrationRequest> userHotelRegistrationRequests;
 

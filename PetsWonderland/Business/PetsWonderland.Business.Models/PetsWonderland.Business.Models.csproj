@@ -59,18 +59,30 @@
   <ItemGroup>
     <Compile Include="Animals\Animal.cs" />
     <Compile Include="Animals\AnimalType.cs" />
+    <Compile Include="Animals\Contracts\IAnimal.cs" />
+    <Compile Include="Animals\Contracts\IAnimalType.cs" />
+    <Compile Include="Animals\Contracts\IHotelAnimal.cs" />
+    <Compile Include="Animals\Contracts\IUserAnimal.cs" />
     <Compile Include="Animals\HotelAnimal.cs" />
     <Compile Include="Animals\UserAnimal.cs" />
+    <Compile Include="Hotels\Contracts\IHotel.cs" />
+    <Compile Include="Hotels\Contracts\IHotelLocation.cs" />
+    <Compile Include="Hotels\Contracts\IUserHotel.cs" />
     <Compile Include="Hotels\Hotel.cs" />
     <Compile Include="Hotels\HotelLocation.cs" />
     <Compile Include="Hotels\UserHotel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\Contracts\IUserBoardingRequest.cs" />
+    <Compile Include="Requests\Contracts\IUserHotelRegistrationRequest.cs" />
     <Compile Include="Requests\UserBoardingRequest.cs" />
     <Compile Include="Requests\UserHotelRegistrationRequest.cs" />
     <Compile Include="UserRoles\ApplicationRole.cs" />
     <Compile Include="Users\Admin.cs" />
+    <Compile Include="Users\Contracts\IAdmin.cs" />
+    <Compile Include="Users\Contracts\IHotelManager.cs" />
+    <Compile Include="Users\Contracts\IRegularUser.cs" />
     <Compile Include="Users\HotelManager.cs" />
-    <Compile Include="Users\User.cs" />
+    <Compile Include="Users\RegularUser.cs" />
     <Compile Include="Users\UserProfile.cs" />
   </ItemGroup>
   <ItemGroup>

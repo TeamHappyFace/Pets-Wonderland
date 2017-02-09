@@ -17,16 +17,16 @@ namespace PetsWonderland.Models.Tests.UsersTests
         public void Constructor_ShouldHaveParameterlessConstructor()
         {
             // Arrange & Act
-            var user = new User();
+            var user = new RegularUser();
 
             // Assert
-            Assert.IsInstanceOf<User>(user);
+            Assert.IsInstanceOf<RegularUser>(user);
         }
 
         [Test]
         public void Constructor_ShouldInitializeAnimalsCollectionCorrectly()
         {
-            var user = new User();
+            var user = new RegularUser();
 
             var animals = user.Animals;
 
@@ -40,7 +40,7 @@ namespace PetsWonderland.Models.Tests.UsersTests
             var animal = new UserAnimal() { Id = userAnimalId };
             var set = new HashSet<UserAnimal> { animal };
 
-            var user = new User { Animals = set };
+            var user = new RegularUser { Animals = set };
 
             Assert.AreEqual(user.Animals.First().Id, userAnimalId);
         }
@@ -50,7 +50,7 @@ namespace PetsWonderland.Models.Tests.UsersTests
         public void IsDeleted_ShouldGetAndSetDataCorrectly(bool testIsDeleted)
         {
             // Arrange & Act
-            var user = new User { IsDeleted = testIsDeleted };
+            var user = new RegularUser { IsDeleted = testIsDeleted };
 
             //Assert
             Assert.AreEqual(user.IsDeleted, testIsDeleted);

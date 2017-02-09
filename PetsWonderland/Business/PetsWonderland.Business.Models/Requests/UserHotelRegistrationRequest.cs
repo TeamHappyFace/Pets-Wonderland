@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using PetsWonderland.Business.Models.Hotels;
+using PetsWonderland.Business.Models.Requests.Contracts;
 using PetsWonderland.Business.Models.Users;
 
 namespace PetsWonderland.Business.Models.Requests
 {
-	public class UserHotelRegistrationRequest
+	public class UserHotelRegistrationRequest : IUserHotelRegistrationRequest
 	{
 		[Key]
 		public int Id { get; set; }

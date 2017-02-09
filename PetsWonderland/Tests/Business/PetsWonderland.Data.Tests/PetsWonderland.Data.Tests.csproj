@@ -47,6 +47,10 @@
       <HintPath>..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
       <HintPath>..\..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
@@ -94,6 +98,10 @@
     <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Services\PetsWonderland.Business.Services.csproj">
       <Project>{88A839D2-5BF3-443B-95F3-7C088542CC15}</Project>
       <Name>PetsWonderland.Business.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Client\PetsWonderland.Client\PetsWonderland.Client.csproj">
+      <Project>{249F99BA-7350-4C9A-9D54-9EF9FF6C7153}</Project>
+      <Name>PetsWonderland.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
