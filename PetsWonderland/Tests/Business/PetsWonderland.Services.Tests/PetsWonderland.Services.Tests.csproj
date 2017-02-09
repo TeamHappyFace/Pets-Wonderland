@@ -73,6 +73,12 @@
     <Compile Include="AnimalTests\GetAnimalType_Should.cs" />
     <Compile Include="AnimalTests\GetById_Should.cs" />
     <Compile Include="AnimalTests\GetByName_Should.cs" />
+    <Compile Include="BoardingRequestTests\AddBoardingRequest_Should.cs" />
+    <Compile Include="BoardingRequestTests\Constructor_Should.cs" />
+    <Compile Include="BoardingRequestTests\DeleteBoardingRequestById_Should.cs" />
+    <Compile Include="BoardingRequestTests\DeleteBoardingRequest_Should.cs" />
+    <Compile Include="BoardingRequestTests\GetAllBoardingRequests_Should.cs" />
+    <Compile Include="BoardingRequestTests\GetById_Should.cs" />
     <Compile Include="HotelTests\AddHotel_Should.cs" />
     <Compile Include="HotelTests\Constructor_Should.cs" />
     <Compile Include="HotelTests\Count_Should.cs" />

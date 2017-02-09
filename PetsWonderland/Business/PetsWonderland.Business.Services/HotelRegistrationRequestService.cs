@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Requests;
@@ -25,6 +26,14 @@ namespace PetsWonderland.Business.Services
 			Guard.WhenArgument(requestToAdd, "Request to add is null!").IsNull();
 
 			this.hotelRequestRepository.Add(requestToAdd);
+			this.unitOfWork.SaveChanges();
+		}
+
+		public void DeleteHotelRequest(UserHotelRegistrationRequest requestToDelete)
+		{
+			Guard.WhenArgument(requestToDelete, "Cannot delete request with id= null!").IsNull();
+
+			this.hotelRequestRepository.Delete(requestToDelete);
 			this.unitOfWork.SaveChanges();
 		}
 

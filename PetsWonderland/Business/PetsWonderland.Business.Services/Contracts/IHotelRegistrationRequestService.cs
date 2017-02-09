@@ -10,5 +10,6 @@ namespace PetsWonderland.Business.Services.Contracts
 
 		void AddHotelRequest(UserHotelRegistrationRequest requestToAdd);
 		void DeleteHotelRequestById(object requestId);
+		void DeleteHotelRequest(UserHotelRegistrationRequest requestToDelete);
 	}
 }

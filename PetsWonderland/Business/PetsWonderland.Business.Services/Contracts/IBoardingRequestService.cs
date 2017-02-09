@@ -10,5 +10,6 @@ namespace PetsWonderland.Business.Services.Contracts
 
 		void AddBoardingRequest(UserBoardingRequest requestToAdd);
 		void DeleteBoardingRequestById(object requestId);
+		void DeleteBoardingRequest(UserBoardingRequest requestToDelete);
 	}
 }
