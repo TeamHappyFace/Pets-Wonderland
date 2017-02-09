@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
@@ -13,7 +14,7 @@ namespace PetsWonderland.Business.Data.Repositories
 
         public GenericRepository(IPetsWonderlandDbContext context)
         {
-			Guard.WhenArgument(context, "Db context is null!").IsNull();
+			Guard.WhenArgument(context, "Db context is null!").IsNull().Throw();
 
             this.context = context;    
             this.dbSet = this.context.Set<T>();           

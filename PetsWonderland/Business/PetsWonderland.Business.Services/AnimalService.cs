@@ -24,9 +24,13 @@ namespace PetsWonderland.Business.Services
 		public void AddAnimal(Animal animalToAdd)
 		{
 			Guard.WhenArgument(animalToAdd, "Animal to add is null!").IsNull();
-
-			this.animalRepository.Add(animalToAdd);
-			this.unitOfWork.SaveChanges();
+			
+		    using (var uow = this.unitOfWork)
+		    {
+                this.animalRepository.Add(animalToAdd);
+                uow.SaveChanges();
+		    }
+			
 		}
 
 		public int Count()

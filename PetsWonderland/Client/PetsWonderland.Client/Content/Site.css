@@ -3,7 +3,9 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
-
+footer {
+    background-image: url('~/Images/footer.jpg');
+}
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {

@@ -75,6 +75,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DbContextTests\Constructor_Should.cs" />
+    <Compile Include="GenericRepositoryTests\Constructor_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +86,14 @@
     <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Data\PetsWonderland.Business.Data.csproj">
       <Project>{84BEF435-1813-4162-871C-7FB56F503E62}</Project>
       <Name>PetsWonderland.Business.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Models\PetsWonderland.Business.Models.csproj">
+      <Project>{33C1F9D0-BEFA-4992-9955-CD2613E319F7}</Project>
+      <Name>PetsWonderland.Business.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Services\PetsWonderland.Business.Services.csproj">
+      <Project>{88A839D2-5BF3-443B-95F3-7C088542CC15}</Project>
+      <Name>PetsWonderland.Business.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
