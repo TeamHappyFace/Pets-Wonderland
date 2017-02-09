@@ -9,7 +9,7 @@ namespace PetsWonderland.Business.Data.UnitOfWork
 
         public UnitOfWork(IPetsWonderlandDbContext context)
         {
-			Guard.WhenArgument(context, "Db context is null!").IsNull();
+			Guard.WhenArgument(context, "Db context is null!").IsNull().Throw();
 
             this.context = context;
         }

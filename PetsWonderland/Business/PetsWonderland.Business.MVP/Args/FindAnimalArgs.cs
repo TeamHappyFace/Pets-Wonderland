@@ -12,7 +12,7 @@ namespace PetsWonderland.Business.MVP.Args
 
 		public FindAnimalArgs(int id, string name)
 		{
-			Guard.WhenArgument(name, "Name is null!").IsNullOrEmpty();
+			Guard.WhenArgument(name, "Name is null!").IsNullOrEmpty().Throw();
 
 			this.Id = id;
 			this.Name = name;

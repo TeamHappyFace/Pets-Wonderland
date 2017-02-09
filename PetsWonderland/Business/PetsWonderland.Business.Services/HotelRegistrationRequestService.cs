@@ -14,8 +14,8 @@ namespace PetsWonderland.Business.Services
 
 		public HotelRegistrationRequestService(IRepository<UserHotelRegistrationRequest> hotelRequestRepository, IUnitOfWork unitOfWork)
 		{
-			Guard.WhenArgument(hotelRequestRepository, "Hotel request repository is null!").IsNull();
-			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull();
+			Guard.WhenArgument(hotelRequestRepository, "Hotel request repository is null!").IsNull().Throw();
+			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull().Throw();
 
 			this.hotelRequestRepository = hotelRequestRepository;
 			this.unitOfWork = unitOfWork;
@@ -23,26 +23,35 @@ namespace PetsWonderland.Business.Services
 
 		public void AddHotelRequest(UserHotelRegistrationRequest requestToAdd)
 		{
-			Guard.WhenArgument(requestToAdd, "Request to add is null!").IsNull();
+			Guard.WhenArgument(requestToAdd, "Request to add is null!").IsNull().Throw();
 
-			this.hotelRequestRepository.Add(requestToAdd);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.hotelRequestRepository.Add(requestToAdd);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public void DeleteHotelRequest(UserHotelRegistrationRequest requestToDelete)
 		{
-			Guard.WhenArgument(requestToDelete, "Cannot delete request with id= null!").IsNull();
+			Guard.WhenArgument(requestToDelete, "Cannot delete request with id= null!").IsNull().Throw();
 
-			this.hotelRequestRepository.Delete(requestToDelete);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.hotelRequestRepository.Delete(requestToDelete);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public void DeleteHotelRequestById(object requestId)
 		{
-			Guard.WhenArgument(requestId, "Cannot delete request with id= null!").IsNull();
+			Guard.WhenArgument(requestId, "Cannot delete request with id= null!").IsNull().Throw();
 
-			this.hotelRequestRepository.Delete(requestId);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.hotelRequestRepository.Delete(requestId);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public IQueryable<UserHotelRegistrationRequest> GetAllHotelRequests()

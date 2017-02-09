@@ -14,8 +14,8 @@ namespace PetsWonderland.Business.Services
 
         public AnimalService(IRepository<Animal> animalRepository, IUnitOfWork unitOfWork)
         {
-			Guard.WhenArgument(animalRepository, "Animal repository is null!").IsNull();
-			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull();
+			Guard.WhenArgument(animalRepository, "Animal repository is null!").IsNull().Throw();
+			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull().Throw();
 
             this.animalRepository = animalRepository;
 			this.unitOfWork = unitOfWork;
@@ -23,12 +23,12 @@ namespace PetsWonderland.Business.Services
 
 		public void AddAnimal(Animal animalToAdd)
 		{
-			Guard.WhenArgument(animalToAdd, "Animal to add is null!").IsNull();
+			Guard.WhenArgument(animalToAdd, "Animal to add is null!").IsNull().Throw();
 			
-		    using (var uow = this.unitOfWork)
+		    using (var unitOfWork = this.unitOfWork)
 		    {
                 this.animalRepository.Add(animalToAdd);
-                uow.SaveChanges();
+				unitOfWork.SaveChanges();
 		    }
 			
 		}
@@ -40,18 +40,24 @@ namespace PetsWonderland.Business.Services
 
 		public void DeleteAnimal(Animal animalToDelete)
 		{
-			Guard.WhenArgument(animalToDelete, "Animal to delete is null!").IsNull();
+			Guard.WhenArgument(animalToDelete, "Animal to delete is null!").IsNull().Throw();
 
-			this.animalRepository.Delete(animalToDelete);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.animalRepository.Delete(animalToDelete);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public void DeleteAnimalById(object animalId)
 		{
-			Guard.WhenArgument(animalId, "Cannot delete animal with id=null!").IsNull();
+			Guard.WhenArgument(animalId, "Cannot delete animal with id=null!").IsNull().Throw();
 
-			this.animalRepository.Delete(animalId);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.animalRepository.Delete(animalId);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public IQueryable<Animal> GetAllAnimals()
