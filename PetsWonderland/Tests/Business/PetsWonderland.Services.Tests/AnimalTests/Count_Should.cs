@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Moq;
 using NUnit.Framework;
@@ -12,7 +12,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 	public class Count_Should
 	{
 		[Test]
-		public void CallCountMethod_WhenParamsAreValid()
+		public void BeCalled_WhenParamsAreValid()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<Animal>>();
@@ -29,7 +29,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 		}
 
 		[Test]
-		public void NotCallCountMethod_WhenParamsAreValid()
+		public void NotBeCalled_WhenNotInvoked()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<Animal>>();
@@ -42,6 +42,38 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 
 			//Assert
 			mockedRepository.Verify(repository => repository.All(), Times.Never);
+		}
+
+		[Test]
+		public void ReturnExactNumber_WhenParamsAreValid()
+		{
+			//Arange
+			var mockedRepository = new Mock<IRepository<Animal>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
+
+			//Act
+			IEnumerable<Animal> result = new List<Animal>() { new Animal(), new Animal(), new Animal() };
+			mockedRepository.Setup(repository => repository.All()).Returns(() => result.AsQueryable());
+
+			//Assert
+			Assert.AreEqual(3, animalService.Count());
+		}
+
+		[Test]
+		public void ReturnZero_WhenNoAnimals()
+		{
+			//Arange
+			var mockedRepository = new Mock<IRepository<Animal>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
+
+			//Act
+			IEnumerable<Animal> result = new List<Animal>();
+			mockedRepository.Setup(repository => repository.All()).Returns(() => result.AsQueryable());
+
+			//Assert
+			Assert.AreEqual(0, animalService.Count());
 		}
 	}
 }
