@@ -48,7 +48,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 
 			IEnumerable<Animal> result = new List<Animal>() { new Animal(), new Animal(), new Animal() };
-			mockedRepository.Setup(repo => repo.All()).Returns(() => result.AsQueryable());
+			mockedRepository.Setup(repository => repository.All()).Returns(() => result.AsQueryable());
 
 			//Act, Assert
 			Assert.IsInstanceOf<IQueryable<Animal>>(animalService.GetAllAnimals());
@@ -64,7 +64,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 
 			//Act
 			IEnumerable<Animal> result = new List<Animal>() { new Animal(), new Animal(), new Animal() };
-			mockedRepository.Setup(repo => repo.All()).Returns(() => result.AsQueryable());
+			mockedRepository.Setup(repository => repository.All()).Returns(() => result.AsQueryable());
 
 			//Assert
 			Assert.AreEqual(animalService.GetAllAnimals(), result);
@@ -80,7 +80,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 
 			//Act
 			IEnumerable<Animal> result = new List<Animal>();
-			mockedRepository.Setup(repo => repo.All()).Returns(() => result.AsQueryable());
+			mockedRepository.Setup(repository => repository.All()).Returns(() => result.AsQueryable());
 
 			//Assert
 			Assert.IsEmpty(animalService.GetAllAnimals());
@@ -96,7 +96,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 
 			//Act
 			IEnumerable<Animal> result = null;
-			mockedRepository.Setup(repo => repo.All()).Returns(() => result.AsQueryable());
+			mockedRepository.Setup(repository => repository.All()).Returns(() => result.AsQueryable());
 
 			//Assert
 			Assert.Throws<ArgumentNullException>(() => animalService.GetAllAnimals());

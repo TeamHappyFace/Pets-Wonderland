@@ -48,7 +48,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 
 			//Act
 			var animal = new Mock<Animal>();
-			mockedRepository.Setup(repo => repo.GetByName(animal.Object.Name)).Returns(() => animal.Object);
+			mockedRepository.Setup(repository => repository.GetByName(animal.Object.Name)).Returns(() => animal.Object);
 
 			//Assert
 			Assert.IsInstanceOf<Animal>(animalService.GetByName(animal.Object.Name));
@@ -64,7 +64,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 
 			//Act
 			var animal = new Mock<Animal>();
-			mockedRepository.Setup(repo => repo.GetByName(animal.Object.Name)).Returns(() => animal.Object);
+			mockedRepository.Setup(repository => repository.GetByName(animal.Object.Name)).Returns(() => animal.Object);
 
 			//Assert
 			Assert.AreEqual(animalService.GetByName(animal.Object.Name), animal.Object);
@@ -81,7 +81,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			//Act
 			var animal = new Mock<Animal>();
 			var animalToCompare = new Mock<Animal>();
-			mockedRepository.Setup(repo => repo.GetByName(animal.Object.Name)).Returns(() => animal.Object);
+			mockedRepository.Setup(repository => repository.GetByName(animal.Object.Name)).Returns(() => animal.Object);
 
 			//Assert
 			Assert.AreNotEqual(animalService.GetByName(animal.Object.Name), animalToCompare.Object);
@@ -96,7 +96,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 
 			//Act
-			mockedRepository.Setup(repo => repo.GetByName("Zoro")).Returns(() => null);
+			mockedRepository.Setup(repository => repository.GetByName("Zoro")).Returns(() => null);
 
 			//Assert
 			Assert.IsNull(animalService.GetByName("Zoro"));

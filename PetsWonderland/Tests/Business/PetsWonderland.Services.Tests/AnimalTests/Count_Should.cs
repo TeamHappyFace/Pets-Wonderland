@@ -54,7 +54,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 
 			//Act
 			IEnumerable<Animal> result = new List<Animal>() { new Animal(), new Animal(), new Animal() };
-			mockedRepository.Setup(repo => repo.All()).Returns(() => result.AsQueryable());
+			mockedRepository.Setup(repository => repository.All()).Returns(() => result.AsQueryable());
 
 			//Assert
 			Assert.AreEqual(3, animalService.Count());
@@ -70,7 +70,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 
 			//Act
 			IEnumerable<Animal> result = new List<Animal>();
-			mockedRepository.Setup(repo => repo.All()).Returns(() => result.AsQueryable());
+			mockedRepository.Setup(repository => repository.All()).Returns(() => result.AsQueryable());
 
 			//Assert
 			Assert.AreEqual(0, animalService.Count());

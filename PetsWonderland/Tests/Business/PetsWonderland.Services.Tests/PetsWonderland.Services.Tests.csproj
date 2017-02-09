@@ -75,6 +75,13 @@
     <Compile Include="AnimalTests\GetByName_Should.cs" />
     <Compile Include="HotelTests\AddHotel_Should.cs" />
     <Compile Include="HotelTests\Constructor_Should.cs" />
+    <Compile Include="HotelTests\Count_Should.cs" />
+    <Compile Include="HotelTests\DeleteHotelById_Should.cs" />
+    <Compile Include="HotelTests\DeleteHotel_Should.cs" />
+    <Compile Include="HotelTests\GetAllHotels_Should.cs" />
+    <Compile Include="HotelTests\GetById_Should.cs" />
+    <Compile Include="HotelTests\GetByName_Should.cs" />
+    <Compile Include="HotelTests\GetHotelLocation_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -21,7 +21,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			//Act
 			var validAnimal = new Mock<Animal>();
 			var animalType = new AnimalType() { Name = "Dog" };
-			validAnimal.Setup(a => a.AnimalType).Returns(animalType);
+			validAnimal.Setup(animal => animal.AnimalType).Returns(animalType);
 
 			//Assert
 			Assert.AreEqual(animalType, animalService.GetAnimalType(validAnimal.Object));
@@ -38,14 +38,14 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			//Act
 			var validAnimal = new Mock<Animal>();
 			var animalType = new AnimalType() { Name = "Dog" };
-			validAnimal.Setup(a => a.AnimalType).Returns(animalType);
+			validAnimal.Setup(animal => animal.AnimalType).Returns(animalType);
 
 			//Assert
 			Assert.IsInstanceOf<AnimalType>(validAnimal.Object.AnimalType);
 		}
 
 		[Test]
-		public void ReturnsNull_WhenNoAnimalTypeIsAssigned()
+		public void ReturnsNull_WhenNoAnimalTypeIsNotAssigned()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<Animal>>();
@@ -56,7 +56,7 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 			var validAnimal = new Mock<Animal>();
 
 			//Assert
-			Assert.IsNull(validAnimal.Object.AnimalType);
+			Assert.IsNull(animalService.GetAnimalType(validAnimal.Object));
 		}
 
 		[Test]
