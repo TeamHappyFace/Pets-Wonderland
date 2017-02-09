@@ -79,6 +79,12 @@
     <Compile Include="BoardingRequestTests\DeleteBoardingRequest_Should.cs" />
     <Compile Include="BoardingRequestTests\GetAllBoardingRequests_Should.cs" />
     <Compile Include="BoardingRequestTests\GetById_Should.cs" />
+    <Compile Include="HotelRegistrationRequestTests\AddHotelRequest_Should.cs" />
+    <Compile Include="HotelRegistrationRequestTests\Constructor_Should.cs" />
+    <Compile Include="HotelRegistrationRequestTests\DeleteHotelRequestById_Should.cs" />
+    <Compile Include="HotelRegistrationRequestTests\DeleteHotelRequest_Should.cs" />
+    <Compile Include="HotelRegistrationRequestTests\GetAllHotelRequests_Should.cs" />
+    <Compile Include="HotelRegistrationRequestTests\GetById_Should.cs" />
     <Compile Include="HotelTests\AddHotel_Should.cs" />
     <Compile Include="HotelTests\Constructor_Should.cs" />
     <Compile Include="HotelTests\Count_Should.cs" />

@@ -28,7 +28,7 @@ namespace PetsWonderland.Services.Tests.BoardingRequestTests
 		}
 
 		[Test]
-		public void BeInvokedOnceForHotel_WhenParamsAreCorrect()
+		public void BeInvokedOnceForBoardingRequest_WhenParamsAreCorrect()
 		{
 			//Arrange
 			var mockedRepository = new Mock<IRepository<UserBoardingRequest>>();
@@ -45,7 +45,7 @@ namespace PetsWonderland.Services.Tests.BoardingRequestTests
 		}
 
 		[Test]
-		public void CallSaveChangesTwice_WhenHotelIsValid()
+		public void CallSaveChangesTwice_WhenBoardingRequestIsValid()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<UserBoardingRequest>>();
@@ -62,7 +62,7 @@ namespace PetsWonderland.Services.Tests.BoardingRequestTests
 		}
 
 		[Test]
-		public void NotCallSaveChanges_WhenHotelIsNotDeleted()
+		public void NotCallSaveChanges_WhenBoardingRequestIsNotDeleted()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<UserBoardingRequest>>();
@@ -74,7 +74,7 @@ namespace PetsWonderland.Services.Tests.BoardingRequestTests
 		}
 
 		[Test]
-		public void NotDeleteHotel_WhichIsNotAdded()
+		public void NotDeleteBoardingRequest_WhichIsNotAdded()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<UserBoardingRequest>>();
@@ -88,7 +88,7 @@ namespace PetsWonderland.Services.Tests.BoardingRequestTests
 		}
 
 		[Test]
-		public void ThrowException_WhenHotelIsNull()
+		public void ThrowException_WhenBoardingRequestIsNull()
 		{
 			//Arange
 			var mockedRepository = new Mock<IRepository<UserBoardingRequest>>();
