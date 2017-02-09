@@ -230,6 +230,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Content\main.css" />
     <Content Include="Controls\AnimalControl.ascx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
