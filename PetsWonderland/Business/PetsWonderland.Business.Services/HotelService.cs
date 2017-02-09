@@ -14,8 +14,8 @@ namespace PetsWonderland.Business.Services
 
 		public HotelService(IRepository<Hotel> hotelRepository, IUnitOfWork unitOfWork)
 		{
-			Guard.WhenArgument(hotelRepository, "Hotel repository is null!").IsNull();
-			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull();
+			Guard.WhenArgument(hotelRepository, "Hotel repository is null!").IsNull().Throw();
+			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull().Throw();
 
 			this.hotelRepository = hotelRepository;
 			this.unitOfWork = unitOfWork;
@@ -23,10 +23,13 @@ namespace PetsWonderland.Business.Services
 
 		public void AddHotel(Hotel hotelToAdd)
 		{
-			Guard.WhenArgument(hotelToAdd, "Hotel to add is null!").IsNull();
+			Guard.WhenArgument(hotelToAdd, "Hotel to add is null!").IsNull().Throw();
 
-			this.hotelRepository.Add(hotelToAdd);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.hotelRepository.Add(hotelToAdd);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public int Count()
@@ -36,18 +39,24 @@ namespace PetsWonderland.Business.Services
 
 		public void DeleteHotel(Hotel hotelToDelete)
 		{
-			Guard.WhenArgument(hotelToDelete, "Hotel to delete is null!").IsNull();
+			Guard.WhenArgument(hotelToDelete, "Hotel to delete is null!").IsNull().Throw();
 
-			this.hotelRepository.Delete(hotelToDelete);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.hotelRepository.Delete(hotelToDelete);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public void DeleteHotelById(object hotelId)
 		{
-			Guard.WhenArgument(hotelId, "Cannot delete hotel with id=null!").IsNull();
+			Guard.WhenArgument(hotelId, "Cannot delete hotel with id=null!").IsNull().Throw();
 
-			this.hotelRepository.Delete(hotelId);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.hotelRepository.Delete(hotelId);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public IQueryable<Hotel> GetAllHotels()

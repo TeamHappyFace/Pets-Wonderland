@@ -14,8 +14,8 @@ namespace PetsWonderland.Business.Services
 
 		public BoardingRequestService(IRepository<UserBoardingRequest> boardingRequestRepository, IUnitOfWork unitOfWork)
 		{
-			Guard.WhenArgument(boardingRequestRepository, "Boarding request repository is null!").IsNull();
-			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull();
+			Guard.WhenArgument(boardingRequestRepository, "Boarding request repository is null!").IsNull().Throw();
+			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull().Throw();
 
 			this.boardingRequestRepository = boardingRequestRepository;
 			this.unitOfWork = unitOfWork;
@@ -23,26 +23,35 @@ namespace PetsWonderland.Business.Services
 
 		public void AddBoardingRequest(UserBoardingRequest requestToAdd)
 		{
-			Guard.WhenArgument(requestToAdd, "Request to add is null!").IsNull();
+			Guard.WhenArgument(requestToAdd, "Request to add is null!").IsNull().Throw();
 
-			this.boardingRequestRepository.Add(requestToAdd);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.boardingRequestRepository.Add(requestToAdd);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public void DeleteBoardingRequest(UserBoardingRequest requestToDelete)
 		{
-			Guard.WhenArgument(requestToDelete, "Cannot delete request with id= null!").IsNull();
+			Guard.WhenArgument(requestToDelete, "Cannot delete request with id= null!").IsNull().Throw();
 
-			this.boardingRequestRepository.Delete(requestToDelete);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.boardingRequestRepository.Delete(requestToDelete);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public void DeleteBoardingRequestById(object requestId)
 		{
-			Guard.WhenArgument(requestId, "Cannot delete request with id= null!").IsNull();
+			Guard.WhenArgument(requestId, "Cannot delete request with id= null!").IsNull().Throw();
 
-			this.boardingRequestRepository.Delete(requestId);
-			this.unitOfWork.SaveChanges();
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.boardingRequestRepository.Delete(requestId);
+				this.unitOfWork.SaveChanges();
+			}
 		}
 
 		public IQueryable<UserBoardingRequest> GetAllBoardingRequests()

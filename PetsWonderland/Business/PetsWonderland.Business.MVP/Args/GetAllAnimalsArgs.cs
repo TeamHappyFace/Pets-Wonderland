@@ -13,7 +13,7 @@ namespace PetsWonderland.Business.MVP.Args
 
 		public GetAllAnimalsArgs(IList<Animal> allAnimals)
 		{
-			Guard.WhenArgument(allAnimals, "All animals list is null!").IsNullOrEmpty();
+			Guard.WhenArgument(allAnimals, "All animals list is null!").IsNullOrEmpty().Throw();
 
 			this.AllAnimals = allAnimals;
 		}

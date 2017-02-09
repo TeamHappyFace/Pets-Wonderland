@@ -31,21 +31,23 @@ namespace PetsWonderland.Data.Tests.DbContextTests
         [Test]
         public void Return_InstanceOfIPetsWonderlandDbContext()
         {
+			// Arange
             var dbContext = new PetsWonderlandDbContext();
 
+			// Act & Assert
             Assert.IsInstanceOf<IPetsWonderlandDbContext>(dbContext);
         }
 
         [Test]
         public void SaveChanges_ShouldWorkCorrectly()
         {
-            // 
+            // Arrange
             var mockedRepository = new Mock<IRepository<Animal>>();
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
             var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 
             // Act            
-            animalService.AddAnimal(It.IsAny<Animal>());
+            animalService.AddAnimal(new Animal());
 
             // Assert
             mockedUnitOfWork.Verify(x => x.SaveChanges(), Times.Once);
