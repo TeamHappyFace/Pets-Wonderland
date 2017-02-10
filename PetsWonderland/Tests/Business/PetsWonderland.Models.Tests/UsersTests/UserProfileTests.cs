@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Common.Constants;
-using PetsWonderland.Business.Models.Animals;
-using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.Models.Users;
 
 namespace PetsWonderland.Models.Tests.UsersTests
@@ -119,8 +111,6 @@ namespace PetsWonderland.Models.Tests.UsersTests
 
             //Assert
             Assert.AreEqual(userProfile.AvatarUrl, testImagePath);
-        }
-        
-               
+        }       
     }
 }

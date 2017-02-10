@@ -79,6 +79,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DbContextTests\Constructor_Should.cs" />
+    <Compile Include="DbContextTests\Create_Should.cs" />
+    <Compile Include="DbContextTests\SaveChanges_Should.cs" />
     <Compile Include="GenericRepositoryTests\Constructor_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

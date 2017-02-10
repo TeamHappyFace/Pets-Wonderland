@@ -74,5 +74,17 @@ namespace PetsWonderland.Models.Tests.UsersTests
             //Assert
             Assert.AreEqual(manager.IsDeleted, testIsDeleted);
         }
+
+        [TestCase("asd13asd-adwqe24")]
+        [TestCase("yrty324g-234egfed")]
+        public void UserProfile_ShouldGetAndSetDataCorrectly(string testUserId)
+        {
+            // Arrange & Act         
+            var profile = new UserProfile { Id = testUserId };
+            var manager = new HotelManager { UserProfile = profile };
+
+            //Assert
+            Assert.AreEqual(manager.UserProfile.Id, testUserId);
+        }
     }
 }

@@ -29,6 +29,16 @@ namespace PetsWonderland.Models.Tests.UsersTests
             Assert.That(registrationRequests, Is.Not.Null.And.InstanceOf<HashSet<UserHotelRegistrationRequest>>());
         }
 
+        [TestCase("asdasf123-adasd32")]
+        public void Id_ShouldGetAndSetDataCorrectly(string testId)
+        {
+            // Arrange & Act
+            var admin = new Admin { Id = testId };
+
+            //Assert
+            Assert.AreEqual(admin.Id, testId);
+        }
+
         [TestCase(123)]
         [TestCase(12)]
         public void RegistrationRequestCollection_ShouldGetAndSetDataCorrectly(int testId)
@@ -50,6 +60,18 @@ namespace PetsWonderland.Models.Tests.UsersTests
 
             //Assert
             Assert.AreEqual(admin.IsDeleted, testIsDeleted);
+        }
+
+        [TestCase("asd13asd-adwqe24")]
+        [TestCase("yrty324g-234egfed")]
+        public void UserProfile_ShouldGetAndSetDataCorrectly(string testUserId)
+        {
+            // Arrange & Act         
+            var profile = new UserProfile { Id = testUserId };
+            var admin = new Admin { UserProfile = profile };
+
+            //Assert
+            Assert.AreEqual(admin.UserProfile.Id, testUserId);
         }
     }
 }

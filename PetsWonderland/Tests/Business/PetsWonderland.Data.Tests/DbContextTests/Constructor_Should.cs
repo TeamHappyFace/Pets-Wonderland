@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Moq;
+﻿using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Data;
 using PetsWonderland.Business.Data.Contracts;
-using PetsWonderland.Business.Data.Repositories;
-using PetsWonderland.Business.Models;
 using PetsWonderland.Business.Models.Animals;
-using PetsWonderland.Business.Models.Users;
 using PetsWonderland.Business.Services;
 
 namespace PetsWonderland.Data.Tests.DbContextTests

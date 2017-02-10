@@ -11,7 +11,8 @@ namespace PetsWonderland.Client
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var user = System.Web.HttpContext.Current.User;
+            
         }
     }
 }

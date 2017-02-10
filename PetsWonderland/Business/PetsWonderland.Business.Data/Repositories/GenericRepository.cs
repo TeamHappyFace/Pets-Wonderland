@@ -20,6 +20,22 @@ namespace PetsWonderland.Business.Data.Repositories
             this.dbSet = this.context.Set<T>();           
         }
 
+        public IPetsWonderlandDbContext Context
+        {
+            get
+            {
+                return this.context;
+            }
+        }
+
+        public IDbSet<T> DbSet
+        {
+            get
+            {
+                return this.dbSet;
+            }
+        }
+
         public IQueryable<T> Entities
         {
             get { return this.dbSet; }

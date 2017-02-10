@@ -46,16 +46,16 @@ namespace PetsWonderland.Models.Tests.AnimalsTests
             Assert.AreEqual(userAnimal.UserId, testUserId);
         }
 
-        [TestCase("Gosho")]
-        [TestCase("Mosho")]
-        public void User_ShouldGetAndSetDataCorrectly(string testFirstname)
+        [TestCase("asd-1323dsa2")]
+        [TestCase("asd325423321-esdcsdf34")]
+        public void User_ShouldGetAndSetDataCorrectly(string testUserId)
         {
             // Arrange & Act         
-            var user = new RegularUser() { FirstName = testFirstname };
+            var user = new RegularUser() { Id = testUserId };
             var userAnimal = new UserAnimal() { User = user };
 
             //Assert
-            Assert.AreEqual(userAnimal.User.FirstName, testFirstname);
+            Assert.AreEqual(userAnimal.User.Id, testUserId);
         }
 
         [TestCase(15)]

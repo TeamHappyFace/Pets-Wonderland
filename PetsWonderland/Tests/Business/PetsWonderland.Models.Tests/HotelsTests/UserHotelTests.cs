@@ -46,16 +46,16 @@ namespace PetsWonderland.Models.Tests.HotelsTests
             Assert.AreEqual(userHotel.HotelManagerId, testManagerId);
         }
 
-        [TestCase("Pencho")]
-        [TestCase("Mencho")]
-        public void HotelManager_ShouldGetAndSetDataCorrectly(string testManagerFirstname)
+        [TestCase("asd13asd-adwqe24")]
+        [TestCase("yrty324g-234egfed")]
+        public void HotelManager_ShouldGetAndSetDataCorrectly(string testManagerId)
         {
             // Arrange & Act         
-            var manager = new HotelManager { FirstName = testManagerFirstname };
+            var manager = new HotelManager { Id = testManagerId };
             var userHotel = new UserHotel { HotelManager = manager };
 
             //Assert
-            Assert.AreEqual(userHotel.HotelManager.FirstName, testManagerFirstname);
+            Assert.AreEqual(userHotel.HotelManager.Id, testManagerId);
         }
 
         [TestCase(123)]

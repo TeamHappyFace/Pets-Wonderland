@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AspNet.Identity;
 using PetsWonderland.Business.MVP.Args;
 using PetsWonderland.Business.MVP.Models;
 using PetsWonderland.Business.MVP.Presenters;
@@ -35,7 +36,13 @@ namespace PetsWonderland.Client
 		{
 			results.Visible = false;
 			GridView1.Visible = true;
-			this.GetAll(this, new GetAllAnimalsArgs());
+
+		    var user = System.Web.HttpContext.Current.User;
+		    Console.WriteLine(user.Identity.GetUserName());
+
+
+
+            this.GetAll(this, new GetAllAnimalsArgs());
 		}
 	    
 	}

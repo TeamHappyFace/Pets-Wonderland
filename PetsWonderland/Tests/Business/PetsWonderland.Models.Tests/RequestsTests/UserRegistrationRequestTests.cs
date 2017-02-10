@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
-using PetsWonderland.Business.Models.Animals;
 using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.Models.Users;
@@ -62,16 +58,16 @@ namespace PetsWonderland.Models.Tests.RequestsTests
             Assert.AreEqual(userHotelRegistrationRequest.HotelManagerId, testManagerId);
         }
 
-        [TestCase("Pencho")]
-        [TestCase("Mencho")]
-        public void HotelManager_ShouldGetAndSetDataCorrectly(string testManagerFirstname)
+        [TestCase("rhf43232-dfge-sfedr43-afdf")]
+        [TestCase("asdas23r54r-123ewf")]
+        public void HotelManager_ShouldGetAndSetDataCorrectly(string testManagerId)
         {
             // Arrange & Act         
-            var manager = new HotelManager { FirstName = testManagerFirstname };
+            var manager = new HotelManager { Id = testManagerId };
             var userHotelRegistrationRequest = new UserHotelRegistrationRequest { HotelManager = manager };
 
             //Assert
-            Assert.AreEqual(userHotelRegistrationRequest.HotelManager.FirstName, testManagerFirstname);
+            Assert.AreEqual(userHotelRegistrationRequest.HotelManager.Id, testManagerId);
         }
 
         [TestCase(123)]

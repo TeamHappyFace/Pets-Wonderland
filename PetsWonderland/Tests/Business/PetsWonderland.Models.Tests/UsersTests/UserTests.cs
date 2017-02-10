@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using PetsWonderland.Business.Models.Animals;
-using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.Models.Users;
 
 namespace PetsWonderland.Models.Tests.UsersTests
@@ -54,6 +50,18 @@ namespace PetsWonderland.Models.Tests.UsersTests
 
             //Assert
             Assert.AreEqual(user.IsDeleted, testIsDeleted);
+        }
+
+        [TestCase("asd13asd-adwqe24")]
+        [TestCase("yrty324g-234egfed")]
+        public void UserProfile_ShouldGetAndSetDataCorrectly(string testUserId)
+        {
+            // Arrange & Act         
+            var profile = new UserProfile { Id = testUserId };
+            var regularUser = new RegularUser { UserProfile = profile };
+
+            //Assert
+            Assert.AreEqual(regularUser.UserProfile.Id, testUserId);
         }
     }
 }

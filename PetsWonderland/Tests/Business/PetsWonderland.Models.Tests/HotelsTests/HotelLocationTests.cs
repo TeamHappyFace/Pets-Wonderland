@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using PetsWonderland.Business.Common.Constants;
-using PetsWonderland.Business.Models.Animals;
 using PetsWonderland.Business.Models.Hotels;
 
 namespace PetsWonderland.Models.Tests.HotelsTests
