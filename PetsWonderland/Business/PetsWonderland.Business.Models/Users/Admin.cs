@@ -1,12 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.Models.Users.Contracts;
 
 namespace PetsWonderland.Business.Models.Users
 {
-	public class Admin : UserProfile, IAdmin
+	public class Admin : IAdmin
 	{
+		[Key, ForeignKey("UserProfile")]
+		public string Id { get; set; }
+		public virtual UserProfile UserProfile { get; set; }
+
 		private ICollection<UserHotelRegistrationRequest> userHotelRegistrationRequests;
 
 		public Admin()

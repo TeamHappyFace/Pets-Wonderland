@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace PetsWonderland.Client.Identity
+namespace PetsWonderland.Business.Identity
 {
 	public static class IdentityHelper
 	{

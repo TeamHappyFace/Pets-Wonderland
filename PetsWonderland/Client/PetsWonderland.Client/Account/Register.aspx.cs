@@ -2,71 +2,64 @@
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using PetsWonderland.Business.Models.Users;
-using PetsWonderland.Client.Identity;
+using PetsWonderland.Business.Identity;
+using PetsWonderland.Business.MVP.Args;
+using PetsWonderland.Business.MVP.Models;
+using PetsWonderland.Business.MVP.Presenters;
+using PetsWonderland.Business.MVP.Views.Contracts;
+using WebFormsMvp;
+using WebFormsMvp.Web;
 
 namespace PetsWonderland.Client.Account
 {
-    public partial class Register : Page
-    {
+	[PresenterBinding(typeof(RegistrationPresenter))]
+	public partial class Register : MvpPage<RegistrationModel>, IRegistrationView
+	{
+		public event EventHandler<EventArgs> EventBindPageData;
+		public event EventHandler<RegistrationEventArgs> EventRegisterUser;
+		
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!Page.IsPostBack)
 			{
 				// Bind the roles
-				var roles = new[]
-				{
-					"User",
-					"Hotel manager"
-				};
 
-				this.UserType.DataSource = roles;
+				this.EventBindPageData(this, e);
+				this.UserType.DataSource = this.Model.UserRoles.ToList();
 				this.UserType.DataBind();
-				this.UserType.SelectedIndex=1;
+				this.UserType.SelectedIndex = 1;
 			}
 		}
 
 		protected void CreateUser_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-			var roleManager = Context.GetOwinContext().Get<ApplicationRoleManager>();
-            var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
+			var owinCtx = Context.GetOwinContext();
+			var selectedRole = this.UserType.SelectedItem.Value;
 
-			var user = new UserProfile();
-
-			switch (UserType.SelectedItem.Value)
+			var eventArgs = new RegistrationEventArgs()
 			{
-				case "User":
-					user = new RegularUser() { FirstName = FirstName.Text, LastName = LastName.Text, UserName = Username.Text, Email = Email.Text };
-					break;
-				case "Hotel manager":
-					user = new HotelManager() { FirstName = FirstName.Text, LastName = LastName.Text, UserName = Username.Text, Email = Email.Text };
-					break;
-				default:
-					break;
-			}
+				OwinCtx = owinCtx,
+				Email = this.Email.Text,
+				FirstName = this.FirstName.Text,
+				LastName = this.LastName.Text,
+				UserName = this.Email.Text,
+				UserType = this.UserType.SelectedItem.Text,
+				Password = this.Password.Text,
+				ConfirmedPassword = this.ConfirmPassword.Text
+			};
+			
+			EventRegisterUser(this, eventArgs);
 
-			IdentityResult result = manager.Create(user, Password.Text);
+			var result = this.Model.Result;
 
 			if (result.Succeeded)
-            {
-				// For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-				//string code = manager.GenerateEmailConfirmationToken(user.Id);
-				//string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
-				//manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
-
-				manager.AddToRoles(user.Id, UserType.SelectedItem.Value);
-
-				signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-            }
-            else 
-            {
-                ErrorMessage.Text = result.Errors.FirstOrDefault();
-            }
-        }
+			{
+				IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+			}
+			else
+			{
+				ErrorMessage.Text = result.Errors.FirstOrDefault();
+			}
+		}
 	}
 }

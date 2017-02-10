@@ -40,8 +40,8 @@ namespace PetsWonderland.Business.Data
 		public virtual DbSet<UserBoardingRequest> UserBoardingRequests { get; set; }
 		public virtual DbSet<UserHotelRegistrationRequest> UserHotelRegistrationRequests { get; set; }
 
-		public virtual DbSet<RegularUser> RegularUsers { get; set; }
-		public virtual DbSet<HotelManager> HotelManagers { get; set; }
 		public virtual DbSet<Admin> Admins { get; set; }
+		public virtual DbSet<HotelManager> HotelManagers { get; set; }
+		public virtual DbSet<RegularUser> RegularUsers { get; set; }
 	}
 }

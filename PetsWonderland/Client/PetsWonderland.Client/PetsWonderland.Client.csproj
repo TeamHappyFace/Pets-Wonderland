@@ -457,10 +457,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Identity\ApplicationRoleManager.cs" />
-    <Compile Include="Identity\ApplicationSignInManager.cs" />
-    <Compile Include="Identity\ApplicationUserManager.cs" />
-    <Compile Include="Identity\IdentityHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -493,6 +489,10 @@
     <ProjectReference Include="..\..\Business\PetsWonderland.Business.Data\PetsWonderland.Business.Data.csproj">
       <Project>{84bef435-1813-4162-871c-7fb56f503e62}</Project>
       <Name>PetsWonderland.Business.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\PetsWonderland.Business.Identity\PetsWonderland.Business.Identity.csproj">
+      <Project>{69f156ab-db88-4b34-b211-c2b35b0dc2df}</Project>
+      <Name>PetsWonderland.Business.Identity</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Business\PetsWonderland.Business.Models\PetsWonderland.Business.Models.csproj">
       <Project>{33c1f9d0-befa-4992-9955-cd2613e319f7}</Project>

@@ -1,6 +1,5 @@
 ﻿using Ninject.Modules;
-using PetsWonderland.Business.Services;
-using PetsWonderland.Business.Services.Contracts;
+using Ninject.Extensions.Conventions;
 
 namespace PetsWonderland.Client.NinjectBIndings
 {
@@ -8,11 +7,7 @@ namespace PetsWonderland.Client.NinjectBIndings
     {
         public override void Load()
         {
-            this.Bind<IAnimalService>().To<AnimalService>();
-			this.Bind<IHotelService>().To<HotelService>();
-			this.Bind<IUserHotelService>().To<UserHotelService>();
-			this.Bind<IHotelRegistrationRequestService>().To<HotelRegistrationRequestService>();
-			this.Bind<IBoardingRequestService>().To<BoardingRequestService>();
+			this.Bind(x => x.From("PetsWonderland.Business.Services").SelectAllClasses().BindDefaultInterface());
         }
     }
 }

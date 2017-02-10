@@ -12,16 +12,16 @@ namespace PetsWonderland.Client.NinjectFactories
 
         public NinjectPresenterFactory(INinjectPresenterFactory presenterFactory)
         {
-			Guard.WhenArgument(presenterFactory, "An instance of presenter factory is required").IsNull();
+			Guard.WhenArgument(presenterFactory, "An instance of presenter factory is required").IsNull().Throw();
 
             this.presenterFactory = presenterFactory;
         }
 
         public IPresenter Create(Type presenterType, Type viewType, IView viewInstance)
         {
-			Guard.WhenArgument(presenterType, "Presenter type is required!").IsNull();
-			Guard.WhenArgument(viewType, "View type is required!").IsNull();
-			Guard.WhenArgument(viewInstance, "View instance is required!").IsNull();
+			Guard.WhenArgument(presenterType, "Presenter type is required!").IsNull().Throw();
+			Guard.WhenArgument(viewType, "View type is required!").IsNull().Throw();
+			Guard.WhenArgument(viewInstance, "View instance is required!").IsNull().Throw();
 
 			var presenter = this.presenterFactory.GetPresenter(presenterType, viewType, viewInstance);
             return presenter;

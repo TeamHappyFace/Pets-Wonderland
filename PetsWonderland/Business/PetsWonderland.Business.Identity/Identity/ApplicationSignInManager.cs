@@ -5,7 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using PetsWonderland.Business.Models.Users;
 
-namespace PetsWonderland.Client.Identity
+namespace PetsWonderland.Business.Identity
 {
 	public class ApplicationSignInManager : SignInManager<UserProfile, string>
 	{

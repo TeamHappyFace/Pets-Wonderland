@@ -6,7 +6,8 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using PetsWonderland.Business.Models.Users;
-using PetsWonderland.Client.Identity;
+using PetsWonderland.Business.Identity;
+
 
 namespace PetsWonderland.Client.Account
 {

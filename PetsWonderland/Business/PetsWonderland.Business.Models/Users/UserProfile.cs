@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -21,7 +20,7 @@ namespace PetsWonderland.Business.Models.Users
 		public int Age { get; set; }
 
 		public string AvatarUrl { get; set; }
-
+		
 		public ClaimsIdentity GenerateUserIdentity(UserManager<UserProfile> manager)
 		{
 			// Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -34,7 +33,5 @@ namespace PetsWonderland.Business.Models.Users
 		{
 			return Task.FromResult(GenerateUserIdentity(manager));
 		}
-
-
 	}
 }

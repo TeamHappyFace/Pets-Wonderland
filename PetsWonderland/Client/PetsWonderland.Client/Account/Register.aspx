@@ -11,7 +11,7 @@
         <hr />
 		<div class="form-group">
             <div class="col-md-10">
-				<asp:DropDownList ID="UserType" runat="server"></asp:DropDownList>
+				<asp:DropDownList ID="UserType" runat="server" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
             </div>
         </div>
 		<div class="form-group">

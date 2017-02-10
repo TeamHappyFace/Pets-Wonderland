@@ -8,7 +8,7 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using PetsWonderland.Business.Data;
 using PetsWonderland.Business.Models.Users;
-using PetsWonderland.Client.Identity;
+using PetsWonderland.Business.Identity;
 
 namespace PetsWonderland.Client
 {

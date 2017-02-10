@@ -6,7 +6,7 @@ using Microsoft.Owin;
 using PetsWonderland.Business.Data;
 using PetsWonderland.Business.Models.UserRoles;
 
-namespace PetsWonderland.Client.Identity
+namespace PetsWonderland.Business.Identity
 {
 	public class ApplicationRoleManager : RoleManager<ApplicationRole>
 	{

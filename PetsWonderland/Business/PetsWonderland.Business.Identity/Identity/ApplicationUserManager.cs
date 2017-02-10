@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Linq;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using PetsWonderland.Business.Data;
-using PetsWonderland.Business.Models.UserRoles;
 using PetsWonderland.Business.Models.Users;
 
-namespace PetsWonderland.Client.Identity
+namespace PetsWonderland.Business.Identity
 {
 	// Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 	public class ApplicationUserManager : UserManager<UserProfile>
@@ -56,8 +54,8 @@ namespace PetsWonderland.Client.Identity
 			userManager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
 			userManager.MaxFailedAccessAttemptsBeforeLockout = 5;
 
-			userManager.EmailService = new EmailService();
-			userManager.SmsService = new SmsService();
+			//userManager.EmailService = new EmailService();
+			//userManager.SmsService = new SmsService();
 			var dataProtectionProvider = options.DataProtectionProvider;
 			if (dataProtectionProvider != null)
 			{
