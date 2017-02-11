@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Bytes2you.Validation;
-using Microsoft.AspNet.Identity.EntityFramework;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.UserRoles;
 using PetsWonderland.Business.Models.Users;
@@ -14,13 +12,13 @@ namespace PetsWonderland.Business.Services
 		private readonly IRepository<ApplicationRole> userRolesRepo;
 		private readonly IRepository<RegularUser> userRepo;
 		private readonly IRepository<HotelManager> hotelManagerRepo;
-		private readonly Func<IUnitOfWork> unitOfWork;
+		private readonly IUnitOfWork unitOfWork;
 
 		public RegistrationService(
 			IRepository<ApplicationRole> userRolesRepo,
 			IRepository<RegularUser> userRepo,
 			IRepository<HotelManager> hotelManagerRepo,
-			Func<IUnitOfWork> unitOfWork
+			IUnitOfWork unitOfWork
 			)
 		{
 			Guard.WhenArgument(userRolesRepo, "userRolesRepo").IsNull().Throw();
@@ -43,7 +41,7 @@ namespace PetsWonderland.Business.Services
 		{
 			Guard.WhenArgument(hotelManagerId, "hotelManagerId").IsNullOrEmpty().Throw();
 
-			using (var uow = this.unitOfWork())
+			using (var uow = this.unitOfWork)
 			{
 				this.hotelManagerRepo.Add(new HotelManager()
 				{
@@ -58,7 +56,7 @@ namespace PetsWonderland.Business.Services
 		{
 			Guard.WhenArgument(userId, "userId").IsNullOrEmpty().Throw();
 
-			using (var uow = this.unitOfWork())
+			using (var uow = this.unitOfWork)
 			{
 				this.userRepo.Add(new RegularUser()
 				{
