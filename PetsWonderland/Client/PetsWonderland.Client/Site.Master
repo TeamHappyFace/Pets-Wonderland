@@ -15,8 +15,8 @@
 
 	<%--<link href="~/Content/Site.css" rel="stylesheet" type="text/css" media="screen" runat="server" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-</head>s
+    <asp:ContentPlaceHolder ID="CustomStylesheets" runat="server"></asp:ContentPlaceHolder>
+</head>
 <body>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -39,57 +39,81 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="nav navbar-brand" runat="server" href="~/">Pets Wonderland</a>
-                </div>
-                <div class="navbar-collapse collapse navbar-right">
-                    <ul class="nav navbar-nav ">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName() %> !</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                
+        <header>
+            <div id="main-nav" class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="nav navbar-brand" runat="server" href="~/">
+                            <img src="~/Images/Pages/logo.png" runat="server"/>
+                            Pets Wonderland
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse navbar-right">
+                        <ul class="nav navbar-nav ">
+                            <li>
+                                <a runat="server" href="~/">
+                                    <i class="fa fa-home"></i>
+                                    Home
+                                </a>
+                            </li>                        
+                            <li><a runat="server" href="~/About">About</a></li>
+                            <li><a runat="server" href="~/Hotels">Browse Hotels</a></li>
+                            <li><a runat="server" href="~/Guest Book">Guest Book</a></li>
+                            <li><a runat="server" href="~/Contact">Contact Us</a></li>
+                        </ul>
+                        <asp:LoginView runat="server" ViewStateMode="Disabled">
+                            <AnonymousTemplate>
+                                <ul class="user-nav nav navbar-nav navbar-right">
+                                    <li>
+                                        <a runat="server" href="~/Account/Register">
+                                            <i class="fa fa-key"></i>
+                                            Register
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a runat="server" href="~/Account/Login">
+                                            <i class="fa fa-sign-in"></i>
+                                            Log in
+                                        </a>
+                                    </li>
+                                </ul>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <ul class="user-nav nav navbar-nav navbar-right">
+                                    <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName() %> !</a></li>
+                                    <li>
+                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    </li>
+                                </ul>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p class="text-center">&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-				<span class="wsite-text">
-					<span class="text-center" style="text-decoration:none; font-style:normal; font-weight:300; color:rgb(117, 117, 117); ">
-						<a href="~/">Home </a> &nbsp; &nbsp; I &nbsp; &nbsp; 
-						<a href="~/About.aspx">About</a> &nbsp; &nbsp; I &nbsp;&nbsp;&nbsp;
-						<a href="~/Contact.aspx"> Contact</a>s 
-					</span>
-				</span>
-			</footer>
-        </div>
+
+            <asp:ContentPlaceHolder ID="HeaderPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        </header>
+         
+        <main>
+            <asp:ContentPlaceHolder ID="OuterContent" runat="server"></asp:ContentPlaceHolder>
+            
+            <div class="container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>                       
+            </div>
+        </main>
+        
+        <footer>
+            <p class="text-center">Footer</p>			
+		</footer>
+
     </form>
+
+    <asp:ContentPlaceHolder ID="CustomScripts" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>

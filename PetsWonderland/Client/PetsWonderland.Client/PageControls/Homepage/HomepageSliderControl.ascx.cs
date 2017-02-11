@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PetsWonderland.Client
+namespace PetsWonderland.Client.PageControls.Homepage
 {
-    public partial class _Default : Page
+    public partial class HomepageSliderControl : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var user = System.Web.HttpContext.Current.User;
-            
 
         }
+
+
     }
 }

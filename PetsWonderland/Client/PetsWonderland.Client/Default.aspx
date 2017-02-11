@@ -1,48 +1,27 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PetsWonderland.Client._Default" %>
+﻿<%@ Page Title="Home Page" 
+    Language="C#" 
+    MasterPageFile="~/Site.Master"
+    AutoEventWireup="true" 
+    CodeBehind="Default.aspx.cs" 
+    Inherits="PetsWonderland.Client._Default" %>
 
-<%@ Register Src="~/Controls/AnimalControl.ascx" TagPrefix="uc" TagName="LookupAnimals" %>
+<%@ Register Src="~/PageControls/Homepage/HomepageSliderControl.ascx" TagPrefix="hpc" TagName="SliderControl" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ContentPlaceHolderID="CustomStylesheets" runat="server">
+    <link href="<%= ResolveUrl("~/Content/External/RevSlider/revslider.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Content/Pages/homepage.css") %>" rel="stylesheet" type="text/css" />
+</asp:Content>
 
-    <h1>Lookup Animals</h1>
-    <uc:LookupAnimals runat="server" />
+<asp:Content ContentPlaceHolderID="OuterContent" runat="server">
+    <hpc:SliderControl runat="server"/>
+</asp:Content>
 
-   <%-- <div class="jumbotron">
+<asp:Content ID="HomepageContent" ContentPlaceHolderID="MainContent" runat="server">
+    
+</asp:Content>
 
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>--%>
-
+<asp:Content ContentPlaceHolderID="CustomScripts" runat="server">
+    <script src="<%= ResolveUrl("~/Scripts/External/RevSlider/jquery.themepunch.plugins.min.js") %>" type="text/javascript"></script>
+    <script src="<%= ResolveUrl("~/Scripts/External/RevSlider/jquery.themepunch.revolution.min.js") %>" type="text/javascript"></script>
+    <script src="<%= ResolveUrl("~/Scripts/Pages/homepage.js") %>" type="text/javascript"></script>
 </asp:Content>

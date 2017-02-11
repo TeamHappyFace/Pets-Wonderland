@@ -1,0 +1,10 @@
+﻿#homepage-slider .slide-title {
+    font-family: lobster;
+    font-weight: bold;
+    font-size: 40px;
+    color: #10b4ea;
+}
+
+#homepage-slider .slide-middle-text  p{
+    font-size: 30px;
+}
