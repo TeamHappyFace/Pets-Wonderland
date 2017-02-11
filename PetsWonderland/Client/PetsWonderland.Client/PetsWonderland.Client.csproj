@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AspNet.ScriptManager.jQuery.1.10.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Bytes2you.Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a7d501dd757e0442, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Bytes2you.Validation.2.0.0.0\lib\portable-win+net40+sl40+wp+Xbox40\Bytes2you.Validation.dll</HintPath>
       <Private>True</Private>
@@ -122,9 +126,6 @@
     </Reference>
     <Reference Include="AspNet.ScriptManager.bootstrap">
       <HintPath>..\..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
-    </Reference>
-    <Reference Include="AspNet.ScriptManager.jQuery">
-      <HintPath>..\..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ScriptManager.MSAjax">
       <HintPath>..\..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
@@ -230,9 +231,11 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Content\External\RevSlider\revslider.css" />
+    <Content Include="Content\External\RevSlider\extralayers.css" />
     <Content Include="Content\External\FontAwesome\font-awesome.css" />
     <Content Include="Content\External\FontAwesome\font-awesome.min.css" />
+    <Content Include="Content\External\RevSlider\settings.css" />
+    <Content Include="Content\External\RevSlider\style.css" />
     <Content Include="Content\Fonts.css" />
     <Content Include="Content\Pages\homepage.css" />
     <Content Include="Controls\AnimalControl.ascx" />
@@ -286,6 +289,10 @@
     <Content Include="fonts\FontAwesome\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome\fontawesome-webfont.ttf" />
     <Content Include="fonts\FontAwesome\fontawesome-webfont.eot" />
+    <None Include="Scripts\jquery-1.10.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.1.js" />
+    <Content Include="Scripts\jquery-1.10.1.min.js" />
+    <Content Include="Scripts\jquery-1.10.1.min.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="fonts\RevSlider\revicons.svg" />
     <Content Include="Images\404_page_cover.jpg" />
@@ -355,14 +362,12 @@
     <Content Include="PageControls\Homepage\HomepageSliderControl.ascx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\External\RevSlider2\jquery.themepunch.plugins.min.js" />
+    <Content Include="Scripts\External\RevSlider2\jquery.themepunch.revolution.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Pages\homepage.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\External\RevSlider\jquery.themepunch.plugins.min.js" />
-    <Content Include="Scripts\External\RevSlider\jquery.themepunch.revolution.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -394,7 +399,6 @@
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

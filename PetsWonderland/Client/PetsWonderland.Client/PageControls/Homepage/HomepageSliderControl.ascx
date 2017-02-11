@@ -4,11 +4,23 @@
             Inherits="PetsWonderland.Client.PageControls.Homepage.HomepageSliderControl" %>
 
 <section id="homepage-slider">
-    <div class="fullwidthbanner-container">
-    <div class="fullscreenbanner">
+    <div class="tp-banner-container">
+    <div class="tp-banner">
         <ul>
-            <li data-transition="cube" data-slotamount="1" >
-                <img src="~/Images/Pages/Homepage/Slider/pets_01.jpg" runat="server" />
+            <li data-transition="fade"
+                data-slotamount="7" 
+                data-masterspeed="500" 
+                data-thumb="../../Images/Pages/Homepage/Slider/pets_01.jpg" 
+                data-saveperformance="on" 
+                data-title="Landing" >
+                
+                <img runat="server" 
+                     src="~/Images/Pages/Homepage/Slider/pets_01.jpg" 
+                     alt="slidebg1"
+                     data-lazyload="../../Images/Pages/Homepage/Slider/pets_01.jpg" 
+                     data-bgposition="center top" 
+                     data-bgfit="cover"
+                     data-bgrepeat="no-repeat" />
                       
                 <div class="tp-caption tp-fade"
                      data-x="center"
@@ -36,8 +48,7 @@
                      data-elementdelay="0.1"
                      data-endelementdelay="0.1"
                      data-endspeed="300"
-                >
-                    <img src="" alt=""  />
+                >            
                     <h1 class="slide-title">PetsWonderland</h1>
                 </div>
 
@@ -75,14 +86,39 @@
                             <span>Browse Hotels</span>
                         </div>                       
                     </div>       
-                    <!--<div class="slide-bottom-text"><p>Try us</p></div>-->
-                </div>
+     
+                </div> 
             </li>    
-            <li data-transition="cube" data-slotamount="2" >
-                <img src="~/Images/Pages/Homepage/Slider/pets_04.jpg" runat="server" />                
+            <li data-transition="random" 
+                data-slotamount="2"
+                data-masterspeed="500" 
+                data-thumb="../../Images/Pages/Homepage/Slider/pets_04.jpg" 
+                data-saveperformance="on" 
+                data-title="Services Info" >
+                
+                <img src="~/Images/Pages/Homepage/Slider/pets_04.jpg"
+                     runat="server" 
+                     alt="slidebg2"
+                     data-lazyload="../../Images/Pages/Homepage/Slider/pets_04.jpg" 
+                     data-bgposition="center top" 
+                     data-bgfit="cover"
+                     data-bgrepeat="no-repeat"/>                
             </li>
-            <li data-transition="cube" data-slotamount="3" >
-                <img src="~/Images/Pages/Homepage/Slider/pets_03.jpg" runat="server" />                
+            <li data-transition="random" 
+                data-slotamount="5"
+                data-masterspeed="500" 
+                data-thumb="../../Images/Pages/Homepage/Slider/pets_03.jpg" 
+                data-saveperformance="on" 
+                data-title="More.." >
+                
+                <img src="~/Images/Pages/Homepage/Slider/pets_03.jpg" 
+                     alt="slidebg2"
+                     data-lazyload="../../Images/Pages/Homepage/Slider/pets_03.jpg" 
+                     data-bgposition="center top" 
+                     data-bgfit="cover"
+                     data-bgrepeat="no-repeat"
+                     runat="server" 
+                />                
             </li> 
         </ul>
     </div>

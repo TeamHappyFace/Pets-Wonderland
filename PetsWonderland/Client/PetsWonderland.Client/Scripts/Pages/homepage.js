@@ -1,17 +1,18 @@
 ﻿$(document).ready(function () {
-    $('.fullscreenbanner').revolution({
-        delay: 9000,
-        startwidth: 1920,
-        startheight: 500,
+    jQuery('.tp-banner').show().revolution({      
+        dottedOverlay: "none",
+        delay: 16000,
+        startwidth: 1170,
+        startheight: 700,
         hideThumbs: 200,
 
         thumbWidth: 100,
         thumbHeight: 50,
-        thumbAmount: 2,
+        thumbAmount: 5,
 
         navigationType: "none",
-        navigationArrows: "verticalcentered",
-        navigationStyle: "square",
+        navigationArrows: "solo",
+        navigationStyle: "preview4",
 
         touchenabled: "on",
         onHoverStop: "on",
@@ -22,9 +23,8 @@
         drag_block_vertical: false,
 
         parallax: "mouse",
-        parallaxBgFreeze: "off",
-        parallaxLevels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
-        parallaxDisableOnMobile: "on",
+        parallaxBgFreeze: "on",
+        parallaxLevels: [7, 4, 3, 2, 5, 4, 3, 2, 1, 0],
 
         keyboardNavigation: "off",
 
@@ -47,7 +47,7 @@
         fullWidth: "off",
         fullScreen: "on",
 
-        spinner: "spinner0",
+        spinner: "spinner4",
 
         stopLoop: "off",
         stopAfterLoops: -1,
@@ -55,10 +55,10 @@
 
         shuffle: "off",
 
-
+        autoHeight: "off",
         forceFullWidth: "off",
-        fullScreenAlignForce: "on",
-        minFullScreenHeight: "",
+
+
 
         hideThumbsOnMobile: "off",
         hideNavDelayOnMobile: 1500,
@@ -66,12 +66,10 @@
         hideArrowsOnMobile: "off",
         hideThumbsUnderResolution: 0,
 
-        fullScreenOffsetContainer: "",
-        fullScreenOffset: "",
         hideSliderAtLimit: 0,
         hideCaptionAtLimit: 0,
         hideAllCaptionAtLilmit: 0,
-        startWithSlide: 0
-
+        startWithSlide: 0,
+        fullScreenOffsetContainer: ".header"
     });
 });

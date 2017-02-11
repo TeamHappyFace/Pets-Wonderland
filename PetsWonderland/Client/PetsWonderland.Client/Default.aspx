@@ -8,8 +8,10 @@
 <%@ Register Src="~/PageControls/Homepage/HomepageSliderControl.ascx" TagPrefix="hpc" TagName="SliderControl" %>
 
 <asp:Content ContentPlaceHolderID="CustomStylesheets" runat="server">
-    <link href="<%= ResolveUrl("~/Content/External/RevSlider/revslider.css") %>" rel="stylesheet" type="text/css" />
-    <link href="<%= ResolveUrl("~/Content/Pages/homepage.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Content/Pages/homepage.css") %>" rel="stylesheet" type="text/css" />  
+    <link href="<%= ResolveUrl("~/Content/External/RevSlider/style.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Content/External/RevSlider/extralayers.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Content/External/RevSlider/settings.css") %>" rel="stylesheet" type="text/css" />    
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="OuterContent" runat="server">
@@ -21,7 +23,7 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="CustomScripts" runat="server">
-    <script src="<%= ResolveUrl("~/Scripts/External/RevSlider/jquery.themepunch.plugins.min.js") %>" type="text/javascript"></script>
-    <script src="<%= ResolveUrl("~/Scripts/External/RevSlider/jquery.themepunch.revolution.min.js") %>" type="text/javascript"></script>
+    <script src="<%= ResolveUrl("~/Scripts/External/RevSlider2/jquery.themepunch.plugins.min.js") %>" type="text/javascript"></script>
+    <script src="<%= ResolveUrl("~/Scripts/External/RevSlider2/jquery.themepunch.revolution.min.js") %>" type="text/javascript"></script>
     <script src="<%= ResolveUrl("~/Scripts/Pages/homepage.js") %>" type="text/javascript"></script>
 </asp:Content>

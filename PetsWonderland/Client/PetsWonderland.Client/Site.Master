@@ -35,11 +35,11 @@
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
+                <asp:ScriptReference Name="WebFormsBundle" />                                                                
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-                
+                         
         <header>
             <div id="main-nav" class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
@@ -111,7 +111,6 @@
         <footer>
             <p class="text-center">Footer</p>			
 		</footer>
-
     </form>
 
     <asp:ContentPlaceHolder ID="CustomScripts" runat="server"></asp:ContentPlaceHolder>
