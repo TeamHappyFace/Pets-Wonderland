@@ -3,12 +3,12 @@
 			CodeBehind="HomepageGuestBookControl.ascx.cs"
 			Inherits="PetsWonderland.Client.PageControls.Homepage.HomepageGuestBookControl" %>
 
-<section id="guest-book" class="hp-hotels generic-section">
+<section id="guest-book" class="hp-guest-book generic-section">
 	<div class="section-title">
         <h2>Guest Book</h2>
     </div>
 	<diV>
-		<div class="qot-week">
+		<div class="qot-week parallax">
 			<div class="qot-pic"></div>
 			<br />
 			<h6 class="qot-title">Quote of the Week</h6>

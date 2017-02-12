@@ -93,6 +93,37 @@
                                 </ul>
                             </LoggedInTemplate>
                         </asp:LoginView>
+                        
+                        <asp:LoginView runat="server">
+                            <RoleGroups>
+                                <asp:RoleGroup Roles="Admin">
+                                    <ContentTemplate>
+                                        <ul class="nav navbar-nav">                                       
+                                            <li><a runat="server" href="~/Admin/Dashboard.aspx">Administraction</a></li>
+                                        </ul>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+
+                                <%-- Regular User--%>
+                                <asp:RoleGroup Roles="User">
+                                    <ContentTemplate>
+                                        <ul class="nav navbar-nav">
+                                            <li><a runat="server" href="~/User/Profile.aspx">For the Regular User</a></li>                                           
+                                        </ul>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+
+                                <%-- Hotel Manager--%>
+                                <asp:RoleGroup Roles="Hotel manager">
+                                    <ContentTemplate>
+                                        <ul class="nav navbar-nav">
+                                            <li><a runat="server" href="#">Panel</a></li>
+                                        </ul>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+                            </RoleGroups>
+
+                        </asp:LoginView>
                     </div>
                 </div>
             </div>
@@ -110,21 +141,7 @@
         
         <footer>
             <p class="text-center">Footer</p>	
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
-            <br/>		
+     		
 		</footer>
     </form>
 
