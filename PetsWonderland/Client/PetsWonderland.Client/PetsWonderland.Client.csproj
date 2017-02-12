@@ -290,6 +290,15 @@
     <Content Include="fonts\FontAwesome\fontawesome-webfont.ttf" />
     <Content Include="fonts\FontAwesome\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-1.10.1.intellisense.js" />
+    <Content Include="Images\Pages\Homepage\About\boarding.png" />
+    <Content Include="Images\Pages\Homepage\About\daycare.png" />
+    <Content Include="Images\Pages\Homepage\About\management.png" />
+    <Content Include="Images\Pages\Homepage\About\organization.png" />
+    <Content Include="Images\Pages\Homepage\bone.png" />
+    <Content Include="PageControls\Homepage\HomepageAboutControl.ascx" />
+    <Content Include="PageControls\Homepage\HomepageContactFormControl.ascx" />
+    <Content Include="PageControls\Homepage\HomepageGuestBookControl.ascx" />
+    <Content Include="PageControls\Homepage\HomepageHotelsListControl.ascx" />
     <Content Include="Scripts\jquery-1.10.1.js" />
     <Content Include="Scripts\jquery-1.10.1.min.js" />
     <Content Include="Scripts\jquery-1.10.1.min.map" />
@@ -364,6 +373,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\External\RevSlider2\jquery.themepunch.plugins.min.js" />
     <Content Include="Scripts\External\RevSlider2\jquery.themepunch.revolution.min.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Pages\homepage.js" />
     <Content Include="Scripts\respond.js" />
@@ -568,6 +578,34 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PageControls\Homepage\HomepageAboutControl.ascx.cs">
+      <DependentUpon>HomepageAboutControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageControls\Homepage\HomepageAboutControl.ascx.designer.cs">
+      <DependentUpon>HomepageAboutControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PageControls\Homepage\HomepageContactFormControl.ascx.cs">
+      <DependentUpon>HomepageContactFormControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageControls\Homepage\HomepageContactFormControl.ascx.designer.cs">
+      <DependentUpon>HomepageContactFormControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PageControls\Homepage\HomepageGuestBookControl.ascx.cs">
+      <DependentUpon>HomepageGuestBookControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageControls\Homepage\HomepageGuestBookControl.ascx.designer.cs">
+      <DependentUpon>HomepageGuestBookControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PageControls\Homepage\HomepageHotelsListControl.ascx.cs">
+      <DependentUpon>HomepageHotelsListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageControls\Homepage\HomepageHotelsListControl.ascx.designer.cs">
+      <DependentUpon>HomepageHotelsListControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="PageControls\Homepage\HomepageSliderControl.ascx.cs">
       <DependentUpon>HomepageSliderControl.ascx</DependentUpon>

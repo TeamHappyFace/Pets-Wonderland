@@ -2,6 +2,7 @@
 /// <reference path="bootstrap.js" />
 /// <reference path="external/revslider2/jquery.themepunch.plugins.min.js" />
 /// <reference path="external/revslider2/jquery.themepunch.revolution.min.js" />
+/// <reference path="jquery.easing.1.3.js" />
 /// <reference path="jquery-1.10.1.js" />
 /// <reference path="jquery-1.10.2.js" />
 /// <reference path="modernizr-2.6.2.js" />

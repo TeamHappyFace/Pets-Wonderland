@@ -31,9 +31,15 @@
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    background: #4d505b;
+    background: #fff;
     padding-bottom: 20px;
     font-family: 'Raleway', sans-serif;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 p {
@@ -119,6 +125,6 @@ input[type="select"] {
         margin-top: 20px;
     }
     .body-content {
-        padding: 0;
+        /*padding: 0;*/
     }
 }

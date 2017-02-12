@@ -24,7 +24,7 @@
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="jquery" /> 
                 <asp:ScriptReference Name="bootstrap" />
                 <asp:ScriptReference Name="respond" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
@@ -62,10 +62,10 @@
                                     Home
                                 </a>
                             </li>                        
-                            <li><a runat="server" href="~/About">About</a></li>
-                            <li><a runat="server" href="~/Hotels">Browse Hotels</a></li>
-                            <li><a runat="server" href="~/Guest Book">Guest Book</a></li>
-                            <li><a runat="server" href="~/Contact">Contact Us</a></li>
+                            <li><a runat="server" class="page-scroll" href="#about">About</a></li>
+                            <li><a runat="server" class="page-scroll" href="#hotels">Browse Hotels</a></li>
+                            <li><a runat="server" class="page-scroll" href="#guest-book">Guest Book</a></li>
+                            <li><a runat="server" class="page-scroll" href="#contact-us">Contact Us</a></li>
                         </ul>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
@@ -109,10 +109,27 @@
         </main>
         
         <footer>
-            <p class="text-center">Footer</p>			
+            <p class="text-center">Footer</p>	
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
+            <br/>		
 		</footer>
     </form>
 
-    <asp:ContentPlaceHolder ID="CustomScripts" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="CustomScripts" runat="server">
+            
+    </asp:ContentPlaceHolder>
 </body>
 </html>
