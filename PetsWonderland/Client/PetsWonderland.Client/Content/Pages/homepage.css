@@ -183,3 +183,42 @@
     -o-transition: all .2s ease;
     transition: all .2s ease;
 }
+
+/* Guest Book Section */
+.qot-week {
+    clear: both;
+    margin: 10px;
+    margin-top: 36px;
+    padding-bottom: 18px;
+    position: relative;
+    text-align: center;
+}
+.qot-week .qot-pic:before {
+    content: '\201C';
+    border-top: 2px solid #c4c4c4;
+    border-radius: 50%;
+    font-size: 62px;
+    color: #555;
+    font-weight: bold;
+    background: #fff;
+    padding: 3px 20px;
+    margin-top: 20px;
+    font-family: Georgia, Times, serif;
+}
+.qot-week .qot-pic {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 7px;
+    height: 40px;
+    width: 70px;
+}
+
+.qot-week h6.qot-title {
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: #999;
+    display: block;
+    clear: both;
+    font-size: 10px;
+    font-weight: bold;
+}

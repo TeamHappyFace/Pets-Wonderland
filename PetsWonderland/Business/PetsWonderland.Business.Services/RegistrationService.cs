@@ -14,12 +14,8 @@ namespace PetsWonderland.Business.Services
 		private readonly IRepository<HotelManager> hotelManagerRepo;
 		private readonly IUnitOfWork unitOfWork;
 
-		public RegistrationService(
-			IRepository<ApplicationRole> userRolesRepo,
-			IRepository<RegularUser> userRepo,
-			IRepository<HotelManager> hotelManagerRepo,
-			IUnitOfWork unitOfWork
-			)
+		public RegistrationService(IRepository<ApplicationRole> userRolesRepo, IRepository<RegularUser> userRepo,
+			IRepository<HotelManager> hotelManagerRepo, IUnitOfWork unitOfWork)
 		{
 			Guard.WhenArgument(userRolesRepo, "userRolesRepo").IsNull().Throw();
 			Guard.WhenArgument(userRepo, "userRepo").IsNull().Throw();

@@ -15,12 +15,9 @@ namespace PetsWonderland.Business.MVP.Presenters
 	{
 		private readonly IRegistrationService registrationService;
 
-		public RegistrationPresenter(
-			IRegistrationView view,
-			IRegistrationService registrationService)
+		public RegistrationPresenter(IRegistrationView view, IRegistrationService registrationService)
 			: base(view)
 		{
-
 			Guard.WhenArgument(registrationService, "registrationService").IsNull().Throw();
 
 			this.registrationService = registrationService;
