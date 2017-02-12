@@ -33,5 +33,6 @@
     <script src="<%= ResolveUrl("~/Scripts/jquery.easing.1.3.js") %>" type="text/javascript"></script>
     <script src="<%= ResolveUrl("~/Scripts/External/RevSlider2/jquery.themepunch.plugins.min.js") %>" type="text/javascript"></script>
     <script src="<%= ResolveUrl("~/Scripts/External/RevSlider2/jquery.themepunch.revolution.min.js") %>" type="text/javascript"></script>
+    <script src="<%= ResolveUrl("~/Scripts/External/Isotope/isotope.pkgd.min.js") %>" type="text/javascript"></script>
     <script src="<%= ResolveUrl("~/Scripts/Pages/homepage.js") %>" type="text/javascript"></script>
 </asp:Content>

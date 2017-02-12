@@ -1,5 +1,6 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="bootstrap.js" />
+/// <reference path="external/isotope/isotope.pkgd.min.js" />
 /// <reference path="external/revslider2/jquery.themepunch.plugins.min.js" />
 /// <reference path="external/revslider2/jquery.themepunch.revolution.min.js" />
 /// <reference path="jquery.easing.1.3.js" />

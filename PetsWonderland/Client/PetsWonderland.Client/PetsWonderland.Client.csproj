@@ -295,10 +295,13 @@
     <Content Include="Images\Pages\Homepage\About\management.png" />
     <Content Include="Images\Pages\Homepage\About\organization.png" />
     <Content Include="Images\Pages\Homepage\bone.png" />
+    <Content Include="Images\Pages\Homepage\Hotels\dog_hotel.jpg" />
+    <Content Include="Images\Pages\Homepage\Hotels\dog_hotel_2.jpg" />
     <Content Include="PageControls\Homepage\HomepageAboutControl.ascx" />
     <Content Include="PageControls\Homepage\HomepageContactFormControl.ascx" />
     <Content Include="PageControls\Homepage\HomepageGuestBookControl.ascx" />
     <Content Include="PageControls\Homepage\HomepageHotelsListControl.ascx" />
+    <Content Include="Scripts\External\Isotope\isotope.pkgd.min.js" />
     <Content Include="Scripts\jquery-1.10.1.js" />
     <Content Include="Scripts\jquery-1.10.1.min.js" />
     <Content Include="Scripts\jquery-1.10.1.min.map" />

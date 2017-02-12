@@ -83,3 +83,21 @@ $(function () {
         event.preventDefault();
     });
 });
+
+$(function() {
+    $('.grid').isotope({
+        // options
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',  
+        percentPosition: true,
+        fitRows: {
+        },
+        getSortData: {
+            category: '[data-category]'
+        },
+        containerStyle: {
+            position: 'relative',
+            overflow: 'hidden'
+        }
+    });
+});

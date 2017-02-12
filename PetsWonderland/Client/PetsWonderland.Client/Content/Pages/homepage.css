@@ -1,5 +1,8 @@
 ﻿/* Generic */
 .generic-section {
+    float: left;
+    position: relative;
+    width: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -68,22 +71,22 @@
     border-bottom: 1px solid #10b4ea;
 }
 
-.hp-about .services-list > div > ul {
+.hp-about .services-list > div > .row > ul {
     float: left;
     position: relative;
     width: 100%;
 }
-.hp-about .services-list > div > ul > li img {
+.hp-about .services-list > div > .row > ul > li img {
     width: 100%;
 }
 
-.hp-about .services-list > div > ul > li a{
+.hp-about .services-list > div > .row > ul > li a{
     display: block;
     float: left;
     position: relative;
 }
 
-.hp-about .services-list > div > ul > li a:before{
+.hp-about .services-list > div > .row > ul > li a:before{
     background: rgba(34,37,51,0.50);
     content: "";
     position: absolute;
@@ -91,7 +94,7 @@
     height: 100%;
 }
 
-.hp-about .services-list > div > ul > li:hover a:before{
+.hp-about .services-list > div > .row > ul > li:hover a:before{
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
@@ -100,7 +103,7 @@
     opacity: 0;
 }
 
-.hp-about .services-list > div > ul > li span {
+.hp-about .services-list > div > .row > ul > li span {
     position: absolute;
     width: 100%;
     display: block;
@@ -110,4 +113,73 @@
     font-family: "Lobster";
     font-weight: bold;
     text-align: center;
+}
+
+/* Browse Hotels Section */
+.hp-hotels {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.hp-hotels .hotels-list {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.hp-hotels .hotels-list .grid-item {
+    margin-bottom: 20px;  
+    padding-top: 15px;
+}
+
+/* fluid 4% gutter */
+.gutter-sizer { width: 20px; }
+
+.hp-hotels .hotels-list .grid-item > .wrapper {
+    float: left;
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.hp-hotels .hotels-list .grid-item:hover .image > img {
+    transform: scale(1.1) !important;
+    -moz-transform: scale(1.1) !important;
+    -webkit-transform: scale(1.1) !important;
+    -o-transform: scale(1.1) !important;
+    -ms-transform: scale(1.1) !important;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
+
+.hp-hotels .hotels-list .grid-item .image,
+.hp-hotels .hotels-list .grid-item .title,
+.hp-hotels .hotels-list .grid-item .description{
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.hp-hotels .hotels-list .grid-item .title > h3 {
+    text-align: center;
+    font-family: "Lobster";
+    color: #10b4ea;
+}
+
+.hp-hotels .hotels-list .grid-item .description > p {
+    text-align: justify;
+}
+
+.hp-hotels .hotels-list .grid-item .image > img {
+    width: 100%;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
 }

@@ -17,7 +17,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <asp:ContentPlaceHolder ID="CustomStylesheets" runat="server"></asp:ContentPlaceHolder>
 </head>
-<body>
+<body data-spy="scroll" data-target="#main-nav" data-offset="70">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -41,7 +41,7 @@
         </asp:ScriptManager>
                          
         <header>
-            <div id="main-nav" class="navbar navbar-inverse navbar-fixed-top">
+            <div id="main-nav" class="navbar navbar-inverse navbar-fixed-top" >
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

@@ -21,37 +21,41 @@
         <div class="services-list">
             <div class="col-sm-12 col-md-6">
                 <h3>For regular users</h3>
-                <ul>
-                    <li class="col-sm-6">
-                        <a href="#">
-                            <img src="~/Images/Pages/Homepage/About/daycare.png" runat="server"/>
-                            <span>Daycare</span>
-                        </a>
-                    </li>
-                    <li class="col-sm-6">
-                        <a href="#">
-                            <img src="~/Images/Pages/Homepage/About/boarding.png" runat="server"/>
-                            <span>Boarding</span>
-                        </a>
-                    </li>                 
-                </ul>
+                <div class="row">
+                    <ul>
+                        <li class="col-sm-6">
+                            <a href="#">
+                                <img src="~/Images/Pages/Homepage/About/daycare.png" runat="server"/>
+                                <span>Daycare</span>
+                            </a>
+                        </li>
+                        <li class="col-sm-6">
+                            <a href="#">
+                                <img src="~/Images/Pages/Homepage/About/boarding.png" runat="server"/>
+                                <span>Boarding</span>
+                            </a>
+                        </li>                 
+                    </ul>
+                </div>                
             </div>
             <div class="col-sm-12 col-md-6">
                 <h3>For hotel owners</h3>
-                <ul>
-                    <li class="col-sm-6">
-                        <a href="#">
-                            <img src="~/Images/Pages/Homepage/About/management.png" runat="server"/>
-                            <span>Management</span>
-                        </a>
-                    </li>
-                    <li class="col-sm-6">
-                        <a href="#">
-                            <img src="~/Images/Pages/Homepage/About/organization.png" runat="server"/>
-                            <span>Organization</span>
-                        </a>
-                    </li>                 
-                </ul>
+                <div class="row">
+                    <ul>
+                        <li class="col-sm-6">
+                            <a href="#">
+                                <img src="~/Images/Pages/Homepage/About/management.png" runat="server"/>
+                                <span>Management</span>
+                            </a>
+                        </li>
+                        <li class="col-sm-6">
+                            <a href="#">
+                                <img src="~/Images/Pages/Homepage/About/organization.png" runat="server"/>
+                                <span>Organization</span>
+                            </a>
+                        </li>                 
+                    </ul>
+                </div>                
             </div>
         </div>
     </div>
