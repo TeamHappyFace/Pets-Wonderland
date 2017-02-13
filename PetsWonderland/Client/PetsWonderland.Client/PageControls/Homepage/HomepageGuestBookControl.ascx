@@ -3,12 +3,12 @@
 			CodeBehind="HomepageGuestBookControl.ascx.cs"
 			Inherits="PetsWonderland.Client.PageControls.Homepage.HomepageGuestBookControl" %>
 
-<section id="guest-book" class="hp-guest-book generic-section">
+<section id="guest-book" class="hp-guest-book generic-section parallax">
 	<div class="section-title">
         <h2>Guest Book</h2>
     </div>
-	<diV>
-		<div class="qot-week parallax">
+	<div class="section-content">	              
+		<div class="qot-week ">
 			<div class="qot-pic"></div>
 			<br />
 			<h6 class="qot-title">Quote of the Week</h6>
@@ -21,5 +21,5 @@
 				<cite title="">Dave St. Peter <small>Minnesota Twins President</small></cite>
 			</blockquote>
 		</div>
-	</diV>
+	</div>
 </section>

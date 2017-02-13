@@ -24,8 +24,9 @@
 
 <asp:Content ID="HomepageContent" ContentPlaceHolderID="MainContent" runat="server">
     <hpc:AboutSectionControl runat="server"/>
-    <hpc:HotelsListSectionControl runat="server"/>
     <hpc:GuestBookSectionControl runat="server"/>
+    <hpc:HotelsListSectionControl runat="server"/>
+  
     <hpc:ContactSectionControl runat="server"/>
 </asp:Content>
 

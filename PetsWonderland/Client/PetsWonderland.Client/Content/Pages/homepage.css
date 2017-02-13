@@ -1,8 +1,5 @@
 ﻿/* Generic */
 .generic-section {
-    float: left;
-    position: relative;
-    width: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -50,12 +47,6 @@
 }
 
 /* About Section */
-.hp-about {
-    float: left;
-    position: relative;
-    width: 100%;
-}
-
 .hp-about .services-list {
     float: left;
     position: relative;
@@ -116,12 +107,6 @@
 }
 
 /* Browse Hotels Section */
-.hp-hotels {
-    float: left;
-    position: relative;
-    width: 100%;
-}
-
 .hp-hotels .hotels-list {
     float: left;
     position: relative;
@@ -174,6 +159,7 @@
 
 .hp-hotels .hotels-list .grid-item .description > p {
     text-align: justify;
+    font-size: 22px;
 }
 
 .hp-hotels .hotels-list .grid-item .image > img {
@@ -185,13 +171,40 @@
 }
 
 /* Guest Book Section */
+.hp-guest-book {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.hp-guest-book.parallax {
+    background-image: url("../../Images/Pages/Homepage/Slider/slide_01.jpg");
+
+    height: 600px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hp-guest-book .section-title > h2 {
+    color: #fff;
+}
+.hp-guest-book blockquote {
+    border-right: 5px solid #eeeeee;
+    background: rgba(16,180,234, 0.2);
+    color: #fff;
+}
+.hp-guest-book blockquote p{
+    text-align: center;
+    font-size: 22px;
+}
 .qot-week {
     clear: both;
-    margin: 10px;
-    margin-top: 36px;
+    margin: 0;
     padding-bottom: 18px;
     position: relative;
     text-align: center;
+    padding: 0 200px;
 }
 .qot-week .qot-pic:before {
     content: '\201C';
@@ -221,4 +234,17 @@
     clear: both;
     font-size: 10px;
     font-weight: bold;
+}
+
+.hp-guest-book cite {
+    font-family: "Lobster";
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+}
+.hp-guest-book cite small {
+      color: #fff;
+}
+.hp-guest-book cite small:after{
+    content: '\2014 \00A0';
 }

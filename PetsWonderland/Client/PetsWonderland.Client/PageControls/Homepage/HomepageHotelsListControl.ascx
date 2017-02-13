@@ -3,7 +3,7 @@
             CodeBehind="HomepageHotelsListControl.ascx.cs" 
             Inherits="PetsWonderland.Client.PageControls.Homepage.HomepageHotelsListControl" %>
 
-<section id="hotels" class="hp-hotels generic-section">
+<section id="hotels" class="hp-hotels generic-section container">
     <div class="section-title">
         <h2>Hotels..</h2>
     </div>
