@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PetsWonderland.Client.SiteMaster" %>
 
-<%@ Register Src="~/PageControls/Homepage/QuickContactControl.ascx" TagPrefix="hpc" TagName="QuickContactControl" %>
+<%@ Register Src="~/PageControls/Homepage/QuickContactControl.ascx" TagPrefix="hps" TagName="QuickContactControl" %>
 
 <!DOCTYPE html>
 
@@ -15,7 +15,7 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
 
-	<%--<link href="~/Content/Site.css" rel="stylesheet" type="text/css" media="screen" runat="server" />--%>
+	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" media="screen" runat="server" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <asp:ContentPlaceHolder ID="CustomStylesheets" runat="server"></asp:ContentPlaceHolder>
 </head>
@@ -72,13 +72,13 @@
                             <AnonymousTemplate>
                                 <ul class="user-nav nav navbar-nav navbar-right">
                                     <li>
-                                        <a runat="server" href="~/Account/Register">
+                                        <a runat="server" href="~/Account/Register.aspx">
                                             <i class="fa fa-key"></i>
                                             Register
                                         </a>
                                     </li>
                                     <li>
-                                        <a runat="server" href="~/Account/Login">
+                                        <a runat="server" href="~/Account/Login.aspx">
                                             <i class="fa fa-sign-in"></i>
                                             Log in
                                         </a>
@@ -87,7 +87,10 @@
                             </AnonymousTemplate>
                             <LoggedInTemplate>
                                 <ul class="user-nav nav navbar-nav navbar-right">
-                                    <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName() %> !</a></li>
+                                    <li><a runat="server" href="~/Account/Manage.aspx" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName() %> !</a></li>
+                                    <li><a runat="server" href="~/Account/Manage.aspx" title="Manage your account">Hello, <%: Context.User.IsInRole("User") %> !</a></li>
+                                    <li><a runat="server" href="~/Account/Manage.aspx" title="Manage your account">Hello, <%: Context.User.IsInRole("Admin") %> !</a></li>
+                                    <li><a runat="server" href="~/Account/Manage.aspx" title="Manage your account">Hello, <%: Context.User.IsInRole("Hotel manager") %> !</a></li>                               
                                     <li>
                                         <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                     </li>
@@ -143,13 +146,10 @@
         <footer>
             <p class="text-center">Footer</p>	
      		
-		</footer>
-        
-        <a id="go-to-top" href="#">
-            <i class="fa fa-angle-up"></i>
-        </a>        
-        <hpc:QuickContactControl runat="server"/>
+		</footer>                          
     </form>
+    
+    <hps:QuickContactControl runat="server"/>
 
     <asp:ContentPlaceHolder ID="CustomScripts" runat="server">
             
