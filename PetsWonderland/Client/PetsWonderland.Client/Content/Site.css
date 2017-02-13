@@ -26,7 +26,12 @@
 #main-nav .user-nav {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
+}
 
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+    background: #fff;
 }
 
 /* Move down content because we have a fixed navbar that is 50px tall */
