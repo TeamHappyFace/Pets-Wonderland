@@ -145,7 +145,40 @@
         
         <footer>
             <p class="text-center">Footer</p>	
-     		
+     		<div class="bottom">
+		         <div class="container">
+		             <div class="copyright pull-left">
+		                 Copyright 2017
+                         <a href="https://github.com/TeamHappyFace"> HappyFace </a>
+                         |  All Rights Reserved
+		             </div>
+                 
+                     <div class="socials pull-right">
+                         <ul>
+                             <li class="facebook" data-toggle="tooltip" title="Facebook" data-placement="top">
+                                 <a href="#">
+                                     <i class="fa fa-facebook fa-2x"></i>
+                                 </a>
+                             </li>
+                             <li class="twitter" data-toggle="tooltip" title="Twitter" data-placement="top">
+                                 <a href="#">
+                                     <i class="fa fa-twitter fa-2x"></i>
+                                 </a>
+                             </li>
+                             <li class="linkedin" data-toggle="tooltip" title="Linked-in" data-placement="top">
+                                 <a href="#">
+                                     <i class="fa fa-linkedin fa-2x"></i>
+                                 </a>
+                             </li>
+                             <li class="rss" data-toggle="tooltip" title="RSS" data-placement="top">
+                                 <a href="#">
+                                     <i class="fa fa-rss fa-2x"></i>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
+		         </div>		         
+		     </div>
 		</footer>                          
     </form>
     

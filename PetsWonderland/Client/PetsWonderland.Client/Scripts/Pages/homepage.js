@@ -72,6 +72,7 @@
     });
 });
 
+/* Smooth scroll for navigation */
 $(function () {
     $('a.page-scroll').bind('click', function (event) {
         var $anchor = $(this);
@@ -82,6 +83,7 @@ $(function () {
     });
 });
 
+/* Hotels List Gallery */
 $(function() {
     $('.grid').isotope({
         // options
@@ -100,6 +102,7 @@ $(function() {
     });
 });
 
+/* Shows and hides Contact Btn */
 $(function () {
     $('.quick-contact-btn').on('click', function(ev) {
         ev.preventDefault();
@@ -108,3 +111,6 @@ $(function () {
     });
 });
 
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
