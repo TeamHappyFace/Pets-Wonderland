@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace PetsWonderland.Client.PageControls.Homepage
 {
-    public partial class HomepageContactFormControl : System.Web.UI.UserControl
+    public partial class QuickContactControl : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

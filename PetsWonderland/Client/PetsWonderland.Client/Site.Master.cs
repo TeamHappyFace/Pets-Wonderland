@@ -45,7 +45,7 @@ namespace PetsWonderland.Client
                 Response.Cookies.Set(responseCookie);
             }
 
-            Page.PreLoad += master_Page_PreLoad;
+            Page.PreLoad += master_Page_PreLoad;        
         }
 
         protected void master_Page_PreLoad(object sender, EventArgs e)

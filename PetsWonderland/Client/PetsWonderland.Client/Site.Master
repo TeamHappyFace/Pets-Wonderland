@@ -1,12 +1,14 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PetsWonderland.Client.SiteMaster" %>
 
+<%@ Register Src="~/PageControls/Homepage/QuickContactControl.ascx" TagPrefix="hpc" TagName="QuickContactControl" %>
+
 <!DOCTYPE html>
 
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Premium pets services</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -64,8 +66,7 @@
                             </li>                        
                             <li><a runat="server" class="page-scroll" href="#about">Services</a></li>
                             <li><a runat="server" class="page-scroll" href="#guest-book">Guest Book</a></li>
-                            <li><a runat="server" class="page-scroll" href="#hotels">Browse Hotels</a></li>   
-                            <li><a runat="server" class="page-scroll" href="#contact-us">Contact Us</a></li>
+                            <li><a runat="server" class="page-scroll" href="#hotels">Browse Hotels</a></li>          
                         </ul>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
@@ -143,6 +144,11 @@
             <p class="text-center">Footer</p>	
      		
 		</footer>
+        
+        <a id="go-to-top" href="#">
+            <i class="fa fa-angle-up"></i>
+        </a>        
+        <hpc:QuickContactControl runat="server"/>
     </form>
 
     <asp:ContentPlaceHolder ID="CustomScripts" runat="server">

@@ -171,9 +171,7 @@
 }
 
 /* Guest Book Section */
-.hp-guest-book {
-    float: left;
-    position: relative;
+.hp-guest-book { 
     width: 100%;
 }
 .hp-guest-book.parallax {

@@ -126,6 +126,53 @@ input[type="select"] {
 }
 
 
+/* Quick contact form */
+#quick-contact {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    z-index: 300;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+}
+#quick-contact > .quick-contact-btn {
+    display: block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #ccc;
+    background-color: rgba(0,0,0,0.2);
+    padding: 12px 14px;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+}
+
+#quick-contact-form {
+    position: absolute;
+    width: 280px;
+    bottom: 70px;
+    right: 0;
+    -webkit-box-shadow: 0 0 50px 10px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 0 50px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 13px 0 rgba(0,0,0,0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e5e5e5;
+    border-radius: 4px;
+    padding: 20px;
+    z-index: 100;
+    display: none;
+    background-color: #f7f7f7;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {

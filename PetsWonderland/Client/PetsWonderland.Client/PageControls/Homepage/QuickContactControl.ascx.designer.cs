@@ -11,7 +11,7 @@ namespace PetsWonderland.Client.PageControls.Homepage
 {
 
 
-    public partial class HomepageContactFormControl
+    public partial class QuickContactControl
     {
     }
 }

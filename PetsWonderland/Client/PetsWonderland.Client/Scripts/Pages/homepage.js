@@ -58,8 +58,6 @@
         autoHeight: "off",
         forceFullWidth: "off",
 
-
-
         hideThumbsOnMobile: "off",
         hideNavDelayOnMobile: 1500,
         hideBulletsOnMobile: "off",
@@ -99,5 +97,13 @@ $(function() {
             position: 'relative',
             overflow: 'hidden'
         }
+    });
+});
+
+$(function () {
+    $('.quick-contact-btn').on('click', function(ev) {
+        ev.preventDefault();
+
+        $('#quick-contact-form').toggle();
     });
 });

@@ -9,7 +9,6 @@
 <%@ Register Src="~/PageControls/Homepage/HomepageAboutControl.ascx" TagPrefix="hpc" TagName="AboutSectionControl" %>
 <%@ Register Src="~/PageControls/Homepage/HomepageHotelsListControl.ascx" TagPrefix="hpc" TagName="HotelsListSectionControl" %>
 <%@ Register Src="~/PageControls/Homepage/HomepageGuestBookControl.ascx" TagPrefix="hpc" TagName="GuestBookSectionControl" %>
-<%@ Register Src="~/PageControls/Homepage/HomepageContactFormControl.ascx" TagPrefix="hpc" TagName="ContactSectionControl" %>
 
 <asp:Content ContentPlaceHolderID="CustomStylesheets" runat="server">
     <link href="<%= ResolveUrl("~/Content/Pages/homepage.css") %>" rel="stylesheet" type="text/css" />  
@@ -25,9 +24,7 @@
 <asp:Content ID="HomepageContent" ContentPlaceHolderID="MainContent" runat="server">
     <hpc:AboutSectionControl runat="server"/>
     <hpc:GuestBookSectionControl runat="server"/>
-    <hpc:HotelsListSectionControl runat="server"/>
-  
-    <hpc:ContactSectionControl runat="server"/>
+    <hpc:HotelsListSectionControl runat="server"/>  
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="CustomScripts" runat="server">
