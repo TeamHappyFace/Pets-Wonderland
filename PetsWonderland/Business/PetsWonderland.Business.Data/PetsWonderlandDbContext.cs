@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Animals;
 using PetsWonderland.Business.Models.Hotels;
+using PetsWonderland.Business.Models.Pages;
 using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.Models.Users;
 
@@ -43,5 +44,8 @@ namespace PetsWonderland.Business.Data
 		public virtual DbSet<Admin> Admins { get; set; }
 		public virtual DbSet<HotelManager> HotelManagers { get; set; }
 		public virtual DbSet<RegularUser> RegularUsers { get; set; }
+
+		public virtual DbSet<Slider> Sliders { get; set; }
+		public virtual DbSet<Slide> Slides { get; set; }
 	}
 }
