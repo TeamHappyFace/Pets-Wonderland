@@ -15,9 +15,7 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
 
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="~/Content/Pages/hotelRequest.css" rel="stylesheet" type="text/css" />  
-    <link href="~/Content/Pages/boardingRequest.css" rel="stylesheet" type="text/css" />  
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
 
     <asp:ContentPlaceHolder ID="CustomStylesheets" runat="server"></asp:ContentPlaceHolder>
 </head>
@@ -76,7 +74,7 @@
                                 <asp:RoleGroup Roles="Admin">
                                     <ContentTemplate>
                                         <ul class="nav navbar-nav">                                       
-                                            <li><a runat="server" href="~/Admin/Dashboard.aspx">Administation</a></li>
+                                            <li><a runat="server" href="~/Admin/Dashboard.aspx">Administration</a></li>
                                         </ul>
                                     </ContentTemplate>
                                 </asp:RoleGroup>
@@ -174,8 +172,6 @@
     
     <hps:QuickContactControl runat="server"/>
 
-    <asp:ContentPlaceHolder ID="CustomScripts" runat="server">
-            
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="CustomScripts" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>

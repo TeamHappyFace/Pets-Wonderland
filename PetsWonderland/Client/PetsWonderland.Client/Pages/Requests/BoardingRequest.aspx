@@ -3,6 +3,11 @@
 		MasterPageFile="../../Site.Master"
 		CodeBehind="BoardingRequest.aspx.cs" Inherits="PetsWonderland.Client.Pages.Requests.BoardingRequest" %>
 
+<asp:Content ContentPlaceHolderID="CustomStylesheets" runat="server">
+    <link href="<%= ResolveUrl("~/Content/Pages/boardingRequest.css") %>" rel="stylesheet" type="text/css" />       
+</asp:Content>
+
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="form-horizontal boarding-request parallax">
         <h3>Register your pet to our hotel </h3>

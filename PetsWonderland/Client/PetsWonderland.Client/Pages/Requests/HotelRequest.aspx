@@ -4,6 +4,10 @@
 		CodeBehind="HotelRequest.aspx.cs" 
 		Inherits="PetsWonderland.Client.Pages.Requests.HotelRequest" %>
 
+<asp:Content ContentPlaceHolderID="CustomStylesheets" runat="server">
+    <link href="<%= ResolveUrl("~/Content/Pages/hotelRequest.css") %>" rel="stylesheet" type="text/css" />       
+</asp:Content>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="form-horizontal hotel-request parallax">
         <h3>Register your hotel </h3>

@@ -236,6 +236,8 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Content\Admin\bootstrap.min.css" />
+    <Content Include="Content\Admin\material-dashboard.css" />
     <Content Include="Content\External\RevSlider\extralayers.css" />
     <Content Include="Content\External\FontAwesome\font-awesome.css" />
     <Content Include="Content\External\FontAwesome\font-awesome.min.css" />
@@ -296,6 +298,7 @@
     <Content Include="fonts\FontAwesome\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome\fontawesome-webfont.ttf" />
     <Content Include="fonts\FontAwesome\fontawesome-webfont.eot" />
+    <Content Include="Images\Admin\sidebar-1.jpg" />
     <Content Include="Images\Pages\Homepage\About\boarding.png" />
     <Content Include="Images\Pages\Homepage\About\daycare.png" />
     <Content Include="Images\Pages\Homepage\About\management.png" />
@@ -315,7 +318,11 @@
     <Content Include="PageControls\Homepage\QuickContactControl.ascx" />
     <Content Include="Pages\Requests\BoardingRequest.aspx" />
     <Content Include="Pages\Requests\HotelRequest.aspx" />
+    <Content Include="Scripts\Admin\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\Admin\material-dashboard.js" />
+    <Content Include="Scripts\Admin\material.min.js" />
     <Content Include="Scripts\External\Isotope\isotope.pkgd.min.js" />
+    <Content Include="Admin\Admin.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="fonts\RevSlider\revicons.svg" />
     <Content Include="Images\404_page_cover.jpg" />
@@ -539,6 +546,13 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
