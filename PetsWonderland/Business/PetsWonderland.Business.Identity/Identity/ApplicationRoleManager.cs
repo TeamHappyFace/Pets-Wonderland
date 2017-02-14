@@ -23,7 +23,7 @@ namespace PetsWonderland.Business.Identity
 			string adminRole = "Admin";
 			string hotelManagerRole = "Hotel manager";
 
-			if (context != null && roleManager.Roles.Count() == 0)
+			if (roleManager.Roles.Count() == 0)
 			{
 				roleManager.Create(new ApplicationRole(userRole));
 				roleManager.Create(new ApplicationRole(adminRole));

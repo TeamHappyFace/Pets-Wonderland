@@ -13,10 +13,10 @@
            <div class="grid-item col-sm-12 col-md-4">
                 <div class="wrapper">
                     <div class="image">
-                        <img src="~/Images/Pages/Homepage/Hotels/dog_hotel.jpg" runat="server"/>
+						<img src="~/Images/Pages/Homepage/Hotels/dog_hotel.jpg" runat="server"/>
                     </div>
                     <div class="title">
-                        <h3>D.O.G Premium Hotel</h3>
+                        <a href="#"><h3>D.O.G Premium Hotel</h3></a>
                     </div>
                     <div class="description">
                         <p>
@@ -30,10 +30,10 @@
             <div class="grid-item col-sm-12 col-md-4">
                 <div class="wrapper">
                     <div class="image">
-                        <img src="~/Images/Pages/Homepage/Hotels/dog_hotel_2.jpg" runat="server"/>
+						<img src="~/Images/Pages/Homepage/Hotels/dog_hotel_2.jpg" runat="server"/>
                     </div>
                     <div class="title">
-                        <h3>D.O.G Premium Hotel</h3>
+                        <a href="#"><h3>D.O.G Premium Hotel</h3></a>
                     </div>
                     <div class="description">
                         <p>
@@ -48,10 +48,10 @@
             <div class="grid-item col-sm-12 col-md-4">
                 <div class="wrapper">
                     <div class="image">
-                        <img src="~/Images/Pages/Homepage/Hotels/dog_hotel.jpg" runat="server"/>
+						<img src="~/Images/Pages/Homepage/Hotels/dog_hotel.jpg" runat="server"/>
                     </div>
                     <div class="title">
-                        <h3>D.O.G Premium Hotel</h3>
+                        <a href="#"><h3>D.O.G Premium Hotel</h3></a>
                     </div>
                     <div class="description">
                         <p>
@@ -68,7 +68,7 @@
                         <img src="~/Images/Pages/Homepage/Hotels/dog_hotel_2.jpg" runat="server"/>
                     </div>
                     <div class="title">
-                        <h3>D.O.G Premium Hotel</h3>
+                        <a href="#"><h3>D.O.G Premium Hotel</h3></a>
                     </div>
                     <div class="description">
                         <p>

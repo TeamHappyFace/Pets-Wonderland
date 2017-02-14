@@ -242,7 +242,9 @@
     <Content Include="Content\External\RevSlider\settings.css" />
     <Content Include="Content\External\RevSlider\style.css" />
     <Content Include="Content\Fonts.css" />
+    <Content Include="Content\Pages\boardingRequest.css" />
     <Content Include="Content\Pages\homepage.css" />
+    <Content Include="Content\Pages\hotelRequest.css" />
     <Content Include="Controls\AnimalControl.ascx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\External\Bootstrap\bootstrap.css" />
@@ -298,13 +300,17 @@
     <Content Include="Images\Pages\Homepage\About\daycare.png" />
     <Content Include="Images\Pages\Homepage\About\management.png" />
     <Content Include="Images\Pages\Homepage\About\organization.png" />
+    <Content Include="Images\Pages\Homepage\About\spa..jpg" />
     <Content Include="Images\Pages\Homepage\bone.png" />
     <Content Include="Images\Pages\Homepage\Hotels\dog_hotel.jpg" />
     <Content Include="Images\Pages\Homepage\Hotels\dog_hotel_2.jpg" />
+    <Content Include="Images\Pages\Requests\hotel.jpg" />
     <Content Include="PageControls\Homepage\HomepageAboutControl.ascx" />
     <Content Include="PageControls\Homepage\HomepageGuestBookControl.ascx" />
     <Content Include="PageControls\Homepage\HomepageHotelsListControl.ascx" />
     <Content Include="PageControls\Homepage\QuickContactControl.ascx" />
+    <Content Include="Pages\Requests\BoardingRequest.aspx" />
+    <Content Include="Pages\Requests\HotelRequest.aspx" />
     <Content Include="Scripts\External\Isotope\isotope.pkgd.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="fonts\RevSlider\revicons.svg" />
@@ -628,6 +634,20 @@
     <Compile Include="PageControls\Homepage\QuickContactControl.ascx.designer.cs">
       <DependentUpon>QuickContactControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Requests\BoardingRequest.aspx.cs">
+      <DependentUpon>BoardingRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Requests\BoardingRequest.aspx.designer.cs">
+      <DependentUpon>BoardingRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Requests\HotelRequest.aspx.cs">
+      <DependentUpon>HotelRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Requests\HotelRequest.aspx.designer.cs">
+      <DependentUpon>HotelRequest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -654,6 +674,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Pages\Hotels\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Business\PetsWonderland.Business.Data\PetsWonderland.Business.Data.csproj">

@@ -1,0 +1,25 @@
+﻿.hotel-request { 
+    width: 100%;
+	margin-top: 80px;
+	position: relative;
+	float: left;
+	color: inherit;
+}
+.hotel-request.parallax {
+    background-image: url("../../Images/Pages/Requests/hotel.jpg");
+
+    height: 600px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h3 {
+	float: left;
+    position: relative;
+    width: 100%;
+	font-weight: bold;
+	font-size: 25px;
+}

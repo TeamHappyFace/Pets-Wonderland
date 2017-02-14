@@ -11,7 +11,7 @@
 <%@ Register Src="~/PageControls/Homepage/HomepageGuestBookControl.ascx" TagPrefix="hpc" TagName="GuestBookSectionControl" %>
 
 <asp:Content ContentPlaceHolderID="CustomStylesheets" runat="server">
-    <link href="<%= ResolveUrl("~/Content/Pages/homepage.css") %>" rel="stylesheet" type="text/css" />  
+    <link href="<%= ResolveUrl("~/Content/Pages/homepage.css") %>" rel="stylesheet" type="text/css" />   
     <link href="<%= ResolveUrl("~/Content/External/RevSlider/style.css") %>" rel="stylesheet" type="text/css" />
     <link href="<%= ResolveUrl("~/Content/External/RevSlider/extralayers.css") %>" rel="stylesheet" type="text/css" />
     <link href="<%= ResolveUrl("~/Content/External/RevSlider/settings.css") %>" rel="stylesheet" type="text/css" />    

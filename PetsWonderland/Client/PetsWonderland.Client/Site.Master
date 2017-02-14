@@ -15,8 +15,9 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
 
-	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" media="screen" runat="server" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Pages/hotelRequest.css" rel="stylesheet" type="text/css" />  
+
     <asp:ContentPlaceHolder ID="CustomStylesheets" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body data-spy="scroll" data-target="#main-nav" data-offset="70">
@@ -43,7 +44,7 @@
         </asp:ScriptManager>
                          
         <header>
-            <div id="main-nav" class="navbar navbar-inverse navbar-fixed-top" >
+            <div id="main-nav" class="navbar navbar-inverse navbar-fixed-top collapse navbar-collapse" >
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -68,6 +69,27 @@
                             <li><a runat="server" class="page-scroll" href="#guest-book">Guest Book</a></li>
                             <li><a runat="server" class="page-scroll" href="#hotels">Browse Hotels</a></li>          
                         </ul>
+						<asp:LoginView runat="server">
+                            <RoleGroups>
+								<%--Admin--%>
+                                <asp:RoleGroup Roles="Admin">
+                                    <ContentTemplate>
+                                        <ul class="nav navbar-nav">                                       
+                                            <li><a runat="server" href="~/Admin/Dashboard.aspx">Administation</a></li>
+                                        </ul>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+
+                                <%-- Hotel Manager--%>
+                                <asp:RoleGroup Roles="Hotel manager">
+                                    <ContentTemplate>
+                                        <ul class="nav navbar-nav">
+                                            <li><a runat="server" href="~/Pages/Requests/HotelRequest.aspx">Register your hotel</a></li>
+                                        </ul>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+                            </RoleGroups>
+                        </asp:LoginView>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
                                 <ul class="user-nav nav navbar-nav navbar-right">
@@ -86,47 +108,15 @@
                                 </ul>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
-                                <ul class="user-nav nav navbar-nav navbar-right">
-                                    <li><a runat="server" href="~/Account/Manage.aspx" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName() %> !</a></li>
-                                    <li><a runat="server" href="~/Account/Manage.aspx" title="Manage your account">Hello, <%: Context.User.IsInRole("User") %> !</a></li>
-                                    <li><a runat="server" href="~/Account/Manage.aspx" title="Manage your account">Hello, <%: Context.User.IsInRole("Admin") %> !</a></li>
-                                    <li><a runat="server" href="~/Account/Manage.aspx" title="Manage your account">Hello, <%: Context.User.IsInRole("Hotel manager") %> !</a></li>                               
+                                <ul class="user-nav nav navbar-nav">
                                     <li>
-                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+										<a runat="server" href="~/Account/Manage.aspx" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName() %> !</a>
                                     </li>
+									<li>
+										<asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+									</li>
                                 </ul>
                             </LoggedInTemplate>
-                        </asp:LoginView>
-                        
-                        <asp:LoginView runat="server">
-                            <RoleGroups>
-                                <asp:RoleGroup Roles="Admin">
-                                    <ContentTemplate>
-                                        <ul class="nav navbar-nav">                                       
-                                            <li><a runat="server" href="~/Admin/Dashboard.aspx">Administraction</a></li>
-                                        </ul>
-                                    </ContentTemplate>
-                                </asp:RoleGroup>
-
-                                <%-- Regular User--%>
-                                <asp:RoleGroup Roles="User">
-                                    <ContentTemplate>
-                                        <ul class="nav navbar-nav">
-                                            <li><a runat="server" href="~/User/Profile.aspx">For the Regular User</a></li>                                           
-                                        </ul>
-                                    </ContentTemplate>
-                                </asp:RoleGroup>
-
-                                <%-- Hotel Manager--%>
-                                <asp:RoleGroup Roles="Hotel manager">
-                                    <ContentTemplate>
-                                        <ul class="nav navbar-nav">
-                                            <li><a runat="server" href="#">Panel</a></li>
-                                        </ul>
-                                    </ContentTemplate>
-                                </asp:RoleGroup>
-                            </RoleGroups>
-
                         </asp:LoginView>
                     </div>
                 </div>

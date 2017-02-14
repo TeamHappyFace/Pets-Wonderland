@@ -23,6 +23,7 @@ namespace PetsWonderland.Business.Models.Animals
 		[MaxLength(ValidationConstants.MaxAnimalDescription)]
 		public string Description { get; set; }
 
+		[Required]
 		public int? AnimalTypeId { get; set; }
 		public virtual AnimalType AnimalType { get; set; }
 

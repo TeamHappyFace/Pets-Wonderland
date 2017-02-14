@@ -67,6 +67,7 @@
     position: relative;
     width: 100%;
 }
+
 .hp-about .services-list > div > .row > ul > li img {
     width: 100%;
 }
@@ -75,6 +76,7 @@
     display: block;
     float: left;
     position: relative;
+	margin-bottom: 20px;
 }
 
 .hp-about .services-list > div > .row > ul > li a:before{
@@ -104,6 +106,11 @@
     font-family: "Lobster";
     font-weight: bold;
     text-align: center;
+}
+
+.services-list > div > .row > ul > li p {
+	text-align: center;
+	font-size: 15px;
 }
 
 /* Browse Hotels Section */
@@ -151,7 +158,7 @@
     width: 100%;
 }
 
-.hp-hotels .hotels-list .grid-item .title > h3 {
+.hp-hotels .hotels-list .grid-item .title > a > h3 {
     text-align: center;
     font-family: "Lobster";
     color: #10b4ea;

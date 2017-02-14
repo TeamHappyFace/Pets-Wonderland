@@ -28,13 +28,30 @@
                                 <img src="~/Images/Pages/Homepage/About/daycare.png" runat="server"/>
                                 <span>Daycare</span>
                             </a>
+							<p class="box">
+								Dogs get excited just hearing pet hotel – they have a fun filled day playing, 
+								making new friends and getting their wiggles out in daycare.
+							</p>
                         </li>
                         <li class="col-sm-6">
                             <a href="#">
                                 <img src="~/Images/Pages/Homepage/About/boarding.png" runat="server"/>
                                 <span>Boarding</span>
                             </a>
-                        </li>                 
+							<p class="box">
+								Pet Hotels provides an exceptional experience in care, 
+								comfort and fun for every one of our overnight guests – plus lots of hugs.
+							</p>
+                        </li>
+<%--					<li class="col-sm-6">
+                            <a href="#">
+                                <img src="~/Images/Pages/Homepage/About/spa.png" runat="server"/>
+                                <span>Spa</span>
+                            </a>
+							<p class="box">
+								Professional dog grooming services provide the highest level of expertise and care for each of our guests – pampering is our priority.
+							</p>
+                        </li>  --%>                
                     </ul>
                 </div>                
             </div>
