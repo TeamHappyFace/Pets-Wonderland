@@ -32,7 +32,6 @@ namespace PetsWonderland.Business.MVP.Presenters
 		{
 			var allAnimals = this.animalService.GetAllAnimals().ToList();
            
-
 			View.Model.Animals = allAnimals;
 			View.Model.ShowResults = true;
 		}
