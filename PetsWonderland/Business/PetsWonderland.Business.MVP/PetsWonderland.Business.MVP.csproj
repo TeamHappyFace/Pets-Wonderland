@@ -102,6 +102,7 @@
     <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Presenters\AnimalPresenter.cs" />
     <Compile Include="Presenters\Contracts\IAnimalPresenter.cs" />
+    <Compile Include="Presenters\Contracts\IRegistrationPresenter.cs" />
     <Compile Include="Presenters\RegistrationPresenter.cs" />
     <Compile Include="Views\Contracts\IAnimalView.cs" />
     <Compile Include="Args\FindAnimalArgs.cs" />

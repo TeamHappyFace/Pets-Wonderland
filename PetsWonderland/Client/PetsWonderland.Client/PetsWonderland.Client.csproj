@@ -327,8 +327,6 @@
     <Content Include="fonts\RevSlider\revicons.svg" />
     <Content Include="Images\404_page_cover.jpg" />
     <Content Include="Images\default_page_cover.jpg" />
-    <Content Include="Images\footer.jpg" />
-    <Content Include="Images\navbar.jpg" />
     <Content Include="Images\Pages\Homepage\Slider\assets\arrowleft.png" />
     <Content Include="Images\Pages\Homepage\Slider\assets\arrowright.png" />
     <Content Include="Images\Pages\Homepage\Slider\assets\arrow_large_left.png" />
