@@ -8,11 +8,11 @@ namespace PetsWonderland.Business.Models.Pages
 {
     public class Slider : ISlider
     {
-        private ICollection<Slide> slides;
+        private ICollection<ISlide> slides;
 
         public Slider()
         {
-            this.slides = new HashSet<Slide>();    
+            this.slides = new HashSet<ISlide>();    
         }
 
         [Key]
@@ -30,7 +30,7 @@ namespace PetsWonderland.Business.Models.Pages
         [MaxLength(ValidationConstants.NameMaxLength)]
         public string Position { get; set; }
 
-        public virtual ICollection<Slide> Slides
+        public virtual ICollection<ISlide> Slides
         {
             get
             {

@@ -98,12 +98,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Args\RegistrationEventArgs.cs" />
+    <Compile Include="Content\Slider\ViewModels\SliderViewModel.cs" />
+    <Compile Include="Content\Slider\Views\ISliderView.cs" />
     <Compile Include="Models\AnimalViewModel.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Presenters\AnimalPresenter.cs" />
-    <Compile Include="Presenters\Content\Slider\Args\GetSliderDataArgs.cs" />
-    <Compile Include="Presenters\Content\Slider\Contracts\ISliderPresenter.cs" />
-    <Compile Include="Presenters\Content\Slider\SliderPresenter.cs" />
+    <Compile Include="Content\Slider\Args\GetSliderDataArgs.cs" />
+    <Compile Include="Content\Slider\Contracts\ISliderPresenter.cs" />
+    <Compile Include="Content\Slider\SliderPresenter.cs" />
     <Compile Include="Presenters\Contracts\IAnimalPresenter.cs" />
     <Compile Include="Presenters\Contracts\IRegistrationPresenter.cs" />
     <Compile Include="Presenters\RegistrationPresenter.cs" />

@@ -67,6 +67,7 @@
     <Compile Include="Animals\UserAnimal.cs" />
     <Compile Include="Hotels\Contracts\IHotel.cs" />
     <Compile Include="Hotels\Contracts\IHotelLocation.cs" />
+    <Compile Include="Pages\Contracts\ISlide.cs" />
     <Compile Include="Pages\Contracts\ISlider.cs" />
     <Compile Include="Hotels\Contracts\IUserHotel.cs" />
     <Compile Include="Hotels\Hotel.cs" />

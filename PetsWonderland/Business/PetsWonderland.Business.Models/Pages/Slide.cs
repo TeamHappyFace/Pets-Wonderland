@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using PetsWonderland.Business.Models.Pages.Contracts;
 
 namespace PetsWonderland.Business.Models.Pages
 {
-    public class Slide
+    public class Slide : ISlide
     {
         [Key]
         public int Id { get; set; }
@@ -17,6 +18,6 @@ namespace PetsWonderland.Business.Models.Pages
 
         public int SliderId { get; set; }
 
-        public virtual Slider Slider { get; set; }
+        public virtual ISlider Slider { get; set; }
     }
 }
