@@ -19,18 +19,20 @@ namespace PetsWonderland.Business.Identity
 		{
 			var roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(context.Get<PetsWonderlandDbContext>()));
 
-			string userRole = "User";
-			string adminRole = "Admin";
-			string hotelManagerRole = "Hotel manager";
+			const string userRole = "User";
+			const string adminRole = "Admin";
+			const string hotelManagerRole = "Hotel manager";
 
-			if (roleManager.Roles.Count() == 0)
-			{
-				roleManager.Create(new ApplicationRole(userRole));
-				roleManager.Create(new ApplicationRole(adminRole));
-				roleManager.Create(new ApplicationRole(hotelManagerRole));
-			}
+		    if (roleManager.Roles.Any())
+		    {
+		        return roleManager;
+		    }
 
-			return roleManager;
+		    roleManager.Create(new ApplicationRole(userRole));
+		    roleManager.Create(new ApplicationRole(adminRole));
+		    roleManager.Create(new ApplicationRole(hotelManagerRole));
+
+		    return roleManager;
 		}
 	}
 }

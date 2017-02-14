@@ -101,6 +101,9 @@
     <Compile Include="Models\AnimalViewModel.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Presenters\AnimalPresenter.cs" />
+    <Compile Include="Presenters\Content\Slider\Args\GetSliderDataArgs.cs" />
+    <Compile Include="Presenters\Content\Slider\Contracts\ISliderPresenter.cs" />
+    <Compile Include="Presenters\Content\Slider\SliderPresenter.cs" />
     <Compile Include="Presenters\Contracts\IAnimalPresenter.cs" />
     <Compile Include="Presenters\RegistrationPresenter.cs" />
     <Compile Include="Views\Contracts\IAnimalView.cs" />
