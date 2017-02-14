@@ -4,11 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PetsWonderland.Business.Models.Hotels;
+using PetsWonderland.Business.Models.Requests;
+using PetsWonderland.Business.MVP.Args;
+using PetsWonderland.Business.Services;
+using WebFormsMvp;
 
 namespace PetsWonderland.Client.Pages.Requests
 {
-	public partial class HotelRequest : System.Web.UI.Page
+	[PresenterBinding(typeof(HotelRegistrationRequestService))]
+	public partial class HotelRequest : Page
 	{
+		event EventHandler<AddHotelRequestArgs> EventAddHotelRegistrationRequest;
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
@@ -16,6 +24,30 @@ namespace PetsWonderland.Client.Pages.Requests
 
 		public void CreateUserRequest_Click(object sender, EventArgs e)
 		{
+			var currentHotelManager = this.User.Identity.Name;
+
+			var currentLocation = new HotelLocation()
+			{
+				Address = this.Location.ToString()
+			};
+
+			var currentHotel = new Hotel()
+			{
+				Name = this.HotelName.ToString(),
+				Location = currentLocation,
+				Description = this.Description.ToString()
+			};
+
+			var newHotelRegistrationRequest = new UserHotelRegistrationRequest()
+			{
+				Hotel = currentHotel,
+				DateOfRequest = DateTime.Now,
+				IsAccepted = false
+			};
+
+			var hotelRegistrationRequestArgs = new AddHotelRequestArgs(newHotelRegistrationRequest);
+			this.EventAddHotelRegistrationRequest.Invoke(sender, hotelRegistrationRequestArgs);
+
 			UploadImage();
 		}
 
