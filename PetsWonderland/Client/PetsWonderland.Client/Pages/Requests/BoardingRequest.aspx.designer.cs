@@ -13,15 +13,6 @@ namespace PetsWonderland.Client.Pages.Requests {
     public partial class BoardingRequest {
         
         /// <summary>
-        /// ErrorMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ErrorMessage;
-        
-        /// <summary>
         /// PetName control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,33 @@ namespace PetsWonderland.Client.Pages.Requests {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox Gender1;
+        
+        /// <summary>
+        /// ImageUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ImageUrl;
+        
+        /// <summary>
+        /// Image control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload Image;
+        
+        /// <summary>
+        /// FileUploadedLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FileUploadedLabel;
         
         /// <summary>
         /// BehavioralConcerns control.

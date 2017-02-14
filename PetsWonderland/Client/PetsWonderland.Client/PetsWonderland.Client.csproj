@@ -304,7 +304,11 @@
     <Content Include="Images\Pages\Homepage\bone.png" />
     <Content Include="Images\Pages\Homepage\Hotels\dog_hotel.jpg" />
     <Content Include="Images\Pages\Homepage\Hotels\dog_hotel_2.jpg" />
+    <Content Include="Images\Pages\Requests\boarding.jpg" />
     <Content Include="Images\Pages\Requests\hotel.jpg" />
+    <Content Include="Images\Pages\Requests\labrador.jpg" />
+    <Content Include="Images\Pages\Requests\puppy2.jpg" />
+    <Content Include="Images\Pages\Requests\puppy3.jpg" />
     <Content Include="PageControls\Homepage\HomepageAboutControl.ascx" />
     <Content Include="PageControls\Homepage\HomepageGuestBookControl.ascx" />
     <Content Include="PageControls\Homepage\HomepageHotelsListControl.ascx" />

@@ -1,2 +1,25 @@
-﻿body {
+﻿.boarding-request { 
+    width: 100%;
+	margin-top: 80px;
+	position: relative;
+	float: left;
+	color: white;
+}
+.boarding-request.parallax {
+    background-image: url("../../Images/Pages/Requests/puppy3.jpg");
+	
+    height: 1000px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h3 {
+	float: left;
+    position: relative;
+    width: 100%;
+	font-weight: bold;
+	font-size: 25px;
 }

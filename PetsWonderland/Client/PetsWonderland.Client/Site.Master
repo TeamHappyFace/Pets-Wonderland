@@ -17,6 +17,7 @@
 
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/Content/Pages/hotelRequest.css" rel="stylesheet" type="text/css" />  
+    <link href="~/Content/Pages/boardingRequest.css" rel="stylesheet" type="text/css" />  
 
     <asp:ContentPlaceHolder ID="CustomStylesheets" runat="server"></asp:ContentPlaceHolder>
 </head>

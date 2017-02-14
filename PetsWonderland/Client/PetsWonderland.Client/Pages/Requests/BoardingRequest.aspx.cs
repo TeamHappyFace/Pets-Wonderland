@@ -16,7 +16,24 @@ namespace PetsWonderland.Client.Pages.Requests
 
 		public void CreateUserRequest_Click(object sender, EventArgs e)
 		{
+			UploadImage();
+		}
 
+		private void UploadImage()
+		{
+			if (Image.HasFile)
+				try
+				{
+					Image.SaveAs(Server.MapPath("~/Images/") + Image.FileName);
+				}
+				catch (Exception ex)
+				{
+					FileUploadedLabel.Text = "ERROR: " + ex.Message.ToString();
+				}
+			else
+			{
+				FileUploadedLabel.Text = "You have not specified a file.";
+			}
 		}
 	}
 }
