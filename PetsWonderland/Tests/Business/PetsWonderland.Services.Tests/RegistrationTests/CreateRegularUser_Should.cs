@@ -24,11 +24,13 @@ namespace PetsWonderland.Services.Tests.RegistrationTests
             var mockedRoleRepository = new Mock<IRepository<ApplicationRole>>();
             var mockedUserRepository = new Mock<IRepository<RegularUser>>();
             var mockedHotelManagerRepository = new Mock<IRepository<HotelManager>>();
-            var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var mockedAdminRepository = new Mock<IRepository<Admin>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 
             var registrationService = new RegistrationService(
                 mockedRoleRepository.Object,
                 mockedUserRepository.Object,
+				mockedAdminRepository.Object,
                 mockedHotelManagerRepository.Object,
                 mockedUnitOfWork.Object
             );

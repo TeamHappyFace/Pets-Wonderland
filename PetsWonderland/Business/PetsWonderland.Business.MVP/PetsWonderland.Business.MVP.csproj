@@ -105,6 +105,7 @@
     <Compile Include="Presenters\Content\Slider\Contracts\ISliderPresenter.cs" />
     <Compile Include="Presenters\Content\Slider\SliderPresenter.cs" />
     <Compile Include="Presenters\Contracts\IAnimalPresenter.cs" />
+    <Compile Include="Presenters\Contracts\IRegistrationPresenter.cs" />
     <Compile Include="Presenters\RegistrationPresenter.cs" />
     <Compile Include="Views\Contracts\IAnimalView.cs" />
     <Compile Include="Args\FindAnimalArgs.cs" />

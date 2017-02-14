@@ -5,13 +5,14 @@ using Microsoft.AspNet.Identity.Owin;
 using PetsWonderland.Business.Identity;
 using PetsWonderland.Business.Models.Users;
 using PetsWonderland.Business.MVP.Args;
+using PetsWonderland.Business.MVP.Presenters.Contracts;
 using PetsWonderland.Business.MVP.Views.Contracts;
 using PetsWonderland.Business.Services.Contracts;
 using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Presenters
 {
-	public class RegistrationPresenter : Presenter<IRegistrationView>
+	public class RegistrationPresenter : Presenter<IRegistrationView>, IRegistrationPresenter
 	{
 		private readonly IRegistrationService registrationService;
 
@@ -26,12 +27,12 @@ namespace PetsWonderland.Business.MVP.Presenters
 			this.View.EventBindPageData += BindPageData;
 		}
 
-		private void BindPageData(object sender, EventArgs e)
+		public void BindPageData(object sender, EventArgs e)
 		{
 			this.View.Model.UserRoles = this.registrationService.GetAllUserRoles();
 		}
 
-		private void RegisterUser(object sender, RegistrationEventArgs e)
+		public void RegisterUser(object sender, RegistrationEventArgs e)
 		{
 			var manager = e.OwinCtx.GetUserManager<ApplicationUserManager>();
 			var signInManager = e.OwinCtx.Get<ApplicationSignInManager>();

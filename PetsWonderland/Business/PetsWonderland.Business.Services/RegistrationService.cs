@@ -12,19 +12,22 @@ namespace PetsWonderland.Business.Services
 		private readonly IRepository<ApplicationRole> userRolesRepo;
 		private readonly IRepository<RegularUser> userRepo;
 		private readonly IRepository<HotelManager> hotelManagerRepo;
+		private readonly IRepository<Admin> adminRepo;
 		private readonly IUnitOfWork unitOfWork;
 
-		public RegistrationService(IRepository<ApplicationRole> userRolesRepo, IRepository<RegularUser> userRepo,
+		public RegistrationService(IRepository<ApplicationRole> userRolesRepo, IRepository<RegularUser> userRepo, IRepository<Admin> adminRepo,
 			IRepository<HotelManager> hotelManagerRepo, IUnitOfWork unitOfWork)
 		{
 			Guard.WhenArgument(userRolesRepo, "userRolesRepo").IsNull().Throw();
 			Guard.WhenArgument(userRepo, "userRepo").IsNull().Throw();
 			Guard.WhenArgument(hotelManagerRepo, "hotelManagerRepo").IsNull().Throw();
+			Guard.WhenArgument(adminRepo, "adminRepo").IsNull().Throw();
 			Guard.WhenArgument(unitOfWork, "unitOfWork").IsNull().Throw();
 
 			this.userRolesRepo = userRolesRepo;
 			this.userRepo = userRepo;
 			this.hotelManagerRepo = hotelManagerRepo;
+			this.adminRepo = adminRepo;
 			this.unitOfWork = unitOfWork;
 		}
 
@@ -32,7 +35,22 @@ namespace PetsWonderland.Business.Services
 		{
 			return this.userRolesRepo.All();
 		}
-	
+
+		public void CreateAdmin(string adminId)
+		{
+			Guard.WhenArgument(adminId, "adminId").IsNullOrEmpty().Throw();
+
+			using (var uow = this.unitOfWork)
+			{
+				this.adminRepo.Add(new Admin()
+				{
+					Id = adminId
+				});
+
+				uow.SaveChanges();
+			}
+		}
+
 		public void CreateHotelManager(string hotelManagerId)
 		{
 			Guard.WhenArgument(hotelManagerId, "hotelManagerId").IsNullOrEmpty().Throw();
