@@ -219,7 +219,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -235,7 +234,12 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\ContentPages.aspx" />
+    <Content Include="Admin\Controls\AdminEditSliderFormControl.ascx" />
+    <Content Include="Admin\Controls\AdminNewSliderFormControl.ascx" />
+    <Content Include="Admin\Controls\AdminSlidersListControl.ascx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Content\Admin\admin.main.css" />
     <Content Include="Content\Admin\bootstrap.min.css" />
     <Content Include="Content\Admin\material-dashboard.css" />
     <Content Include="Content\External\RevSlider\extralayers.css" />
@@ -248,7 +252,6 @@
     <Content Include="Content\Pages\homepage.css" />
     <Content Include="Content\Pages\hotelRequest.css" />
     <Content Include="Controls\AnimalControl.ascx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\External\Bootstrap\bootstrap.css" />
     <Content Include="Content\External\Bootstrap\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -318,6 +321,7 @@
     <Content Include="PageControls\Homepage\QuickContactControl.ascx" />
     <Content Include="Pages\Requests\BoardingRequest.aspx" />
     <Content Include="Pages\Requests\HotelRequest.aspx" />
+    <Content Include="Scripts\Admin\admin.main.js" />
     <Content Include="Scripts\Admin\jquery-3.1.0.min.js" />
     <Content Include="Scripts\Admin\material-dashboard.js" />
     <Content Include="Scripts\Admin\material.min.js" />
@@ -552,6 +556,34 @@
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ContentPages.aspx.cs">
+      <DependentUpon>ContentPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ContentPages.aspx.designer.cs">
+      <DependentUpon>ContentPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Controls\AdminEditSliderFormControl.ascx.cs">
+      <DependentUpon>AdminEditSliderFormControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Controls\AdminEditSliderFormControl.ascx.designer.cs">
+      <DependentUpon>AdminEditSliderFormControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Controls\AdminNewSliderFormControl.ascx.cs">
+      <DependentUpon>AdminNewSliderFormControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Controls\AdminNewSliderFormControl.ascx.designer.cs">
+      <DependentUpon>AdminNewSliderFormControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Controls\AdminSlidersListControl.ascx.cs">
+      <DependentUpon>AdminSlidersListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Controls\AdminSlidersListControl.ascx.designer.cs">
+      <DependentUpon>AdminSlidersListControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -567,13 +599,6 @@
       <DependentUpon>AnimalControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectBIndings\DataBindings.cs" />
     <Compile Include="App_Start\NinjectBIndings\MvpBindings.cs" />
@@ -584,13 +609,6 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

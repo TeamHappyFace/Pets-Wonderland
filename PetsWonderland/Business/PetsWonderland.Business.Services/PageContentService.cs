@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
@@ -29,6 +30,11 @@ namespace PetsWonderland.Business.Services
             var slider = this.slidersRepository.Entities.Include(x => x.Slides).Where(s => s.Position == sliderPosition).FirstOrDefault();
 
             return slider;           
+        }
+
+        public IEnumerable<ISlider> GetAllSliders()
+        {
+            return this.slidersRepository.All();
         }
     }
 }

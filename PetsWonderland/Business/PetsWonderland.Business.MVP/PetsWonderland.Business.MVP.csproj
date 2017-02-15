@@ -100,6 +100,11 @@
     <Compile Include="Args\AddHotelRequestArgs.cs" />
     <Compile Include="Args\GetAllHotelRequestsArgs.cs" />
     <Compile Include="Args\RegistrationEventArgs.cs" />
+    <Compile Include="Content\ContentComponent\Args\GetAllSlidersArgs.cs" />
+    <Compile Include="Content\ContentComponent\ContentComponentPresenter.cs" />
+    <Compile Include="Content\ContentComponent\Contracts\IContentComponentPresenter.cs" />
+    <Compile Include="Content\ContentComponent\ViewModels\ContentComponentViewModel.cs" />
+    <Compile Include="Content\ContentComponent\Views\IContentComponentView.cs" />
     <Compile Include="Content\Slider\ViewModels\SliderViewModel.cs" />
     <Compile Include="Content\Slider\Views\ISliderView.cs" />
     <Compile Include="Models\AnimalViewModel.cs" />
@@ -143,6 +148,7 @@
       <Name>PetsWonderland.Business.Services</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,24 @@
+﻿/* Resets */
+.nav-tabs-title {
+    float: left;
+    padding: 10px 10px 10px 0;
+    line-height: 24px;
+}
+.nav-tabs {
+    background: transparent;
+}
+
+.form-group input[type="file"] {
+    opacity: 1;
+    position: static;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+}
+
+/* Modals */
+#editSliderModal, 
+#newSliderModal {
+    width: 100%;
+}
