@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using PetsWonderland.Business.Models.Animals;
 
-namespace PetsWonderland.Business.MVP.Models
+namespace PetsWonderland.Business.MVP.Animals.ViewModels
 {
 	public class AnimalViewModel
 	{

@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.AspNet.Identity;
-using PetsWonderland.Business.MVP.Args;
-using PetsWonderland.Business.MVP.Models;
-using PetsWonderland.Business.MVP.Presenters;
-using PetsWonderland.Business.MVP.Views.Contracts;
+using PetsWonderland.Business.MVP.Animals;
+using PetsWonderland.Business.MVP.Animals.Args;
+using PetsWonderland.Business.MVP.Animals.ViewModels;
+using PetsWonderland.Business.MVP.Animals.Views;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
@@ -37,13 +37,10 @@ namespace PetsWonderland.Client
 			results.Visible = false;
 			GridView1.Visible = true;
 
-		    var user = System.Web.HttpContext.Current.User;
-		    Console.WriteLine(user.Identity.GetUserName());
+			var user = System.Web.HttpContext.Current.User;
+			Console.WriteLine(user.Identity.GetUserName());
 
-
-
-            this.GetAll(this, new GetAllAnimalsArgs());
+			this.GetAll(this, new GetAllAnimalsArgs());
 		}
-	    
 	}
 }

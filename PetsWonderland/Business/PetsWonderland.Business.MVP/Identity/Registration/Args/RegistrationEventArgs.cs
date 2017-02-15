@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Owin;
 
-namespace PetsWonderland.Business.MVP.Args
+namespace PetsWonderland.Business.MVP.Identity.Registration.Args
 {
 	public class RegistrationEventArgs : EventArgs
 	{

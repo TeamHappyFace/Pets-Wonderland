@@ -1,7 +1,7 @@
 ﻿using System;
 using Bytes2you.Validation;
 
-namespace PetsWonderland.Business.MVP.Args
+namespace PetsWonderland.Business.MVP.Animals.Args
 {
 	public class FindAnimalArgs : EventArgs
 	{

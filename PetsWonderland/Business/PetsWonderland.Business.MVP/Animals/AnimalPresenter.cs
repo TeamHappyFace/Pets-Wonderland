@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Models.Animals;
-using PetsWonderland.Business.MVP.Args;
-using PetsWonderland.Business.MVP.Presenters.Contracts;
-using PetsWonderland.Business.MVP.Views.Contracts;
+using PetsWonderland.Business.MVP.Animals.Args;
+using PetsWonderland.Business.MVP.Animals.Contracts;
+using PetsWonderland.Business.MVP.Animals.Views;
 using PetsWonderland.Business.Services.Contracts;
 using WebFormsMvp;
 
-namespace PetsWonderland.Business.MVP.Presenters
+namespace PetsWonderland.Business.MVP.Animals
 {
 	public class AnimalPresenter : Presenter<IAnimalView>, IAnimalPresenter
 	{
-	    private readonly IAnimalService animalService;
+		private readonly IAnimalService animalService;
 
 		public AnimalPresenter(IAnimalView view, IAnimalService animalService)
 			: base(view)
@@ -21,17 +21,17 @@ namespace PetsWonderland.Business.MVP.Presenters
 			Guard.WhenArgument(view, "View is null!").IsNull().Throw();
 			Guard.WhenArgument(animalService, "AnimalService is null!").IsNull().Throw();
 
-		    this.animalService = animalService;
+			this.animalService = animalService;
 
-            View.Finding += Finding;
-            View.GetAll += GetAllAnimals;
-            View.Model.Animals = new List<Animal>();
-        }	
+			View.Finding += Finding;
+			View.GetAll += GetAllAnimals;
+			View.Model.Animals = new List<Animal>();
+		}
 
 		public void GetAllAnimals(object sender, GetAllAnimalsArgs e)
 		{
 			var allAnimals = this.animalService.GetAllAnimals().ToList();
-           
+
 			View.Model.Animals = allAnimals;
 			View.Model.ShowResults = true;
 		}

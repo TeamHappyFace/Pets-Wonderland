@@ -1,9 +1,9 @@
 ﻿using System;
-using PetsWonderland.Business.MVP.Args;
-using PetsWonderland.Business.MVP.Models;
+using PetsWonderland.Business.MVP.Animals.Args;
+using PetsWonderland.Business.MVP.Animals.ViewModels;
 using WebFormsMvp;
 
-namespace PetsWonderland.Business.MVP.Views.Contracts
+namespace PetsWonderland.Business.MVP.Animals.Views
 {
 	public interface IAnimalView : IView<AnimalViewModel>
 	{

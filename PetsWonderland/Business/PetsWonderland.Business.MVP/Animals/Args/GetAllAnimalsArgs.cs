@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Models.Animals;
 
-namespace PetsWonderland.Business.MVP.Args
+namespace PetsWonderland.Business.MVP.Animals.Args
 {
 	public class GetAllAnimalsArgs : EventArgs
 	{

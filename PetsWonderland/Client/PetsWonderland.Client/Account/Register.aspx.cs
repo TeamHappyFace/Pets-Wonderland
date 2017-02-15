@@ -3,10 +3,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using PetsWonderland.Business.Identity;
-using PetsWonderland.Business.MVP.Args;
-using PetsWonderland.Business.MVP.Models;
-using PetsWonderland.Business.MVP.Presenters;
-using PetsWonderland.Business.MVP.Views.Contracts;
+using PetsWonderland.Business.MVP.Identity.Registration;
+using PetsWonderland.Business.MVP.Identity.Registration.Args;
+using PetsWonderland.Business.MVP.Identity.Registration.ViewModels;
+using PetsWonderland.Business.MVP.Identity.Registration.Views;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
@@ -17,7 +17,7 @@ namespace PetsWonderland.Client.Account
 	{
 		public event EventHandler<EventArgs> EventBindPageData;
 		public event EventHandler<RegistrationEventArgs> EventRegisterUser;
-		
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!Page.IsPostBack)
@@ -32,7 +32,7 @@ namespace PetsWonderland.Client.Account
 		}
 
 		protected void CreateUser_Click(object sender, EventArgs e)
-        {
+		{
 			var owinCtx = Context.GetOwinContext();
 			var selectedRole = this.UserType.SelectedItem.Value;
 
@@ -47,7 +47,7 @@ namespace PetsWonderland.Client.Account
 				Password = this.Password.Text,
 				ConfirmedPassword = this.ConfirmPassword.Text
 			};
-			
+
 			EventRegisterUser(this, eventArgs);
 
 			var result = this.Model.Result;
