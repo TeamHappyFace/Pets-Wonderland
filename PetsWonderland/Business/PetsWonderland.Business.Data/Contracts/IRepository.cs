@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace PetsWonderland.Business.Data.Contracts
 {
@@ -12,7 +14,9 @@ namespace PetsWonderland.Business.Data.Contracts
 
         T GetByName(object name);
 
-		void Add(T entity);
+        T GetFirst(Expression<Func<T, bool>> filter);
+
+        void Add(T entity);
 
         void Update(T entity);
 

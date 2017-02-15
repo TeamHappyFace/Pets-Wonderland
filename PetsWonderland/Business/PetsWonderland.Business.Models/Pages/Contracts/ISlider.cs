@@ -10,7 +10,7 @@ namespace PetsWonderland.Business.Models.Pages.Contracts
 
         string Position { get; set; }
 
-        ICollection<ISlide> Slides { get; set; }
+        ICollection<Slide> Slides { get; set; }
 
         bool IsDeleted { get; set; }
     }

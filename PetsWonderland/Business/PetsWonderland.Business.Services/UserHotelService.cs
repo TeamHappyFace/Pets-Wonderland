@@ -23,11 +23,11 @@ namespace PetsWonderland.Business.Services
 		public void AddUserHotel(UserHotel userHotelToAdd)
 		{
 			Guard.WhenArgument(userHotelToAdd, "User hotel to add is null!").IsNull().Throw();
-
+            
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.userHotelRepository.Add(userHotelToAdd);
-				this.unitOfWork.SaveChanges();
+			    unitOfWork.SaveChanges();
 			}
 		}
 

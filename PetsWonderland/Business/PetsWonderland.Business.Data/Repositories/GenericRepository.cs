@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 
@@ -56,7 +57,13 @@ namespace PetsWonderland.Business.Data.Repositories
 			return this.dbSet.Find(name);
 		}
 
-		public virtual void Add(T entity)
+        public T GetFirst(Expression<Func<T, bool>> filter)
+        {
+            var foundEntity = this.DbSet.FirstOrDefault(filter);
+            return foundEntity;
+        }
+
+        public virtual void Add(T entity)
         {
             var entry = this.context.Entry(entity);
             if (entry.State != EntityState.Detached)
@@ -108,6 +115,6 @@ namespace PetsWonderland.Business.Data.Repositories
         {
             var entry = this.context.Entry(entity);
             entry.State = EntityState.Detached;
-        }
-	}
+        }        
+    }
 }

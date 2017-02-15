@@ -15,13 +15,18 @@ namespace PetsWonderland.Client.PageControls.Homepage
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            if (!IsPostBack)
             {
                 var sliderDataEventArgs = new GetSliderDataArgs("homepage");
+                this.GetSliderData?.Invoke(this, sliderDataEventArgs);
 
-                var onGetSliderData = this.GetSliderData;
-                onGetSliderData?.Invoke(this, sliderDataEventArgs);
+                if (this.Model.SliderData != null)
+                {
+                    this.SliderRepeater.DataSource = this.Model.SliderData.Slides;
+                    this.SliderRepeater.DataBind();
+                }                
             }
+           
         }
     }
 }

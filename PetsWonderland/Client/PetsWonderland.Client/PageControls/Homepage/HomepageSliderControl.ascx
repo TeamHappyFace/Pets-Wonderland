@@ -3,6 +3,18 @@
             CodeBehind="HomepageSliderControl.ascx.cs" 
             Inherits="PetsWonderland.Client.PageControls.Homepage.HomepageSliderControl" %>
 
+<div>
+   
+    <asp:Repeater ID="SliderRepeater" runat="server" ItemType="PetsWonderland.Business.Models.Pages.Slide">
+        <ItemTemplate>
+            <div><%#: Eval("Title") %></div>
+            <div><%#: Eval("Caption") %></div>
+            <div><%#: Eval("Image") %></div>
+        </ItemTemplate>
+    </asp:Repeater>
+     
+</div>
+
 <section id="homepage-slider">
     <div class="tp-banner-container">
     <div class="tp-banner">
