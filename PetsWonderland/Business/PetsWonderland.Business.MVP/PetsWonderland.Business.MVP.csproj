@@ -97,29 +97,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Args\AddHotelRequestArgs.cs" />
-    <Compile Include="Args\GetAllHotelRequestsArgs.cs" />
-    <Compile Include="Args\RegistrationEventArgs.cs" />
     <Compile Include="Content\Slider\ViewModels\SliderViewModel.cs" />
     <Compile Include="Content\Slider\Views\ISliderView.cs" />
+    <Compile Include="Identity\Registration\Args\RegistrationEventArgs.cs" />
+    <Compile Include="Identity\Registration\Contracts\IRegistrationPresenter.cs" />
+    <Compile Include="Identity\Registration\RegistrationPresenter.cs" />
+    <Compile Include="Identity\Registration\ViewModels\RegistrationModel.cs" />
+    <Compile Include="Identity\Registration\Views\IRegistrationView.cs" />
     <Compile Include="Models\AnimalViewModel.cs" />
-    <Compile Include="Models\HotelRegistrationRequestModel.cs" />
-    <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Presenters\AnimalPresenter.cs" />
     <Compile Include="Content\Slider\Args\GetSliderDataArgs.cs" />
     <Compile Include="Content\Slider\Contracts\ISliderPresenter.cs" />
     <Compile Include="Content\Slider\SliderPresenter.cs" />
     <Compile Include="Presenters\Contracts\IAnimalPresenter.cs" />
-    <Compile Include="Presenters\Contracts\IHotelRegistrationRequestPresenter.cs" />
-    <Compile Include="Presenters\Contracts\IRegistrationPresenter.cs" />
-    <Compile Include="Presenters\HotelRegistrationRequestPresenter.cs" />
-    <Compile Include="Presenters\RegistrationPresenter.cs" />
+    <Compile Include="Requests\HotelRegistrationRequest\Args\AddHotelRequestArgs.cs" />
+    <Compile Include="Requests\HotelRegistrationRequest\Args\GetAllHotelRequestsArgs.cs" />
+    <Compile Include="Requests\HotelRegistrationRequest\Contracts\IHotelRegistrationRequestPresenter.cs" />
+    <Compile Include="Requests\HotelRegistrationRequest\HotelRegistrationRequestPresenter.cs" />
+    <Compile Include="Requests\HotelRegistrationRequest\ViewModels\HotelRegistrationRequestModel.cs" />
+    <Compile Include="Requests\HotelRegistrationRequest\Views\IHotelRegistrationRequestView.cs" />
     <Compile Include="Views\Contracts\IAnimalView.cs" />
     <Compile Include="Args\FindAnimalArgs.cs" />
     <Compile Include="Args\GetAllAnimalsArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Contracts\IHotelRegistrationRequestView.cs" />
-    <Compile Include="Views\Contracts\IRegistrationView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -142,6 +142,9 @@
       <Project>{88a839d2-5bf3-443b-95f3-7c088542cc15}</Project>
       <Name>PetsWonderland.Business.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Animals\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

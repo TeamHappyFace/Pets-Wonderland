@@ -5,7 +5,9 @@ namespace PetsWonderland.Business.Models.Users.Contracts
 {
     public interface IAdmin
     {
-        ICollection<UserHotelRegistrationRequest> UserHotelRegistrationRequests { get; set; }
+		string Id { get; set; }
+
+		ICollection<UserHotelRegistrationRequest> UserHotelRegistrationRequests { get; set; }
 
         bool IsDeleted { get; set; }
     }

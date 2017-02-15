@@ -3,10 +3,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using PetsWonderland.Business.Identity;
-using PetsWonderland.Business.MVP.Args;
-using PetsWonderland.Business.MVP.Models;
-using PetsWonderland.Business.MVP.Presenters;
-using PetsWonderland.Business.MVP.Views.Contracts;
+using PetsWonderland.Business.MVP.Identity.Registration;
+using PetsWonderland.Business.MVP.Identity.Registration.Args;
+using PetsWonderland.Business.MVP.Identity.Registration.ViewModels;
+using PetsWonderland.Business.MVP.Identity.Registration.Views;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 

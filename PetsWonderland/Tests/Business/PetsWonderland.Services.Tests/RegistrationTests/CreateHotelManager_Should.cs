@@ -9,35 +9,11 @@ using PetsWonderland.Business.Services;
 
 namespace PetsWonderland.Services.Tests.RegistrationTests
 {
-    [TestFixture]
-    public class CreateRegularUser_Should
-    {        
-        [Test]
-        public void ThrowException_WhenRegularUserIsInvalid()
-        {
-            //Arange
-            var mockedRoleRepository = new Mock<IRepository<ApplicationRole>>();
-            var mockedUserRepository = new Mock<IRepository<RegularUser>>();
-            var mockedHotelManagerRepository = new Mock<IRepository<HotelManager>>();
-			var mockedAdminRepository = new Mock<IRepository<Admin>>();
-			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-
-            var registrationService = new RegistrationService(
-                mockedRoleRepository.Object,
-                mockedUserRepository.Object,
-				mockedAdminRepository.Object,
-                mockedHotelManagerRepository.Object,
-                mockedUnitOfWork.Object
-            );
-
-            Mock<RegularUser> userToAdd = null;
-
-            //Act, Assert
-            Assert.Throws<NullReferenceException>(() => registrationService.CreateRegularUser(userToAdd.Object.Id));
-        }
-
+	[TestFixture]
+	public class CreateHotelManager_Should
+	{
 		[Test]
-		public void InvokeSaveChanges_WhenRegularUserIsValid()
+		public void ThrowException_WhenHotelManagerIsInvalid()
 		{
 			//Arange
 			var mockedRoleRepository = new Mock<IRepository<ApplicationRole>>();
@@ -53,11 +29,35 @@ namespace PetsWonderland.Services.Tests.RegistrationTests
 				mockedHotelManagerRepository.Object,
 				mockedUnitOfWork.Object
 			);
-			
+
+			Mock<HotelManager> userToAdd = null;
+
+			//Act, Assert
+			Assert.Throws<NullReferenceException>(() => registrationService.CreateHotelManager(userToAdd.Object.Id));
+		}
+
+		[Test]
+		public void InvokeSaveChanges_WhenHotelManagerIsValid()
+		{
+			//Arange
+			var mockedRoleRepository = new Mock<IRepository<ApplicationRole>>();
+			var mockedUserRepository = new Mock<IRepository<RegularUser>>();
+			var mockedHotelManagerRepository = new Mock<IRepository<HotelManager>>();
+			var mockedAdminRepository = new Mock<IRepository<Admin>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+
+			var registrationService = new RegistrationService(
+				mockedRoleRepository.Object,
+				mockedUserRepository.Object,
+				mockedAdminRepository.Object,
+				mockedHotelManagerRepository.Object,
+				mockedUnitOfWork.Object
+			);
+
 			//Act
-			var userToAdd = new Mock<IRegularUser>() {  Name = "Ivan" };
+			var userToAdd = new Mock<IHotelManager>() { Name = "Ivan" };
 			userToAdd.Setup(user => user.Id).Returns("a");
-			registrationService.CreateRegularUser(userToAdd.Object.Id);
+			registrationService.CreateHotelManager(userToAdd.Object.Id);
 
 			//Assert
 			mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);

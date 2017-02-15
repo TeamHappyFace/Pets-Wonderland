@@ -16,11 +16,10 @@ namespace PetsWonderland.Business.Models.Requests
 		public string HotelManagerId { get; set; }
 		public virtual HotelManager HotelManager { get; set; }
 
-		public int? HotelId { get; set; }
-		public virtual Hotel Hotel { get; set; }
-
 		public bool IsAccepted { get; set; }
 
 		public bool IsDeleted { get; set; }
+
+		public string Description { get; set; }
 	}
 }

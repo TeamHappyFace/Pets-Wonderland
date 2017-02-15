@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Models.Requests;
 
-namespace PetsWonderland.Business.MVP.Args
+namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Args
 {
 	public class GetAllHotelRequestsArgs : EventArgs
 	{

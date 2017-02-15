@@ -1,7 +1,7 @@
 ﻿using System;
-using PetsWonderland.Business.MVP.Args;
+using PetsWonderland.Business.MVP.Identity.Registration.Args;
 
-namespace PetsWonderland.Business.MVP.Presenters.Contracts
+namespace PetsWonderland.Business.MVP.Identity.Registration.Contracts
 {
 	public interface IRegistrationPresenter
 	{

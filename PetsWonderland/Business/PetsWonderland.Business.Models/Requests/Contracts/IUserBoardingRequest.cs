@@ -15,14 +15,6 @@ namespace PetsWonderland.Business.Models.Requests.Contracts
 
         RegularUser User { get; set; }
 
-        int? HotelId { get; set; }
-
-        Hotel Hotel { get; set; }
-
-        int? UserAnimalId { get; set; }
-
-        UserAnimal UserAnimal { get; set; }
-
         bool IsAccepted { get; set; }
 
         bool IsDeleted { get; set; }

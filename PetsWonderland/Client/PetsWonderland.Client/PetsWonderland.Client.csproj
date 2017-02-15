@@ -252,6 +252,7 @@
     <Content Include="Content\External\Bootstrap\bootstrap.css" />
     <Content Include="Content\External\Bootstrap\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="ErrorPages\400.html" />
     <Content Include="ErrorPages\404.aspx" />
     <Content Include="ErrorPages\DefaultErrorPage.aspx" />
     <Content Include="fonts\FontAwesome\fontawesome-webfont.svg" />
