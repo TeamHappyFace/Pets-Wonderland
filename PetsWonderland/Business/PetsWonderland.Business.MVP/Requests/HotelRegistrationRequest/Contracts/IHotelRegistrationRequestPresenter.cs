@@ -1,6 +1,6 @@
-﻿using PetsWonderland.Business.MVP.Args;
+﻿using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Args;
 
-namespace PetsWonderland.Business.MVP.Presenters.Contracts
+namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Contracts
 {
 	public interface IHotelRegistrationRequestPresenter
 	{

@@ -17,12 +17,6 @@ namespace PetsWonderland.Business.Models.Requests
 		public string UserId { get; set; }
 		public virtual RegularUser User { get; set; }
 
-		public int? HotelId { get; set; }
-		public virtual Hotel Hotel { get; set; }
-
-		public int? UserAnimalId { get; set; }
-		public virtual UserAnimal UserAnimal { get; set; }
-
 		public bool IsAccepted { get; set; }
 
 		public bool IsDeleted { get; set; }
