@@ -14,6 +14,10 @@ namespace PetsWonderland.Business.Models.Requests.Contracts
 
         HotelManager HotelManager { get; set; }
 
+        int? HotelId { get; set; }
+
+        Hotel Hotel { get; set; }
+
         bool IsAccepted { get; set; }
 
         bool IsDeleted { get; set; }

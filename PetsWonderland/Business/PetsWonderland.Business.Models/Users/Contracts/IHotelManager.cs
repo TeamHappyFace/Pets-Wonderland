@@ -6,9 +6,7 @@ namespace PetsWonderland.Business.Models.Users.Contracts
 {
     public interface IHotelManager
     {
-		string Id { get; set; }
-
-		ICollection<Hotel> Hotels { get; set; }
+        ICollection<Hotel> Hotels { get; set; }
 
         ICollection<UserBoardingRequest> UserBoardingRequests { get; set; }
 

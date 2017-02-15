@@ -113,8 +113,6 @@
     <Compile Include="HotelTests\GetHotelLocation_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationTests\Constructor_Should.cs" />
-    <Compile Include="RegistrationTests\CreateAdmin_Should.cs" />
-    <Compile Include="RegistrationTests\CreateHotelManager_Should.cs" />
     <Compile Include="RegistrationTests\CreateRegularUser_Should.cs" />
     <Compile Include="RegistrationTests\GetAll_Should.cs" />
     <Compile Include="UserHotelTests\AddUserHotel_Should.cs" />

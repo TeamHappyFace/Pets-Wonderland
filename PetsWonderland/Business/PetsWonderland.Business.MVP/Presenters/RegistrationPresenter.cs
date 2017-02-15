@@ -4,13 +4,13 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using PetsWonderland.Business.Identity;
 using PetsWonderland.Business.Models.Users;
-using PetsWonderland.Business.MVP.Identity.Registration.Args;
-using PetsWonderland.Business.MVP.Identity.Registration.Contracts;
-using PetsWonderland.Business.MVP.Identity.Registration.Views;
+using PetsWonderland.Business.MVP.Args;
+using PetsWonderland.Business.MVP.Presenters.Contracts;
+using PetsWonderland.Business.MVP.Views.Contracts;
 using PetsWonderland.Business.Services.Contracts;
 using WebFormsMvp;
 
-namespace PetsWonderland.Business.MVP.Identity.Registration
+namespace PetsWonderland.Business.MVP.Presenters
 {
 	public class RegistrationPresenter : Presenter<IRegistrationView>, IRegistrationPresenter
 	{

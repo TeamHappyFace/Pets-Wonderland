@@ -1,22 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using PetsWonderland.Business.Identity;
+using System.Web.UI.WebControls;
+using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.Models.Requests;
-using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest;
-using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Args;
-using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.ViewModels;
-using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Views;
+using PetsWonderland.Business.MVP.Args;
+using PetsWonderland.Business.Services;
 using WebFormsMvp;
-using WebFormsMvp.Web;
 
 namespace PetsWonderland.Client.Pages.Requests
 {
-	[PresenterBinding(typeof(HotelRegistrationRequestPresenter))]
-	public partial class HotelRequest : MvpPage<HotelRegistrationRequestModel>, IHotelRegistrationRequestView
+	[PresenterBinding(typeof(HotelRegistrationRequestService))]
+	public partial class HotelRequest : Page
 	{
-		public event EventHandler<AddHotelRequestArgs> AddHotelRegistrationRequest;
+		event EventHandler<AddHotelRequestArgs> EventAddHotelRegistrationRequest;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -25,24 +24,31 @@ namespace PetsWonderland.Client.Pages.Requests
 
 		public void CreateUserRequest_Click(object sender, EventArgs e)
 		{
-			if (Page.IsValid)
+			var currentHotelManager = this.User.Identity.Name;
+
+			var currentLocation = new HotelLocation()
 			{
-				var currentHotelManagerId = User.Identity.GetUserId();
+				Address = this.Location.ToString()
+			};
 
-				var newHotelRegistrationRequest = new UserHotelRegistrationRequest()
-				{
-					HotelManagerId=currentHotelManagerId,
-					Description = this.Description.Text, 
-					DateOfRequest = DateTime.Now,
-					IsAccepted = false
-				};
+			var currentHotel = new Hotel()
+			{
+				Name = this.HotelName.ToString(),
+				Location = currentLocation,
+				Description = this.Description.ToString()
+			};
 
-				var hotelRegistrationRequestArgs = new AddHotelRequestArgs(newHotelRegistrationRequest);
-				this.AddHotelRegistrationRequest(this, hotelRegistrationRequestArgs);
+			var newHotelRegistrationRequest = new UserHotelRegistrationRequest()
+			{
+				Hotel = currentHotel,
+				DateOfRequest = DateTime.Now,
+				IsAccepted = false
+			};
 
-				UploadImage();
-				IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-			}
+			var hotelRegistrationRequestArgs = new AddHotelRequestArgs(newHotelRegistrationRequest);
+			this.EventAddHotelRegistrationRequest.Invoke(sender, hotelRegistrationRequestArgs);
+
+			UploadImage();
 		}
 
 		private void UploadImage()

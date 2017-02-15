@@ -2,7 +2,7 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace PetsWonderland.Business.MVP.Identity.Registration.ViewModels
+namespace PetsWonderland.Business.MVP.Models
 {
 	public class RegistrationModel
 	{

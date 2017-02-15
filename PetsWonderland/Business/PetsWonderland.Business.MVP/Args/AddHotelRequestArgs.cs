@@ -2,7 +2,7 @@
 using Bytes2you.Validation;
 using PetsWonderland.Business.Models.Requests;
 
-namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Args
+namespace PetsWonderland.Business.MVP.Args
 {
 	public class AddHotelRequestArgs : EventArgs
 	{

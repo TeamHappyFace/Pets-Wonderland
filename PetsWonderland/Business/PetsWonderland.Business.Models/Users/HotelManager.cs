@@ -11,6 +11,7 @@ namespace PetsWonderland.Business.Models.Users
 	{
 		[Key, ForeignKey("UserProfile")]
 		public string Id { get; set; }
+
 		public virtual UserProfile UserProfile { get; set; }
 
 		private ICollection<Hotel> hotels;

@@ -1,9 +1,9 @@
 ﻿using System;
-using PetsWonderland.Business.MVP.Identity.Registration.Args;
-using PetsWonderland.Business.MVP.Identity.Registration.ViewModels;
+using PetsWonderland.Business.MVP.Args;
+using PetsWonderland.Business.MVP.Models;
 using WebFormsMvp;
 
-namespace PetsWonderland.Business.MVP.Identity.Registration.Views
+namespace PetsWonderland.Business.MVP.Views.Contracts
 {
 	public interface IRegistrationView : IView<RegistrationModel>
 	{

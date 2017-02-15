@@ -21,7 +21,7 @@ namespace PetsWonderland.Business.Models.Hotels
 		[MinLength(ValidationConstants.MinHotelDescription)]
 		[MaxLength(ValidationConstants.MaxHotelDescription)]
 		public string Description { get; set; }
-		
+
 		[Required]
 		public int? LocationId { get; set; }
 		public virtual HotelLocation Location { get; set; }

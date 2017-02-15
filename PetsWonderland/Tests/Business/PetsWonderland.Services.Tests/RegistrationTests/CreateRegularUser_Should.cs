@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Data.Contracts;
@@ -35,32 +40,5 @@ namespace PetsWonderland.Services.Tests.RegistrationTests
             //Act, Assert
             Assert.Throws<NullReferenceException>(() => registrationService.CreateRegularUser(userToAdd.Object.Id));
         }
-
-		[Test]
-		public void InvokeSaveChanges_WhenRegularUserIsValid()
-		{
-			//Arange
-			var mockedRoleRepository = new Mock<IRepository<ApplicationRole>>();
-			var mockedUserRepository = new Mock<IRepository<RegularUser>>();
-			var mockedHotelManagerRepository = new Mock<IRepository<HotelManager>>();
-			var mockedAdminRepository = new Mock<IRepository<Admin>>();
-			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-
-			var registrationService = new RegistrationService(
-				mockedRoleRepository.Object,
-				mockedUserRepository.Object,
-				mockedAdminRepository.Object,
-				mockedHotelManagerRepository.Object,
-				mockedUnitOfWork.Object
-			);
-			
-			//Act
-			var userToAdd = new Mock<IRegularUser>() {  Name = "Ivan" };
-			userToAdd.Setup(user => user.Id).Returns("a");
-			registrationService.CreateRegularUser(userToAdd.Object.Id);
-
-			//Assert
-			mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);
-		}
-	}
+    }
 }

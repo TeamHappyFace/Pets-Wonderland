@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Requests;
@@ -27,7 +28,7 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.hotelRequestRepository.Add(requestToAdd);
-				unitOfWork.SaveChanges();
+				this.unitOfWork.SaveChanges();
 			}
 		}
 
@@ -38,7 +39,7 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.hotelRequestRepository.Delete(requestToDelete);
-				unitOfWork.SaveChanges();
+				this.unitOfWork.SaveChanges();
 			}
 		}
 
@@ -49,7 +50,7 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.hotelRequestRepository.Delete(requestId);
-				unitOfWork.SaveChanges();
+				this.unitOfWork.SaveChanges();
 			}
 		}
 
@@ -70,7 +71,7 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				userHotelRegistrationRequest.IsAccepted = isAccepted;
-				unitOfWork.SaveChanges();
+				this.unitOfWork.SaveChanges();
 			}
 		}
 	}

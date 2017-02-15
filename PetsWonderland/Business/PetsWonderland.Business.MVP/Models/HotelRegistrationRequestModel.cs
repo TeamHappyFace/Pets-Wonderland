@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using PetsWonderland.Business.Models.Requests;
 
-namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.ViewModels
+namespace PetsWonderland.Business.MVP.Models
 {
 	public class HotelRegistrationRequestModel
 	{
