@@ -1,9 +1,12 @@
-﻿using PetsWonderland.Business.Models.Pages.Contracts;
+﻿using System.Collections.Generic;
+using PetsWonderland.Business.Models.Pages.Contracts;
 
 namespace PetsWonderland.Business.Services.Contracts
 {
     public interface IPageContentService
     {
         ISlider GetSliderByPosition(string position);
+
+        IEnumerable<ISlider> GetAllSliders();
     }
 }

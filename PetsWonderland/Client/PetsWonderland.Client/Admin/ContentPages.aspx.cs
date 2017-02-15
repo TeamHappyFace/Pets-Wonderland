@@ -5,13 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PetsWonderland.Client
+namespace PetsWonderland.Client.Admin
 {
-    public partial class Contact : Page
+    public partial class ContentPages : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

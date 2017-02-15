@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#"
-        MasterPageFile="~/Admin/Admin.Master"
+         MasterPageFile="~/Admin/Admin.Master"
          AutoEventWireup="true"
          CodeBehind="Dashboard.aspx.cs"
          Inherits="PetsWonderland.Client.Admin.Dashboard" %>
