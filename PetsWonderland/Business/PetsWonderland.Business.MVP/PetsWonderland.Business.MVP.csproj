@@ -85,6 +85,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -97,17 +98,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\CreateSlider\Contracts\ICreateSliderPresenter.cs" />
+    <Compile Include="Admin\CreateSlider\CreateSliderPresenter.cs" />
+    <Compile Include="Admin\CreateSlider\ViewModels\CreateSliderViewModel.cs" />
+    <Compile Include="Admin\CreateSlider\Views\ICreateSliderView.cs" />
     <Compile Include="Animals\AnimalPresenter.cs" />
     <Compile Include="Animals\Args\FindAnimalArgs.cs" />
     <Compile Include="Animals\Args\GetAllAnimalsArgs.cs" />
     <Compile Include="Animals\Contracts\IAnimalPresenter.cs" />
     <Compile Include="Animals\ViewModels\AnimalViewModel.cs" />
     <Compile Include="Animals\Views\IAnimalView.cs" />
-    <Compile Include="Content\ContentComponent\Args\GetAllSlidersArgs.cs" />
-    <Compile Include="Content\ContentComponent\ContentComponentPresenter.cs" />
-    <Compile Include="Content\ContentComponent\Contracts\IContentComponentPresenter.cs" />
-    <Compile Include="Content\ContentComponent\ViewModels\ContentComponentViewModel.cs" />
-    <Compile Include="Content\ContentComponent\Views\IContentComponentView.cs" />
+    <Compile Include="Admin\ListSlider\Args\GetAllSlidersArgs.cs" />
+    <Compile Include="Admin\ListSlider\ListSlidersPresenter.cs" />
+    <Compile Include="Admin\ListSlider\Contracts\IListSlidersPresenter.cs" />
+    <Compile Include="Admin\ListSlider\ViewModels\ListSlidersViewModel.cs" />
+    <Compile Include="Admin\ListSlider\Views\IListSlidersView.cs" />
+    <Compile Include="Admin\CreateSlider\Args\CreateSliderArgs.cs" />
     <Compile Include="Content\Slider\ViewModels\SliderViewModel.cs" />
     <Compile Include="Content\Slider\Views\ISliderView.cs" />
     <Compile Include="Content\Slider\Args\GetSliderDataArgs.cs" />

@@ -43,7 +43,8 @@
                             Text="Create slider"
                             ID="CreateSliderBtn"
                             CssClass="btn btn-primary"
-                            OnClick="CreateSliderBtn_Click" />                      
+                            OnClick="CreateSliderBtn_Click">
+                        </asp:Button>                      
                         <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
                     </div>
                 </div>

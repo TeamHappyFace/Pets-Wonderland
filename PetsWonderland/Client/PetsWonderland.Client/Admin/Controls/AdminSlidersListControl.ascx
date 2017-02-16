@@ -7,7 +7,7 @@
     ID="btnNewSlider"  
     runat="server" 
     CssClass="btn btn-primary btn-simple btn-xs"
-    OnClientClick="$('#newSliderModal').appendTo('body').modal();return false;">
+    OnClientClick="$('#newSliderModal').appendTo('#aspnetForm').modal();return false;">
     <i class="fa fa-plus-square-o"></i>
 </asp:LinkButton>
 
@@ -30,7 +30,7 @@
                          <asp:LinkButton ID="btnEditSlider"  
                                      runat="server" 
                                      CssClass="btn btn-primary btn-simple btn-xs"                            
-                                     OnClientClick="$('#editSliderModal').appendTo('body').modal();return false;">
+                                     OnClientClick="$('#editSliderModal').appendTo('#aspnerForm').modal();return false;">
                              <i class="fa fa-pencil"></i>
                          </asp:LinkButton>
                          <asp:LinkButton ID="btnDeleteSlider"  

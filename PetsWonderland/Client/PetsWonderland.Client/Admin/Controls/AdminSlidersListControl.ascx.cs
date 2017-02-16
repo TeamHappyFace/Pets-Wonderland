@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Linq;
-using System.Web.UI;
-using PetsWonderland.Business.MVP.Content.ContentComponent;
-using PetsWonderland.Business.MVP.Content.ContentComponent.Args;
-using PetsWonderland.Business.MVP.Content.ContentComponent.ViewModels;
-using PetsWonderland.Business.MVP.Content.ContentComponent.Views;
+using PetsWonderland.Business.MVP.Admin.ListSlider;
+using PetsWonderland.Business.MVP.Admin.ListSlider.Args;
+using PetsWonderland.Business.MVP.Admin.ListSlider.ViewModels;
+using PetsWonderland.Business.MVP.Admin.ListSlider.Views;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
 namespace PetsWonderland.Client.Admin.Controls
 {
-    [PresenterBinding(typeof(ContentComponentPresenter))]
-    public partial class AdminSlidersListControl : MvpUserControl<ContentComponentViewModel>, IContentComponentView
+    [PresenterBinding(typeof(ListSlidersPresenter))]
+    public partial class AdminSlidersListControl : MvpUserControl<ListSlidersViewModel>, IListSlidersView
     {
         public event EventHandler<GetAllSlidersArgs> GetSlidersList;
 

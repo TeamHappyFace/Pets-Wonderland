@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PetsWonderland.Business.MVP.Content.ContentComponent.Args
+namespace PetsWonderland.Business.MVP.Admin.ListSlider.Args
 {
     public class GetAllSlidersArgs : EventArgs
     {

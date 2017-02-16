@@ -2,9 +2,9 @@
 using PetsWonderland.Business.Models.Hotels.Contracts;
 using PetsWonderland.Business.Models.Pages.Contracts;
 
-namespace PetsWonderland.Business.MVP.Content.ContentComponent.ViewModels
+namespace PetsWonderland.Business.MVP.Admin.ListSlider.ViewModels
 {
-    public class ContentComponentViewModel
+    public class ListSlidersViewModel
     {
         public IEnumerable<ISlider> AllSliders { get; set; }
 
