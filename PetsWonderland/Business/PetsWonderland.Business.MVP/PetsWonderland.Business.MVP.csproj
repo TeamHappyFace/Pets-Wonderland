@@ -113,6 +113,11 @@
     <Compile Include="Content\Slider\Args\GetSliderDataArgs.cs" />
     <Compile Include="Content\Slider\Contracts\ISliderPresenter.cs" />
     <Compile Include="Content\Slider\SliderPresenter.cs" />
+    <Compile Include="Identity\Login\Args\LoginEventArgs.cs" />
+    <Compile Include="Identity\Login\Contracts\ILoginPresenter.cs" />
+    <Compile Include="Identity\Login\LoginPresenter.cs" />
+    <Compile Include="Identity\Login\ViewModels\LoginModel.cs" />
+    <Compile Include="Identity\Login\Views\ILoginView.cs" />
     <Compile Include="Identity\Registration\Args\RegistrationEventArgs.cs" />
     <Compile Include="Identity\Registration\Contracts\IRegistrationPresenter.cs" />
     <Compile Include="Identity\Registration\RegistrationPresenter.cs" />

@@ -48,7 +48,7 @@ namespace PetsWonderland.Client.Account
 				ConfirmedPassword = this.ConfirmPassword.Text
 			};
 
-			EventRegisterUser(this, eventArgs);
+			this.EventRegisterUser(this, eventArgs);
 
 			var result = this.Model.Result;
 

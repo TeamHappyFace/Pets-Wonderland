@@ -70,27 +70,27 @@ namespace PetsWonderland.Models.Tests.RequestsTests
             Assert.AreEqual(userHotelRegistrationRequest.HotelManager.Id, testManagerId);
         }
 
-        [TestCase(123)]
-        public void HotelId_ShouldGetAndSetDataCorrectly(int testHotelId)
-        {
-            // Arrange & Act
-            var userHotelRegistrationRequest = new UserHotelRegistrationRequest { HotelId = testHotelId };
+        //[TestCase(123)]
+        //public void HotelId_ShouldGetAndSetDataCorrectly(int testHotelId)
+        //{
+        //    // Arrange & Act
+        //    var userHotelRegistrationRequest = new UserHotelRegistrationRequest { HotelId = testHotelId };
 
-            //Assert
-            Assert.AreEqual(userHotelRegistrationRequest.HotelId, testHotelId);
-        }
+        //    //Assert
+        //    Assert.AreEqual(userHotelRegistrationRequest.HotelId, testHotelId);
+        //}
 
-        [TestCase("Doggies2")]
-        [TestCase("Doggies3")]
-        public void Hotel_ShouldGetAndSetDataCorrectly(string testHotelName)
-        {
-            // Arrange & Act         
-            var hotel = new Hotel { Name = testHotelName };
-            var userHotelRegistrationRequest = new UserHotelRegistrationRequest { Hotel = hotel };
+        //[TestCase("Doggies2")]
+        //[TestCase("Doggies3")]
+        //public void Hotel_ShouldGetAndSetDataCorrectly(string testHotelName)
+        //{
+        //    // Arrange & Act         
+        //    var hotel = new Hotel { Name = testHotelName };
+        //    var userHotelRegistrationRequest = new UserHotelRegistrationRequest { Hotel = hotel };
 
-            //Assert
-            Assert.AreEqual(userHotelRegistrationRequest.Hotel.Name, testHotelName);
-        }
+        //    //Assert
+        //    Assert.AreEqual(userHotelRegistrationRequest.Hotel.Name, testHotelName);
+        //}
            
         [TestCase(true)]
         [TestCase(false)]

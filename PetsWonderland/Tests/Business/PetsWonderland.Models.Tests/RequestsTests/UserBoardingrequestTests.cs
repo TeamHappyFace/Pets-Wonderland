@@ -71,50 +71,50 @@ namespace PetsWonderland.Models.Tests.RequestsTests
             Assert.AreEqual(userBoardingRequest.User.Id, testUserId);
         }
 
-        [TestCase(123)]
-        public void HotelId_ShouldGetAndSetDataCorrectly(int testHotelId)
-        {
-            // Arrange & Act
-            var userBoardingRequest = new UserBoardingRequest { HotelId = testHotelId };
+        //[TestCase(123)]
+        //public void HotelId_ShouldGetAndSetDataCorrectly(int testHotelId)
+        //{
+        //    // Arrange & Act
+        //    var userBoardingRequest = new UserBoardingRequest { HotelId = testHotelId };
 
-            //Assert
-            Assert.AreEqual(userBoardingRequest.HotelId, testHotelId);
-        }
+        //    //Assert
+        //    Assert.AreEqual(userBoardingRequest.HotelId, testHotelId);
+        //}
 
-        [TestCase("Doggies2")]
-        [TestCase("Doggies3")]
-        public void Hotel_ShouldGetAndSetDataCorrectly(string testHotelName)
-        {
-            // Arrange & Act         
-            var hotel = new Hotel { Name = testHotelName };
-            var userBoardingRequest = new UserBoardingRequest { Hotel = hotel };
+        //[TestCase("Doggies2")]
+        //[TestCase("Doggies3")]
+        //public void Hotel_ShouldGetAndSetDataCorrectly(string testHotelName)
+        //{
+        //    // Arrange & Act         
+        //    var hotel = new Hotel { Name = testHotelName };
+        //    var userBoardingRequest = new UserBoardingRequest { Hotel = hotel };
 
-            //Assert
-            Assert.AreEqual(userBoardingRequest.Hotel.Name, testHotelName);
-        }
+        //    //Assert
+        //    Assert.AreEqual(userBoardingRequest.Hotel.Name, testHotelName);
+        //}
 
-        [TestCase(123)]
-        [TestCase(323)]
-        public void UserAnimalId_ShouldGetAndSetDataCorrectly(int testAnimalId)
-        {
-            // Arrange & Act
-            var userBoardingRequest = new UserBoardingRequest { UserAnimalId = testAnimalId };
+        //[TestCase(123)]
+        //[TestCase(323)]
+        //public void UserAnimalId_ShouldGetAndSetDataCorrectly(int testAnimalId)
+        //{
+        //    // Arrange & Act
+        //    var userBoardingRequest = new UserBoardingRequest { UserAnimalId = testAnimalId };
 
-            //Assert
-            Assert.AreEqual(userBoardingRequest.UserAnimalId, testAnimalId);
-        }
+        //    //Assert
+        //    Assert.AreEqual(userBoardingRequest.UserAnimalId, testAnimalId);
+        //}
 
-        [TestCase(123)]
-        [TestCase(3545323)]
-        public void UserAnimal_ShouldGetAndSetDataCorrectly(int testAnimalId)
-        {
-            // Arrange & Act         
-            var animal = new UserAnimal { AnimalId = testAnimalId };
-            var userBoardingRequest = new UserBoardingRequest { UserAnimal = animal };
+        //[TestCase(123)]
+        //[TestCase(3545323)]
+        //public void UserAnimal_ShouldGetAndSetDataCorrectly(int testAnimalId)
+        //{
+        //    // Arrange & Act         
+        //    var animal = new UserAnimal { AnimalId = testAnimalId };
+        //    var userBoardingRequest = new UserBoardingRequest { UserAnimal = animal };
 
-            //Assert
-            Assert.AreEqual(userBoardingRequest.UserAnimal.AnimalId, testAnimalId);
-        }
+        //    //Assert
+        //    Assert.AreEqual(userBoardingRequest.UserAnimal.AnimalId, testAnimalId);
+        //}
 
         [TestCase(true)]
         [TestCase(false)]
