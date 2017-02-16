@@ -49,6 +49,9 @@
                     </div>
                 </div>
             </ContentTemplate>
+            <Triggers>
+                    <asp:PostBackTrigger ControlID="CreateSliderBtn" />
+            </Triggers>
         </asp:UpdatePanel>
     </div>
 </div>

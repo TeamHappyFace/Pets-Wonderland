@@ -20,6 +20,17 @@ namespace PetsWonderland.Client.Admin.Controls
 
         protected void CreateSliderBtn_Click(object sender, EventArgs e)
         {           
+            //Code display data
+            string sliderName = this.SliderName.Text;
+            string sliderPosition = this.SliderPostion.Text;
+
+            var sliderArgs = new CreateSliderArgs()
+            {
+                Name = sliderName,
+                Postition = sliderPosition
+            };
+
+            this.CreateSlider?.Invoke(this, sliderArgs);                           
         } 
     }
 }
