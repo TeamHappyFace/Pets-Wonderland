@@ -15,7 +15,7 @@ namespace PetsWonderland.Client.Admin.Controls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+  
         }
 
         protected void CreateSliderBtn_Click(object sender, EventArgs e)
@@ -30,7 +30,8 @@ namespace PetsWonderland.Client.Admin.Controls
                 Postition = sliderPosition
             };
 
-            this.CreateSlider?.Invoke(this, sliderArgs);                           
+            this.CreateSlider?.Invoke(this, sliderArgs);
+            Response.Redirect(Request.RawUrl);                 
         } 
     }
 }
