@@ -8,5 +8,9 @@ namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Views
 	public interface IHotelRegistrationRequestView : IView<HotelRegistrationRequestModel>
 	{
 		event EventHandler<AddHotelRequestArgs> AddHotelRegistrationRequest;
+
+		event EventHandler<DeleteHotelRequestArgs> DeleteHotelRegistrationRequest;
+
+		event EventHandler<GetAllHotelRequestsArgs> GetAllHotelRequests;
 	}
 }

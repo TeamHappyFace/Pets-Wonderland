@@ -16,6 +16,8 @@ namespace PetsWonderland.Client.Pages.Requests
 	public partial class HotelRequest : MvpPage<HotelRegistrationRequestModel>, IHotelRegistrationRequestView
 	{
 		public event EventHandler<AddHotelRequestArgs> AddHotelRegistrationRequest;
+		public event EventHandler<GetAllHotelRequestsArgs> GetAllHotelRequests;
+		public event EventHandler<DeleteHotelRequestArgs> DeleteHotelRegistrationRequest;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -30,14 +32,17 @@ namespace PetsWonderland.Client.Pages.Requests
 
 				var newHotelRegistrationRequest = new UserHotelRegistrationRequest()
 				{
+					HotelName = this.HotelName.Text,
+					HotelLocation = this.Location.Text,
+					HotelImageUrl = this.ImageUrl.Text,
 					HotelManagerId = currentHotelManagerId,
-					Description = this.Description.Text,
+					HotelDescription = this.Description.Text,
 					DateOfRequest = DateTime.Now,
 					IsAccepted = false
 				};
 
 				var hotelRegistrationRequestArgs = new AddHotelRequestArgs(newHotelRegistrationRequest);
-				this.AddHotelRegistrationRequest(this, hotelRegistrationRequestArgs);
+				this.AddHotelRegistrationRequest?.Invoke(this, hotelRegistrationRequestArgs);
 
 				UploadImage();
 				IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);

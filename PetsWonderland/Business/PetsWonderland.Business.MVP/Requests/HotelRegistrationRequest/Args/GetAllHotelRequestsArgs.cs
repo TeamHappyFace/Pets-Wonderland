@@ -7,9 +7,14 @@ namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Args
 {
 	public class GetAllHotelRequestsArgs : EventArgs
 	{
+		public GetAllHotelRequestsArgs()
+		{
+
+		}
+
 		public GetAllHotelRequestsArgs(IList<UserHotelRegistrationRequest> allHotelRequests)
 		{
-			Guard.WhenArgument(allHotelRequests, "All animals list is null!").IsNullOrEmpty().Throw();
+			Guard.WhenArgument(allHotelRequests, "All hotels list is null!").IsNullOrEmpty().Throw();
 
 			this.HotelRequests = allHotelRequests;
 		}

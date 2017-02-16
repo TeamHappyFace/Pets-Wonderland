@@ -125,6 +125,7 @@
     <Compile Include="Identity\Registration\Views\IRegistrationView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\HotelRegistrationRequest\Args\AddHotelRequestArgs.cs" />
+    <Compile Include="Requests\HotelRegistrationRequest\Args\DeleteHotelRequestArgs.cs" />
     <Compile Include="Requests\HotelRegistrationRequest\Args\GetAllHotelRequestsArgs.cs" />
     <Compile Include="Requests\HotelRegistrationRequest\Contracts\IHotelRegistrationRequestPresenter.cs" />
     <Compile Include="Requests\HotelRegistrationRequest\HotelRegistrationRequestPresenter.cs" />

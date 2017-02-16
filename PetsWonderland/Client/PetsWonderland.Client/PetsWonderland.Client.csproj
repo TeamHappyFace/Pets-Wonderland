@@ -239,8 +239,10 @@
     <Content Include="Admin\Controls\AdminNewSliderFormControl.ascx" />
     <Content Include="Admin\Controls\AdminSlidersListControl.ascx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\HotelRegistrations.aspx" />
     <Content Include="Content\Admin\admin.main.css" />
     <Content Include="Content\Admin\bootstrap.min.css" />
+    <Content Include="Content\Admin\hotelRegistrations.css" />
     <Content Include="Content\Admin\material-dashboard.css" />
     <Content Include="Content\External\RevSlider\extralayers.css" />
     <Content Include="Content\External\FontAwesome\font-awesome.css" />
@@ -590,6 +592,13 @@
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HotelRegistrations.aspx.cs">
+      <DependentUpon>HotelRegistrations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HotelRegistrations.aspx.designer.cs">
+      <DependentUpon>HotelRegistrations.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controls\AnimalControl.ascx.cs">
       <DependentUpon>AnimalControl.ascx</DependentUpon>

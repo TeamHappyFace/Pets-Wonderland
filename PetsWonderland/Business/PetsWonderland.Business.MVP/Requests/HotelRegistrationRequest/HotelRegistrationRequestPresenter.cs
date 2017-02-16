@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Models.Requests;
@@ -23,6 +24,8 @@ namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest
 			this.hotelRegistrationRequestService = hotelRegistrationRequestService;
 
 			this.View.AddHotelRegistrationRequest += AddHotelRegistrationRequest;
+			this.View.GetAllHotelRequests += GetAllHotelRegistrationRequests;
+			this.View.DeleteHotelRegistrationRequest += DeleteHotelRegistrationRequest;
 			this.View.Model.HotelRegistrationRequests = new List<UserHotelRegistrationRequest>();
 		}
 
@@ -31,6 +34,14 @@ namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest
 			this.hotelRegistrationRequestService.AddHotelRequest(e.HotelRequestToAdd);
 			this.View.Model.HotelRequestToAdd = hotelRegistrationRequestService.GetById(e.HotelRequestToAdd.Id);
 			this.View.Model.HotelRegistrationRequests.Add(e.HotelRequestToAdd);
+		}
+
+		public void DeleteHotelRegistrationRequest(object sender, DeleteHotelRequestArgs e)
+		{
+			this.hotelRegistrationRequestService.DeleteHotelRequestById(e.HotelRequestToDeleteId);
+
+			var request = this.View.Model.HotelRegistrationRequests.First(req => req.Id==e.HotelRequestToDeleteId);
+			this.View.Model.HotelRegistrationRequests.Remove(request);
 		}
 
 		public void GetAllHotelRegistrationRequests(object sender, GetAllHotelRequestsArgs e)

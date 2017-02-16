@@ -36,10 +36,7 @@ namespace PetsWonderland.Client
 		{
 			results.Visible = false;
 			GridView1.Visible = true;
-
-			var user = System.Web.HttpContext.Current.User;
-			Console.WriteLine(user.Identity.GetUserName());
-
+			
 			this.GetAll(this, new GetAllAnimalsArgs());
 		}
 	}

@@ -5,6 +5,9 @@ namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Contract
 	public interface IHotelRegistrationRequestPresenter
 	{
 		void GetAllHotelRegistrationRequests(object sender, GetAllHotelRequestsArgs e);
+
 		void AddHotelRegistrationRequest(object sender, AddHotelRequestArgs e);
+
+		void DeleteHotelRegistrationRequest(object sender, DeleteHotelRequestArgs e);
 	}
 }

@@ -61,7 +61,7 @@
 	                        </a>
 	                    </li>
 	                    <li>
-	                        <a href="user.html">
+	                        <a runat="server" href="~/Admin/HotelRegistrations.aspx">
 	                            <i class="fa fa-hotel"></i>
 	                            <p>Hotel registrations</p>
 	                        </a>
