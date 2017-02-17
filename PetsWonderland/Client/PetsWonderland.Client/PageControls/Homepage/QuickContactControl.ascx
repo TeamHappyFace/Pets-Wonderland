@@ -10,7 +10,7 @@
     </a>
     <div id="quick-contact-form">
         <h4>CONTACT US</h4>
-        <p>If yiu have any questions you can send us an email and we will get back to you as soon as possible.</p>
+        <p>If you have any questions you can send us an email and we will get back to you as soon as possible.</p>
         <form method="post">
             <div class="form-group">
                 <input type="text" required="" name="f_names" class="form-control" placeholder="Your Name"/>

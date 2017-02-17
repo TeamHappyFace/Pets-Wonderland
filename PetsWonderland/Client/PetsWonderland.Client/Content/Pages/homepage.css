@@ -169,6 +169,12 @@
     font-size: 22px;
 }
 
+.hp-hotels .hotels-list .grid-item .description > a > h4 {
+	text-align: center;
+    font-family: "Lobster";
+    color: #10b4ea;
+}
+
 .hp-hotels .hotels-list .grid-item .image > img {
     width: 100%;
     -webkit-transition: all .2s ease;

@@ -124,6 +124,11 @@
     <Compile Include="Hotels\AddHotel\Contracts\IAddHotelPresenter.cs" />
     <Compile Include="Hotels\AddHotel\ViewModels\AddHotelModel.cs" />
     <Compile Include="Hotels\AddHotel\Views\IAddHotelView.cs" />
+    <Compile Include="Hotels\GetAllHotels\Args\GetAllHotelsArgs.cs" />
+    <Compile Include="Hotels\GetAllHotels\Contracts\IGetAllHotelsPresenter.cs" />
+    <Compile Include="Hotels\GetAllHotels\GetAllHotelsPresenter.cs" />
+    <Compile Include="Hotels\GetAllHotels\ViewModels\GetAllHotelsModel.cs" />
+    <Compile Include="Hotels\GetAllHotels\Views\IGetAllHotelsView.cs" />
     <Compile Include="Identity\Login\Args\LoginEventArgs.cs" />
     <Compile Include="Identity\Login\Contracts\ILoginPresenter.cs" />
     <Compile Include="Identity\Login\LoginPresenter.cs" />

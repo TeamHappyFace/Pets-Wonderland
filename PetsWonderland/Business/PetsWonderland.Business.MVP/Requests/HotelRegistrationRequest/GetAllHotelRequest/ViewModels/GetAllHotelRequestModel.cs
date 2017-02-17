@@ -5,8 +5,6 @@ namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHo
 {
 	public class GetAllHotelRequestModel
 	{
-		public UserHotelRegistrationRequest HotelRequestToAdd { get; set; }
-
 		public IList<UserHotelRegistrationRequest> HotelRegistrationRequests { get; set; }
 	}
 }
