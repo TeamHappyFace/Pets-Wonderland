@@ -9,6 +9,14 @@ namespace PetsWonderland.Business.Models.Requests.Contracts
 
 		DateTime DateOfRequest { get; set; }
 
+		string HotelName { get; set; }
+
+		string HotelLocation { get; set; }
+
+		string HotelDescription { get; set; }
+
+		string HotelImageUrl { get; set; }
+
 		string HotelManagerId { get; set; }
 
 		HotelManager HotelManager { get; set; }

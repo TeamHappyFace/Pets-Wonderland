@@ -1,14 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
+using PetsWonderland.Business.Identity;
+using PetsWonderland.Business.Models.Requests;
+using PetsWonderland.Business.MVP.Requests.BoardingRequest.AddBoardingRequest;
+using PetsWonderland.Business.MVP.Requests.BoardingRequest.AddBoardingRequest.Args;
+using PetsWonderland.Business.MVP.Requests.BoardingRequest.AddBoardingRequest.ViewModels;
+using PetsWonderland.Business.MVP.Requests.BoardingRequest.AddBoardingRequest.Views;
+using WebFormsMvp;
+using WebFormsMvp.Web;
 
 namespace PetsWonderland.Client.Pages.Requests
 {
-	public partial class BoardingRequest : Page
+	[PresenterBinding(typeof(AddBoardingRequestPresenter))]
+	public partial class BoardingRequest : MvpPage<AddBoardingRequestModel>, IAddBoardingRequestView
 	{
+		public event EventHandler<AddBoardingRequestArgs> AddBoardingRequest;
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
@@ -16,7 +24,25 @@ namespace PetsWonderland.Client.Pages.Requests
 
 		public void CreateUserRequest_Click(object sender, EventArgs e)
 		{
-			UploadImage();
+			if (Page.IsValid)
+			{
+				var currentUserId = User.Identity.GetUserId();
+
+				var newBoardingRequest = new UserBoardingRequest()
+				{
+					PetName = this.PetName.Text,
+					Age = int.Parse(this.Age.Text),
+					DateOfRequest = DateTime.Now,
+					PetBreed = this.Breed.Text,
+					UserId = currentUserId			 
+				};
+
+				var boardingRequestArgs = new AddBoardingRequestArgs(newBoardingRequest);
+				this.AddBoardingRequest?.Invoke(this, boardingRequestArgs);
+
+				UploadImage();
+				IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+			}
 		}
 
 		private void UploadImage()

@@ -140,6 +140,11 @@
     <Compile Include="Identity\Registration\ViewModels\RegistrationModel.cs" />
     <Compile Include="Identity\Registration\Views\IRegistrationView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\BoardingRequest\AddBoardingRequest\AddBoardingRequestPresenter.cs" />
+    <Compile Include="Requests\BoardingRequest\AddBoardingRequest\Args\AddBoardingRequestArgs.cs" />
+    <Compile Include="Requests\BoardingRequest\AddBoardingRequest\Contracts\IAddBoardingRequestPresenter.cs" />
+    <Compile Include="Requests\BoardingRequest\AddBoardingRequest\ViewModels\AddBoardingRequestModel.cs" />
+    <Compile Include="Requests\BoardingRequest\AddBoardingRequest\Views\IAddBoardingRequestView.cs" />
     <Compile Include="Requests\HotelRegistrationRequest\AddHotelRequest\Args\AddHotelRequestArgs.cs" />
     <Compile Include="Requests\HotelRegistrationRequest\AddHotelRequest\Contracts\IAddHotelRequestPresenter.cs" />
     <Compile Include="Requests\HotelRegistrationRequest\AddHotelRequest\AddHotelRequestPresenter.cs" />

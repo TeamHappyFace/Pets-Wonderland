@@ -9,6 +9,12 @@ namespace PetsWonderland.Business.Models.Requests.Contracts
 
 		DateTime DateOfRequest { get; set; }
 
+		string PetName { get; set; }
+		
+		string PetBreed { get; set; }
+
+		int Age { get; set; }
+
 		string UserId { get; set; }
 
 		RegularUser User { get; set; }
