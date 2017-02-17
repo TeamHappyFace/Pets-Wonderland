@@ -9,6 +9,9 @@
 <asp:Content ID="HotelRegistrations" ContentPlaceHolderID="DashboardMainContent" runat="server">
 	<div class="title">
 		<h2>Hotel requests</h2>
-		<acc:AllHotelRequests runat="server"/>
+
+		<div>
+			<acc:AllHotelRequests runat="server"/>
+		</div>
 	</div>
 </asp:Content>

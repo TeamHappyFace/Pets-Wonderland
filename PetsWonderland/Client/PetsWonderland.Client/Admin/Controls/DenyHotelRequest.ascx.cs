@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHotelRequest;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHotelRequest.Args;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHotelRequest.ViewModels;
@@ -27,7 +22,7 @@ namespace PetsWonderland.Client.Admin.Controls
 
 		protected void OnDeny_Click(object sender, EventArgs e)
 		{
-			this.DeleteHotelRegistrationRequest?.Invoke(this, new DeleteHotelRequestArgs(RequestId));
+			//this.DeleteHotelRegistrationRequest?.Invoke(this, new DeleteHotelRequestArgs(this.RequestId));
 		}
 	}
 }

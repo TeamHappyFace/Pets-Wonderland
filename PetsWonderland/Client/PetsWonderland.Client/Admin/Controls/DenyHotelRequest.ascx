@@ -3,4 +3,4 @@
 	CodeBehind="DenyHotelRequest.ascx.cs" 
 	Inherits="PetsWonderland.Client.Admin.Controls.DenyHotelRequest" %>
 
-<asp:Button Text="Approve" runat="server"/>
+<asp:Button ID="DenyRequest" Text="Deny" runat="server" CommandName="Deny" OnClick="OnDeny_Click"/>

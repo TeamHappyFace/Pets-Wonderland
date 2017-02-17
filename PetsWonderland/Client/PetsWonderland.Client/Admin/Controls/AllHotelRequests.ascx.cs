@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web.UI.WebControls;
 using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHotelRequest;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHotelRequest.Args;
@@ -22,21 +20,11 @@ namespace PetsWonderland.Client.Admin.Controls
 			ListViewHotelRequests_GetData();
 		}
 
-		public IList<UserHotelRegistrationRequest> ListViewHotelRequests_GetData()
+		public IQueryable<UserHotelRegistrationRequest> ListViewHotelRequests_GetData()
 		{
 			this.GetAllHotelRequests?.Invoke(this, new GetAllHotelRequestsArgs());
 
-			return this.Model.HotelRegistrationRequests.Where(req=>req.IsDeleted==false).ToList();
-		}
-
-		protected void OnDeny_Click(object sender, EventArgs e)
-		{
-			var argument = ((Button)sender).CommandArgument;
-			int requestToDenyId = int.Parse(argument);
-			
-			var request = this.Model.HotelRegistrationRequests.FirstOrDefault(req => req.Id == requestToDenyId);
-			request.IsDeleted = true;
-			this.Model.HotelRegistrationRequests.Remove(request);			
+			return this.Model.HotelRegistrationRequests.Where(req=>req.IsDeleted==false).AsQueryable();
 		}
 	}
 }

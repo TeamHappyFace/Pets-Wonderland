@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Web.UI.WebControls;
 using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.MVP.Hotels.AddHotel;
 using PetsWonderland.Business.MVP.Hotels.AddHotel.Args;
@@ -14,7 +13,6 @@ namespace PetsWonderland.Client.Admin.Controls
 	public partial class ApproveHotelRequest : MvpUserControl<AddHotelModel>, IAddHotelView
 	{
 		public event EventHandler<AddHotelArgs> AddHotel;
-		private Hotel newHotel;
 
 		public string HotelName { get; set; }
 		public string Description { get; set; }
@@ -25,20 +23,17 @@ namespace PetsWonderland.Client.Admin.Controls
 
 		}
 
-		protected void Page_PreRender(object sender, EventArgs e)
-		{
-			newHotel = new Hotel()
-			{
-				Name = this.HotelName,
-				Description = this.Description,
-				ImageUrl = this.ImageUrl
-			};
-		}
-
 		protected void OnApprove_Click(object sender, EventArgs e)
 		{
-			var hotelArgs = new AddHotelArgs(newHotel);
-			this.AddHotel?.Invoke(this, hotelArgs);
+			//var newHotel = new Hotel()
+			//{
+			//	Name = this.HotelName,
+			//	Description = this.Description,
+			//	ImageUrl = this.ImageUrl
+			//};
+
+			//var hotelArgs = new AddHotelArgs(newHotel);
+			//this.AddHotel?.Invoke(this, hotelArgs);
 
 			//IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
 		}
