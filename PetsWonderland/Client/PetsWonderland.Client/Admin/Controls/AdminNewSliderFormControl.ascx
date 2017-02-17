@@ -5,7 +5,7 @@
 
 <div class="modal modal-lg fade" id="newSliderModal" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-        <asp:UpdatePanel ID="newSliderModalPanel" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+        <asp:UpdatePanel ID="NewSliderModalPanel" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="modal-content">
                     <div class="modal-header">
@@ -49,6 +49,9 @@
                     </div>
                 </div>
             </ContentTemplate>
+            <Triggers>
+               <asp:PostBackTrigger ControlID="CreateSliderBtn" />
+            </Triggers>
         </asp:UpdatePanel>
     </div>
 </div>

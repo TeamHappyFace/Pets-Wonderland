@@ -13,13 +13,13 @@ namespace PetsWonderland.Client.Admin.Controls {
     public partial class AdminNewSliderFormControl {
         
         /// <summary>
-        /// newSliderModalPanel control.
+        /// NewSliderModalPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel newSliderModalPanel;
+        protected global::System.Web.UI.UpdatePanel NewSliderModalPanel;
         
         /// <summary>
         /// SliderName control.

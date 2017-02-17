@@ -18,22 +18,28 @@ namespace PetsWonderland.Client.Admin.Controls
         {
             if (!IsPostBack)
             {
-                var getAllSlidersEventArts = new GetAllSlidersArgs();
-                this.GetSlidersList?.Invoke(this, getAllSlidersEventArts);
+                BindSlidersRepeater();
+            }            
+        }
+     
+        protected void BindSlidersRepeater()
+        {
+            var getAllSlidersEventArts = new GetAllSlidersArgs();
+            this.GetSlidersList?.Invoke(this, getAllSlidersEventArts);
 
-                this.AllSlidersTableRepeater.DataSource = this.Model.AllSliders.ToList();
-                this.AllSlidersTableRepeater.DataBind();
-            }
+            this.AllSlidersTableRepeater.DataSource = this.Model.AllSliders.ToList();
+            this.AllSlidersTableRepeater.DataBind();
         }
 
         protected void btnEditSlider_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+          
+            this.BindSlidersRepeater();
         }
 
         protected void btnDeleteSlider_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+        {   
+            this.BindSlidersRepeater();
         }
 
         protected void btnNewSlider_Click(object sender, EventArgs e)

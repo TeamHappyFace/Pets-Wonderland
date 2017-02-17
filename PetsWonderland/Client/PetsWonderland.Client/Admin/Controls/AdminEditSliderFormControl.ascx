@@ -13,30 +13,28 @@
                         <h4 class="modal-title">Edit slider data</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="col-md-12">
-                            <form>
-                                <div class="row">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Image:</label>
-                                        <input class="form-control" type="file" />
-                                        <span class="material-input"></span>
-                                    </div>
+                        <div class="col-md-12">                            
+                            <div class="row">
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label">Image:</label>
+                                    <input class="form-control" type="file" />
+                                    <span class="material-input"></span>
                                 </div>
-                                <div class="row">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Title:</label>
-                                        <input class="form-control" type="text" />
-                                        <span class="material-input"></span>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label">Title:</label>
+                                    <input class="form-control" type="text" />
+                                    <span class="material-input"></span>
                                 </div>
-                                <div class="row">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Caption:</label>
-                                        <input class="form-control" type="text" />
-                                        <span class="material-input"></span>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label">Caption:</label>
+                                    <input class="form-control" type="text" />
+                                    <span class="material-input"></span>
                                 </div>
-                            </form>
+                            </div>                            
                         </div>
                     </div>
                     <div class="modal-footer">
