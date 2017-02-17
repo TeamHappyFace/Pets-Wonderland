@@ -3,6 +3,8 @@
 		MasterPageFile="../../Site.Master"
 		CodeBehind="BoardingRequest.aspx.cs" Inherits="PetsWonderland.Client.Pages.Requests.BoardingRequest" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxtoolkit" %>
+
 <asp:Content ContentPlaceHolderID="CustomStylesheets" runat="server">
     <link href="<%= ResolveUrl("~/Content/Pages/boardingRequest.css") %>" rel="stylesheet" type="text/css" />       
 </asp:Content>
@@ -52,13 +54,22 @@
             </div>
 			<asp:Label ID="FileUploadedLabel" runat="server" CssClass="col-md-2 control-label"/>
 		</div>
-		<div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="BehavioralConcerns" CssClass="col-md-2 control-label">
-				Are there any behavioral concerns we should be aware of?</asp:Label>
-			<asp:TextBox ID="BehavioralConcerns" TextMode="multiline" Columns="50" Rows="5" runat="server" />
-		</div>
+		<div class="row">
+			<div class="forms-group">
+				<asp:Label runat="server" AssociatedControlID="txtFrom"  CssClass="col-md-2 control-label">From </asp:Label>
+				<asp:TextBox ID="txtFrom" runat="server" CssClass="form-control" Width="110px"></asp:TextBox>
+				<ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtFrom"></ajaxToolkit:CalendarExtender>	
+			</div>
+			<br />
+			<div class="forms-group">
+				<asp:Label runat="server" AssociatedControlID="txtTo" CssClass="col-md-2 control-label">To </asp:Label>
+				<asp:TextBox ID="txtTo" runat="server" CssClass="form-control" Width="110px"></asp:TextBox>
+				<ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="txtTo"></ajaxToolkit:CalendarExtender>	
+			</div>
+		</div>			
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
+				<br />
                 <asp:Button runat="server" OnClick="CreateUserRequest_Click" Text="Send your request" CssClass="btn btn-default" />
             </div>
         </div>

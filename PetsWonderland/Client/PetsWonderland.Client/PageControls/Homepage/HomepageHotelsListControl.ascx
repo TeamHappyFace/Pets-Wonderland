@@ -91,7 +91,9 @@
 							<p>
 								<%#: Item.Description %>
 							</p>
-							<a href="../../Pages/Requests/BoardingRequest.aspx"><h4>Accomodate your pet</h4></a>
+							<asp:HyperLink ID="boardingRequest" runat="server" NavigateUrl="../../Pages/Requests/BoardingRequest.aspx">
+								<h4>Accomodate your pet</h4>
+							</asp:HyperLink>
 						</div>
 					</div>                
 				</div>
