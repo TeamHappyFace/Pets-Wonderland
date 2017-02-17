@@ -1,7 +1,6 @@
 ﻿using System;
-using Bytes2you.Validation;
 
-namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Args
+namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHotelRequest.Args
 {
 	public class DeleteHotelRequestArgs : EventArgs
 	{

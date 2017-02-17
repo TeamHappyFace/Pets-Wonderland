@@ -56,7 +56,7 @@ namespace PetsWonderland.Business.Services
 
 		public IQueryable<UserHotelRegistrationRequest> GetAllHotelRequests()
 		{
-			return this.hotelRequestRepository.All();
+			return this.hotelRequestRepository.All().Where(req=>req.IsDeleted==false);
 		}
 
 		public UserHotelRegistrationRequest GetById(int id)

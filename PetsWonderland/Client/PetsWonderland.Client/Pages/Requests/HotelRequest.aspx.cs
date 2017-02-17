@@ -3,21 +3,19 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using PetsWonderland.Business.Identity;
 using PetsWonderland.Business.Models.Requests;
-using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest;
-using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Args;
-using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.ViewModels;
-using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.Views;
+using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.AddHotelRequest.Args;
+using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.AddHotelRequest.ViewModels;
+using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.AddHotelRequest.Views;
+using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.AddHotelRequest;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
 namespace PetsWonderland.Client.Pages.Requests
 {
-	[PresenterBinding(typeof(HotelRegistrationRequestPresenter))]
-	public partial class HotelRequest : MvpPage<HotelRegistrationRequestModel>, IHotelRegistrationRequestView
+	[PresenterBinding(typeof(AddHotelRequestPresenter))]
+	public partial class HotelRequest : MvpPage<AddHotelRequestModel>, IAddHotelRequestView
 	{
 		public event EventHandler<AddHotelRequestArgs> AddHotelRegistrationRequest;
-		public event EventHandler<GetAllHotelRequestsArgs> GetAllHotelRequests;
-		public event EventHandler<DeleteHotelRequestArgs> DeleteHotelRegistrationRequest;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{

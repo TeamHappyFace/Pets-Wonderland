@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using PetsWonderland.Business.Models.Requests;
 
-namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.ViewModels
+namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHotelRequest.ViewModels
 {
-	public class HotelRegistrationRequestModel
+	public class DeleteHotelRequestModel
 	{
 		public UserHotelRegistrationRequest HotelRequestToAdd { get; set; }
 

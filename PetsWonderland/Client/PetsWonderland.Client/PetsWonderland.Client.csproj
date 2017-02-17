@@ -238,6 +238,8 @@
     <Content Include="Admin\Controls\AdminEditSliderFormControl.ascx" />
     <Content Include="Admin\Controls\AdminNewSliderFormControl.ascx" />
     <Content Include="Admin\Controls\AdminSlidersListControl.ascx" />
+    <Content Include="Admin\Controls\AllHotelRequests.ascx" />
+    <Content Include="Admin\Controls\ApproveHotelRequest.ascx" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\HotelRegistrations.aspx" />
     <Content Include="Content\Admin\admin.main.css" />
@@ -585,6 +587,20 @@
     </Compile>
     <Compile Include="Admin\Controls\AdminSlidersListControl.ascx.designer.cs">
       <DependentUpon>AdminSlidersListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Controls\AllHotelRequests.ascx.cs">
+      <DependentUpon>AllHotelRequests.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Controls\AllHotelRequests.ascx.designer.cs">
+      <DependentUpon>AllHotelRequests.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Controls\ApproveHotelRequest.ascx.cs">
+      <DependentUpon>ApproveHotelRequest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Controls\ApproveHotelRequest.ascx.designer.cs">
+      <DependentUpon>ApproveHotelRequest.ascx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
