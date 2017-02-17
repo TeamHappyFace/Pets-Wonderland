@@ -64,13 +64,24 @@ namespace PetsWonderland.Business.Services
 			return this.hotelRequestRepository.GetById(id);
 		}
 
-		public void Update(UserHotelRegistrationRequest userHotelRegistrationRequest, bool isAccepted)
+		public void UpdateAccepted(UserHotelRegistrationRequest userHotelRegistrationRequest, bool isAccepted)
 		{
 			Guard.WhenArgument(userHotelRegistrationRequest, "UserHotelRegistrationRequest is null!").IsNull().Throw();
 
 			using (var unitOfWork = this.unitOfWork)
 			{
 				userHotelRegistrationRequest.IsAccepted = isAccepted;
+				this.unitOfWork.SaveChanges();
+			}
+		}
+
+		public void UpdateDeleted(int RequestId, bool isDeleted)
+		{
+			Guard.WhenArgument(RequestId, "Request Id is less than zero!").IsLessThan(0).Throw();
+
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.GetById(RequestId).IsDeleted = isDeleted;
 				this.unitOfWork.SaveChanges();
 			}
 		}

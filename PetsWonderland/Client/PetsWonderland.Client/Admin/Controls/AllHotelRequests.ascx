@@ -3,6 +3,9 @@
 	CodeBehind="AllHotelRequests.ascx.cs" 
 	Inherits="PetsWonderland.Client.Admin.Controls.AllHotelRequests" %>
 
+<%@ Register src="DenyHotelRequest.ascx" tagname="DenyHotelRequest" tagprefix="ucc" %>
+<%@ Register src="ApproveHotelRequest.ascx" tagname="ApproveHotelRequest" tagprefix="ucc" %>
+
 <asp:ListView runat="server"  
 	ID="HotelRequests" 
     ItemType="PetsWonderland.Business.Models.Requests.UserHotelRegistrationRequest" 
@@ -32,7 +35,12 @@
             </div>                
         </div>
 		<div>
-			<asp:Button OnClick="OnDeny_Click" Text="Deny" runat="server" CommandArgument='<%# Item.Id %>'/>
+<%--			<ucc:ApproveHotelRequest runat="server" ID="ApproveRequest"
+				HotelName="<%# Item.HotelName %>"
+				Description = "<%# Item.HotelDescription %>"
+				ImageUrl = "<%# Item.HotelImageUrl %>" />--%>
+<%--			<ucc:DenyHotelRequest runat="server" ID="DenyRequest"
+				RequestId="<%# Item.Id %>"/>--%>
 		</div>
     </ItemTemplate>
 </asp:ListView>

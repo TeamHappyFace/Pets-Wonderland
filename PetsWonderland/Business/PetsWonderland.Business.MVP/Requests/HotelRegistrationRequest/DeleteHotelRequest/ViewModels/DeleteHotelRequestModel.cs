@@ -5,8 +5,6 @@ namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHo
 {
 	public class DeleteHotelRequestModel
 	{
-		public UserHotelRegistrationRequest HotelRequestToAdd { get; set; }
-
 		public IList<UserHotelRegistrationRequest> HotelRegistrationRequests { get; set; }
 	}
 }

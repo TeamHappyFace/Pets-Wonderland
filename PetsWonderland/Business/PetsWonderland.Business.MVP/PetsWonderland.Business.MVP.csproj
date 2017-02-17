@@ -119,6 +119,11 @@
     <Compile Include="Content\Slider\Args\GetSliderDataArgs.cs" />
     <Compile Include="Content\Slider\Contracts\ISliderPresenter.cs" />
     <Compile Include="Content\Slider\SliderPresenter.cs" />
+    <Compile Include="Hotels\AddHotel\AddHotelPresenter.cs" />
+    <Compile Include="Hotels\AddHotel\Args\AddHotelArgs.cs" />
+    <Compile Include="Hotels\AddHotel\Contracts\IAddHotelPresenter.cs" />
+    <Compile Include="Hotels\AddHotel\ViewModels\AddHotelModel.cs" />
+    <Compile Include="Hotels\AddHotel\Views\IAddHotelView.cs" />
     <Compile Include="Identity\Login\Args\LoginEventArgs.cs" />
     <Compile Include="Identity\Login\Contracts\ILoginPresenter.cs" />
     <Compile Include="Identity\Login\LoginPresenter.cs" />

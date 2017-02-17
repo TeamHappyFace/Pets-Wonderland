@@ -240,6 +240,7 @@
     <Content Include="Admin\Controls\AdminSlidersListControl.ascx" />
     <Content Include="Admin\Controls\AllHotelRequests.ascx" />
     <Content Include="Admin\Controls\ApproveHotelRequest.ascx" />
+    <Content Include="Admin\Controls\DenyHotelRequest.ascx" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\HotelRegistrations.aspx" />
     <Content Include="Content\Admin\admin.main.css" />
@@ -601,6 +602,13 @@
     </Compile>
     <Compile Include="Admin\Controls\ApproveHotelRequest.ascx.designer.cs">
       <DependentUpon>ApproveHotelRequest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Controls\DenyHotelRequest.ascx.cs">
+      <DependentUpon>DenyHotelRequest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Controls\DenyHotelRequest.ascx.designer.cs">
+      <DependentUpon>DenyHotelRequest.ascx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
