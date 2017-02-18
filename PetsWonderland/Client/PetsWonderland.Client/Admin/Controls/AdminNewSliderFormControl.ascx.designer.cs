@@ -13,15 +13,6 @@ namespace PetsWonderland.Client.Admin.Controls {
     public partial class AdminNewSliderFormControl {
         
         /// <summary>
-        /// NewSliderModalPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel NewSliderModalPanel;
-        
-        /// <summary>
         /// SliderName control.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,31 @@ namespace PetsWonderland.Client.Admin.Controls {
         protected global::System.Web.UI.WebControls.TextBox SliderPostion;
         
         /// <summary>
-        /// SliderImage control.
+        /// SlidesList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload SliderImage;
+        protected global::System.Web.UI.WebControls.Panel SlidesList;
+        
+        /// <summary>
+        /// AddNewSlideBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddNewSlideBtn;
+        
+        /// <summary>
+        /// SliderSlidesPlaceholder2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder SliderSlidesPlaceholder2;
         
         /// <summary>
         /// CreateSliderBtn control.

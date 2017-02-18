@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Web;
 using PetsWonderland.Business.Models.Pages.Contracts;
 
 namespace PetsWonderland.Business.Services.Contracts
@@ -9,6 +10,10 @@ namespace PetsWonderland.Business.Services.Contracts
 
         ISlider GetSliderByPosition(string position);
    
-        bool CreateSlider(string name, string position);
+        bool CreateSlider(
+            string name, 
+            string position, 
+            Dictionary<int, List<KeyValuePair<string, string>>> slidesOptions,
+            Dictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> slidesImages);
     }
 }
