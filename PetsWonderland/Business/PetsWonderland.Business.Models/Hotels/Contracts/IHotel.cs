@@ -1,4 +1,6 @@
-﻿namespace PetsWonderland.Business.Models.Hotels.Contracts
+﻿using PetsWonderland.Business.Models.Users;
+
+namespace PetsWonderland.Business.Models.Hotels.Contracts
 {
     public interface IHotel
     {
@@ -14,6 +16,10 @@
 
         HotelLocation Location { get; set; }
 
-        bool IsDeleted { get; set; }
+		string HotelManagerId { get; set; }
+
+		HotelManager HotelManager { get; set; }
+
+		bool IsDeleted { get; set; }
     }
 }

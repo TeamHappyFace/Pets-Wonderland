@@ -15,9 +15,17 @@ namespace PetsWonderland.Business.Models.Requests.Contracts
 
 		int Age { get; set; }
 
+		string FromDate { get; set; }
+
+		string ToDate { get; set; }
+
 		string UserId { get; set; }
 
 		RegularUser User { get; set; }
+
+		string HotelManagerId { get; set; }
+
+		HotelManager HotelManager { get; set; }
 
 		bool IsAccepted { get; set; }
 

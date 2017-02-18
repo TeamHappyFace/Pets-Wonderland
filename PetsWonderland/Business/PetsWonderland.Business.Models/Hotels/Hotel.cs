@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using PetsWonderland.Business.Common.Constants;
 using PetsWonderland.Business.Models.Hotels.Contracts;
+using PetsWonderland.Business.Models.Users;
 
 namespace PetsWonderland.Business.Models.Hotels
 {
@@ -21,6 +22,9 @@ namespace PetsWonderland.Business.Models.Hotels
 		[MinLength(ValidationConstants.MinHotelDescription)]
 		[MaxLength(ValidationConstants.MaxHotelDescription)]
 		public string Description { get; set; }
+
+		public string HotelManagerId { get; set; }
+		public virtual HotelManager HotelManager { get; set; }
 
 		[Required]
 		public int? LocationId { get; set; }

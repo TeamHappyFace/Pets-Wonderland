@@ -257,6 +257,7 @@
     <Content Include="Content\External\RevSlider\settings.css" />
     <Content Include="Content\External\RevSlider\style.css" />
     <Content Include="Content\Fonts.css" />
+    <Content Include="Content\Pages\allBoardingRequests.css" />
     <Content Include="Content\Pages\boardingRequest.css" />
     <Content Include="Content\Pages\homepage.css" />
     <Content Include="Content\Pages\hotelRequest.css" />
@@ -328,6 +329,7 @@
     <Content Include="PageControls\Homepage\HomepageGuestBookControl.ascx" />
     <Content Include="PageControls\Homepage\HomepageHotelsListControl.ascx" />
     <Content Include="PageControls\Homepage\QuickContactControl.ascx" />
+    <Content Include="Pages\Requests\AllBoardingRequests.aspx" />
     <Content Include="Pages\Requests\BoardingRequest.aspx" />
     <Content Include="Pages\Requests\HotelRequest.aspx" />
     <Content Include="Scripts\Admin\admin.main.js" />
@@ -704,6 +706,13 @@
     </Compile>
     <Compile Include="PageControls\Homepage\QuickContactControl.ascx.designer.cs">
       <DependentUpon>QuickContactControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Requests\AllBoardingRequests.aspx.cs">
+      <DependentUpon>AllBoardingRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Requests\AllBoardingRequests.aspx.designer.cs">
+      <DependentUpon>AllBoardingRequests.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Requests\BoardingRequest.aspx.cs">
       <DependentUpon>BoardingRequest.aspx</DependentUpon>

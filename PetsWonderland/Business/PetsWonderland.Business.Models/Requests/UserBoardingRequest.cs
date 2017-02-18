@@ -18,8 +18,17 @@ namespace PetsWonderland.Business.Models.Requests
 
 		public int Age { get; set; }
 
+		public string ImageUrl { get; set; }
+
+		public string FromDate { get; set; }
+
+		public string ToDate { get; set; }
+
 		public string UserId { get; set; }
 		public virtual RegularUser User { get; set; }
+
+		public string HotelManagerId { get; set; }
+		public virtual HotelManager HotelManager { get; set; }
 
 		public bool IsAccepted { get; set; }
 

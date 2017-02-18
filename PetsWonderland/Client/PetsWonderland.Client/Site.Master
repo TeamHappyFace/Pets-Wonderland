@@ -82,8 +82,11 @@
                                 <%-- Hotel Manager--%>
                                 <asp:RoleGroup Roles="Hotel manager">
                                     <ContentTemplate>
+										<ul class="nav navbar-nav">
+                                            <li><a runat="server" href="~/Pages/Requests/AllBoardingRequests.aspx">Boarding requests</a></li>
+                                        </ul>
                                         <ul class="nav navbar-nav">
-                                            <li><a runat="server" href="~/Pages/Requests/HotelRequest.aspx">Register your hotel</a></li>
+                                            <li><a runat="server" href="~/Pages/Requests/HotelRequest.aspx">Register hotel</a></li>
                                         </ul>
                                     </ContentTemplate>
                                 </asp:RoleGroup>

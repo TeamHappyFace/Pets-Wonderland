@@ -145,6 +145,11 @@
     <Compile Include="Requests\BoardingRequest\AddBoardingRequest\Contracts\IAddBoardingRequestPresenter.cs" />
     <Compile Include="Requests\BoardingRequest\AddBoardingRequest\ViewModels\AddBoardingRequestModel.cs" />
     <Compile Include="Requests\BoardingRequest\AddBoardingRequest\Views\IAddBoardingRequestView.cs" />
+    <Compile Include="Requests\BoardingRequest\GetAllBoardingRequests\Args\GetAllBoardingRequestsArgs.cs" />
+    <Compile Include="Requests\BoardingRequest\GetAllBoardingRequests\Contracts\IGetAllBoardingRequestsPresenter.cs" />
+    <Compile Include="Requests\BoardingRequest\GetAllBoardingRequests\GetAllBoardingRequestsPresenter.cs" />
+    <Compile Include="Requests\BoardingRequest\GetAllBoardingRequests\ViewModels\GetAllBoardingRequestsModel.cs" />
+    <Compile Include="Requests\BoardingRequest\GetAllBoardingRequests\Views\IGetAllBoardingRequestsView.cs" />
     <Compile Include="Requests\HotelRegistrationRequest\AddHotelRequest\Args\AddHotelRequestArgs.cs" />
     <Compile Include="Requests\HotelRegistrationRequest\AddHotelRequest\Contracts\IAddHotelRequestPresenter.cs" />
     <Compile Include="Requests\HotelRegistrationRequest\AddHotelRequest\AddHotelRequestPresenter.cs" />

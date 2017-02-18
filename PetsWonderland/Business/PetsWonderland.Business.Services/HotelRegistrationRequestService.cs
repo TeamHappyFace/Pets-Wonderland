@@ -75,13 +75,13 @@ namespace PetsWonderland.Business.Services
 			}
 		}
 
-		public void UpdateDeleted(int RequestId, bool isDeleted)
+		public void UpdateDeleted(int requestId, bool isDeleted)
 		{
-			Guard.WhenArgument(RequestId, "Request Id is less than zero!").IsLessThan(0).Throw();
+			Guard.WhenArgument(requestId, "Request Id is less than zero!").IsLessThan(0).Throw();
 
 			using (var unitOfWork = this.unitOfWork)
 			{
-				this.GetById(RequestId).IsDeleted = isDeleted;
+				this.GetById(requestId).IsDeleted = isDeleted;
 				this.unitOfWork.SaveChanges();
 			}
 		}

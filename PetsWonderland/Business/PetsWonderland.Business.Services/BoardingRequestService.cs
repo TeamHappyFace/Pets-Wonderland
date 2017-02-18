@@ -63,5 +63,27 @@ namespace PetsWonderland.Business.Services
 		{
 			return this.boardingRequestRepository.GetById(id);
 		}
+
+		public void UpdateAccepted(UserBoardingRequest userBoardingRequest, bool isAccepted)
+		{
+			Guard.WhenArgument(userBoardingRequest, "UserBoardingRequest is null!").IsNull().Throw();
+
+			using (var unitOfWork = this.unitOfWork)
+			{
+				userBoardingRequest.IsAccepted = isAccepted;
+				this.unitOfWork.SaveChanges();
+			}
+		}
+
+		public void UpdateDeleted(int requestId, bool isDeleted)
+		{
+			Guard.WhenArgument(requestId, "Request Id is less than zero!").IsLessThan(0).Throw();
+
+			using (var unitOfWork = this.unitOfWork)
+			{
+				this.GetById(requestId).IsDeleted = isDeleted;
+				this.unitOfWork.SaveChanges();
+			}
+		}
 	}
 }
