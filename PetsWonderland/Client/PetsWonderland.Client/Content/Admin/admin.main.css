@@ -22,3 +22,25 @@
 #newSliderModal {
     width: 100%;
 }
+
+/* Create slider */
+.stack-group {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.stack-group > label {
+    float: left;
+    position: relative;
+    width: 100%;
+    color: black;
+    text-decoration: underline;
+    font-size: 16px;
+    margin-top: 20px;
+    text-indent: 10px;
+}
+.stack-group .form-group {
+    float: left;
+    position: relative;
+    width: 100%;
+}

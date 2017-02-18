@@ -23,7 +23,7 @@ namespace PetsWonderland.Business.MVP.Admin.CreateSlider
 
         public void CreateSlider(object sender, CreateSliderArgs e)
         {
-            var result = this.sliderService.CreateSlider(e.Name, e.Postition);
+            var result = this.sliderService.CreateSlider(e.Name, e.Postition, e.SlidesOptions, e.SlidesImages);
 
             this.View.Model.SliderCreatedSuccessfully = result;
         }

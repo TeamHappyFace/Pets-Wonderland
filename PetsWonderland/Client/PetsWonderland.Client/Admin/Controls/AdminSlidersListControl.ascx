@@ -3,13 +3,9 @@
             CodeBehind="AdminSlidersListControl.ascx.cs" 
             Inherits="PetsWonderland.Client.Admin.Controls.AdminSlidersListControl" %>
 
-<asp:LinkButton 
-    ID="btnNewSlider"  
-    runat="server" 
-    CssClass="btn btn-primary btn-simple btn-xs"
-    OnClientClick="$('#newSliderModal').appendTo('#aspnetForm').modal();return false;">
-    <i class="fa fa-plus-square-o"></i>
-</asp:LinkButton>
+<a runat="server" href="~/Admin/AddSlider.aspx">
+    <i class="fa fa-plus-square-o"></i>                          
+</a>
 
 <table class="table table-hover">
     <thead class="text-primary">
@@ -30,12 +26,10 @@
                         <td><%#: Eval("Position") %></td>
                         <td><%#: Eval("Slides.Count") %></td>
                         <td>      
-                            <asp:LinkButton ID="btnEditSlider"  
-                                        runat="server" 
-                                        CssClass="btn btn-primary btn-simple btn-xs"                            
-                                        OnClientClick="$('#editSliderModal').appendTo('#aspnerForm').modal();return false;">
-                                <i class="fa fa-pencil"></i>
-                            </asp:LinkButton>
+                            <a href="~EditSlider.aspx" runat="server">
+                                 <i class="fa fa-pencil"></i>
+                            </a>
+                                                                                    
                             <asp:LinkButton ID="btnDeleteSlider"  
                                         runat="server" 
                                         CssClass="btn btn-primary btn-simple btn-xs"

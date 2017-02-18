@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web;
 
 namespace PetsWonderland.Business.MVP.Admin.CreateSlider.Args
@@ -9,6 +10,8 @@ namespace PetsWonderland.Business.MVP.Admin.CreateSlider.Args
 
         public string Postition { get; set; }
 
-        public HttpPostedFile AvatarFile { get; set; }
+        public Dictionary<int, List<KeyValuePair<string, string>>> SlidesOptions { get; set; }
+
+        public Dictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> SlidesImages { get; set; }
     }
 }

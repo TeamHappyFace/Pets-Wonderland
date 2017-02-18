@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Web;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Pages;
@@ -41,8 +42,12 @@ namespace PetsWonderland.Business.Services
 
             return slider;
         }
-                
-        public bool CreateSlider(string name, string position)
+
+        public bool CreateSlider(
+            string name, string 
+            position, 
+            Dictionary<int, List<KeyValuePair<string, string>>> slidesOptions,
+            Dictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> slidesImages)
         {
             Guard.WhenArgument(name, "Slider must have a name!").IsEmpty().Throw();
             Guard.WhenArgument(position, "Slider must have a position!").IsEmpty().Throw();
@@ -52,7 +57,32 @@ namespace PetsWonderland.Business.Services
             {
                 using (var uow = unitOfWork)
                 {
-                    var slider = new Slider { Name = name, Position = position };
+                    var slides = new List<Slide>();
+                    foreach (var key in slidesOptions.Keys)
+                    {
+                        var slideTitle = slidesOptions[key].Where(x => x.Key == "SlideTitle").Select(x => x.Value).FirstOrDefault();
+                        var slideCaption = slidesOptions[key].Where(x => x.Key == "SlideCaption").Select(x => x.Value).FirstOrDefault();
+                        var slideImagePath = slidesOptions[key].Where(x => x.Key == "SlideImageName").Select(x => x.Value).FirstOrDefault();
+
+                        var slide = new Slide
+                        {
+                            Title = slideTitle,
+                            Caption = slideCaption,
+                            Image = slideImagePath
+                        };
+
+                        slides.Add(slide);
+                    }
+
+                    var storagePath = HttpContext.Current.Server.MapPath("~/Images/Pages/Homepage/Slider/");
+                    foreach (var key in slidesImages.Keys)
+                    {
+                        var slideImageFile = slidesImages[key].Where(x => x.Key == "SlideImage").Select(x => x.Value).FirstOrDefault();
+
+                        slideImageFile?.SaveAs(storagePath + slideImageFile.FileName);
+                    }
+
+                    var slider = new Slider { Name = name, Position = position, Slides = slides};
 
                     this.slidersRepository.Add(slider);
                     uow.SaveChanges();
