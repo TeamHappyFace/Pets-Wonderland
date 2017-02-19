@@ -22,8 +22,8 @@
     <div class="form-group label-floating is-empty">
         <label class="control-label">Image:</label>                              
         <asp:FileUpload runat="server" ID="SlideImage" name="slideImage" CssClass="form-control" onchange="showpreview(this);" />
-        <asp:RequiredFieldValidator runat="server" ControlToValidate= "SlideImage" CssClass="text-danger" ErrorMessage="Slide image is required." />
         <img runat="server" class="file-upload-preview"  src="" />
+        <asp:RequiredFieldValidator runat="server" ControlToValidate= "SlideImage" CssClass="text-danger" ErrorMessage="Slide image is required." />       
         <span class="material-input"></span>
     </div>
 
