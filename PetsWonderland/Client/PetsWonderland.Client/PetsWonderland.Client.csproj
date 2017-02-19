@@ -239,6 +239,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\AddSlider.aspx" />
+    <Content Include="Admin\ApproveHotelRequest.aspx" />
     <Content Include="Admin\ContentPages.aspx" />
     <Content Include="Admin\Controls\AdminEditSliderFormControl.ascx" />
     <Content Include="Admin\Controls\AdminNewSliderFormControl.ascx" />
@@ -580,6 +581,13 @@
     </Compile>
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ApproveHotelRequest.aspx.cs">
+      <DependentUpon>ApproveHotelRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ApproveHotelRequest.aspx.designer.cs">
+      <DependentUpon>ApproveHotelRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ContentPages.aspx.cs">
       <DependentUpon>ContentPages.aspx</DependentUpon>

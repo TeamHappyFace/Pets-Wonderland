@@ -89,8 +89,8 @@
 							<p>
 								<%#: Item.Description %>
 							</p>
-							<asp:HyperLink ID="boardingRequest" runat="server" NavigateUrl='<%# String.Format("../../Pages/Requests/BoardingRequest.aspx?id={0}", Item.HotelManagerId) %>'>
-								<h4 runat="server" id="hello">Accomodate your pet</h4>
+							<asp:HyperLink ID="boardingRequest" runat="server" Visible="false" NavigateUrl='<%# String.Format("../../Pages/Requests/BoardingRequest.aspx?id={0}", Item.HotelManagerId) %>'>
+								<h4 runat="server">Accomodate your pet</h4>
 							</asp:HyperLink>
 						</div>
 					</div>                

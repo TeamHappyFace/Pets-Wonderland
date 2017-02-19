@@ -48,12 +48,20 @@
             </div>                
         </div>
 		<div>
+		<asp:HyperLink ID="ApproveHotelRequest" runat="server" Visible="true"
+			 NavigateUrl='<%# String.Format("../../Pages/Requests/BoardingRequest.aspx?id={0}", Item.Id) %>'>
+			<h4 runat="server">Approve hotel request</h4>
+		</asp:HyperLink>
+		<asp:HyperLink ID="HyperLink1" runat="server" Visible="true"
+			 NavigateUrl='<%# String.Format("../../Pages/Requests/BoardingRequest.aspx?id={0}", Item.Id) %>'>
+			<h4 runat="server">Deny hotel request</h4>
+		</asp:HyperLink>
 		<div>
 <%--			<ucc:ApproveHotelRequest ID="asd" runat="server"
 				 HotelName="<%# Item.HotelName %>" 
 				Description="<%# Item.HotelDescription %>"/>--%>
 
-			<ucc:DenyHotelRequest runat="server" ID="DenyRequest" RequestId ='<%#Bind("Id")%>'/>
+<%--			<ucc:DenyHotelRequest runat="server" ID="DenyRequest" RequestId ='<%# BindItem.Id %>'/>--%>
 		</div>
     </ItemTemplate>
 </asp:ListView>
