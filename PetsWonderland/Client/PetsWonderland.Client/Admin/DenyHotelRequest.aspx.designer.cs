@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PetsWonderland.Client.Admin.Controls {
+namespace PetsWonderland.Client.Admin {
     
     
-    public partial class ApproveHotelRequest {
+    public partial class DenyHotelRequest {
     }
 }

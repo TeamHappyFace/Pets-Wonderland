@@ -22,13 +22,24 @@ namespace PetsWonderland.Client.Admin
 		{
 			Approve();
 		}
+
 		protected void Approve()
 		{
+			var requestId = int.Parse(Request.QueryString["id"]);
+			var hotelName = Request.QueryString["name"];
+			var hotelDescription = Request.QueryString["description"];
+			var hotelImage = Request.QueryString["image"];
+			var hotelLocation = Request.QueryString["location"];
+
 			var hotelArgs = new AddHotelArgs
 			{
-				//HotelName = this.HotelName,
-				//HotelDescription = this.Description
+				HotelName = hotelName,
+				HotelDescription = hotelDescription,
+				ImageUrl = hotelImage,
+				Location = hotelLocation,
+				RequestId = requestId
 			};
+
 			this.AddHotel?.Invoke(this, hotelArgs);
 		}
 	}

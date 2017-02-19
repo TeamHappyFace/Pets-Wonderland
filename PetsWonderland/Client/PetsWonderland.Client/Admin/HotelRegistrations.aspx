@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" 
+﻿ <%@ Page Language="C#" 
 		MasterPageFile="~/Admin/Admin.Master"
 		AutoEventWireup="true" 
 		CodeBehind="HotelRegistrations.aspx.cs" 

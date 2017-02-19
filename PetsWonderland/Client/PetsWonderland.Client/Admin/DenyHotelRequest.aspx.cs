@@ -6,40 +6,22 @@ using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHotelR
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
-namespace PetsWonderland.Client.Admin.Controls
+namespace PetsWonderland.Client.Admin
 {
 	[PresenterBinding(typeof(DeleteHotelRequestPresenter))]
-	public partial class DenyHotelRequest : MvpUserControl<DeleteHotelRequestModel>, IDeleteHotelRequestView
+	public partial class DenyHotelRequest : MvpPage<DeleteHotelRequestModel>, IDeleteHotelRequestView
 	{
 		public event EventHandler<DeleteHotelRequestArgs> DeleteHotelRegistrationRequest;
 
-		public int RequestId
-		{
-			get
-			{
-				if (ViewState["RequestId"] == null)
-				{
-					return 0;
-				}
-				else
-				{
-					return (int)ViewState["RequestId"];
-				}
-			}
-			set
-			{
-				ViewState["RequestId"] = value;
-			}
-		}
-
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			Deny();
 		}
 
-		protected void OnDeny_Click(object sender, EventArgs e)
+		protected void Deny()
 		{
-			this.DeleteHotelRegistrationRequest?.Invoke(this, new DeleteHotelRequestArgs(this.RequestId));
+			int requestId = int.Parse(Request.QueryString["id"]);
+			this.DeleteHotelRegistrationRequest?.Invoke(this, new DeleteHotelRequestArgs(requestId));
 		}
 	}
 }

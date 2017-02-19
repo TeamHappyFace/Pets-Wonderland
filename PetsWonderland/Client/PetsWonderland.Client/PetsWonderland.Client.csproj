@@ -245,10 +245,9 @@
     <Content Include="Admin\Controls\AdminNewSliderFormControl.ascx" />
     <Content Include="Admin\Controls\AdminSlidersListControl.ascx" />
     <Content Include="Admin\Controls\AllHotelRequests.ascx" />
-    <Content Include="Admin\Controls\ApproveHotelRequest.ascx" />
-    <Content Include="Admin\Controls\DenyHotelRequest.ascx" />
     <Content Include="Admin\Controls\SlideControl.ascx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\DenyHotelRequest.aspx" />
     <Content Include="Admin\HotelRegistrations.aspx" />
     <Content Include="Content\Admin\admin.main.css" />
     <Content Include="Content\Admin\bootstrap.min.css" />
@@ -449,7 +448,9 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -624,20 +625,6 @@
     <Compile Include="Admin\Controls\AllHotelRequests.ascx.designer.cs">
       <DependentUpon>AllHotelRequests.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Controls\ApproveHotelRequest.ascx.cs">
-      <DependentUpon>ApproveHotelRequest.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Controls\ApproveHotelRequest.ascx.designer.cs">
-      <DependentUpon>ApproveHotelRequest.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Controls\DenyHotelRequest.ascx.cs">
-      <DependentUpon>DenyHotelRequest.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Controls\DenyHotelRequest.ascx.designer.cs">
-      <DependentUpon>DenyHotelRequest.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Controls\SlideControl.ascx.cs">
       <DependentUpon>SlideControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -651,6 +638,13 @@
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DenyHotelRequest.aspx.cs">
+      <DependentUpon>DenyHotelRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DenyHotelRequest.aspx.designer.cs">
+      <DependentUpon>DenyHotelRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\HotelRegistrations.aspx.cs">
       <DependentUpon>HotelRegistrations.aspx</DependentUpon>

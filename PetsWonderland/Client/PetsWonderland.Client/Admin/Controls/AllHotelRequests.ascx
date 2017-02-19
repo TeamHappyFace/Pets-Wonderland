@@ -3,9 +3,6 @@
 	CodeBehind="AllHotelRequests.ascx.cs" 
 	Inherits="PetsWonderland.Client.Admin.Controls.AllHotelRequests" %>
 
-<%@ Register src="~/Admin/Controls/DenyHotelRequest.ascx" tagname="DenyHotelRequest" tagprefix="ucc" %>
-<%@ Register src="~/Admin/Controls/ApproveHotelRequest.ascx" tagname="ApproveHotelRequest" tagprefix="ucc" %>
-
 <!DOCTYPE html>
 
 <asp:ListView runat="server"  
@@ -19,9 +16,7 @@
         </div>
     </EmptyDataTemplate>
     <EmptyItemTemplate>
-		<div>
-
-		</div>
+		<div></div>
     </EmptyItemTemplate>
 
     <LayoutTemplate>
@@ -47,22 +42,15 @@
                 </div>
             </div>                
         </div>
-		<div>
 		<asp:HyperLink ID="ApproveHotelRequest" runat="server" Visible="true"
-			 NavigateUrl='<%# String.Format("../../Pages/Requests/BoardingRequest.aspx?id={0}", Item.Id) %>'>
+			 NavigateUrl='<%# String.Format("../ApproveHotelRequest.aspx?name={0}&description={1}&image={2}&location={3}&id={4}", 
+				Item.HotelName, Item.HotelDescription, Item.HotelImageUrl, Item.HotelLocation, Item.Id) %>'>
 			<h4 runat="server">Approve hotel request</h4>
 		</asp:HyperLink>
-		<asp:HyperLink ID="HyperLink1" runat="server" Visible="true"
-			 NavigateUrl='<%# String.Format("../../Pages/Requests/BoardingRequest.aspx?id={0}", Item.Id) %>'>
+		<asp:HyperLink ID="DenyHotelRequest" runat="server" Visible="true"
+			 NavigateUrl='<%# String.Format("../DenyHotelRequest.aspx?id={0}", Item.Id) %>'>
 			<h4 runat="server">Deny hotel request</h4>
 		</asp:HyperLink>
-		<div>
-<%--			<ucc:ApproveHotelRequest ID="asd" runat="server"
-				 HotelName="<%# Item.HotelName %>" 
-				Description="<%# Item.HotelDescription %>"/>--%>
-
-<%--			<ucc:DenyHotelRequest runat="server" ID="DenyRequest" RequestId ='<%# BindItem.Id %>'/>--%>
-		</div>
     </ItemTemplate>
 </asp:ListView>
 <asp:DataPager ID="DataPagerCustomers" runat="server"

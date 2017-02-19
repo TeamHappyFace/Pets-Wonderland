@@ -69,11 +69,13 @@
     <Compile Include="BoardingRequestService.cs" />
     <Compile Include="Contracts\IAnimalService.cs" />
     <Compile Include="Contracts\IBoardingRequestService.cs" />
+    <Compile Include="Contracts\IHotelLocationService.cs" />
     <Compile Include="Contracts\IHotelRegistrationRequestService.cs" />
     <Compile Include="Contracts\IHotelService.cs" />
     <Compile Include="Contracts\IRegistrationService.cs" />
     <Compile Include="Contracts\ISliderService.cs" />
     <Compile Include="Contracts\IUserHotelService.cs" />
+    <Compile Include="HotelLocationService.cs" />
     <Compile Include="HotelRegistrationRequestService.cs" />
     <Compile Include="HotelService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

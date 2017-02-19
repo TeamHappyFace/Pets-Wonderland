@@ -29,9 +29,6 @@ namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHo
 		public void DeleteHotelRegistrationRequest(object sender, DeleteHotelRequestArgs e)
 		{
 			this.hotelRegistrationRequestService.UpdateDeleted(e.HotelRequestToDeleteId, true);
-
-			var request = this.View.Model.HotelRegistrationRequests.First(req => req.Id == e.HotelRequestToDeleteId);
-			this.View.Model.HotelRegistrationRequests.Remove(request);
 		}
 	}
 }

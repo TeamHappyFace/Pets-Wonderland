@@ -56,7 +56,9 @@ namespace PetsWonderland.Business.Services
 
 		public IQueryable<UserHotelRegistrationRequest> GetAllHotelRequests()
 		{
-			return this.hotelRequestRepository.All().Where(req=>req.IsDeleted==false);
+			return this.hotelRequestRepository.All()
+					.Where(req => req.IsDeleted == false)
+					.Where(req => req.IsAccepted == false);
 		}
 
 		public UserHotelRegistrationRequest GetById(int id)
@@ -64,9 +66,9 @@ namespace PetsWonderland.Business.Services
 			return this.hotelRequestRepository.GetById(id);
 		}
 
-		public void UpdateAccepted(UserHotelRegistrationRequest userHotelRegistrationRequest, bool isAccepted)
+		public void UpdateAccepted(int userHotelRegistrationRequestId, bool isAccepted)
 		{
-			Guard.WhenArgument(userHotelRegistrationRequest, "UserHotelRegistrationRequest is null!").IsNull().Throw();
+			var userHotelRegistrationRequest = this.GetById(userHotelRegistrationRequestId);
 
 			using (var unitOfWork = this.unitOfWork)
 			{

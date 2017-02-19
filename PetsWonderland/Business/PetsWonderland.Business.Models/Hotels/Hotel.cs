@@ -25,8 +25,7 @@ namespace PetsWonderland.Business.Models.Hotels
 
 		public string HotelManagerId { get; set; }
 		public virtual HotelManager HotelManager { get; set; }
-
-		[Required]
+		
 		public int? LocationId { get; set; }
 		public virtual HotelLocation Location { get; set; }
 
