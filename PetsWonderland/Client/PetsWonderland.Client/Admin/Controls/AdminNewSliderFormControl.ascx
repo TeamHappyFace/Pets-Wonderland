@@ -36,7 +36,7 @@
                 <asp:Panel runat="server" id="SlidesList" CssClass="stack-group">
                     <div class="header">
                         <label> Slides:</label>                                                                                                                
-                        <asp:Button ID="AddNewSlideBtn" CssClass="btn btn-primary" runat="server" Text="Add" onclick="addNewSlide_Click"/>                          
+                        <asp:Button ID="AddNewSlideBtn" CssClass="btn btn-primary"  CausesValidation="False" runat="server" Text="Add" onclick="addNewSlide_Click"/>                          
                     </div>
                     
                     <asp:PlaceHolder ID="SliderSlidesPlaceholder2" runat="server"> </asp:PlaceHolder>

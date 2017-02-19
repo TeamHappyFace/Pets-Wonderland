@@ -85,7 +85,7 @@ namespace PetsWonderland.Client.Admin.Controls
                             var postedImage = fupd.PostedFile;
                             var file = new HttpPostedFileWrapper(postedImage);
                             var fileName = file.FileName;
-                            var fileStoragePath = Server.MapPath("~/Images/Pages/Homepage/Slider/") + fileName;                                        
+                            var fileStoragePath = "~/Images/Pages/Homepage/Slider/" + fileName;                                        
 
                             var filePair = new KeyValuePair<string, HttpPostedFileBase>("SlideImage", file);
                             var fileNamePair = new KeyValuePair<string, string>("SlideImageName", fileStoragePath);
