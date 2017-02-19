@@ -5,6 +5,7 @@
 		Inherits="PetsWonderland.Client.Admin.HotelRegistrations" %>
 
 <%@ Register Src="~/Admin/Controls/AllHotelRequests.ascx" TagPrefix="acc" TagName="AllHotelRequests" %>
+<%@ Register src="~/Admin/Controls/ApproveHotelRequest.ascx" tagname="ApproveHotelRequest" tagprefix="ucc" %>
 
 <asp:Content ID="HotelRegistrations" ContentPlaceHolderID="DashboardMainContent" runat="server">
 	<div class="title">

@@ -23,24 +23,81 @@
     width: 100%;
 }
 
+.text-primary,a {
+    color: #00acc1;
+}
+
 /* Create slider */
+#sliders .create-slider-btn {
+    display: block;
+    float: left;
+    padding: 5px 10px;
+}
+#sliders .create-slider-btn i{
+    float: left;
+    margin-right: 15px;
+}
+#sliders .create-slider-btn span {
+    height: 23px;
+    line-height: 23px;
+    display: block;
+    float: left;
+    top: 2px;
+    position: relative;
+}
 .stack-group {
     float: left;
     position: relative;
     width: 100%;
 }
-.stack-group > label {
+.stack-group > label,
+.stack-group .header > label {
     float: left;
     position: relative;
-    width: 100%;
     color: black;
     text-decoration: underline;
     font-size: 16px;
     margin-top: 20px;
     text-indent: 10px;
+    margin-right: 20px;
+}
+.stack-group .header {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.stack-group > .btn {
+    padding: 5px 30px;
+    margin-top: 20px;
 }
 .stack-group .form-group {
     float: left;
     position: relative;
     width: 100%;
 }
+
+.stack-group .form-group input[type="file"] {
+    text-indent: 55px;
+}
+
+.stack-group .file-upload-preview {
+    display: none;
+    width: 200px;
+    height: 200px;
+}
+
+.stack-group .slide-row {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.stack-group .slide-row > label {
+    width: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+    color: black;
+    text-decoration: underline;
+}
+

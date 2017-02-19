@@ -3,8 +3,9 @@
             CodeBehind="AdminSlidersListControl.ascx.cs" 
             Inherits="PetsWonderland.Client.Admin.Controls.AdminSlidersListControl" %>
 
-<a runat="server" href="~/Admin/AddSlider.aspx">
-    <i class="fa fa-plus-square-o"></i>                          
+<a class="create-slider-btn" runat="server" href="~/Admin/AddSlider.aspx">
+    <i class="fa fa-plus-square-o fa-2x"></i>    
+    <span>Create new slider</span>                      
 </a>
 
 <table class="table table-hover">
@@ -21,20 +22,17 @@
             <asp:Repeater ID="AllSlidersTableRepeater" runat="server" ItemType="PetsWonderland.Business.Models.Pages.Slider">
                 <ItemTemplate>                       
                     <tr>
-                        <td>1</td>
+                        <td><%# Container.ItemIndex + 1 %></td>
                         <td><%#: Eval("Name") %></td>
                         <td><%#: Eval("Position") %></td>
                         <td><%#: Eval("Slides.Count") %></td>
-                        <td>      
-                            <a href="~EditSlider.aspx" runat="server">
-                                 <i class="fa fa-pencil"></i>
-                            </a>
-                                                                                    
-                            <asp:LinkButton ID="btnDeleteSlider"  
-                                        runat="server" 
-                                        CssClass="btn btn-primary btn-simple btn-xs"
-                                        OnClick="btnDeleteSlider_Click">
-                                <i class="fa fa-trash"></i>
+                        <td>                                                                                                         
+                            <asp:LinkButton                                 
+                                ID="btnDeleteSlider"  
+                                runat="server" 
+                                CssClass="btn btn-primary btn-simple btn-xs"
+                                OnClick="btnDeleteSlider_Click">
+                                <i class="fa fa-trash text-danger" data-toggle="tooltip" title="Delete this slider" data-placement="bottom"></i>
                             </asp:LinkButton>                  
                         </td>
                     </tr>                          

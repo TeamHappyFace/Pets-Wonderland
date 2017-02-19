@@ -38,7 +38,8 @@
         </div>
 		<div>
 		<div>
-			<ucc:ApproveHotelRequest runat="server"/>
+			<ucc:ApproveHotelRequest ID="asd" runat="server" HotelName="<%# Item.HotelName %>" Description="<%# Item.HotelDescription %>"/>
+
 			<ucc:DenyHotelRequest runat="server" />
 
 <%--			<ucc:ApproveHotelRequest runat="server" ID="ApproveRequest"

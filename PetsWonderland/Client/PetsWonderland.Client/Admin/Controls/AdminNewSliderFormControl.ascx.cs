@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using AjaxControlToolkit;
-using PetsWonderland.Business.Models.Pages.Contracts;
 using PetsWonderland.Business.MVP.Admin.CreateSlider;
 using PetsWonderland.Business.MVP.Admin.CreateSlider.Args;
 using PetsWonderland.Business.MVP.Admin.CreateSlider.ViewModels;
@@ -50,16 +45,6 @@ namespace PetsWonderland.Client.Admin.Controls
 
                 slide.NameGroup = this.NumberOfControls.ToString();
                 SliderSlidesPlaceholder2.Controls.Add(slide);     
-            }
-        }
-
-        private IEnumerable<Control> EnumerateControlsRecursive(Control parent)
-        {
-            foreach (Control child in parent.Controls)
-            {
-                yield return child;
-                foreach (Control descendant in EnumerateControlsRecursive(child))
-                    yield return descendant;
             }
         }
 
@@ -121,6 +106,12 @@ namespace PetsWonderland.Client.Admin.Controls
             };
             
             this.CreateSlider?.Invoke(this, sliderArgs);
+
+            if (!this.Model.SliderCreatedSuccessfully)
+            {
+                this.Notificator.DisplaySuccessNotification("An error occured while trying to create the slider!");
+            }
+            
             Response.Redirect("ContentPages.aspx");                 
         }
 
@@ -131,7 +122,6 @@ namespace PetsWonderland.Client.Admin.Controls
 
             SliderSlidesPlaceholder2.Controls.Add(slide);
             this.NumberOfControls++;
-
         }
     }
 }

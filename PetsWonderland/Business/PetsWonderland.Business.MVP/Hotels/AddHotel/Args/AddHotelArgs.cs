@@ -6,13 +6,8 @@ namespace PetsWonderland.Business.MVP.Hotels.AddHotel.Args
 {
 	public class AddHotelArgs : EventArgs
 	{
-		public AddHotelArgs(Hotel hotelToAdd)
-		{
-			Guard.WhenArgument(hotelToAdd, "Hotel to add is null!").IsNull().Throw();
+		public string HotelName { get; set; }
 
-			this.HotelToAdd = hotelToAdd;
-		}
-
-		public Hotel HotelToAdd { get; set; }
+        public string HotelDescription { get; set; }
 	}
 }

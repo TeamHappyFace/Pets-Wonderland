@@ -17,10 +17,13 @@ namespace PetsWonderland.Client.Admin.Controls
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			ListViewHotelRequests_GetData();
+		    if (!IsPostBack)
+		    {
+                ListViewHotelRequests_GetData();
+            }			
 		}
 
-		public IQueryable<UserHotelRegistrationRequest> ListViewHotelRequests_GetData()
+        public IQueryable<UserHotelRegistrationRequest> ListViewHotelRequests_GetData()
 		{
 			this.GetAllHotelRequests?.Invoke(this, new GetAllHotelRequestsArgs());
 
