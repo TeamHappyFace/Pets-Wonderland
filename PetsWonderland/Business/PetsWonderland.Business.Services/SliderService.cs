@@ -44,8 +44,8 @@ namespace PetsWonderland.Business.Services
         }
 
         public bool CreateSlider(
-            string name, string 
-            position, 
+            string name,
+            string position, 
             Dictionary<int, List<KeyValuePair<string, string>>> slidesOptions,
             Dictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> slidesImages)
         {
@@ -60,9 +60,15 @@ namespace PetsWonderland.Business.Services
                     var slides = new List<Slide>();
                     foreach (var key in slidesOptions.Keys)
                     {
-                        var slideTitle = slidesOptions[key].Where(x => x.Key == "SlideTitle").Select(x => x.Value).FirstOrDefault();
-                        var slideCaption = slidesOptions[key].Where(x => x.Key == "SlideCaption").Select(x => x.Value).FirstOrDefault();
-                        var slideImagePath = slidesOptions[key].Where(x => x.Key == "SlideImageName").Select(x => x.Value).FirstOrDefault();
+                        var slideTitle = slidesOptions[key]
+                            .Where(x => x.Key == "SlideTitle")
+                            .Select(x => x.Value).FirstOrDefault();
+                        var slideCaption = slidesOptions[key]
+                            .Where(x => x.Key == "SlideCaption")
+                            .Select(x => x.Value).FirstOrDefault();
+                        var slideImagePath = slidesOptions[key]
+                            .Where(x => x.Key == "SlideImageName")
+                            .Select(x => x.Value).FirstOrDefault();
 
                         var slide = new Slide
                         {
@@ -77,7 +83,9 @@ namespace PetsWonderland.Business.Services
                     var storagePath = HttpContext.Current.Server.MapPath("~/Images/Pages/Homepage/Slider/");
                     foreach (var key in slidesImages.Keys)
                     {
-                        var slideImageFile = slidesImages[key].Where(x => x.Key == "SlideImage").Select(x => x.Value).FirstOrDefault();
+                        var slideImageFile = slidesImages[key]
+                            .Where(x => x.Key == "SlideImage")
+                            .Select(x => x.Value).FirstOrDefault();
 
                         slideImageFile?.SaveAs(storagePath + slideImageFile.FileName);
                     }

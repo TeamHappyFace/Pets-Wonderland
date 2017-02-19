@@ -30,8 +30,6 @@ namespace PetsWonderland.Business.Models.Pages
         [MaxLength(ValidationConstants.NameMaxLength)]
         public string Position { get; set; }
 
-
-
         public virtual ICollection<Slide> Slides
         {
             get

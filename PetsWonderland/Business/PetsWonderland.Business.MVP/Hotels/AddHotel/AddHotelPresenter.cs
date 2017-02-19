@@ -27,9 +27,9 @@ namespace PetsWonderland.Business.MVP.Hotels.AddHotel
 
 		public void AddHotel(object sender, AddHotelArgs e)
 		{
-			this.hotelService.AddHotel(e.HotelToAdd);
+			/*this.hotelService.AddHotel(e.HotelToAdd);
 			this.View.Model.HotelToAdd = hotelService.GetById(e.HotelToAdd.Id);
-			this.View.Model.Hotels.Add(e.HotelToAdd);
+			this.View.Model.Hotels.Add(e.HotelToAdd);*/
 		}
 	}
 }

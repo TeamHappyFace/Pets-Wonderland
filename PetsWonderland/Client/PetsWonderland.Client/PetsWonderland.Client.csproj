@@ -267,7 +267,9 @@
     <Content Include="Content\External\Bootstrap\bootstrap.css" />
     <Content Include="Content\External\Bootstrap\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="ErrorPages\400.aspx" />
     <Content Include="ErrorPages\404.aspx" />
+    <Content Include="ErrorPages\500.aspx" />
     <Content Include="ErrorPages\DefaultErrorPage.aspx" />
     <Content Include="fonts\FontAwesome\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -314,6 +316,8 @@
     <Content Include="fonts\FontAwesome\fontawesome-webfont.ttf" />
     <Content Include="fonts\FontAwesome\fontawesome-webfont.eot" />
     <Content Include="Images\Admin\sidebar-1.jpg" />
+    <Content Include="Images\Errors\404_page_cover.png" />
+    <Content Include="Images\Errors\500_page_cover.png" />
     <Content Include="Images\Pages\Homepage\About\boarding.png" />
     <Content Include="Images\Pages\Homepage\About\daycare.png" />
     <Content Include="Images\Pages\Homepage\About\management.png" />
@@ -331,6 +335,7 @@
     <Content Include="PageControls\Homepage\HomepageGuestBookControl.ascx" />
     <Content Include="PageControls\Homepage\HomepageHotelsListControl.ascx" />
     <Content Include="PageControls\Homepage\QuickContactControl.ascx" />
+    <Content Include="PageControls\Notifications\NotificationControl.ascx" />
     <Content Include="Pages\Requests\AllBoardingRequests.aspx" />
     <Content Include="Pages\Requests\BoardingRequest.aspx" />
     <Content Include="Pages\Requests\HotelRequest.aspx" />
@@ -671,12 +676,26 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ErrorPages\400.aspx.cs">
+      <DependentUpon>400.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\400.aspx.designer.cs">
+      <DependentUpon>400.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPages\404.aspx.cs">
       <DependentUpon>404.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ErrorPages\404.aspx.designer.cs">
       <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
     </Compile>
     <Compile Include="ErrorPages\DefaultErrorPage.aspx.cs">
       <DependentUpon>DefaultErrorPage.aspx</DependentUpon>
@@ -722,6 +741,13 @@
     </Compile>
     <Compile Include="PageControls\Homepage\QuickContactControl.ascx.designer.cs">
       <DependentUpon>QuickContactControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PageControls\Notifications\NotificationControl.ascx.cs">
+      <DependentUpon>NotificationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageControls\Notifications\NotificationControl.ascx.designer.cs">
+      <DependentUpon>NotificationControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Requests\AllBoardingRequests.aspx.cs">
       <DependentUpon>AllBoardingRequests.aspx</DependentUpon>

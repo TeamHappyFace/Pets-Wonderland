@@ -13,6 +13,15 @@ namespace PetsWonderland.Client.Admin.Controls {
     public partial class AdminNewSliderFormControl {
         
         /// <summary>
+        /// Notificator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::PetsWonderland.Client.PageControls.Notifications.NotificationControl Notificator;
+        
+        /// <summary>
         /// SliderName control.
         /// </summary>
         /// <remarks>

@@ -121,7 +121,7 @@ input[type="select"] {
     perspective: 500px;
     -webkit-perspective: 500px;
 }
-.prism-button > .prism-wrap {
+.prism-button .prism-wrap {
     height: 100%;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
@@ -129,11 +129,11 @@ input[type="select"] {
     -webkit-transition: 0.25s;
 }
 
-.prism-button:hover > .prism-wrap {
+.prism-button:hover .prism-wrap {
     transform: rotateX(-90deg);
 }
 
-.prism-button > .prism-wrap > span {
+.prism-button .prism-wrap > span {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -146,17 +146,28 @@ input[type="select"] {
     text-transform: uppercase;
 }
 
-.prism-button > .prism-wrap > span:nth-child(1) {
+.prism-button .prism-wrap > span:nth-child(1) {
   color: #10b4ea;
   transform: translate3d(0, 0, 30px);
   -webkit-transform: translate3d(0, 0, 30px);
 }
 
-.prism-button > .prism-wrap > span:nth-child(2) {
+.prism-button .prism-wrap > span:nth-child(2) {
   color: #fff;
   background: #10b4ea;
   transform: rotateX(90deg) translate3d(0, 0, 30px);
   -webkit-transform: rotateX(90deg) translate3d(0, 0, 30px);
+}
+
+.prism-button.reversed .prism-wrap > span:nth-child(2){
+    color: #10b4ea;
+    background: #fff;
+}
+.prism-button.reversed .prism-wrap > span:nth-child(1) {
+    color: #fff;
+}
+.prism-button.reversed .prism-wrap > span {
+      border: 3px solid #fff;
 }
 
 
@@ -205,6 +216,21 @@ input[type="select"] {
     z-index: 100;
     display: none;
     background-color: #f7f7f7;
+}
+
+/* Error Pages */
+#ErrorPage404 img,
+#ErrorPage505 img{
+    width: 100%;
+}
+
+#ErrorPage505 .buttons {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+}
+#ErrorPage505 .buttons > .container > div {
+    width: 400px;
 }
 
 /* Responsive: Portrait tablets and up */

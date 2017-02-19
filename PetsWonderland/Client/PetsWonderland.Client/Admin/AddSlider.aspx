@@ -7,7 +7,6 @@
 <%@ Register Src="~/Admin/Controls/AdminNewSliderFormControl.ascx" TagPrefix="acc" TagName="NewSliderControl" %>
 <%@ Register Src="~/Admin/Controls/SlideControl.ascx" TagPrefix="acc" TagName="SlideControl" %>
 
-
 <asp:Content ID="HomepageContent" ContentPlaceHolderID="DashboardMainContent" runat="server">    
     <acc:NewSliderControl runat="server"/>
 </asp:Content>
