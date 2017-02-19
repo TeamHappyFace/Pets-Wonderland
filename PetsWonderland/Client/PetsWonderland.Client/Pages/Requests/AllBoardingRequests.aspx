@@ -48,4 +48,15 @@
 	</div>
 	</ItemTemplate>
 </asp:ListView>
+<asp:DataPager ID="DataPagerCustomers" runat="server"
+    PagedControlID="HotelRequests" PageSize="1"
+    QueryStringField="page">
+    <Fields>
+        <asp:NextPreviousPagerField ShowFirstPageButton="false"
+            ShowNextPageButton="false" ShowPreviousPageButton="true" />
+		<asp:NumericPagerField />
+        <asp:NextPreviousPagerField ShowLastPageButton="false"
+            ShowNextPageButton="true" ShowPreviousPageButton="false" />
+    </Fields>
+</asp:DataPager>
 </asp:Content>
