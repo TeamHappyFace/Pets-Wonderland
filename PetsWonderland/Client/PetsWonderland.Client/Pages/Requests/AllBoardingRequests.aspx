@@ -9,9 +9,22 @@
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+	<div class="title">
+		<h2>Boarding requests</h2>
+	</div>
 	<asp:ListView runat="server" ID="Hotels" 
 	ItemType="PetsWonderland.Business.Models.Requests.UserBoardingRequest" 
 	SelectMethod="ListViewRequests_GetData">
+	<EmptyDataTemplate>
+        <div>
+            <h2>No boarding requests found!</h2>
+        </div>
+    </EmptyDataTemplate>
+    <EmptyItemTemplate>
+		<div>
+
+		</div>
+    </EmptyItemTemplate>
 
 	<GroupTemplate>
 		<div class="row">
@@ -48,15 +61,4 @@
 	</div>
 	</ItemTemplate>
 </asp:ListView>
-<asp:DataPager ID="DataPagerCustomers" runat="server"
-    PagedControlID="HotelRequests" PageSize="1"
-    QueryStringField="page">
-    <Fields>
-        <asp:NextPreviousPagerField ShowFirstPageButton="false"
-            ShowNextPageButton="false" ShowPreviousPageButton="true" />
-		<asp:NumericPagerField />
-        <asp:NextPreviousPagerField ShowLastPageButton="false"
-            ShowNextPageButton="true" ShowPreviousPageButton="false" />
-    </Fields>
-</asp:DataPager>
 </asp:Content>
