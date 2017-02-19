@@ -10,12 +10,10 @@
     <div class="section-content">
         <div class="description">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis et quam
-                nec volutpat. Nam aliquet at lectus id viverra. Suspendisse potenti. Ut dictum 
-                imperdiet augue, a dictum mi sagittis sed. Duis ac ligula nunc. Nulla finibus 
-                neque nunc. Cras eget nunc libero. Nam luctus lobortis aliquam. Pellentesque congue
-                libero sit amet feugiat rhoncus. Aliquam vestibulum felis non vehicula lobortis.
-                Morbi ipsum erat, tincidunt in scelerisque placerat, efficitur nec augue. 
+				We understand that when you get home from work everyday, you are exhausted and just want to kick back and relax before bed. 
+				However, if you have a dog that sat at home all day cooped up and waiting for you to return, you can’t, because your dog needs a walk and some attention and play. 
+				With that in mind, we founded hotels for you and your pet to each lead happy and healthy lives together, so come and open a membership with us and experience all
+				the wonders for your dog that we have to offer.
             </p>
         </div>
         <div class="services-list">
@@ -28,30 +26,13 @@
                                 <img src="~/Images/Pages/Homepage/About/daycare.png" runat="server"/>
                                 <span>Daycare</span>
                             </a>
-							<p class="box">
-								Dogs get excited just hearing pet hotel – they have a fun filled day playing, 
-								making new friends and getting their wiggles out in daycare.
-							</p>
                         </li>
                         <li class="col-sm-6">
                             <a href="#">
                                 <img src="~/Images/Pages/Homepage/About/boarding.png" runat="server"/>
                                 <span>Boarding</span>
                             </a>
-							<p class="box">
-								Pet Hotels provides an exceptional experience in care, 
-								comfort and fun for every one of our overnight guests – plus lots of hugs.
-							</p>
-                        </li>
-<%--					<li class="col-sm-6">
-                            <a href="#">
-                                <img src="~/Images/Pages/Homepage/About/spa.png" runat="server"/>
-                                <span>Spa</span>
-                            </a>
-							<p class="box">
-								Professional dog grooming services provide the highest level of expertise and care for each of our guests – pampering is our priority.
-							</p>
-                        </li>  --%>                
+                        </li>               
                     </ul>
                 </div>                
             </div>

@@ -1,6 +1,4 @@
 ﻿using System;
-using Bytes2you.Validation;
-using PetsWonderland.Business.Models.Hotels;
 
 namespace PetsWonderland.Business.MVP.Hotels.AddHotel.Args
 {

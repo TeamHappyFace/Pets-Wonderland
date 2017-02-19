@@ -19,6 +19,7 @@ namespace PetsWonderland.Client.Admin.Controls
 		{
 		    if (!IsPostBack)
 		    {
+				DataBind();
                 ListViewHotelRequests_GetData();
             }			
 		}

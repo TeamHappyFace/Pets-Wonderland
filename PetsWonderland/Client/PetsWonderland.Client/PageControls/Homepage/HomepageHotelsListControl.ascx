@@ -24,7 +24,6 @@
                             nec volutpat. Nam aliquet at lectus id viverra. Suspendisse potenti. Ut dictum 
                             imperdiet augue, a dictum mi sagittis sed. Duis ac ligula nunc.
                         </p>
-						<a href="../../Pages/Requests/BoardingRequest.aspx"><h4>Accomodate your pet</h4></a>
                     </div>
                 </div>                
             </div>
@@ -70,7 +69,7 @@
 		SelectMethod="ListViewHotels_GetData">
 
 		<GroupTemplate>
-			<div class="row">
+			<div class="col-md-4">
 				<asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
 			</div>
 		</GroupTemplate>
@@ -78,11 +77,10 @@
 		<ItemTemplate>
 		<div class="section-content">
 			<div class="hotels-list grid">
-				<div class="gutter-sizer"></div>
-				<div class="grid-item col-sm-12 col-md-4">
+				<div class="grid-item">
 					<div class="wrapper">
 						<div class="image">
-							<asp:Image runat="server" ImageUrl='<%# Item.ImageUrl %>'/>
+							<asp:Image runat="server" Height="130px" ImageUrl='<%# Item.ImageUrl %>'/>
 						</div>
 						<div class="title">
 							<a href="#"><h3><%#: Item.Name %></h3></a>
@@ -92,7 +90,7 @@
 								<%#: Item.Description %>
 							</p>
 							<asp:HyperLink ID="boardingRequest" runat="server" NavigateUrl='<%# String.Format("../../Pages/Requests/BoardingRequest.aspx?id={0}", Item.HotelManagerId) %>'>
-								<h4>Accomodate your pet</h4>
+								<h4 runat="server" id="hello">Accomodate your pet</h4>
 							</asp:HyperLink>
 						</div>
 					</div>                

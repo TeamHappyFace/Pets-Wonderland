@@ -21,7 +21,7 @@
             <asp:Label runat="server" AssociatedControlID="HotelName" CssClass="col-md-2 control-label">Hotel name *</asp:Label>
             <div>
                 <asp:TextBox runat="server" ID="HotelName" CssClass="form-control"/>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate= "HotelName"
+                <asp:RequiredFieldValidator runat="server" CssClass="col-md-offset-2 col-md-10" ControlToValidate= "HotelName"
                     ErrorMessage="The Hotel name field is required." />
             </div>
         </div>
@@ -29,7 +29,7 @@
             <asp:Label runat="server" AssociatedControlID="Location" CssClass="col-md-2 control-label">Location *</asp:Label>
             <div>
                 <asp:TextBox runat="server" ID="Location" CssClass="form-control"/>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Location"
+                <asp:RequiredFieldValidator runat="server" CssClass="col-md-offset-2 col-md-10" ControlToValidate="Location"
                    ErrorMessage="The Location field is required." />
             </div>
         </div>

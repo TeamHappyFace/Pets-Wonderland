@@ -12,6 +12,17 @@
 	ID="HotelRequests" 
     ItemType="PetsWonderland.Business.Models.Requests.UserHotelRegistrationRequest" 
     SelectMethod="ListViewHotelRequests_GetData">
+	
+	<EmptyDataTemplate>
+        <div>
+            <h2>No hotel requests found!/h2>
+        </div>
+    </EmptyDataTemplate>
+    <EmptyItemTemplate>
+		<div>
+
+		</div>
+    </EmptyItemTemplate>
 
     <LayoutTemplate>
         <div class="row">
@@ -38,17 +49,11 @@
         </div>
 		<div>
 		<div>
-			<ucc:ApproveHotelRequest ID="asd" runat="server" HotelName="<%# Item.HotelName %>" Description="<%# Item.HotelDescription %>"/>
+<%--			<ucc:ApproveHotelRequest ID="asd" runat="server"
+				 HotelName="<%# Item.HotelName %>" 
+				Description="<%# Item.HotelDescription %>"/>--%>
 
-			<ucc:DenyHotelRequest runat="server" />
-
-<%--			<ucc:ApproveHotelRequest runat="server" ID="ApproveRequest"
- 				HotelName = <%# Item.HotelName %>
- 				Description = <%# Item.HotelDescription %>
- 				ImageUrl = <%# Item.HotelImageUrl %> />
-
-			<ucc:DenyHotelRequest runat="server" RequestId ="<%# Item.Id %>"/>--%>
-
+			<ucc:DenyHotelRequest runat="server" ID="DenyRequest" RequestId ='<%#Bind("Id")%>'/>
 		</div>
     </ItemTemplate>
 </asp:ListView>

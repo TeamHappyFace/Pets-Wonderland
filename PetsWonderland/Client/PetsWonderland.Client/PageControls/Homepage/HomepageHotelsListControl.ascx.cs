@@ -19,15 +19,12 @@ namespace PetsWonderland.Client.PageControls.Homepage
 
 		protected void Page_Load(object sender, ListViewItemEventArgs e)
 		{
-			var hyperlink = (HyperLink)e.Item.FindControl("BoardingRequest");
-			
-			if (this.Page.User.IsInRole("User"))
+			if (!this.Page.User.IsInRole("User"))
 			{
-				hyperlink.Visible = true;
-			}
-			else
-			{
-				Page.Items.Remove(hyperlink);
+				HyperLink hyperlink = new HyperLink();
+
+				hyperlink = (HyperLink)e.Item.FindControl("boardingRequest");
+				hyperlink.Visible = false;
 			}
 
 			ListViewHotels_GetData();

@@ -4,22 +4,28 @@
 	position: relative;
 	float: left;
 	color: white;
+	font-size: 16px;
 }
 .boarding-request.parallax {
     background-image: url("../../Images/Pages/Requests/puppy3.jpg");
-	
     height: 1000px;
-
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-h3 {
+.boarding-request .form-group h3 {
 	float: left;
     position: relative;
     width: 100%;
 	font-weight: bold;
 	font-size: 25px;
+	font-family: "Lobster";
+    color: #10b4ea;
+	margin: 30px 240px;
 }
+
+.boarding-request .form-content .form-group .col-md-offset-2 > * {
+	color: #10b4ea;
+} 

@@ -13,7 +13,24 @@ namespace PetsWonderland.Client.Admin.Controls
 	{
 		public event EventHandler<DeleteHotelRequestArgs> DeleteHotelRegistrationRequest;
 
-		public int RequestId { get; set; }
+		public int RequestId
+		{
+			get
+			{
+				if (ViewState["RequestId"] == null)
+				{
+					return 0;
+				}
+				else
+				{
+					return (int)ViewState["RequestId"];
+				}
+			}
+			set
+			{
+				ViewState["RequestId"] = value;
+			}
+		}
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -22,7 +39,7 @@ namespace PetsWonderland.Client.Admin.Controls
 
 		protected void OnDeny_Click(object sender, EventArgs e)
 		{
-			//this.DeleteHotelRegistrationRequest?.Invoke(this, new DeleteHotelRequestArgs(this.RequestId));
+			this.DeleteHotelRegistrationRequest?.Invoke(this, new DeleteHotelRequestArgs(this.RequestId));
 		}
 	}
 }
