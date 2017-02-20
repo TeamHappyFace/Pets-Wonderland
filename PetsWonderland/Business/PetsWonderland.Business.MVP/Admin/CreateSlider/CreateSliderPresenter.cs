@@ -14,7 +14,7 @@ namespace PetsWonderland.Business.MVP.Admin.CreateSlider
         public CreateSliderPresenter(ICreateSliderView view, ISliderService sliderService) : base(view)
         {
             Guard.WhenArgument(view, "View cannot be null!").IsNull().Throw();
-            Guard.WhenArgument(sliderService, "ContentService cannot be null!").IsNull().Throw();
+            Guard.WhenArgument(sliderService, "SliderService cannot be null!").IsNull().Throw();
 
             this.sliderService = sliderService;
 

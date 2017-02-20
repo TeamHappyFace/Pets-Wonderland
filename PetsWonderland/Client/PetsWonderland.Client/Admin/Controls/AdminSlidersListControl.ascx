@@ -14,6 +14,7 @@
         <th>Name</th>
         <th>Position</th>        
         <th>Number of slides</th>        
+        <th>Is deleted</th>        
         <th>Options</th>
     </thead>
     <tbody>
@@ -26,14 +27,19 @@
                         <td><%#: Eval("Name") %></td>
                         <td><%#: Eval("Position") %></td>
                         <td><%#: Eval("Slides.Count") %></td>
+                        <td><%#: Eval("IsDeleted") %></td>
                         <td>                                                                                                         
+                            <%--<acc:DeleteSliderBtn runat="server" SliderId='<%# Item.Id %>' />  --%>     
+                            
                             <asp:LinkButton                                 
                                 ID="btnDeleteSlider"  
                                 runat="server" 
                                 CssClass="btn btn-primary btn-simple btn-xs"
-                                OnClick="btnDeleteSlider_Click">
+                                OnCommand="btnDeleteSlider_Click"
+                                CommandArgument='<%#Eval("Id") %>' 
+                                >
                                 <i class="fa fa-trash text-danger" data-toggle="tooltip" title="Delete this slider" data-placement="bottom"></i>
-                            </asp:LinkButton>                  
+                            </asp:LinkButton>        
                         </td>
                     </tr>                          
                 </ItemTemplate>

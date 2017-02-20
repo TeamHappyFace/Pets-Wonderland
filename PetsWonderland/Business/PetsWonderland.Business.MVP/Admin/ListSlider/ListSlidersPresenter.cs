@@ -19,11 +19,17 @@ namespace PetsWonderland.Business.MVP.Admin.ListSlider
             this.sliderService = sliderService;
 
             View.GetSlidersList += GetAllSliders;
+            View.DeleteSlider += DeleteSlider;
         }     
 
         public void GetAllSliders(object sender, GetAllSlidersArgs e)
         {
             this.View.Model.AllSliders = this.sliderService.GetAllSliders();
+        }
+
+        public void DeleteSlider(object sender, DeleteSliderArgs e)
+        {
+            this.sliderService.DeleteSlider(e.SliderId);
         }
     }
 }

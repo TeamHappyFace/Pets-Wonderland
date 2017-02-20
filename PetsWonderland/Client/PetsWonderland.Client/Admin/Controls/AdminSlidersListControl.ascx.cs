@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web.UI.WebControls;
 using PetsWonderland.Business.MVP.Admin.ListSlider;
 using PetsWonderland.Business.MVP.Admin.ListSlider.Args;
 using PetsWonderland.Business.MVP.Admin.ListSlider.ViewModels;
@@ -13,6 +14,7 @@ namespace PetsWonderland.Client.Admin.Controls
     public partial class AdminSlidersListControl : MvpUserControl<ListSlidersViewModel>, IListSlidersView
     {
         public event EventHandler<GetAllSlidersArgs> GetSlidersList;
+        public event EventHandler<DeleteSliderArgs> DeleteSlider;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,20 +33,15 @@ namespace PetsWonderland.Client.Admin.Controls
             this.AllSlidersTableRepeater.DataBind();
         }
 
-        protected void btnEditSlider_Click(object sender, EventArgs e)
-        {
-          
-            this.BindSlidersRepeater();
-        }
-
         protected void btnDeleteSlider_Click(object sender, EventArgs e)
-        {   
-            this.BindSlidersRepeater();
-        }
-
-        protected void btnNewSlider_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var btn = (LinkButton)(sender);
+            int sliderId = int.Parse(btn.CommandArgument);
+
+            var deleteSliderEventArgs = new DeleteSliderArgs { SliderId = sliderId };
+            this.DeleteSlider?.Invoke(this, deleteSliderEventArgs);
+
+            BindSlidersRepeater();
         }
     }
 }

@@ -102,6 +102,7 @@
     <Compile Include="Admin\CreateSlider\CreateSliderPresenter.cs" />
     <Compile Include="Admin\CreateSlider\ViewModels\CreateSliderViewModel.cs" />
     <Compile Include="Admin\CreateSlider\Views\ICreateSliderView.cs" />
+    <Compile Include="Admin\ListSlider\Args\DeleteSliderArgs.cs" />
     <Compile Include="Animals\AnimalPresenter.cs" />
     <Compile Include="Animals\Args\FindAnimalArgs.cs" />
     <Compile Include="Animals\Args\GetAllAnimalsArgs.cs" />

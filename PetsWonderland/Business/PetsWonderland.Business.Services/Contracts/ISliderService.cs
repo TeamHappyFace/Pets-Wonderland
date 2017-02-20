@@ -15,5 +15,7 @@ namespace PetsWonderland.Business.Services.Contracts
             string position, 
             Dictionary<int, List<KeyValuePair<string, string>>> slidesOptions,
             Dictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> slidesImages);
+
+        void DeleteSlider(int id);
     }
 }
