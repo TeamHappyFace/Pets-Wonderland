@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.UI.WebControls;
-using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.MVP.Hotels.GetAllHotels;
 using PetsWonderland.Business.MVP.Hotels.GetAllHotels.Args;
 using PetsWonderland.Business.MVP.Hotels.GetAllHotels.ViewModels;
@@ -17,17 +14,42 @@ namespace PetsWonderland.Client.PageControls.Homepage
 	{
 		public event EventHandler<GetAllHotelsArgs> GetAllHotels;
 
+	    protected const int HotelsBatchIncrease = 3;
+
+	    protected int HotelsListStartIndex {
+            get { return (int)ViewState["HotelsListStartIndex"]; }
+            set { ViewState["HotelsListStartIndex"] = value; }
+        }
+
+	    protected int HotelsListBatch
+	    {
+            get { return (int)ViewState["HotelsListBatch"]; }
+            set { ViewState["HotelsListBatch"] = value; }
+        } 
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			ListViewHotels_GetData();
-		}
-		
-		public IList<Hotel> ListViewHotels_GetData()
-		{
-			this.GetAllHotels?.Invoke(this, new GetAllHotelsArgs());
+		    if (!IsPostBack)
+		    {
+		        this.HotelsListStartIndex = 0;
+		        this.HotelsListBatch = HotelsBatchIncrease;
 
-			return this.Model.Hotels.ToList();
+		        RebindHotelsList(this.HotelsListStartIndex, this.HotelsListBatch);
+		    }
+		    else
+		    {
+		        RebindHotelsList(this.HotelsListStartIndex, this.HotelsListBatch);
+		    }
 		}
+
+	    protected void RebindHotelsList(int startAt, int count)
+	    {
+            this.GetAllHotels?.Invoke(this, new GetAllHotelsArgs { StartAt = startAt, Count = count });
+
+            Hotels.DataSource = this.Model.Hotels;
+            Hotels.DataBind();
+        
+        }             
 
 		protected void Hotels_ItemCreated(object sender, ListViewItemEventArgs e)
 		{
@@ -38,5 +60,12 @@ namespace PetsWonderland.Client.PageControls.Homepage
 				hyperlink.Visible = false;
 			}
 		}
+
+        protected void btnLoadMoreHotels_Click(object sender, EventArgs e)
+        {
+            this.HotelsListBatch += HotelsBatchIncrease;
+
+            RebindHotelsList(this.HotelsListStartIndex, this.HotelsListBatch);
+        }
 	}
 }

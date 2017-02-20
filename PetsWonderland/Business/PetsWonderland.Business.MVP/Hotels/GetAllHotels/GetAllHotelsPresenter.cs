@@ -28,7 +28,7 @@ namespace PetsWonderland.Business.MVP.Hotels.GetAllHotels
 
 		public void GetAllHotels(object sender, GetAllHotelsArgs e)
 		{
-			var allRequests = this.hotelService.GetAllHotels().ToList();
+			var allRequests = this.hotelService.GetHotels(e.StartAt, e.Count).ToList();
 			this.View.Model.Hotels = allRequests;
 		}
 	}

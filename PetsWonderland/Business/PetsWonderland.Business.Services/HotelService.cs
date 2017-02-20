@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Hotels;
@@ -56,7 +57,12 @@ namespace PetsWonderland.Business.Services
 			}
 		}
 
-		public IQueryable<Hotel> GetAllHotels()
+	    public IList<Hotel> GetHotels(int startAt, int count)
+	    {
+            return this.hotelRepository.All().OrderByDescending(x => x.Id).Skip(startAt).Take(count).ToList();
+        }
+
+	    public IQueryable<Hotel> GetAllHotels()
 		{
 			return this.hotelRepository.All();
 		}

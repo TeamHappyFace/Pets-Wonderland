@@ -52,7 +52,6 @@
                 OnClick="CreateSliderBtn_Click">
             </asp:Button>                                         
         </div>
-    </div>
-   
+    </div>   
 </div>
 
