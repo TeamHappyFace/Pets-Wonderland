@@ -101,3 +101,11 @@
     text-decoration: underline;
 }
 
+#admin-hotel-reqeusts .card-header{
+    
+    position: relative;
+    color: #fff;
+}
+#admin-hotel-reqeusts .card-header div {
+    color: #fff;
+}
