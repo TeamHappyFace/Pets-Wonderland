@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Requests;
@@ -28,29 +27,27 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.hotelRequestRepository.Add(requestToAdd);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
 		public void DeleteHotelRequest(UserHotelRegistrationRequest requestToDelete)
 		{
-			Guard.WhenArgument(requestToDelete, "Cannot delete request with id= null!").IsNull().Throw();
+			Guard.WhenArgument(requestToDelete, "Request is null!").IsNull().Throw();
 
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.hotelRequestRepository.Delete(requestToDelete);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
 		public void DeleteHotelRequestById(object requestId)
 		{
-			Guard.WhenArgument(requestId, "Cannot delete request with id= null!").IsNull().Throw();
-
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.hotelRequestRepository.Delete(requestId);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
@@ -73,18 +70,16 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				userHotelRegistrationRequest.IsAccepted = isAccepted;
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
 		public void UpdateDeleted(int requestId, bool isDeleted)
 		{
-			Guard.WhenArgument(requestId, "Request Id is less than zero!").IsLessThan(0).Throw();
-
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.GetById(requestId).IsDeleted = isDeleted;
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 	}

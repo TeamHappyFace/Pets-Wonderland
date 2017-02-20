@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Requests;
@@ -28,7 +27,7 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.boardingRequestRepository.Add(requestToAdd);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
@@ -39,18 +38,16 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.boardingRequestRepository.Delete(requestToDelete);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
 		public void DeleteBoardingRequestById(object requestId)
 		{
-			Guard.WhenArgument(requestId, "Cannot delete request with id= null!").IsNull().Throw();
-
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.boardingRequestRepository.Delete(requestId);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
@@ -71,18 +68,16 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				userBoardingRequest.IsAccepted = isAccepted;
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
 		public void UpdateDeleted(int requestId, bool isDeleted)
 		{
-			Guard.WhenArgument(requestId, "Request Id is less than zero!").IsLessThan(0).Throw();
-
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.GetById(requestId).IsDeleted = isDeleted;
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 	}

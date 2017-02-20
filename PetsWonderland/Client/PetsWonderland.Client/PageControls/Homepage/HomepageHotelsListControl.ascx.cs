@@ -19,17 +19,20 @@ namespace PetsWonderland.Client.PageControls.Homepage
 
 		protected void Page_Load(object sender, ListViewItemEventArgs e)
 		{
-			if (this.Page.User.IsInRole("User"))
-			{
-				HyperLink hyperlink = new HyperLink();
-
-				hyperlink = (HyperLink)e.Item.FindControl("boardingRequest");
-				hyperlink.Visible = true;
-			}
-
+			CheckHotels(sender, e);
 			ListViewHotels_GetData();
 		}
 
+		protected void CheckHotels(object sender, ListViewItemEventArgs e)
+		{
+			var hyperlink = e.Item.FindControl("boardingRequest") as HyperLink;
+
+			if (!this.Page.User.IsInRole("User") || !this.Page.User.Identity.IsAuthenticated)
+			{
+				hyperlink.Visible = false;
+				this.Hotels.Controls.Remove(hyperlink);
+			}
+		}
 		public IList<Hotel> ListViewHotels_GetData()
 		{
 			this.GetAllHotels?.Invoke(this, new GetAllHotelsArgs());

@@ -38,18 +38,16 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.userHotelRepository.Delete(userHotelToDelete);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
 		public void DeleteUserHotelById(object userHotelId)
 		{
-			Guard.WhenArgument(userHotelId, "Cannot delete user hotel with id=null!").IsNull().Throw();
-
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.userHotelRepository.Delete(userHotelId);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 

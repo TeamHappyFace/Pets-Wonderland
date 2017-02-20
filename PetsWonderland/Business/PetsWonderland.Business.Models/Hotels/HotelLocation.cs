@@ -10,7 +10,6 @@ namespace PetsWonderland.Business.Models.Hotels
 		public int Id { get; set; }
 
 		[Required]
-		[MinLength(ValidationConstants.MinAddressDescription)]
 		[MaxLength(ValidationConstants.MaxAddressDescription)]
 		public string Address { get; set; }
 

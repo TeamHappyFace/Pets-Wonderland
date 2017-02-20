@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Hotels;
@@ -28,7 +27,7 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.hotelRepository.Add(hotelToAdd);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
@@ -44,18 +43,16 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.hotelRepository.Delete(hotelToDelete);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
 		public void DeleteHotelById(object hotelId)
 		{
-			Guard.WhenArgument(hotelId, "Cannot delete hotel with id=null!").IsNull().Throw();
-
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.hotelRepository.Delete(hotelId);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 

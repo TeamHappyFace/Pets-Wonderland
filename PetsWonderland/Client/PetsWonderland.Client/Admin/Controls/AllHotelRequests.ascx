@@ -8,7 +8,8 @@
 <asp:ListView runat="server"  
 	ID="HotelRequests" 
     ItemType="PetsWonderland.Business.Models.Requests.UserHotelRegistrationRequest" 
-    SelectMethod="ListViewHotelRequests_GetData">
+    SelectMethod="ListViewHotelRequests_GetData"
+	OnItemCommand ="HotelRequests_ItemCommand">
 	
 	<EmptyDataTemplate>
         <div>
@@ -26,28 +27,27 @@
     </LayoutTemplate>
 
     <ItemTemplate>
+		<asp:HiddenField runat="server" ID="hidden" Value="<%#: Item.Id %>"/>
         <div>
-            <h2><%#: Item.HotelName %></h2>
+			<asp:Label runat="server" ID="hotelName" Text="<%#: Item.HotelName %>"></asp:Label>
         </div>
 		<div>
             <div class="wrapper">
 				<div class="location">
-					<p>Location: <%#: Item.HotelLocation %></p>
+					<asp:Label runat="server" ID="location" Text="<%#: Item.HotelLocation %>"/>
                 </div>
                 <div class="image">
-					<asp:Image runat="server" Height="300px" ImageUrl='<%# Item.HotelImageUrl %>'/>
+					<asp:Image runat="server" ID="image" Height="300px" ImageUrl='<%# Item.HotelImageUrl %>'/>
                 </div>
                 <div class="description">
-					<p><%#: Item.HotelDescription %></p>
+					<asp:TextBox runat="server" ID="description" Text="<%#: Item.HotelDescription %>"/>
                 </div>
             </div>                
         </div>
 		<div>
-			<asp:HyperLink ID="ApproveHotelRequest" CssClass="col-md-3" runat="server" Visible="true"
-				 NavigateUrl='<%# String.Format("../ApproveHotelRequest.aspx?name={0}&description={1}&image={2}&location={3}&id={4}", 
-					Item.HotelName, Item.HotelDescription, Item.HotelImageUrl, Item.HotelLocation, Item.Id) %>'>
+			<asp:LinkButton ID="ApproveHotelRequest" CssClass="col-md-3" runat="server" Visible="true">
 				<h4 runat="server">Approve hotel request</h4>
-			</asp:HyperLink>
+			</asp:LinkButton>
 			<asp:HyperLink ID="DenyHotelRequest" CssClass="col-md-3" runat="server" Visible="true"
 				 NavigateUrl='<%# String.Format("../DenyHotelRequest.aspx?id={0}", Item.Id) %>'>
 				<h4 runat="server">Deny hotel request</h4>

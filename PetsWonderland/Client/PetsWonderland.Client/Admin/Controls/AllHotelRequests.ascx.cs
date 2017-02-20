@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web.UI.WebControls;
 using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHotelRequest;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHotelRequest.Args;
@@ -15,7 +16,7 @@ namespace PetsWonderland.Client.Admin.Controls
 	{
 		public event EventHandler<GetAllHotelRequestsArgs> GetAllHotelRequests;
 
-		protected void Page_Load(object sender, EventArgs e)
+		protected void Page_Load(object sender, ListViewItemEventArgs e)
 		{
 		    if (!IsPostBack)
 		    {
@@ -24,11 +25,56 @@ namespace PetsWonderland.Client.Admin.Controls
             }			
 		}
 
-        public IQueryable<UserHotelRegistrationRequest> ListViewHotelRequests_GetData()
+		protected override void OnPreRender(EventArgs e)
+		{
+			if (Session["id"] == null)
+			{
+				Session["id"] = "";
+			}
+
+			if (Session["name"] == null)
+			{
+				Session["name"] = "";
+			}
+
+			if (Session["location"] == null)
+			{
+				Session["location"] = "";
+			}
+
+			if (Session["description"] == null)
+			{
+				Session["description"] = "";
+			}
+
+			if (Session["image"] == null)
+			{
+				Session["image"] = "";
+			}
+		}
+
+		public IQueryable<UserHotelRegistrationRequest> ListViewHotelRequests_GetData()
 		{
 			this.GetAllHotelRequests?.Invoke(this, new GetAllHotelRequestsArgs());
 
 			return this.Model.HotelRegistrationRequests.Where(req=>req.IsDeleted==false).AsQueryable();
+		}
+
+		protected void HotelRequests_ItemCommand(object sender, ListViewCommandEventArgs e)
+		{
+			var id = e.Item.FindControl("hidden") as HiddenField;
+			var name = e.Item.FindControl("hotelName") as Label;
+			var location = e.Item.FindControl("location") as Label;
+			var image = e.Item.FindControl("image") as Image;
+			var description = e.Item.FindControl("description") as TextBox;
+
+			Session["id"] = id.Value;
+			Session["name"] = name.Text;
+			Session["location"] = location.Text;
+			Session["description"] = description.Text;
+			Session["image"] = image.ImageUrl;
+			
+			Response.Redirect("ApproveHotelRequest.aspx");
 		}
 	}
 }

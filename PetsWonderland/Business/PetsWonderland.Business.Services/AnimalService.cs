@@ -51,8 +51,6 @@ namespace PetsWonderland.Business.Services
 
 		public void DeleteAnimalById(object animalId)
 		{
-			Guard.WhenArgument(animalId, "Cannot delete animal with id=null!").IsNull().Throw();
-
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.animalRepository.Delete(animalId);

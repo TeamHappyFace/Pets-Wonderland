@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Bytes2you.Validation;
+﻿using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.Services.Contracts;
@@ -31,7 +26,7 @@ namespace PetsWonderland.Business.Services
 			using (var unitOfWork = this.unitOfWork)
 			{
 				this.hotelLocationRepository.Add(locationToAdd);
-				this.unitOfWork.SaveChanges();
+				unitOfWork.SaveChanges();
 			}
 		}
 
