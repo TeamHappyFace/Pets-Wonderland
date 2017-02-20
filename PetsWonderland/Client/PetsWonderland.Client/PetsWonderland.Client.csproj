@@ -241,7 +241,6 @@
     <Content Include="Admin\HotelRegistrations.aspx" />
     <Content Include="Content\Admin\admin.main.css" />
     <Content Include="Content\Admin\bootstrap.min.css" />
-    <Content Include="Content\Admin\hotelRegistrations.css" />
     <Content Include="Content\Admin\material-dashboard.css" />
     <Content Include="Content\External\RevSlider\extralayers.css" />
     <Content Include="Content\External\FontAwesome\font-awesome.css" />

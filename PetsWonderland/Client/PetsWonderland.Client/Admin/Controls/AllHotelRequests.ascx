@@ -9,12 +9,13 @@
 	ID="HotelRequests" 
     ItemType="PetsWonderland.Business.Models.Requests.UserHotelRegistrationRequest" 
     SelectMethod="ListViewHotelRequests_GetData"
-	OnItemCommand ="HotelRequests_ItemCommand">
+	OnItemCommand ="HotelRequests_ItemCommand" 
+	OnItemCreated="HotelRequests_ItemCreated">
 	
 	<EmptyDataTemplate>
-        <div>
-            <h2>No hotel requests found!</h2>
-        </div>
+		<div class="col-md-12" data-background-color="blue">
+            <h3 class="col-md-12">No hotel requests found!</h3>
+		</div>
     </EmptyDataTemplate>
     <EmptyItemTemplate>
 		<div></div>
@@ -26,43 +27,48 @@
         </div>
     </LayoutTemplate>
 
-    <ItemTemplate>
+    <ItemTemplate>			
 		<asp:HiddenField runat="server" ID="hidden" Value="<%#: Item.Id %>"/>
-        <div>
-			<asp:Label runat="server" ID="hotelName" Text="<%#: Item.HotelName %>"></asp:Label>
-        </div>
-		<div>
-            <div class="wrapper">
-				<div class="location">
-					<asp:Label runat="server" ID="location" Text="<%#: Item.HotelLocation %>"/>
-                </div>
-                <div class="image">
-					<asp:Image runat="server" ID="image" Height="300px" ImageUrl='<%# Item.HotelImageUrl %>'/>
-                </div>
-                <div class="description">
-					<asp:TextBox runat="server" ID="description" Text="<%#: Item.HotelDescription %>"/>
-                </div>
-            </div>                
-        </div>
-		<div>
-			<asp:LinkButton ID="ApproveHotelRequest" CssClass="col-md-3" runat="server" Visible="true">
-				<h4 runat="server">Approve hotel request</h4>
+		<div class="card-header text-center" data-background-color="blue">                         
+			<h5>Hotel name: 
+				<asp:Label runat="server" ID="hotelName" Text="<%#: Item.HotelName %>"></asp:Label>
+			</h5> 
+			<h5>Location:
+				<asp:Label runat="server" ID="location" Text="<%#: Item.HotelLocation %>"/>
+			</h5>
+		</div> 
+		<div class="card-content text-center image">
+			<asp:Image runat="server" ID="image" Height="400" Width="80%" ImageUrl='<%# Item.HotelImageUrl %>'/>
+		</div>
+		<div class="card-content text-center">             
+			<div class="card-header" data-background-color="blue">
+				<h5 class="title">Description</h5>			                         
+				<div class="stack-group description">
+					<asp:TextBox runat="server" ID="TextBox1" Text="<%#: Item.HotelDescription %>"/>                                                                      
+				</div>                                                       
+			</div>
+		</div>
+		<div class="card-content text-center">
+			<asp:LinkButton ID="ApproveHotelRequest" CssClass="col-md-6" runat="server" Visible="true">
+				<h5 runat="server">Approve hotel request</h5>
 			</asp:LinkButton>
-			<asp:HyperLink ID="DenyHotelRequest" CssClass="col-md-3" runat="server" Visible="true"
+			<asp:HyperLink ID="DenyHotelRequest" CssClass="col-md-6" runat="server" Visible="true"
 				 NavigateUrl='<%# String.Format("../DenyHotelRequest.aspx?id={0}", Item.Id) %>'>
-				<h4 runat="server">Deny hotel request</h4>
+				<h5 runat="server">Deny hotel request</h5>
 			</asp:HyperLink>
 		</div>
     </ItemTemplate>
 </asp:ListView>
-<asp:DataPager ID="DataPagerCustomers" runat="server"
-    PagedControlID="HotelRequests" PageSize="1"
-    QueryStringField="page">
-    <Fields>
-        <asp:NextPreviousPagerField  ShowFirstPageButton="false"
-            ShowNextPageButton="false" ShowPreviousPageButton="true" />
-		<asp:NumericPagerField />
-        <asp:NextPreviousPagerField ShowLastPageButton="false"
-            ShowNextPageButton="true" ShowPreviousPageButton="false" />
-    </Fields>
-</asp:DataPager>
+<div class="text-center">
+	<asp:DataPager ID="DataPager" runat="server"
+		PagedControlID="HotelRequests" PageSize="1"
+		QueryStringField="page">
+		<Fields >
+			<asp:NextPreviousPagerField  ShowFirstPageButton="false"
+				ShowNextPageButton="false" ShowPreviousPageButton="false" />
+			<asp:NumericPagerField/>
+			<asp:NextPreviousPagerField ShowLastPageButton="false"
+				ShowNextPageButton="false" ShowPreviousPageButton="false" />
+		</Fields>
+	</asp:DataPager>
+</div>

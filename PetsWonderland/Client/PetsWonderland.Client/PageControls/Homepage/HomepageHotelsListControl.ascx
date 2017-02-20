@@ -9,7 +9,8 @@
     </div>
 	<asp:ListView runat="server" ID="Hotels" 
 		ItemType="PetsWonderland.Business.Models.Hotels.Hotel" 
-		SelectMethod="ListViewHotels_GetData">
+		SelectMethod="ListViewHotels_GetData" 
+		OnItemCreated="Hotels_ItemCreated">
 
 		<GroupTemplate>
 			<div class="col-md-4">

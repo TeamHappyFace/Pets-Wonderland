@@ -19,7 +19,7 @@
         <link href="<%= ResolveUrl("~/Content/External/FontAwesome/font-awesome.css") %>" rel="stylesheet" type="text/css" />   
         <link href="<%= ResolveUrl("~/Content/Admin/bootstrap.min.css") %>" rel="stylesheet" type="text/css" />   
         <link href="<%= ResolveUrl("~/Content/Admin/material-dashboard.css") %>" rel="stylesheet" type="text/css" />   
-        <link href="<%= ResolveUrl("~/Content/Admin/admin.main.css") %>" rel="stylesheet" type="text/css" />   
+        <link href="<%= ResolveUrl("~/Content/Admin/admin.main.css") %>" rel="stylesheet" type="text/css" />       		  
     </asp:ContentPlaceHolder>
 </head>
 <body>

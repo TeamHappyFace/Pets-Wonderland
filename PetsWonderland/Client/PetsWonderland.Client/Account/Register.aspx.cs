@@ -25,7 +25,7 @@ namespace PetsWonderland.Client.Account
 				// Bind the roles
 
 				this.EventBindPageData(this, e);
-				this.UserType.DataSource = this.Model.UserRoles.ToList();
+				this.UserType.DataSource = this.Model.UserRoles.Take(2).ToList();
 				this.UserType.DataBind();
 				this.UserType.SelectedIndex = 1;
 			}

@@ -8,10 +8,14 @@
 
 <asp:Content ID="HotelRegistrations" ContentPlaceHolderID="DashboardMainContent" runat="server">
 	<div class="title">
-		<h2>Hotel requests</h2>
+		<h1>Hotel requests</h1>
 
-		<div>
-			<acc:AllHotelRequests runat="server"/>
+		<div class="row">
+			 <div class="col-md-12">
+				 <div class="card">
+					<acc:AllHotelRequests runat="server"/>
+				 </div>
+			 </div>
 		</div>
 	</div>
 </asp:Content>

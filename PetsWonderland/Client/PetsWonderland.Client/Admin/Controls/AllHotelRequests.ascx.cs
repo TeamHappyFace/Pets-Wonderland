@@ -16,11 +16,10 @@ namespace PetsWonderland.Client.Admin.Controls
 	{
 		public event EventHandler<GetAllHotelRequestsArgs> GetAllHotelRequests;
 
-		protected void Page_Load(object sender, ListViewItemEventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
 		{
 		    if (!IsPostBack)
 		    {
-				DataBind();
                 ListViewHotelRequests_GetData();
             }			
 		}
@@ -75,6 +74,16 @@ namespace PetsWonderland.Client.Admin.Controls
 			Session["image"] = image.ImageUrl;
 			
 			Response.Redirect("ApproveHotelRequest.aspx");
+		}
+
+		protected void HotelRequests_ItemCreated(object sender, ListViewItemEventArgs e)
+		{
+			var image = e.Item.FindControl("image") as Image;
+
+			if (image.ImageUrl == "")
+			{
+				image.Visible = false;
+			}
 		}
 	}
 }
