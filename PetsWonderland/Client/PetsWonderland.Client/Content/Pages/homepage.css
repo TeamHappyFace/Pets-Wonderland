@@ -167,6 +167,7 @@
 .hp-hotels .hotels-list .grid-item .description > p {
     text-align: justify;
     font-size: 22px;
+    min-height: 220px;
 }
 
 .hp-hotels .hotels-list .grid-item .description h4 {
