@@ -46,6 +46,6 @@ namespace PetsWonderland.Business.Data
 		public virtual DbSet<RegularUser> RegularUsers { get; set; }
 
 		public virtual DbSet<Slider> Sliders { get; set; }
-		public virtual DbSet<Slide> Slides { get; set; }
-	}
+		public virtual DbSet<Slide> Slides { get; set; }            
+    }   
 }

@@ -37,7 +37,7 @@ namespace PetsWonderland.Business.Services
             var slider = this.slidersRepository
                 .Entities
                 .Include(x => x.Slides)
-                .Where(s => s.Position == sliderPosition)
+                .Where(s => s.Position == sliderPosition && s.IsDeleted == false)
                 .FirstOrDefault();
 
             return slider;
@@ -104,6 +104,20 @@ namespace PetsWonderland.Business.Services
             }
 
             return result;
+        }
+
+        public void DeleteSlider(int sliderId)
+        {
+            var foundSlider = this.slidersRepository.GetFirst(x => x.Id == sliderId);
+
+            if (foundSlider != null)
+            {                
+                using (var uow = unitOfWork)
+                {
+                    foundSlider.IsDeleted = true;
+                    uow.SaveChanges();
+                }                                    
+            }
         }
     }
 }

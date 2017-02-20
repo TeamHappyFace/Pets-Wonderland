@@ -22,15 +22,15 @@
 	            </div>
 	        </div>
             <div class="form-bottom">
-               <%-- <p class="text-danger">
+                <p class="text-danger">
                     <asp:Literal runat="server" ID="ErrorMessage" />
-                </p>--%>
+                </p>
 
                 <div class="form-horizontal">       
 		            <div class="form-group">
                         <div class="col-md-12">
 				            <asp:DropDownList ID="UserType" runat="server" CssClass="form-control" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserType"
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName"
                                 CssClass="text-danger" ErrorMessage="The username field is required." />
                         </div>
                     </div>
