@@ -105,12 +105,6 @@
     <Compile Include="Admin\CreateSlider\ViewModels\CreateSliderViewModel.cs" />
     <Compile Include="Admin\CreateSlider\Views\ICreateSliderView.cs" />
     <Compile Include="Admin\ListSlider\Args\DeleteSliderArgs.cs" />
-    <Compile Include="Animals\AnimalPresenter.cs" />
-    <Compile Include="Animals\Args\FindAnimalArgs.cs" />
-    <Compile Include="Animals\Args\GetAllAnimalsArgs.cs" />
-    <Compile Include="Animals\Contracts\IAnimalPresenter.cs" />
-    <Compile Include="Animals\ViewModels\AnimalViewModel.cs" />
-    <Compile Include="Animals\Views\IAnimalView.cs" />
     <Compile Include="Admin\ListSlider\Args\GetAllSlidersArgs.cs" />
     <Compile Include="Admin\ListSlider\ListSlidersPresenter.cs" />
     <Compile Include="Admin\ListSlider\Contracts\IListSlidersPresenter.cs" />
