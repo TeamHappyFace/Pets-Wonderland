@@ -12,30 +12,24 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [Test]
         public void FirstName_ShouldHaveCorrectMinLength()
         {
-            // Arrange
             var firstNameProperty = typeof(UserProfile).GetProperty("FirstName");
 
-            // Act
             var minLengthAttribute = firstNameProperty.GetCustomAttributes(typeof(MinLengthAttribute), false)
                 .Cast<MinLengthAttribute>()
                 .FirstOrDefault();
 
-            // Assert
             Assert.That(minLengthAttribute.Length, Is.Not.Null.And.EqualTo(ValidationConstants.NameMinLength));
         }
 
         [Test]
         public void FirstName_ShouldHaveCorrectMaxLength()
         {
-            // Arrange
             var firstNameProperty = typeof(UserProfile).GetProperty("FirstName");
 
-            // Act
             var maxLengthAttribute = firstNameProperty.GetCustomAttributes(typeof(MaxLengthAttribute), false)
                 .Cast<MaxLengthAttribute>()
                 .FirstOrDefault();
 
-            // Assert
             Assert.That(maxLengthAttribute.Length, Is.Not.Null.And.EqualTo(ValidationConstants.NameMaxLength));
         }
 
@@ -43,40 +37,32 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [TestCase("Micho")]
         public void FirstName_ShouldGetAndSetDataCorrectly(string testName)
         {
-            // Arrange & Act
             var userProfile = new UserProfile() { FirstName = testName };
 
-            //Assert
             Assert.AreEqual(userProfile.FirstName, testName);
         }
 
         [Test]
         public void LastName_ShouldHaveCorrectMinLength()
         {
-            // Arrange
             var lastNameProperty = typeof(UserProfile).GetProperty("LastName");
 
-            // Act
             var minLengthAttribute = lastNameProperty.GetCustomAttributes(typeof(MinLengthAttribute), false)
                 .Cast<MinLengthAttribute>()
                 .FirstOrDefault();
 
-            // Assert
             Assert.That(minLengthAttribute.Length, Is.Not.Null.And.EqualTo(ValidationConstants.NameMinLength));
         }
 
         [Test]
         public void LastName_ShouldHaveCorrectMaxLength()
         {
-            // Arrange
             var lastNameProperty = typeof(UserProfile).GetProperty("LastName");
 
-            // Act
             var maxLengthAttribute = lastNameProperty.GetCustomAttributes(typeof(MaxLengthAttribute), false)
                 .Cast<MaxLengthAttribute>()
                 .FirstOrDefault();
 
-            // Assert
             Assert.That(maxLengthAttribute.Length, Is.Not.Null.And.EqualTo(ValidationConstants.NameMaxLength));
         }
 
@@ -84,10 +70,8 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [TestCase("Petrov")]
         public void LastName_ShouldGetAndSetDataCorrectly(string testName)
         {
-            // Arrange & Act
             var userProfile = new UserProfile() { LastName = testName };
 
-            //Assert
             Assert.AreEqual(userProfile.LastName, testName);
         }
 
@@ -95,10 +79,8 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [TestCase(22)]
         public void Age_ShouldGetAndSetDataCorrectly(int testAge)
         {
-            // Arrange & Act
             var userProfile = new UserProfile() { Age = testAge };
 
-            //Assert
             Assert.AreEqual(userProfile.Age, testAge);
         }
 
@@ -106,10 +88,8 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [TestCase("/uploads/users/11/avata02.jpg")]
         public void HotelImageUrl_ShouldGetAndSetDataCorrectly(string testImagePath)
         {
-            // Arrange & Act
             var userProfile = new UserProfile() { AvatarUrl = testImagePath };
 
-            //Assert
             Assert.AreEqual(userProfile.AvatarUrl, testImagePath);
         }       
     }

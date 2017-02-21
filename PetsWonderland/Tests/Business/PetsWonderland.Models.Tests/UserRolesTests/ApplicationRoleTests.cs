@@ -9,10 +9,8 @@ namespace PetsWonderland.Models.Tests.UserRolesTests
         [Test]
         public void Constructor_ShouldHaveParameterlessConstructor()
         {
-            // Arrange & Act
             var obj = new ApplicationRole();
 
-            // Assert
             Assert.IsInstanceOf<ApplicationRole>(obj);
         }
 
@@ -20,10 +18,8 @@ namespace PetsWonderland.Models.Tests.UserRolesTests
         [TestCase("Manager")]
         public void Constructor_ShouldHaveConstructorWithNameParameter(string roleName)
         {
-            // Arrange & Act
             var obj = new ApplicationRole(roleName);
 
-            // Assert
             Assert.IsInstanceOf<ApplicationRole>(obj);
             Assert.AreEqual(obj.Name, roleName);
         }
@@ -31,10 +27,8 @@ namespace PetsWonderland.Models.Tests.UserRolesTests
         [TestCase("Lorem ipsum dolro sit amet")]
         public void HotelId_ShouldGetAndSetDataCorrectly(string description)
         {
-            // Arrange & Act
             var role = new ApplicationRole { Description = description };
 
-            //Assert
             Assert.AreEqual(role.Description, description);
         }
     }

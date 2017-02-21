@@ -59,12 +59,10 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [TestCase("asd13asd-adwqe24")]
         [TestCase("yrty324g-234egfed")]
         public void UserProfile_ShouldGetAndSetDataCorrectly(string testUserId)
-        {
-            // Arrange & Act         
+        {     
             var profile = new UserProfile { Id = testUserId };
             var admin = new Admin { UserProfile = profile };
 
-            //Assert
             Assert.AreEqual(admin.UserProfile.Id, testUserId);
         }
     }
