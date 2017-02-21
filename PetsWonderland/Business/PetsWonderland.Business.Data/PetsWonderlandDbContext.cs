@@ -20,15 +20,9 @@ namespace PetsWonderland.Business.Data
 
         public virtual DbSet<AnimalType> AnimalTypes { get; set; }
 
-        public virtual DbSet<HotelAnimal> HotelAnimals { get; set; }
-
-        public virtual DbSet<UserAnimal> UserAnimals { get; set; }
-
         public virtual DbSet<Hotel> Hotels { get; set; }
 
         public virtual DbSet<HotelLocation> HotelLocations { get; set; }
-
-        public virtual DbSet<UserHotel> UserHotels { get; set; }
 
         public virtual DbSet<UserBoardingRequest> UserBoardingRequests { get; set; }
 

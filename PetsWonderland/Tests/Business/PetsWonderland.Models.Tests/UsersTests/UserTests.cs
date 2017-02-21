@@ -17,29 +17,7 @@ namespace PetsWonderland.Models.Tests.UsersTests
 
             // Assert
             Assert.IsInstanceOf<RegularUser>(user);
-        }
-
-        [Test]
-        public void Constructor_ShouldInitializeAnimalsCollectionCorrectly()
-        {
-            var user = new RegularUser();
-
-            var animals = user.Animals;
-
-            Assert.That(animals, Is.Not.Null.And.InstanceOf<HashSet<UserAnimal>>());
-        }
-
-        [TestCase(123)]
-        [TestCase(6)]
-        public void AnimalsCollection_ShouldGetAndSetDataCorrectly(int userAnimalId)
-        {
-            var animal = new UserAnimal() { Id = userAnimalId };
-            var set = new HashSet<UserAnimal> { animal };
-
-            var user = new RegularUser { Animals = set };
-
-            Assert.AreEqual(user.Animals.First().Id, userAnimalId);
-        }
+        }      
 
         [TestCase(true)]
         [TestCase(false)]

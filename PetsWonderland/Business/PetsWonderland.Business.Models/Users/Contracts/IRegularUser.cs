@@ -7,7 +7,7 @@ namespace PetsWonderland.Business.Models.Users.Contracts
     {
         string Id { get; set; }
 
-        ICollection<UserAnimal> Animals { get; set; }
+        ICollection<Animal> Animals { get; set; }
 
         bool IsDeleted { get; set; }
     }

@@ -8,11 +8,11 @@ namespace PetsWonderland.Business.Models.Users
 {
     public class RegularUser : IRegularUser
     {
-        private ICollection<UserAnimal> animals;
+        private ICollection<Animal> animals;
 
         public RegularUser()
         {
-            this.animals = new HashSet<UserAnimal>();
+            this.animals = new HashSet<Animal>();
         }
 
         [Key, ForeignKey("UserProfile")]
@@ -21,7 +21,7 @@ namespace PetsWonderland.Business.Models.Users
         public virtual UserProfile UserProfile { get; set; }
       
         [Required]
-        public virtual ICollection<UserAnimal> Animals
+        public virtual ICollection<Animal> Animals
         {
             get
             {
