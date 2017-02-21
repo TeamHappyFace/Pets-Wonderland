@@ -63,18 +63,12 @@
     <Compile Include="Animals\AnimalType.cs" />
     <Compile Include="Animals\Contracts\IAnimal.cs" />
     <Compile Include="Animals\Contracts\IAnimalType.cs" />
-    <Compile Include="Animals\Contracts\IHotelAnimal.cs" />
-    <Compile Include="Animals\Contracts\IUserAnimal.cs" />
-    <Compile Include="Animals\HotelAnimal.cs" />
-    <Compile Include="Animals\UserAnimal.cs" />
     <Compile Include="Hotels\Contracts\IHotel.cs" />
     <Compile Include="Hotels\Contracts\IHotelLocation.cs" />
     <Compile Include="Pages\Contracts\ISlide.cs" />
     <Compile Include="Pages\Contracts\ISlider.cs" />
-    <Compile Include="Hotels\Contracts\IUserHotel.cs" />
     <Compile Include="Hotels\Hotel.cs" />
     <Compile Include="Hotels\HotelLocation.cs" />
-    <Compile Include="Hotels\UserHotel.cs" />
     <Compile Include="Pages\Slide.cs" />
     <Compile Include="Pages\Slider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,7 +96,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" /> 
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
