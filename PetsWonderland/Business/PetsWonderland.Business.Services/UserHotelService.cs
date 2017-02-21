@@ -6,69 +6,69 @@ using PetsWonderland.Business.Services.Contracts;
 
 namespace PetsWonderland.Business.Services
 {
-	public class UserHotelService : IUserHotelService
-	{
-		private readonly IRepository<UserHotel> userHotelRepository;
-		private readonly IUnitOfWork unitOfWork;
+    public class UserHotelService : IUserHotelService
+    {
+        private readonly IRepository<UserHotel> userHotelRepository;
+        private readonly IUnitOfWork unitOfWork;
 
-		public UserHotelService(IRepository<UserHotel> userHotelRepository, IUnitOfWork unitOfWork)
-		{
-			Guard.WhenArgument(userHotelRepository, "User hotel repository is null!").IsNull().Throw();
-			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull().Throw();
+        public UserHotelService(IRepository<UserHotel> userHotelRepository, IUnitOfWork unitOfWork)
+        {
+            Guard.WhenArgument(userHotelRepository, "User hotel repository is null!").IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull().Throw();
 
-			this.userHotelRepository = userHotelRepository;
-			this.unitOfWork = unitOfWork;
-		}
+            this.userHotelRepository = userHotelRepository;
+            this.unitOfWork = unitOfWork;
+        }
 
-		public void AddUserHotel(UserHotel userHotelToAdd)
-		{
-			Guard.WhenArgument(userHotelToAdd, "User hotel to add is null!").IsNull().Throw();
-            
-			using (var unitOfWork = this.unitOfWork)
-			{
-				this.userHotelRepository.Add(userHotelToAdd);
-			    unitOfWork.SaveChanges();
-			}
-		}
+        public void AddUserHotel(UserHotel userHotelToAdd)
+        {
+            Guard.WhenArgument(userHotelToAdd, "User hotel to add is null!").IsNull().Throw();
 
-		public void DeleteUserHotel(UserHotel userHotelToDelete)
-		{
-			Guard.WhenArgument(userHotelToDelete, "User hotel to delete is null!").IsNull().Throw();
+            using (var unitOfWork = this.unitOfWork)
+            {
+                this.userHotelRepository.Add(userHotelToAdd);
+                unitOfWork.SaveChanges();
+            }
+        }
 
-			using (var unitOfWork = this.unitOfWork)
-			{
-				this.userHotelRepository.Delete(userHotelToDelete);
-				unitOfWork.SaveChanges();
-			}
-		}
+        public void DeleteUserHotel(UserHotel userHotelToDelete)
+        {
+            Guard.WhenArgument(userHotelToDelete, "User hotel to delete is null!").IsNull().Throw();
 
-		public void DeleteUserHotelById(object userHotelId)
-		{
-			using (var unitOfWork = this.unitOfWork)
-			{
-				this.userHotelRepository.Delete(userHotelId);
-				unitOfWork.SaveChanges();
-			}
-		}
+            using (var unitOfWork = this.unitOfWork)
+            {
+                this.userHotelRepository.Delete(userHotelToDelete);
+                unitOfWork.SaveChanges();
+            }
+        }
 
-		public IQueryable<UserHotel> GetAllUserHotels()
-		{
-			return this.userHotelRepository.All();
-		}
+        public void DeleteUserHotelById(object userHotelId)
+        {
+            using (var unitOfWork = this.unitOfWork)
+            {
+                this.userHotelRepository.Delete(userHotelId);
+                unitOfWork.SaveChanges();
+            }
+        }
 
-		public UserHotel GetById(int id)
-		{
-			return this.userHotelRepository.GetById(id);
-		}
+        public IQueryable<UserHotel> GetAllUserHotels()
+        {
+            return this.userHotelRepository.All();
+        }
 
-		public UserHotel GetByName(string name)
-		{
-			return this.userHotelRepository.GetByName(name);
-		}
+        public UserHotel GetById(int id)
+        {
+            return this.userHotelRepository.GetById(id);
+        }
 
-		public HotelLocation GetUserHotelLocation(UserHotel userHotel)
-		{
-			return userHotel.Hotel.Location;
-		}
-	}
+        public UserHotel GetByName(string name)
+        {
+            return this.userHotelRepository.GetByName(name);
+        }
+
+        public HotelLocation GetUserHotelLocation(UserHotel userHotel)
+        {
+            return userHotel.Hotel.Location;
+        }
+    }
 }

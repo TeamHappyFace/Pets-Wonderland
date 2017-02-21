@@ -55,7 +55,7 @@ namespace PetsWonderland.Business.Services
             bool result;
             try
             {
-                using (var uow = unitOfWork)
+                using (var uow = this.unitOfWork)
                 {
                     var slides = new List<Slide>();
                     foreach (var key in slidesOptions.Keys)
@@ -90,7 +90,7 @@ namespace PetsWonderland.Business.Services
                         slideImageFile?.SaveAs(storagePath + slideImageFile.FileName);
                     }
 
-                    var slider = new Slider { Name = name, Position = position, Slides = slides};
+                    var slider = new Slider { Name = name, Position = position, Slides = slides };
 
                     this.slidersRepository.Add(slider);
                     uow.SaveChanges();
@@ -112,7 +112,7 @@ namespace PetsWonderland.Business.Services
 
             if (foundSlider != null)
             {                
-                using (var uow = unitOfWork)
+                using (var uow = this.unitOfWork)
                 {
                     foundSlider.IsDeleted = true;
                     uow.SaveChanges();

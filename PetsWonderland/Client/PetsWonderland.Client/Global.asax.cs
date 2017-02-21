@@ -16,7 +16,7 @@ namespace PetsWonderland.Client
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-			//Initialize database
+			// Initialize database
 			Database.SetInitializer(new MigrateDatabaseToLatestVersion<PetsWonderlandDbContext, Configuration>());
 		}
 	}

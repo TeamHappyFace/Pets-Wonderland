@@ -12,54 +12,54 @@ using WebFormsMvp.Web;
 
 namespace PetsWonderland.Client.Account
 {
-	[PresenterBinding(typeof(RegistrationPresenter))]
-	public partial class Register : MvpPage<RegistrationModel>, IRegistrationView
-	{
-		public event EventHandler<EventArgs> EventBindPageData;
-		public event EventHandler<RegistrationEventArgs> EventRegisterUser;
+    [PresenterBinding(typeof(RegistrationPresenter))]
+    public partial class Register : MvpPage<RegistrationModel>, IRegistrationView
+    {
+        public event EventHandler<EventArgs> EventBindPageData;
+        public event EventHandler<RegistrationEventArgs> EventRegisterUser;
 
-		protected void Page_Load(object sender, EventArgs e)
-		{
-			if (!Page.IsPostBack)
-			{
-				// Bind the roles
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+                // Bind the roles
 
-				this.EventBindPageData(this, e);
-				this.UserType.DataSource = this.Model.UserRoles.Take(2).ToList();
-				this.UserType.DataBind();
-				this.UserType.SelectedIndex = 1;
-			}
-		}
+                this.EventBindPageData(this, e);
+                this.UserType.DataSource = this.Model.UserRoles.Take(2).ToList();
+                this.UserType.DataBind();
+                this.UserType.SelectedIndex = 1;
+            }
+        }
 
-		protected void CreateUser_Click(object sender, EventArgs e)
-		{
-			var owinCtx = Context.GetOwinContext();
-			var selectedRole = this.UserType.SelectedItem.Value;
+        protected void CreateUser_Click(object sender, EventArgs e)
+        {
+            var owinCtx = Context.GetOwinContext();
+            var selectedRole = this.UserType.SelectedItem.Value;
 
-			var eventArgs = new RegistrationEventArgs()
-			{
-				OwinCtx = owinCtx,
-				Email = this.Email.Text,
-				FirstName = this.FirstName.Text,
-				LastName = this.LastName.Text,
-				UserName = this.Email.Text,
-				UserType = this.UserType.SelectedItem.Text,
-				Password = this.Password.Text,
-				ConfirmedPassword = this.ConfirmPassword.Text
-			};
+            var eventArgs = new RegistrationEventArgs()
+            {
+                OwinCtx = owinCtx,
+                Email = this.Email.Text,
+                FirstName = this.FirstName.Text,
+                LastName = this.LastName.Text,
+                UserName = this.Email.Text,
+                UserType = this.UserType.SelectedItem.Text,
+                Password = this.Password.Text,
+                ConfirmedPassword = this.ConfirmPassword.Text
+            };
 
-			this.EventRegisterUser(this, eventArgs);
+            this.EventRegisterUser(this, eventArgs);
 
-			var result = this.Model.Result;
+            var result = this.Model.Result;
 
-			if (result.Succeeded)
-			{
-				IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-			}
-			else
-			{
-				ErrorMessage.Text = result.Errors.FirstOrDefault();
-			}
-		}
-	}
+            if (result.Succeeded)
+            {
+                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+            }
+            else
+            {
+                ErrorMessage.Text = result.Errors.FirstOrDefault();
+            }
+        }
+    }
 }

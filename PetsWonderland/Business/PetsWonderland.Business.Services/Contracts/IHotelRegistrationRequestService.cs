@@ -3,16 +3,20 @@ using PetsWonderland.Business.Models.Requests;
 
 namespace PetsWonderland.Business.Services.Contracts
 {
-	public interface IHotelRegistrationRequestService
-	{
-		IQueryable<UserHotelRegistrationRequest> GetAllHotelRequests();
-		UserHotelRegistrationRequest GetById(int id);
+    public interface IHotelRegistrationRequestService
+    {
+        IQueryable<UserHotelRegistrationRequest> GetAllHotelRequests();
 
-		void AddHotelRequest(UserHotelRegistrationRequest requestToAdd);
-		void DeleteHotelRequestById(object requestId);
-		void DeleteHotelRequest(UserHotelRegistrationRequest requestToDelete);
+        UserHotelRegistrationRequest GetById(int id);
 
-		void UpdateAccepted(int userHotelRegistrationRequestId, bool isAccepted);
-		void UpdateDeleted(int RequestId, bool isDeleted);
-	}
+        void AddHotelRequest(UserHotelRegistrationRequest requestToAdd);
+
+        void DeleteHotelRequestById(object requestId);
+
+        void DeleteHotelRequest(UserHotelRegistrationRequest requestToDelete);
+
+        void UpdateAccepted(int userHotelRegistrationRequestId, bool isAccepted);
+
+        void UpdateDeleted(int requestId, bool isDeleted);
+    }
 }

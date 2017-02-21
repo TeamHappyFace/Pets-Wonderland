@@ -4,24 +4,24 @@ using PetsWonderland.Business.Models.Hotels;
 
 namespace PetsWonderland.Business.Services.Contracts
 {
-	public interface IHotelService
-	{
-	    IList<Hotel> GetHotels(int startAt, int count);
+    public interface IHotelService
+    {
+        IList<Hotel> GetHotels(int startAt, int count);
 
-		IQueryable<Hotel> GetAllHotels();
+        IQueryable<Hotel> GetAllHotels();
 
-		Hotel GetById(int id);
+        Hotel GetById(int id);
 
-		Hotel GetByName(string name);
+        Hotel GetByName(string name);
 
-		HotelLocation GetHotelLocation(Hotel hotel);
+        HotelLocation GetHotelLocation(Hotel hotel);
 
-		int Count();
+        int Count();
 
-		void AddHotel(Hotel hotelToAdd);
+        void AddHotel(Hotel hotelToAdd);
 
-		void DeleteHotel(Hotel hotelToDelete);
+        void DeleteHotel(Hotel hotelToDelete);
 
-		void DeleteHotelById(object hotelId);
-	}
+        void DeleteHotelById(object hotelId);
+    }
 }

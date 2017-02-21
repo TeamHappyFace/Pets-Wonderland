@@ -5,39 +5,39 @@ using PetsWonderland.Business.Services.Contracts;
 
 namespace PetsWonderland.Business.Services
 {
-	public class HotelLocationService : IHotelLocationService
-	{
-		private readonly IRepository<HotelLocation> hotelLocationRepository;
-		private readonly IUnitOfWork unitOfWork;
+    public class HotelLocationService : IHotelLocationService
+    {
+        private readonly IRepository<HotelLocation> hotelLocationRepository;
+        private readonly IUnitOfWork unitOfWork;
 
-		public HotelLocationService(IRepository<HotelLocation> hotelLocationRepository, IUnitOfWork unitOfWork)
-		{
-			Guard.WhenArgument(hotelLocationRepository, "Hotel location repository is null!").IsNull().Throw();
-			Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull().Throw();
+        public HotelLocationService(IRepository<HotelLocation> hotelLocationRepository, IUnitOfWork unitOfWork)
+        {
+            Guard.WhenArgument(hotelLocationRepository, "Hotel location repository is null!").IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull().Throw();
 
-			this.hotelLocationRepository = hotelLocationRepository;
-			this.unitOfWork = unitOfWork;
-		}
+            this.hotelLocationRepository = hotelLocationRepository;
+            this.unitOfWork = unitOfWork;
+        }
 
-		public void AddHotelLocation(HotelLocation locationToAdd)
-		{
-			Guard.WhenArgument(locationToAdd, "Hotel to add is null!").IsNull().Throw();
+        public void AddHotelLocation(HotelLocation locationToAdd)
+        {
+            Guard.WhenArgument(locationToAdd, "Hotel to add is null!").IsNull().Throw();
 
-			using (var unitOfWork = this.unitOfWork)
-			{
-				this.hotelLocationRepository.Add(locationToAdd);
-				unitOfWork.SaveChanges();
-			}
-		}
+            using (var unitOfWork = this.unitOfWork)
+            {
+                this.hotelLocationRepository.Add(locationToAdd);
+                unitOfWork.SaveChanges();
+            }
+        }
 
-		public HotelLocation GetById(int id)
-		{
-			return this.hotelLocationRepository.GetById(id);
-		}
+        public HotelLocation GetById(int id)
+        {
+            return this.hotelLocationRepository.GetById(id);
+        }
 
-		public HotelLocation GetByAddress(string address)
-		{
-			return this.hotelLocationRepository.GetFirst(location => location.Address == address);
-		}
-	}
+        public HotelLocation GetByAddress(string address)
+        {
+            return this.hotelLocationRepository.GetFirst(location => location.Address == address);
+        }
+    }
 }

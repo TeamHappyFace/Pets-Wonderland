@@ -2,11 +2,12 @@
 
 namespace PetsWonderland.Business.Services.Contracts
 {
-	public interface IHotelLocationService
-	{
-		HotelLocation GetById(int id);
-		HotelLocation GetByAddress(string address);
+    public interface IHotelLocationService
+    {
+        HotelLocation GetById(int id);
 
-		void AddHotelLocation(HotelLocation locationToAdd);
-	}
+        HotelLocation GetByAddress(string address);
+
+        void AddHotelLocation(HotelLocation locationToAdd);
+    }
 }

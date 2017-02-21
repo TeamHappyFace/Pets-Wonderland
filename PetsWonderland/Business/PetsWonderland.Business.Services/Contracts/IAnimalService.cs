@@ -6,15 +6,19 @@ namespace PetsWonderland.Business.Services.Contracts
     public interface IAnimalService
     {
         IQueryable<Animal> GetAllAnimals();
-		Animal GetById(int id);
-		Animal GetByName(string name);
 
-		AnimalType GetAnimalType(Animal animal);
+        Animal GetById(int id);
 
-		int Count();
+        Animal GetByName(string name);
 
-		void AddAnimal(Animal animalToAdd);
-		void DeleteAnimal(Animal animalToDelete);
-		void DeleteAnimalById(object animalId);
-	}
+        AnimalType GetAnimalType(Animal animal);
+
+        int Count();
+
+        void AddAnimal(Animal animalToAdd);
+
+        void DeleteAnimal(Animal animalToDelete);
+
+        void DeleteAnimalById(object animalId);
+    }
 }
