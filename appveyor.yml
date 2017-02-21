@@ -12,4 +12,4 @@ build:
   
 environment:
   COVERALLS_REPO_TOKEN:
-  secure: Guh0a2if871vheS9gYclMMxnZy4KIZgLx
+  secure: wwOpNVnM+8l1Nt5Lirxdiomb7EpeqNAF958XB3EeZktw8/jpgdt0Gec0qe809/Kf
