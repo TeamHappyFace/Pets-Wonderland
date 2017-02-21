@@ -24,6 +24,7 @@ namespace PetsWonderland.Business.MVP.Hotels.AddHotel
         {
             Guard.WhenArgument(hotelService, "hotelService").IsNull().Throw();
             Guard.WhenArgument(hotelLocationService, "hotelLocationService").IsNull().Throw();
+			Guard.WhenArgument(hotelRegistrationRequestService, "hotelRegistrationRequestService").IsNull().Throw();
 
             this.hotelService = hotelService;
             this.hotelLocationService = hotelLocationService;

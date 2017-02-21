@@ -22,14 +22,16 @@ namespace PetsWonderland.MVP.Tests.Requests.HotelRegistrationRequestTests.Delete
 				.SetupGet(x => x.Model)
 				.Returns(new DeleteHotelRequestModel());
 
-			var deleteHotelRequestPresenter = new DeleteHotelRequestPresenter(mockedHotelRequestView.Object, mockedHotelRequestService.Object);
+			var deleteHotelRequestPresenter = 
+				new DeleteHotelRequestPresenter(mockedHotelRequestView.Object, mockedHotelRequestService.Object);
 
 			var hotelRequest = new Mock<UserHotelRegistrationRequest>();
 
 			mockedHotelRequestView.Raise(x => x.DeleteHotelRegistrationRequest += null,
 				new DeleteHotelRequestArgs(hotelRequest.Object.Id));
 
-			Assert.AreEqual(false, hotelRequest.Object.IsDeleted);
+			mockedHotelRequestService
+				.Verify(x => x.UpdateDeleted(hotelRequest.Object.Id, true), Times.Once());
 		}
 	}
 }

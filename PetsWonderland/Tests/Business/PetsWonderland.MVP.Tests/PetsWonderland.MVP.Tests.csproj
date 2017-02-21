@@ -86,6 +86,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Hotels\AddHotelTests\AddHotel_Should.cs" />
+    <Compile Include="Hotels\AddHotelTests\Constructor_Should.cs" />
     <Compile Include="Identity\ChangeImageTests\ChangeImage_Should.cs" />
     <Compile Include="Identity\ChangeImageTests\Constructor_Should.cs" />
     <Compile Include="Identity\ChangeImageTests\GetImage_Should.cs" />
