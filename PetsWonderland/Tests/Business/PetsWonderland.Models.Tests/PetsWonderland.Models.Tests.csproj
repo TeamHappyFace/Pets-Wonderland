@@ -79,11 +79,8 @@
   <ItemGroup>
     <Compile Include="AnimalsTests\AnimalTests.cs" />
     <Compile Include="AnimalsTests\AnimalTypeTests.cs" />
-    <Compile Include="AnimalsTests\HotelAnimalTests.cs" />
-    <Compile Include="AnimalsTests\UserAnimalTests.cs" />
     <Compile Include="HotelsTests\HotelLocationTests.cs" />
     <Compile Include="HotelsTests\HotelTests.cs" />
-    <Compile Include="HotelsTests\UserHotelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestsTests\UserBoardingrequestTests.cs" />
     <Compile Include="RequestsTests\UserRegistrationRequestTests.cs" />
