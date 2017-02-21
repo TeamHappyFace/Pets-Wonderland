@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{729C8C49-8B3F-4C89-B64D-183B7BF86E64}</ProjectGuid>
+    <ProjectGuid>{A0608AB7-05C0-4F7B-AC0C-F369214CBA19}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PetsWonderland.MVP.Tests</RootNamespace>
