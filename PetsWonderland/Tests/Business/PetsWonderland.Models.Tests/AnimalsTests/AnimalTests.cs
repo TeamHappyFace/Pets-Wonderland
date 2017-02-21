@@ -70,7 +70,7 @@ namespace PetsWonderland.Models.Tests.AnimalsTests
         [TestCase("Gosho")]
         public void Name_ShouldGetAndSetDataCorrectly(string testName)
         {
-            var animal = new Animal {Name = testName};
+            var animal = new Animal { Name = testName };
 
             Assert.AreEqual(testName, animal.Name);
         }
@@ -141,10 +141,8 @@ namespace PetsWonderland.Models.Tests.AnimalsTests
         [TestCase(20)]
         public void AnimalTypeId_ShouldGetAndSetDataCorrectly(int testAnimalTypeId)
         {
-            // Arrange & Act
             var animal = new Animal { AnimalTypeId = testAnimalTypeId };
 
-            //Assert
             Assert.AreEqual(testAnimalTypeId, animal.AnimalTypeId);
         }
 

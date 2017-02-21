@@ -13,10 +13,8 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [Test]
         public void Constructor_ShouldHaveParameterlessConstructor()
         {
-            // Arrange & Act
             var manager = new HotelManager();
 
-            // Assert
             Assert.IsInstanceOf<HotelManager>(manager);
         }
 
@@ -68,22 +66,18 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [TestCase(false)]
         public void IsDeleted_ShouldGetAndSetDataCorrectly(bool testIsDeleted)
         {
-            // Arrange & Act
             var manager = new HotelManager { IsDeleted = testIsDeleted };
 
-            //Assert
             Assert.AreEqual(manager.IsDeleted, testIsDeleted);
         }
 
         [TestCase("asd13asd-adwqe24")]
         [TestCase("yrty324g-234egfed")]
         public void UserProfile_ShouldGetAndSetDataCorrectly(string testUserId)
-        {
-            // Arrange & Act         
+        {        
             var profile = new UserProfile { Id = testUserId };
             var manager = new HotelManager { UserProfile = profile };
 
-            //Assert
             Assert.AreEqual(manager.UserProfile.Id, testUserId);
         }
     }
