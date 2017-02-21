@@ -11,6 +11,7 @@ namespace PetsWonderland.Business.Data.Repositories
         where T : class
     {
         private readonly IPetsWonderlandDbContext context;
+    
         private readonly IDbSet<T> dbSet;
 
         public GenericRepository(IPetsWonderlandDbContext context)
@@ -49,12 +50,9 @@ namespace PetsWonderland.Business.Data.Repositories
 
         public virtual T GetById(object id)
         {
-            return this.dbSet.Find(id);
-        }
+            Guard.WhenArgument((int)id, "Id msut be a positive number!").IsLessThan(0).Throw();
 
-        public T GetByName(object name)
-        {
-            return this.dbSet.Find(name);
+            return this.dbSet.Find(id);
         }
 
         public T GetFirst(Expression<Func<T, bool>> filter)
@@ -65,7 +63,10 @@ namespace PetsWonderland.Business.Data.Repositories
 
         public virtual void Add(T entity)
         {
+            Guard.WhenArgument(entity, "Entity cannot be null!").IsNull().Throw();
+
             var entry = this.context.Entry(entity);
+
             if (entry.State != EntityState.Detached)
             {
                 entry.State = EntityState.Added;
@@ -78,7 +79,10 @@ namespace PetsWonderland.Business.Data.Repositories
 
         public virtual void Update(T entity)
         {
+            Guard.WhenArgument(entity, "Entity cannot be null!").IsNull().Throw();
+
             var entry = this.context.Entry(entity);
+
             if (entry.State == EntityState.Detached)
             {
                 this.dbSet.Attach(entity);
@@ -89,7 +93,10 @@ namespace PetsWonderland.Business.Data.Repositories
 
         public virtual void Delete(T entity)
         {
+            Guard.WhenArgument(entity, "Entity cannot be null!").IsNull().Throw();
+
             var entry = this.context.Entry(entity);
+
             if (entry.State != EntityState.Deleted)
             {
                 entry.State = EntityState.Deleted;

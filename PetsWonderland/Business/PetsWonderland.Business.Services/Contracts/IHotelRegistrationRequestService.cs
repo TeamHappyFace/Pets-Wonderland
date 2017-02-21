@@ -10,7 +10,7 @@ namespace PetsWonderland.Business.Services.Contracts
         UserHotelRegistrationRequest GetById(int id);
 
         void AddHotelRequest(UserHotelRegistrationRequest requestToAdd);
-		
+
         void UpdateAccepted(int userHotelRegistrationRequestId, bool isAccepted);
 
         void UpdateDeleted(int requestId, bool isDeleted);
