@@ -12,7 +12,7 @@ namespace PetsWonderland.Business.Services
 
         public UserService(IRepository<UserProfile> userRepository, IUnitOfWork unitOfWork)
         {
-            Guard.WhenArgument(userRepository, "Userrepository is null!").IsNull().Throw();
+            Guard.WhenArgument(userRepository, "User repository is null!").IsNull().Throw();
             Guard.WhenArgument(unitOfWork, "Unit of work is null!").IsNull().Throw();
 
             this.userRepository = userRepository;

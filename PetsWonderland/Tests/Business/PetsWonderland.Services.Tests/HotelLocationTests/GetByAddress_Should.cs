@@ -27,18 +27,26 @@ namespace PetsWonderland.Services.Tests.HotelLocationTests
 			mockedRepository.Verify(repository => repository.GetFirst(It.IsAny<Expression<Func<HotelLocation, bool>>>()), Times.Once);
 		}
 
-		//[Test]
-		//public void ReturnHotelLocation_WhenInvoked()
-		//{
-		//	var mockedRepository = new Mock<IRepository<HotelLocation>>();
-		//	var mockedUnitOfWork = new Mock<IUnitOfWork>();
-		//	var hotelLocationService = new HotelLocationService(mockedRepository.Object, mockedUnitOfWork.Object);
+		[Test]
+		public void ReturnNull_WhenNoSuchHotelLocation()
+		{
+			var mockedRepository = new Mock<IRepository<HotelLocation>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var hotelLocationService = new HotelLocationService(mockedRepository.Object, mockedUnitOfWork.Object);
 			
-		//	mockedRepository.Setup(repository => repository.Add(It.IsAny<HotelLocation>()));
-		//	mockedRepository.Setup(repository => repository.GetFirst(It.IsAny<Expression<Func<HotelLocation, bool>>>()))
-		//		.Returns(() => It.IsAny<HotelLocation>());
+			Assert.IsNull(hotelLocationService.GetByAddress(""));
+		}
 
-		//	Assert.IsInstanceOf<HotelLocation>(hotelLocationService.GetByAddress(It.IsAny<string>()));
-		//}
+		[Test]
+		public void ThrowException_WhenNullHotelLocation()
+		{
+			var mockedRepository = new Mock<IRepository<HotelLocation>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var hotelLocationService = new HotelLocationService(mockedRepository.Object, mockedUnitOfWork.Object);
+
+			Mock<HotelLocation> hotelLocation = null;
+
+			Assert.Throws<NullReferenceException>(() => hotelLocationService.GetByAddress(hotelLocation.Object.Address));
+		}
 	}
 }

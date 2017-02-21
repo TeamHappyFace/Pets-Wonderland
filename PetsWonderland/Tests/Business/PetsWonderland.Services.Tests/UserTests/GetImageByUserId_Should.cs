@@ -17,12 +17,12 @@ namespace PetsWonderland.Services.Tests.UserTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var userService = new UserService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-			var hotelLocation = new Mock<UserProfile>();
-			mockedRepository.Setup(repository => repository.GetById(hotelLocation.Object.Id))
-				.Returns(hotelLocation.Object);
-			userService.GetImageByUserId(hotelLocation.Object.Id);
+			var userProfile = new Mock<UserProfile>();
+			mockedRepository.Setup(repository => repository.GetById(userProfile.Object.Id))
+				.Returns(userProfile.Object);
+			userService.GetImageByUserId(userProfile.Object.Id);
 
-			mockedRepository.Verify(repository => repository.GetById(hotelLocation.Object.Id), Times.Once);
+			mockedRepository.Verify(repository => repository.GetById(userProfile.Object.Id), Times.Once);
 		}
 
 		[Test]
@@ -71,28 +71,16 @@ namespace PetsWonderland.Services.Tests.UserTests
 			Assert.AreNotEqual(userService.GetImageByUserId(userProfile.Object.Id), userProfileToCompare.Object.AvatarUrl);
 		}
 
-		//[Test]
-		//public void ReturnNull_WhenNoSuchUserProfile()
-		//{
-		//	var mockedRepository = new Mock<IRepository<UserProfile>>();
-		//	var mockedUnitOfWork = new Mock<IUnitOfWork>();
-		//	var userService = new UserService(mockedRepository.Object, mockedUnitOfWork.Object);
+		[Test]
+		public void ThrowException_WhenUserIsNull()
+		{
+			var mockedRepository = new Mock<IRepository<UserProfile>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var userService = new UserService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-		//	mockedRepository.Setup(repository => repository.GetById("")).Returns(() => null);
+			Mock<UserProfile> userProfile = null;
 
-		//	Assert.IsNull(userService.GetImageByUserId(""));
-		//}
-
-		//[Test]
-		//public void ThrowException_WhenNullBoardingRequest()
-		//{
-		//	var mockedRepository = new Mock<IRepository<HotelLocation>>();
-		//	var mockedUnitOfWork = new Mock<IUnitOfWork>();
-		//	var hotelLocationService = new HotelLocationService(mockedRepository.Object, mockedUnitOfWork.Object);
-
-		//	Mock<HotelLocation> hotelLocation = null;
-
-		//	Assert.Throws<NullReferenceException>(() => hotelLocationService.GetById(hotelLocation.Object.Id));
-		//}
+			Assert.Throws<NullReferenceException>(() => userService.GetImageByUserId(userProfile.Object.Id));
+		}
 	}
 }
