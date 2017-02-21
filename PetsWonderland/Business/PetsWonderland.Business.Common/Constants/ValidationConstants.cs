@@ -22,5 +22,5 @@
 
 		public const int MinHotelLength = 5;
 		public const int MaxHotelLength = 30;
-	}
+    }
 }
