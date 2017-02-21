@@ -14,7 +14,40 @@ namespace PetsWonderland.Business.Data
         public PetsWonderlandDbContext()
                 : base("PetsWonderland")
         {
-		}
+        }
+        
+        public virtual DbSet<Animal> Animals { get; set; }
+
+        public virtual DbSet<AnimalType> AnimalTypes { get; set; }
+
+        public virtual DbSet<HotelAnimal> HotelAnimals { get; set; }
+
+        public virtual DbSet<UserAnimal> UserAnimals { get; set; }
+
+        public virtual DbSet<Hotel> Hotels { get; set; }
+
+        public virtual DbSet<HotelLocation> HotelLocations { get; set; }
+
+        public virtual DbSet<UserHotel> UserHotels { get; set; }
+
+        public virtual DbSet<UserBoardingRequest> UserBoardingRequests { get; set; }
+
+        public virtual DbSet<UserHotelRegistrationRequest> UserHotelRegistrationRequests { get; set; }
+
+        public virtual DbSet<Admin> Admins { get; set; }
+
+        public virtual DbSet<HotelManager> HotelManagers { get; set; }
+
+        public virtual DbSet<RegularUser> RegularUsers { get; set; }
+
+        public virtual DbSet<Slider> Sliders { get; set; }
+
+        public virtual DbSet<Slide> Slides { get; set; }
+
+        public static PetsWonderlandDbContext Create()
+        {
+            return new PetsWonderlandDbContext();
+        }
 
         public new IDbSet<T> Set<T>() where T : class
         {
@@ -24,28 +57,6 @@ namespace PetsWonderland.Business.Data
         public new void SaveChanges()
         {
             base.SaveChanges();
-        }
-
-		public static PetsWonderlandDbContext Create()
-		{
-			return new PetsWonderlandDbContext();
-		}
-
-		public virtual DbSet<Animal> Animals { get; set; }
-		public virtual DbSet<AnimalType> AnimalTypes { get; set; }
-		public virtual DbSet<HotelAnimal> HotelAnimals { get; set; }
-		public virtual DbSet<UserAnimal> UserAnimals { get; set; }
-		public virtual DbSet<Hotel> Hotels { get; set; }
-		public virtual DbSet<HotelLocation> HotelLocations { get; set; }
-		public virtual DbSet<UserHotel> UserHotels { get; set; }
-		public virtual DbSet<UserBoardingRequest> UserBoardingRequests { get; set; }
-		public virtual DbSet<UserHotelRegistrationRequest> UserHotelRegistrationRequests { get; set; }
-
-		public virtual DbSet<Admin> Admins { get; set; }
-		public virtual DbSet<HotelManager> HotelManagers { get; set; }
-		public virtual DbSet<RegularUser> RegularUsers { get; set; }
-
-		public virtual DbSet<Slider> Sliders { get; set; }
-		public virtual DbSet<Slide> Slides { get; set; }            
-    }   
+        }       
+    }
 }

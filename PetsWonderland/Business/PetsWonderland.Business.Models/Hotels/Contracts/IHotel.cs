@@ -16,10 +16,10 @@ namespace PetsWonderland.Business.Models.Hotels.Contracts
 
         HotelLocation Location { get; set; }
 
-		string HotelManagerId { get; set; }
+        string HotelManagerId { get; set; }
 
-		HotelManager HotelManager { get; set; }
+        HotelManager HotelManager { get; set; }
 
-		bool IsDeleted { get; set; }
+        bool IsDeleted { get; set; }
     }
 }

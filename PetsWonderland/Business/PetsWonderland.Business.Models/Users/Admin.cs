@@ -6,33 +6,34 @@ using PetsWonderland.Business.Models.Users.Contracts;
 
 namespace PetsWonderland.Business.Models.Users
 {
-	public class Admin : IAdmin
-	{
-		[Key, ForeignKey("UserProfile")]
-		public string Id { get; set; }
+    public class Admin : IAdmin
+    {
+        private ICollection<UserHotelRegistrationRequest> userHotelRegistrationRequests;
 
-		public virtual UserProfile UserProfile { get; set; }
+        public Admin()
+        {
+            this.userHotelRegistrationRequests = new HashSet<UserHotelRegistrationRequest>();
+        }
 
-		private ICollection<UserHotelRegistrationRequest> userHotelRegistrationRequests;
+        [Key, ForeignKey("UserProfile")]
+        public string Id { get; set; }
 
-		public Admin()
-		{
-			this.userHotelRegistrationRequests = new HashSet<UserHotelRegistrationRequest>();
-		}
+        public virtual UserProfile UserProfile { get; set; }
 
-		[Required]
-		public virtual ICollection<UserHotelRegistrationRequest> UserHotelRegistrationRequests
-		{
-			get
-			{
-				return this.userHotelRegistrationRequests;
-			}
-			set
-			{
-				this.userHotelRegistrationRequests = value;
-			}
-		}
+        [Required]
+        public virtual ICollection<UserHotelRegistrationRequest> UserHotelRegistrationRequests
+        {
+            get
+            {
+                return this.userHotelRegistrationRequests;
+            }
 
-		public bool IsDeleted { get; set; }
-	}
+            set
+            {
+                this.userHotelRegistrationRequests = value;
+            }
+        }
+
+        public bool IsDeleted { get; set; }
+    }
 }

@@ -53,9 +53,7 @@ namespace PetsWonderland.Client.Account
 					Response.Redirect("/Account/Lockout");
 					break;
 				case SignInStatus.RequiresVerification:
-					Response.Redirect(
-					    $"/Account/TwoFactorAuthenticationSignIn?ReturnUrl={Request.QueryString["ReturnUrl"]}&RememberMe={RememberMe.Checked}",
-									  true);
+					Response.Redirect($"/Account/TwoFactorAuthenticationSignIn?ReturnUrl={Request.QueryString["ReturnUrl"]}&RememberMe={RememberMe.Checked}", true);
 					break;
 				case SignInStatus.Failure:
 				default:

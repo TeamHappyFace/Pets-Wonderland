@@ -15,10 +15,10 @@ namespace PetsWonderland.Business.Data.Repositories
 
         public GenericRepository(IPetsWonderlandDbContext context)
         {
-			Guard.WhenArgument(context, "Db context is null!").IsNull().Throw();
+            Guard.WhenArgument(context, "Db context is null!").IsNull().Throw();
 
-            this.context = context;    
-            this.dbSet = this.context.Set<T>();           
+            this.context = context;
+            this.dbSet = this.context.Set<T>();
         }
 
         public IPetsWonderlandDbContext Context
@@ -52,10 +52,10 @@ namespace PetsWonderland.Business.Data.Repositories
             return this.dbSet.Find(id);
         }
 
-		public T GetByName(object name)
-		{
-			return this.dbSet.Find(name);
-		}
+        public T GetByName(object name)
+        {
+            return this.dbSet.Find(name);
+        }
 
         public T GetFirst(Expression<Func<T, bool>> filter)
         {
@@ -111,11 +111,10 @@ namespace PetsWonderland.Business.Data.Repositories
             }
         }
 
-
         public virtual void Detach(T entity)
         {
             var entry = this.context.Entry(entity);
             entry.State = EntityState.Detached;
-        }        
+        }
     }
 }

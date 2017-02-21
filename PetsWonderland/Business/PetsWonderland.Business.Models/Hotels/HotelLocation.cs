@@ -4,15 +4,15 @@ using PetsWonderland.Business.Models.Hotels.Contracts;
 
 namespace PetsWonderland.Business.Models.Hotels
 {
-	public class HotelLocation : IHotelLocation
-	{
-		[Key]
-		public int Id { get; set; }
+    public class HotelLocation : IHotelLocation
+    {
+        [Key]
+        public int Id { get; set; }
 
-		[Required]
-		[MaxLength(ValidationConstants.MaxAddressDescription)]
-		public string Address { get; set; }
+        [Required]
+        [MaxLength(ValidationConstants.MaxAddressDescription)]
+        public string Address { get; set; }
 
-		public bool IsDeleted { get; set; }
-	}
+        public bool IsDeleted { get; set; }
+    }
 }

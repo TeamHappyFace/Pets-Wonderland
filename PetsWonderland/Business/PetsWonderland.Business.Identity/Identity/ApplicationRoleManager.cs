@@ -8,31 +8,31 @@ using PetsWonderland.Business.Models.UserRoles;
 
 namespace PetsWonderland.Business.Identity
 {
-	public class ApplicationRoleManager : RoleManager<ApplicationRole>
-	{
-		public ApplicationRoleManager(IRoleStore<ApplicationRole, string> store) 
-			: base(store)
-		{
-		}
-		
-		public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
-		{
-			var roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(context.Get<PetsWonderlandDbContext>()));
+    public class ApplicationRoleManager : RoleManager<ApplicationRole>
+    {
+        public ApplicationRoleManager(IRoleStore<ApplicationRole, string> store)
+            : base(store)
+        {
+        }
 
-			const string userRole = "User";
-			const string adminRole = "Admin";
-			const string hotelManagerRole = "Hotel manager";
+        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
+        {
+            var roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(context.Get<PetsWonderlandDbContext>()));
 
-		    if (roleManager.Roles.Any())
-		    {
-		        return roleManager;
-		    }
+            const string UserRole = "User";
+            const string AdminRole = "Admin";
+            const string HotelManagerRole = "Hotel manager";
 
-		    roleManager.Create(new ApplicationRole(userRole));
-		    roleManager.Create(new ApplicationRole(adminRole));
-		    roleManager.Create(new ApplicationRole(hotelManagerRole));
+            if (roleManager.Roles.Any())
+            {
+                return roleManager;
+            }
 
-		    return roleManager;
-		}
-	}
+            roleManager.Create(new ApplicationRole(UserRole));
+            roleManager.Create(new ApplicationRole(AdminRole));
+            roleManager.Create(new ApplicationRole(HotelManagerRole));
+
+            return roleManager;
+        }
+    }
 }

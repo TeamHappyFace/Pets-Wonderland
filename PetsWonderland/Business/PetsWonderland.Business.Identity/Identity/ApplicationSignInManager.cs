@@ -7,20 +7,21 @@ using PetsWonderland.Business.Models.Users;
 
 namespace PetsWonderland.Business.Identity
 {
-	public class ApplicationSignInManager : SignInManager<UserProfile, string>
-	{
-		public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager) :
-			base(userManager, authenticationManager)
-		{ }
+    public class ApplicationSignInManager : SignInManager<UserProfile, string>
+    {
+        public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager)
+            : base(userManager, authenticationManager)
+        {            
+        }
 
-		public override Task<ClaimsIdentity> CreateUserIdentityAsync(UserProfile user)
-		{
-			return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
-		}
+        public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
+        {
+            return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+        }
 
-		public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
-		{
-			return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
-		}
-	}
+        public override Task<ClaimsIdentity> CreateUserIdentityAsync(UserProfile user)
+        {
+            return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
+        }        
+    }
 }

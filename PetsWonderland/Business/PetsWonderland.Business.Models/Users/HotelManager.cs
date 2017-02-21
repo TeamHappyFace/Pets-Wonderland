@@ -7,48 +7,51 @@ using PetsWonderland.Business.Models.Users.Contracts;
 
 namespace PetsWonderland.Business.Models.Users
 {
-	public class HotelManager : IHotelManager
-	{
-		[Key, ForeignKey("UserProfile")]
-		public string Id { get; set; }
+    public class HotelManager : IHotelManager
+    {
+        private ICollection<Hotel> hotels;
 
-		public virtual UserProfile UserProfile { get; set; }
+        private ICollection<UserBoardingRequest> userBoardingRequests;
 
-		private ICollection<Hotel> hotels;
-		private ICollection<UserBoardingRequest> userBoardingRequests;
+        public HotelManager()
+        {
+            this.hotels = new HashSet<Hotel>();
+            this.userBoardingRequests = new HashSet<UserBoardingRequest>();
+        }
 
-		public HotelManager()
-		{
-			this.hotels = new HashSet<Hotel>();
-			this.userBoardingRequests = new HashSet<UserBoardingRequest>();
-		}
+        [Key, ForeignKey("UserProfile")]
+        public string Id { get; set; }
 
-		[Required]
-		public virtual ICollection<Hotel> Hotels
-		{
-			get
-			{
-				return this.hotels;
-			}
-			set
-			{
-				this.hotels = value;
-			}
-		}
+        public virtual UserProfile UserProfile { get; set; }
+        
+        [Required]
+        public virtual ICollection<Hotel> Hotels
+        {
+            get
+            {
+                return this.hotels;
+            }
 
-		[Required]
-		public virtual ICollection<UserBoardingRequest> UserBoardingRequests
-		{
-			get
-			{
-				return this.userBoardingRequests;
-			}
-			set
-			{
-				this.userBoardingRequests = value;
-			}
-		}
+            set
+            {
+                this.hotels = value;
+            }
+        }
 
-		public bool IsDeleted { get; set; }
-	}
+        [Required]
+        public virtual ICollection<UserBoardingRequest> UserBoardingRequests
+        {
+            get
+            {
+                return this.userBoardingRequests;
+            }
+
+            set
+            {
+                this.userBoardingRequests = value;
+            }
+        }
+
+        public bool IsDeleted { get; set; }
+    }
 }

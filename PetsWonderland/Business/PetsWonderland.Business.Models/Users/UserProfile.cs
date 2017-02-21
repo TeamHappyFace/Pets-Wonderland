@@ -7,31 +7,32 @@ using PetsWonderland.Business.Common.Constants;
 
 namespace PetsWonderland.Business.Models.Users
 {
-	public class UserProfile : IdentityUser
-	{
-		[MinLength(ValidationConstants.NameMinLength)]
-		[MaxLength(ValidationConstants.NameMaxLength)]
-		public string FirstName { get; set; }
+    public class UserProfile : IdentityUser
+    {
+        [MinLength(ValidationConstants.NameMinLength)]
+        [MaxLength(ValidationConstants.NameMaxLength)]
+        public string FirstName { get; set; }
 
-		[MinLength(ValidationConstants.NameMinLength)]
-		[MaxLength(ValidationConstants.NameMaxLength)]
-		public string LastName { get; set; }
-		
-		public int Age { get; set; }
+        [MinLength(ValidationConstants.NameMinLength)]
+        [MaxLength(ValidationConstants.NameMaxLength)]
+        public string LastName { get; set; }
 
-		public string AvatarUrl { get; set; }
-		
-		public ClaimsIdentity GenerateUserIdentity(UserManager<UserProfile> manager)
-		{
-			// Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-			var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
-			// Add custom user claims here
-			return userIdentity;
-		}
+        public int Age { get; set; }
 
-		public Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<UserProfile> manager)
-		{
-			return Task.FromResult(GenerateUserIdentity(manager));
-		}
-	}
+        public string AvatarUrl { get; set; }
+
+        public ClaimsIdentity GenerateUserIdentity(UserManager<UserProfile> manager)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
+
+            // Add custom user claims here
+            return userIdentity;
+        }
+
+        public Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<UserProfile> manager)
+        {
+            return Task.FromResult(this.GenerateUserIdentity(manager));
+        }
+    }
 }

@@ -6,33 +6,34 @@ using PetsWonderland.Business.Models.Users.Contracts;
 
 namespace PetsWonderland.Business.Models.Users
 {
-	public class RegularUser : IRegularUser
+    public class RegularUser : IRegularUser
     {
-		[Key, ForeignKey("UserProfile")]
-		public string Id { get; set; }
+        private ICollection<UserAnimal> animals;
 
-		public virtual UserProfile UserProfile { get; set; }
+        public RegularUser()
+        {
+            this.animals = new HashSet<UserAnimal>();
+        }
 
-		private ICollection<UserAnimal> animals;
+        [Key, ForeignKey("UserProfile")]
+        public string Id { get; set; }
 
-		public RegularUser()
-		{
-			this.animals = new HashSet<UserAnimal>();
-		}
+        public virtual UserProfile UserProfile { get; set; }
+      
+        [Required]
+        public virtual ICollection<UserAnimal> Animals
+        {
+            get
+            {
+                return this.animals;
+            }
 
-		[Required]
-		public virtual ICollection<UserAnimal> Animals
-		{
-			get
-			{
-				return this.animals;
-			}
-			set
-			{
-				this.animals = value;
-			}
-		}
+            set
+            {
+                this.animals = value;
+            }
+        }
 
-		public bool IsDeleted { get; set; }
-	}
+        public bool IsDeleted { get; set; }
+    }
 }

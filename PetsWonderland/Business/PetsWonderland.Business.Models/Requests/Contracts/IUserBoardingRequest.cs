@@ -5,30 +5,30 @@ namespace PetsWonderland.Business.Models.Requests.Contracts
 {
     public interface IUserBoardingRequest
     {
-		int Id { get; set; }
+        int Id { get; set; }
 
-		DateTime DateOfRequest { get; set; }
+        DateTime DateOfRequest { get; set; }
 
-		string PetName { get; set; }
-		
-		string PetBreed { get; set; }
+        string PetName { get; set; }
 
-		int Age { get; set; }
+        string PetBreed { get; set; }
 
-		string FromDate { get; set; }
+        int Age { get; set; }
 
-		string ToDate { get; set; }
+        string FromDate { get; set; }
 
-		string UserId { get; set; }
+        string ToDate { get; set; }
 
-		RegularUser User { get; set; }
+        string UserId { get; set; }
 
-		string HotelManagerId { get; set; }
+        RegularUser User { get; set; }
 
-		HotelManager HotelManager { get; set; }
+        string HotelManagerId { get; set; }
 
-		bool IsAccepted { get; set; }
+        HotelManager HotelManager { get; set; }
 
-		bool IsDeleted { get; set; }
-	}
+        bool IsAccepted { get; set; }
+
+        bool IsDeleted { get; set; }
+    }
 }

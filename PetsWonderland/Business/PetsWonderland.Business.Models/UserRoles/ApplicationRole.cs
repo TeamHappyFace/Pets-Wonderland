@@ -2,11 +2,16 @@
 
 namespace PetsWonderland.Business.Models.UserRoles
 {
-	public class ApplicationRole : IdentityRole
-	{
-		public ApplicationRole() : base() { }
-		public ApplicationRole(string name) : base(name) { }
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole() : base()
+        {
+        }
 
-		public string Description { get; set; }
-	}
+        public ApplicationRole(string name) : base(name)
+        {
+        }
+
+        public string Description { get; set; }
+    }
 }
