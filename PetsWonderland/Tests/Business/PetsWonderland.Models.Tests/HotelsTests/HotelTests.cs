@@ -119,21 +119,6 @@ namespace PetsWonderland.Models.Tests.HotelsTests
         }
 
         [Test]
-        public void Description_ShouldHaveCorrectMinLength()
-        {
-            // Arrange
-            var descriptionProperty = typeof(Hotel).GetProperty("Description");
-
-            // Act
-            var minLengthAttribute = descriptionProperty.GetCustomAttributes(typeof(MinLengthAttribute), false)
-                .Cast<MinLengthAttribute>()
-                .FirstOrDefault();
-
-            // Assert
-            Assert.That(minLengthAttribute.Length, Is.Not.Null.And.EqualTo(ValidationConstants.MinHotelDescription));
-        }
-
-        [Test]
         public void Description_ShouldHaveCorrectMaxLength()
         {
             // Arrange

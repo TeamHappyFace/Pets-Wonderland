@@ -49,22 +49,7 @@ namespace PetsWonderland.Models.Tests.HotelsTests
             // Assert
             Assert.That(requiredAttribute, Is.Not.Null);
         }       
-
-        [Test]
-        public void Address_ShouldHaveCorrectMinLength()
-        {
-            // Arrange
-            var addressProperty = typeof(HotelLocation).GetProperty("Address");
-
-            // Act
-            var minLengthAttribute = addressProperty.GetCustomAttributes(typeof(MinLengthAttribute), false)
-                .Cast<MinLengthAttribute>()
-                .FirstOrDefault();
-
-            // Assert
-            Assert.That(minLengthAttribute.Length, Is.Not.Null.And.EqualTo(ValidationConstants.MinAddressDescription));
-        }
-
+               
         [Test]
         public void Address_ShouldHaveCorrectMaxLength()
         {
