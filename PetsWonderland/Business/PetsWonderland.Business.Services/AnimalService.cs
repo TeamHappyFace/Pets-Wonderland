@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Animals;
@@ -31,50 +30,15 @@ namespace PetsWonderland.Business.Services
                 unitOfWork.SaveChanges();
             }
         }
-
-        public int Count()
-        {
-            return this.animalRepository.All().Count();
-        }
-
-        public void DeleteAnimal(Animal animalToDelete)
-        {
-            Guard.WhenArgument(animalToDelete, "Animal to delete is null!").IsNull().Throw();
-
-            using (var unitOfWork = this.unitOfWork)
-            {
-                this.animalRepository.Delete(animalToDelete);
-                this.unitOfWork.SaveChanges();
-            }
-        }
-
-        public void DeleteAnimalById(object animalId)
-        {
-            using (var unitOfWork = this.unitOfWork)
-            {
-                this.animalRepository.Delete(animalId);
-                this.unitOfWork.SaveChanges();
-            }
-        }
-
+		
         public IQueryable<Animal> GetAllAnimals()
         {
             return this.animalRepository.All();
         }
 
-        public AnimalType GetAnimalType(Animal animal)
-        {
-            return animal.AnimalType;
-        }
-
         public Animal GetById(int id)
         {
             return this.animalRepository.GetById(id);
-        }
-
-        public Animal GetByName(string name)
-        {
-            return this.animalRepository.GetByName(name);
         }
     }
 }

@@ -13,62 +13,51 @@ namespace PetsWonderland.Business.Tests.Services.AnimalServiceTests
 		[Test]
 		public void BeInvoked_WhenAnimalIsValid()
 		{
-			//Arange
 			var mockedRepository = new Mock<IRepository<Animal>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
-
-			//Act
+			
 			var validAnimal = new Mock<Animal>();
 			animalService.AddAnimal(validAnimal.Object);
-
-			//Assert
+			
 			mockedRepository.Verify(repository => repository.Add(validAnimal.Object));
 		}
 
 		[Test]
 		public void BeInvokeOnceForTypeAnimal_WhenParamsAreCorrect()
 		{
-			//Arrange
 			var mockedRepository = new Mock<IRepository<Animal>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
-
-			//Act
+			
 			var validAnimal = new Mock<Animal>();
 			animalService.AddAnimal(validAnimal.Object);
-
-			//Assert
+			
 			mockedRepository.Verify(repository => repository.Add(It.IsAny<Animal>()), Times.Once);
 		}
 
 		[Test]
 		public void CallSaveChangesOnce_WhenAnimalIsValid()
 		{
-			//Arange
 			var mockedRepository = new Mock<IRepository<Animal>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-			//Act
 			var validAnimal = new Mock<Animal>();
 			animalService.AddAnimal(validAnimal.Object);
-
-			//Assert
+			
 			mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);
 		}
 
 		[Test]
 		public void ThrowException_WhenAnimalIsInvalid()
 		{
-			//Arange
 			var mockedRepository = new Mock<IRepository<Animal>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
 			
 			Mock<Animal> animalToAdd = null;
-
-			//Act, Assert
+			
 			Assert.Throws<NullReferenceException>(() => animalService.AddAnimal(animalToAdd.Object));
 		}
 	}

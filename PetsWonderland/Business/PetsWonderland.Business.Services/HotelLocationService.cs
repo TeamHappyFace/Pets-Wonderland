@@ -21,7 +21,7 @@ namespace PetsWonderland.Business.Services
 
         public void AddHotelLocation(HotelLocation locationToAdd)
         {
-            Guard.WhenArgument(locationToAdd, "Hotel to add is null!").IsNull().Throw();
+            Guard.WhenArgument(locationToAdd, "Hotel location to add is null!").IsNull().Throw();
 
             using (var unitOfWork = this.unitOfWork)
             {

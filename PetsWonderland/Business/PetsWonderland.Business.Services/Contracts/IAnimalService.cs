@@ -8,17 +8,7 @@ namespace PetsWonderland.Business.Services.Contracts
         IQueryable<Animal> GetAllAnimals();
 
         Animal GetById(int id);
-
-        Animal GetByName(string name);
-
-        AnimalType GetAnimalType(Animal animal);
-
-        int Count();
-
+		
         void AddAnimal(Animal animalToAdd);
-
-        void DeleteAnimal(Animal animalToDelete);
-
-        void DeleteAnimalById(object animalId);
     }
 }

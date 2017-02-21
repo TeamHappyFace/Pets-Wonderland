@@ -13,34 +13,28 @@ namespace PetsWonderland.Services.Tests.AnimalTests
 		[Test]
 		public void CreateAnimalService_WhenParamsAreValid()
 		{
-			//Arrange
 			var mockedRepository = new Mock<IRepository<Animal>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var animalService = new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object);
-
-			//Act, Assert
+			
 			Assert.That(animalService, Is.InstanceOf<AnimalService>());
 		}
 
 		[Test]
 		public void ThrowNullException_WhenRepositoryIsNull()
 		{
-			//Arrange
 			Mock<IRepository<Animal>> mockedRepository = null;
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-
-			//Act, Assert
+			
 			Assert.Throws<NullReferenceException>(() => new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object));
 		}
 
 		[Test]
 		public void ThrowNullException_WhenUnitofworkIsNull()
 		{
-			//Arrange
 			var mockedRepository = new Mock<IRepository<Animal>>();
 			Mock<IUnitOfWork> mockedUnitOfWork = null;
-
-			//Act, Assert
+			
 			Assert.Throws<NullReferenceException>(() => new AnimalService(mockedRepository.Object, mockedUnitOfWork.Object));
 		}
 	}

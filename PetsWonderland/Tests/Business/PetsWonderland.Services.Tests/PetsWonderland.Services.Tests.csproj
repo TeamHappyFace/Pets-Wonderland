@@ -85,48 +85,36 @@
   <ItemGroup>
     <Compile Include="AnimalTests\AddAnimal_Should.cs" />
     <Compile Include="AnimalTests\Constructor_Should.cs" />
-    <Compile Include="AnimalTests\Count_Should.cs" />
-    <Compile Include="AnimalTests\DeleteAnimalById_Should.cs" />
-    <Compile Include="AnimalTests\DeleteAnimal_Should.cs" />
     <Compile Include="AnimalTests\GetAllAnimals_Should.cs" />
-    <Compile Include="AnimalTests\GetAnimalType_Should.cs" />
     <Compile Include="AnimalTests\GetById_Should.cs" />
-    <Compile Include="AnimalTests\GetByName_Should.cs" />
     <Compile Include="BoardingRequestTests\AddBoardingRequest_Should.cs" />
     <Compile Include="BoardingRequestTests\Constructor_Should.cs" />
-    <Compile Include="BoardingRequestTests\DeleteBoardingRequestById_Should.cs" />
-    <Compile Include="BoardingRequestTests\DeleteBoardingRequest_Should.cs" />
     <Compile Include="BoardingRequestTests\GetAllBoardingRequests_Should.cs" />
     <Compile Include="BoardingRequestTests\GetById_Should.cs" />
+    <Compile Include="HotelLocationTests\AddHotelLocation_Should.cs" />
+    <Compile Include="HotelLocationTests\Constructor_Should.cs" />
+    <Compile Include="HotelLocationTests\GetByAddress_Should.cs" />
+    <Compile Include="HotelLocationTests\GetById_Should.cs" />
     <Compile Include="HotelRegistrationRequestTests\AddHotelRequest_Should.cs" />
     <Compile Include="HotelRegistrationRequestTests\Constructor_Should.cs" />
-    <Compile Include="HotelRegistrationRequestTests\DeleteHotelRequestById_Should.cs" />
-    <Compile Include="HotelRegistrationRequestTests\DeleteHotelRequest_Should.cs" />
     <Compile Include="HotelRegistrationRequestTests\GetAllHotelRequests_Should.cs" />
     <Compile Include="HotelRegistrationRequestTests\GetById_Should.cs" />
+    <Compile Include="HotelRegistrationRequestTests\UpdateAccepted_Should.cs" />
+    <Compile Include="HotelRegistrationRequestTests\UpdateDeleted_Should.cs" />
     <Compile Include="HotelTests\AddHotel_Should.cs" />
     <Compile Include="HotelTests\Constructor_Should.cs" />
-    <Compile Include="HotelTests\Count_Should.cs" />
-    <Compile Include="HotelTests\DeleteHotelById_Should.cs" />
-    <Compile Include="HotelTests\DeleteHotel_Should.cs" />
     <Compile Include="HotelTests\GetAllHotels_Should.cs" />
     <Compile Include="HotelTests\GetById_Should.cs" />
-    <Compile Include="HotelTests\GetByName_Should.cs" />
     <Compile Include="HotelTests\GetHotelLocation_Should.cs" />
+    <Compile Include="HotelTests\GetHotels_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationTests\Constructor_Should.cs" />
     <Compile Include="RegistrationTests\CreateAdmin_Should.cs" />
     <Compile Include="RegistrationTests\CreateHotelManager_Should.cs" />
     <Compile Include="RegistrationTests\CreateRegularUser_Should.cs" />
     <Compile Include="RegistrationTests\GetAll_Should.cs" />
-    <Compile Include="UserHotelTests\AddUserHotel_Should.cs" />
-    <Compile Include="UserHotelTests\Constructor_Should.cs" />
-    <Compile Include="UserHotelTests\DeleteUserHotelById_Should.cs" />
-    <Compile Include="UserHotelTests\DeleteUserHotel_Should.cs" />
-    <Compile Include="UserHotelTests\GetAllUserHotels_Should.cs" />
-    <Compile Include="UserHotelTests\GetById_Should.cs" />
-    <Compile Include="UserHotelTests\GetByName_Should.cs" />
-    <Compile Include="UserHotelTests\GetUserHotelLocation_Should.cs" />
+    <Compile Include="UserTests\Constructor_Should.cs" />
+    <Compile Include="UserTests\GetImageByUserId_Should.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

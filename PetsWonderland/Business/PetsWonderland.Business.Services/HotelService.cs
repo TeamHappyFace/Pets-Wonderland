@@ -31,32 +31,7 @@ namespace PetsWonderland.Business.Services
                 unitOfWork.SaveChanges();
             }
         }
-
-        public int Count()
-        {
-            return this.hotelRepository.All().Count();
-        }
-
-        public void DeleteHotel(Hotel hotelToDelete)
-        {
-            Guard.WhenArgument(hotelToDelete, "Hotel to delete is null!").IsNull().Throw();
-
-            using (var unitOfWork = this.unitOfWork)
-            {
-                this.hotelRepository.Delete(hotelToDelete);
-                unitOfWork.SaveChanges();
-            }
-        }
-
-        public void DeleteHotelById(object hotelId)
-        {
-            using (var unitOfWork = this.unitOfWork)
-            {
-                this.hotelRepository.Delete(hotelId);
-                unitOfWork.SaveChanges();
-            }
-        }
-
+		
         public IList<Hotel> GetHotels(int startAt, int count)
         {
             return this.hotelRepository.All().OrderByDescending(x => x.Id).Skip(startAt).Take(count).ToList();
@@ -70,11 +45,6 @@ namespace PetsWonderland.Business.Services
         public Hotel GetById(int id)
         {
             return this.hotelRepository.GetById(id);
-        }
-
-        public Hotel GetByName(string name)
-        {
-            return this.hotelRepository.GetByName(name);
         }
 
         public HotelLocation GetHotelLocation(Hotel hotel)

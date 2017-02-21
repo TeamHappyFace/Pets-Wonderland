@@ -14,7 +14,6 @@ namespace PetsWonderland.Services.Tests.RegistrationTests
         [Test]
         public void CreateHotelService_WhenParamsAreValid()
         {
-            //Arrange
             var mockedRoleRepository = new Mock<IRepository<ApplicationRole>>();
             var mockedUserRepository = new Mock<IRepository<RegularUser>>();
 			var mockedAdminRepository = new Mock<IRepository<Admin>>();
@@ -29,21 +28,18 @@ namespace PetsWonderland.Services.Tests.RegistrationTests
                 mockedUnitOfWork.Object
             );
 
-            //Act, Assert
             Assert.That(registrationService, Is.InstanceOf<RegistrationService>());
         }
 
         [Test]
         public void ThrowNullException_WhenRoleRepositoryIsNull()
         {
-            //Arrange
             Mock<IRepository<ApplicationRole>> mockedRoleRepository = null;
             var mockedUserRepository = new Mock<IRepository<RegularUser>>();
             var mockedHotelManagerRepository = new Mock<IRepository<HotelManager>>();
 			var mockedAdminRepository = new Mock<IRepository<Admin>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-
-            //Act, Assert
+			
             Assert.Throws<NullReferenceException>(() => 
                 new RegistrationService(
                     mockedRoleRepository.Object,
@@ -58,14 +54,12 @@ namespace PetsWonderland.Services.Tests.RegistrationTests
         [Test]
         public void ThrowNullException_WhenUserRepositoryIsNull()
         {
-            //Arrange
             var mockedRoleRepository = new Mock<IRepository<ApplicationRole>>();
             Mock<IRepository<RegularUser>> mockedUserRepository = null;         
             var mockedHotelManagerRepository = new Mock<IRepository<HotelManager>>();
 			var mockedAdminRepository = new Mock<IRepository<Admin>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-
-            //Act, Assert
+			
             Assert.Throws<NullReferenceException>(() =>
                 new RegistrationService(
                     mockedRoleRepository.Object,
@@ -80,14 +74,12 @@ namespace PetsWonderland.Services.Tests.RegistrationTests
         [Test]
         public void ThrowNullException_WhenHotelManagerRepositoryIsNull()
         {
-            //Arrange
             var mockedRoleRepository = new Mock<IRepository<ApplicationRole>>();
             var mockedUserRepository = new Mock<IRepository<RegularUser>>();
 			var mockedAdminRepository = new Mock<IRepository<Admin>>();
 			Mock<IRepository<HotelManager>> mockedHotelManagerRepository = null;   
             var mockedUnitOfWork = new Mock<IUnitOfWork>();
-
-            //Act, Assert
+			
             Assert.Throws<NullReferenceException>(() =>
                 new RegistrationService(
                     mockedRoleRepository.Object,
@@ -102,14 +94,12 @@ namespace PetsWonderland.Services.Tests.RegistrationTests
 		[Test]
 		public void ThrowNullException_WhenAdminRepositoryIsNull()
 		{
-			//Arrange
 			var mockedRoleRepository = new Mock<IRepository<ApplicationRole>>();
 			var mockedUserRepository = new Mock<IRepository<RegularUser>>();
 			var mockedHotelManagerRepository = new Mock<IRepository<HotelManager>>();
 			Mock<IRepository<Admin>> mockedAdminRepository = null;
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
-
-			//Act, Assert
+			
 			Assert.Throws<NullReferenceException>(() =>
 				new RegistrationService(
 					mockedRoleRepository.Object,
@@ -124,14 +114,12 @@ namespace PetsWonderland.Services.Tests.RegistrationTests
 		[Test]
         public void ThrowNullException_WhenUnitofworkIsNull()
         {
-            //Arrange
             var mockedRoleRepository = new Mock<IRepository<ApplicationRole>>();
             var mockedUserRepository = new Mock<IRepository<RegularUser>>();
             var mockedHotelManagerRepository = new Mock<IRepository<HotelManager>>();
 			var mockedAdminRepository = new Mock<IRepository<Admin>>();
 			Mock<IUnitOfWork> mockedUnitOfWork = null;
-
-            //Act, Assert
+			
             Assert.Throws<NullReferenceException>(() =>
                 new RegistrationService(
                     mockedRoleRepository.Object,

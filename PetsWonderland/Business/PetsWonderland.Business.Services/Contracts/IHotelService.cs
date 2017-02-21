@@ -12,16 +12,8 @@ namespace PetsWonderland.Business.Services.Contracts
 
         Hotel GetById(int id);
 
-        Hotel GetByName(string name);
-
         HotelLocation GetHotelLocation(Hotel hotel);
 
-        int Count();
-
         void AddHotel(Hotel hotelToAdd);
-
-        void DeleteHotel(Hotel hotelToDelete);
-
-        void DeleteHotelById(object hotelId);
     }
 }
