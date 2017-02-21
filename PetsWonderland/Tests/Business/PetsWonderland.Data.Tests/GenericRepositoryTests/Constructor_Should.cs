@@ -18,7 +18,8 @@ namespace PetsWonderland.Data.Tests.GenericRepositoryTests
             IPetsWonderlandDbContext nullContext = null;
         
             // Act & Assert
-            Assert.That(() => new GenericRepository<IAnimal>(nullContext), 
+            Assert.That(
+                () => new GenericRepository<IAnimal>(nullContext), 
                 Throws.InstanceOf<ArgumentNullException>().With.Message.Contains("Db context is null!"));
         }
 
@@ -76,7 +77,6 @@ namespace PetsWonderland.Data.Tests.GenericRepositoryTests
             var mockedContext = new Mock<IPetsWonderlandDbContext>();
             var mockedModel = new Mock<DbSet<IAnimal>>();
             mockedContext.Setup(x => x.Set<IAnimal>()).Returns(mockedModel.Object);
-
 
             // Act
             var repository = new GenericRepository<IAnimal>(mockedContext.Object);

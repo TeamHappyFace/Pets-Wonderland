@@ -83,8 +83,16 @@
     <Compile Include="DbContextTests\Constructor_Should.cs" />
     <Compile Include="DbContextTests\Create_Should.cs" />
     <Compile Include="DbContextTests\SaveChanges_Should.cs" />
+    <Compile Include="GenericRepositoryTests\Add_Should.cs" />
+    <Compile Include="GenericRepositoryTests\All_Should.cs" />
     <Compile Include="GenericRepositoryTests\Constructor_Should.cs" />
+    <Compile Include="GenericRepositoryTests\Entities_Should.cs" />
+    <Compile Include="GenericRepositoryTests\GetById_Should.cs" />
+    <Compile Include="GenericRepositoryTests\GetByName_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWorkTests\Constructor_Should.cs" />
+    <Compile Include="UnitOfWorkTests\Dispose_Should.cs" />
+    <Compile Include="UnitOfWorkTests\SaveChanges_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

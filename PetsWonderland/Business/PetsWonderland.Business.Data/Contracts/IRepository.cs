@@ -12,8 +12,6 @@ namespace PetsWonderland.Business.Data.Contracts
 
         T GetById(object id);
 
-        T GetByName(object name);
-
         T GetFirst(Expression<Func<T, bool>> filter);
 
         void Add(T entity);

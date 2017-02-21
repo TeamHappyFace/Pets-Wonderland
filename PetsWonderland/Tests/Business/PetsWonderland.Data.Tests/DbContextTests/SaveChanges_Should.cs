@@ -17,8 +17,7 @@ namespace PetsWonderland.Data.Tests.DbContextTests
     {
         [Test]
         public void WorkCorrectly()
-        {
-            
+        {            
         }
     }
 }
