@@ -11,6 +11,6 @@ namespace PetsWonderland.Business.Services.Contracts
 
         void CreateHotelManager(string hotelManagerId);
 
-		void CreateAdmin(string adminId);
-	}
+        void CreateAdmin(string adminId);
+    }
 }

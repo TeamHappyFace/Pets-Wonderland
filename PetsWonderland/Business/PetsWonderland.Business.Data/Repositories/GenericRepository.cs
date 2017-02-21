@@ -11,6 +11,7 @@ namespace PetsWonderland.Business.Data.Repositories
         where T : class
     {
         private readonly IPetsWonderlandDbContext context;
+    
         private readonly IDbSet<T> dbSet;
 
         public GenericRepository(IPetsWonderlandDbContext context)

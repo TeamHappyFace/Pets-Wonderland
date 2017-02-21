@@ -30,7 +30,7 @@ namespace PetsWonderland.Business.Services
                 unitOfWork.SaveChanges();
             }
         }
-		
+
         public IQueryable<Animal> GetAllAnimals()
         {
             return this.animalRepository.All();

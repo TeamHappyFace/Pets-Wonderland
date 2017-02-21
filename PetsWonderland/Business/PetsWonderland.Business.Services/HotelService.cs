@@ -31,7 +31,7 @@ namespace PetsWonderland.Business.Services
                 unitOfWork.SaveChanges();
             }
         }
-		
+
         public IList<Hotel> GetHotels(int startAt, int count)
         {
             return this.hotelRepository.All().OrderByDescending(x => x.Id).Skip(startAt).Take(count).ToList();

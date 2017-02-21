@@ -30,7 +30,7 @@ namespace PetsWonderland.Business.Services
                 unitOfWork.SaveChanges();
             }
         }
-		
+
         public IQueryable<UserHotelRegistrationRequest> GetAllHotelRequests()
         {
             return this.hotelRequestRepository.All()
