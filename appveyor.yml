@@ -1,0 +1,15 @@
+version: 1.0.{build}
+branches:
+  only:
+  - master
+before_build:
+- cmd: nuget restore PetsWonderland/PetsWonderland.sln
+build:
+  project: PetsWonderland/PetsWonderland.sln
+  publish_nuget: true
+  include_nuget_references: true
+  verbosity: minimal
+  
+environment:
+  COVERALLS_REPO_TOKEN:
+  secure: Guh0a2if871vheS9gYclMMxnZy4KIZgLx
