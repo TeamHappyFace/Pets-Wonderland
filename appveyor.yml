@@ -3,7 +3,7 @@ branches:
   only:
   - master
 before_build:
-- cmd: nuget restore PetsWonderland/SchoolPetsWonderlandSystem.sln
+- cmd: nuget restore PetsWonderland/PetsWonderlandSystem.sln
 build:
   project: PetsWonderland/PetsWonderland.sln
   publish_nuget: true
