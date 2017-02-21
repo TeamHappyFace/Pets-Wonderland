@@ -29,6 +29,8 @@
 
     <ItemTemplate>			
 		<asp:HiddenField runat="server" ID="hidden" Value="<%#: Item.Id %>"/>
+		<asp:HiddenField runat="server" ID="hotelManagerId" Value="<%#: Item.HotelManagerId %>" />
+
 		<div class="card-header text-center" data-background-color="blue">                         
 			<h5>Hotel name: 
 				<asp:Label runat="server" ID="hotelName" Text="<%#: Item.HotelName %>"></asp:Label>

@@ -7,63 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PetsWonderland.Client.Account {
+namespace PetsWonderland.Client.PageControls.Account {
     
     
-    public partial class Manage {
+    public partial class ChangeImageControl {
         
         /// <summary>
-        /// Buttons control.
+        /// Notifier control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Buttons;
+        protected global::PetsWonderland.Client.PageControls.Notifications.NotificationControl Notifier;
         
         /// <summary>
-        /// ImageButton control.
+        /// Image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ImageButton;
+        protected global::System.Web.UI.WebControls.Image Image;
         
         /// <summary>
-        /// PasswordButton control.
+        /// ImageUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PasswordButton;
+        protected global::System.Web.UI.WebControls.FileUpload ImageUpload;
         
         /// <summary>
-        /// MultiView control.
+        /// UploadBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MultiView;
-        
-        /// <summary>
-        /// ChangeImageView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ChangeImageView;
-        
-        /// <summary>
-        /// ChangePasswordView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ChangePasswordView;
+        protected global::System.Web.UI.WebControls.Button UploadBtn;
     }
 }

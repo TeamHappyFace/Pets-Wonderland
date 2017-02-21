@@ -130,6 +130,17 @@
     <Compile Include="Hotels\GetAllHotels\GetAllHotelsPresenter.cs" />
     <Compile Include="Hotels\GetAllHotels\ViewModels\GetAllHotelsModel.cs" />
     <Compile Include="Hotels\GetAllHotels\Views\IGetAllHotelsView.cs" />
+    <Compile Include="Identity\ChangeImage\Args\ChangeImageArgs.cs" />
+    <Compile Include="Identity\ChangeImage\Args\GetImageArgs.cs" />
+    <Compile Include="Identity\ChangeImage\ChangeImagePresenter.cs" />
+    <Compile Include="Identity\ChangeImage\Contracts\IChangeImagePresenter.cs" />
+    <Compile Include="Identity\ChangeImage\ViewModel\ChangeImageModel.cs" />
+    <Compile Include="Identity\ChangeImage\Views\IChangeImageView.cs" />
+    <Compile Include="Identity\ChangePassword\Args\ChangePasswordEventArgs.cs" />
+    <Compile Include="Identity\ChangePassword\ChangePasswordPresenter.cs" />
+    <Compile Include="Identity\ChangePassword\Contracts\IChangePasswordPresenter.cs" />
+    <Compile Include="Identity\ChangePassword\ViewModels\ChangePasswordModel.cs" />
+    <Compile Include="Identity\ChangePassword\Views\IChangePasswordView.cs" />
     <Compile Include="Identity\Login\Args\LoginEventArgs.cs" />
     <Compile Include="Identity\Login\Contracts\ILoginPresenter.cs" />
     <Compile Include="Identity\Login\LoginPresenter.cs" />

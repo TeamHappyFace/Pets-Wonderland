@@ -50,6 +50,11 @@ namespace PetsWonderland.Client.Admin.Controls
 			{
 				Session["image"] = "";
 			}
+
+			if(Session["hotelManagerId"] == null)
+			{
+				Session["hotelManagerId"] = "";
+			}
 		}
 
 		public IQueryable<UserHotelRegistrationRequest> ListViewHotelRequests_GetData()
@@ -62,12 +67,14 @@ namespace PetsWonderland.Client.Admin.Controls
 		protected void HotelRequests_ItemCommand(object sender, ListViewCommandEventArgs e)
 		{
 			var id = e.Item.FindControl("hidden") as HiddenField;
+			var hotelManagerId = e.Item.FindControl("hotelManagerId") as HiddenField;
 			var name = e.Item.FindControl("hotelName") as Label;
 			var location = e.Item.FindControl("location") as Label;
 			var image = e.Item.FindControl("image") as Image;
 			var description = e.Item.FindControl("description") as TextBox;
 
 			Session["id"] = id.Value;
+			Session["hotelManagerId"] = hotelManagerId.Value;
 			Session["name"] = name.Text;
 			Session["location"] = location.Text;
 			Session["description"] = description.Text;

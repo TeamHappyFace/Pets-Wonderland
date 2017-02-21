@@ -7,63 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PetsWonderland.Client.Account {
+namespace PetsWonderland.Client.PageControls.Account {
     
     
-    public partial class Manage {
+    public partial class ChangePasswordControl {
         
         /// <summary>
-        /// Buttons control.
+        /// Notifier control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Buttons;
+        protected global::PetsWonderland.Client.PageControls.Notifications.NotificationControl Notifier;
         
         /// <summary>
-        /// ImageButton control.
+        /// CurrentPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ImageButton;
+        protected global::System.Web.UI.WebControls.TextBox CurrentPassword;
         
         /// <summary>
-        /// PasswordButton control.
+        /// NewPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PasswordButton;
+        protected global::System.Web.UI.WebControls.TextBox NewPassword;
         
         /// <summary>
-        /// MultiView control.
+        /// ConfirmNewPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MultiView;
+        protected global::System.Web.UI.WebControls.TextBox ConfirmNewPassword;
         
         /// <summary>
-        /// ChangeImageView control.
+        /// ChangePasswordButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View ChangeImageView;
-        
-        /// <summary>
-        /// ChangePasswordView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ChangePasswordView;
+        protected global::System.Web.UI.WebControls.Button ChangePasswordButton;
     }
 }

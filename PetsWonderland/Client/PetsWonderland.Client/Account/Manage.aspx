@@ -2,79 +2,49 @@
 
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
+<%@ Register Src="~/PageControls/Account/ChangePasswordControl.ascx" TagPrefix="uc" TagName="ChangePasswordControl" %>
+<%@ Register Src="~/PageControls/Account/ChangeImageControl.ascx" TagPrefix="uc" TagName="ChangeImageControl" %>
+
+<asp:Content ContentPlaceHolderID="CustomStylesheets" runat="server">
+    <link href="<%= ResolveUrl("~/Content/Pages/profile.css") %>" rel="stylesheet" type="text/css" />       
+</asp:Content>
+
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+	<section id="profile" class="col-md-4">
+        <div class="form-box">
+	        <div class="form-top">
+	            <div class="form-top-left">
+	                <h3>Account setting</h3>
+	            </div>
+	            <div class="form-top-right">
+	                <i class="fa fa-user"></i>
+	            </div>
+	        </div>
+		</div>
+        <div class="form-bottom">
+			<asp:UpdatePanel runat="server">
+				<ContentTemplate>
+					<asp:Label runat="server" ID="Buttons">
+						<asp:Button Text="Profile avatar" BorderStyle="None" ID="ImageButton" CssClass="btn" runat="server"
+							OnClick="ImageButton_Click" />
+						<asp:Button Text="Password" BorderStyle="None" ID="PasswordButton" CssClass="btn" runat="server"
+							OnClick="PasswordButton_Click" />
+					</asp:Label>
 
-    <div>
-        <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
-            <p class="text-success"><%: SuccessMessage %></p>
-        </asp:PlaceHolder>
-    </div>
+					<asp:MultiView ID="MultiView" runat="server">
+						<asp:View runat="server" ID="ChangeImageView">
+							<uc:ChangeImageControl runat="server" />
+						</asp:View>
+						<asp:View runat="server" ID="ChangePasswordView">
+							<uc:ChangePasswordControl runat="server"/>
+						</asp:View>
+					</asp:MultiView>
+				</ContentTemplate>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-horizontal">
-                <h4>Change your account settings</h4>
-                <hr />
-                <dl class="dl-horizontal">
-                    <dt>Password:</dt>
-                    <dd>
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Change]" Visible="false" ID="ChangePassword" runat="server" />
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Create]" Visible="false" ID="CreatePassword" runat="server" />
-                    </dd>
-                    <dt>External Logins:</dt>
-                    <dd><%: LoginsCount %>
-                        <asp:HyperLink NavigateUrl="/Account/ManageLogins" Text="[Manage]" runat="server" />
-
-                    </dd>
-                    <%--
-                        Phone Numbers can used as a second factor of verification in a two-factor authentication system.
-                        See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                        for details on setting up this ASP.NET application to support two-factor authentication using SMS.
-                        Uncomment the following blocks after you have set up two-factor authentication
-                    --%>
-                    <%--
-                    <dt>Phone Number:</dt>
-                    <% if (HasPhoneNumber)
-                       { %>
-                    <dd>
-                        <asp:HyperLink NavigateUrl="/Account/AddPhoneNumber" runat="server" Text="[Add]" />
-                    </dd>
-                    <% }
-                       else
-                       { %>
-                    <dd>
-                        <asp:Label Text="" ID="PhoneNumber" runat="server" />
-                        <asp:HyperLink NavigateUrl="/Account/AddPhoneNumber" runat="server" Text="[Change]" /> &nbsp;|&nbsp;
-                        <asp:LinkButton Text="[Remove]" OnClick="RemovePhone_Click" runat="server" />
-                    </dd>
-                    <% } %>
-                    --%>
-
-                    <dt>Two-Factor Authentication:</dt>
-                    <dd>
-                        <p>
-                            There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                            for details on setting up this ASP.NET application to support two-factor authentication.
-                        </p>
-                        <% if (TwoFactorEnabled)
-                          { %> 
-                        <%--
-                        Enabled
-                        <asp:LinkButton Text="[Disable]" runat="server" CommandArgument="false" OnClick="TwoFactorDisable_Click" />
-                        --%>
-                        <% }
-                          else
-                          { %> 
-                        <%--
-                        Disabled
-                        <asp:LinkButton Text="[Enable]" CommandArgument="true" OnClick="TwoFactorEnable_Click" runat="server" />
-                        --%>
-                        <% } %>
-                    </dd>
-                </dl>
-            </div>
+				<Triggers>
+					<asp:PostBackTrigger ControlID = "ImageButton" />
+				</Triggers>
+			</asp:UpdatePanel>
         </div>
-    </div>
-
+	</section>
 </asp:Content>

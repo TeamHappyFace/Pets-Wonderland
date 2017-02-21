@@ -32,7 +32,8 @@ namespace PetsWonderland.Business.MVP.Hotels.AddHotel
 
 		public void AddHotel(object sender, AddHotelArgs e)
 		{
-			var newHotel = new Hotel() { Name = e.HotelName, Description = e.HotelDescription, ImageUrl = e.ImageUrl, IsDeleted = false };
+			var newHotel = new Hotel() { Name = e.HotelName, Description = e.HotelDescription, HotelManagerId = e.HotelManagerId,
+												ImageUrl = e.ImageUrl, IsDeleted = false };
 			var hotelLocation = this.hotelLocationService.GetByAddress(e.Location);
 
 			if (hotelLocation != null)

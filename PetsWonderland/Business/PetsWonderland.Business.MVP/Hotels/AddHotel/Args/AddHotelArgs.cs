@@ -6,6 +6,8 @@ namespace PetsWonderland.Business.MVP.Hotels.AddHotel.Args
 	{
 		public int RequestId { get; set; }
 
+		public string HotelManagerId { get; set; }
+
 		public string HotelName { get; set; }
 
         public string HotelDescription { get; set; }

@@ -21,6 +21,7 @@ namespace PetsWonderland.Client.Admin
 		protected void Approve()
 		{
 			var requestId = (string)(Session["id"]);
+			var hotelManagerId = (string)(Session["hotelManagerId"]);
 			var hotelName = (string)(Session["name"]);
 			var hotelDescription = (string)(Session["description"]);
 			var hotelImage = (string)(Session["image"]);
@@ -29,9 +30,10 @@ namespace PetsWonderland.Client.Admin
 			var hotelArgs = new AddHotelArgs
 			{
 				HotelName = (hotelName != null ? hotelName : ""),
-				HotelDescription = (hotelDescription!= null ? hotelDescription : ""),
+				HotelDescription = (hotelDescription != null ? hotelDescription : ""),
 				ImageUrl = (hotelImage != null ? hotelImage : ""),
 				Location = (hotelLocation != null ? hotelLocation : ""),
+				HotelManagerId = hotelManagerId,
 				RequestId = int.Parse(requestId)
 			};
 

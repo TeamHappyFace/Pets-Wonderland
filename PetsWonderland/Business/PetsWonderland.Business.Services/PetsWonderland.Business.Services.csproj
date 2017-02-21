@@ -75,6 +75,7 @@
     <Compile Include="Contracts\IRegistrationService.cs" />
     <Compile Include="Contracts\ISliderService.cs" />
     <Compile Include="Contracts\IUserHotelService.cs" />
+    <Compile Include="Contracts\IUserService.cs" />
     <Compile Include="HotelLocationService.cs" />
     <Compile Include="HotelRegistrationRequestService.cs" />
     <Compile Include="HotelService.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="RegistrationService.cs" />
     <Compile Include="SliderService.cs" />
     <Compile Include="UserHotelService.cs" />
+    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PetsWonderland.Business.Data\PetsWonderland.Business.Data.csproj">
