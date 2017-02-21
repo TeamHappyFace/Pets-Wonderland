@@ -2,7 +2,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using NUnit.Framework;
-using PetsWonderland.Business.Models.Hotels;
 using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.Models.Users;
 
@@ -14,15 +13,12 @@ namespace PetsWonderland.Models.Tests.RequestsTests
         [Test]
         public void Id_ShouldHaveKeyAttribute()
         {
-            // Arrange
             var idProperty = typeof(UserHotelRegistrationRequest).GetProperty("Id");
 
-            // Act
             var keyAttribute = idProperty.GetCustomAttributes(typeof(KeyAttribute), true)
                 .Cast<KeyAttribute>()
                 .FirstOrDefault();
 
-            // Assert
             Assert.That(keyAttribute, Is.Not.Null);
         }
 
@@ -30,20 +26,16 @@ namespace PetsWonderland.Models.Tests.RequestsTests
         [TestCase(2)]
         public void Id_ShouldGetAndSetDataCorrectly(int testId)
         {
-            // Arrange & Act
             var userHotelRegistrationRequest = new UserHotelRegistrationRequest { Id = testId };
 
-            //Assert
             Assert.AreEqual(testId, userHotelRegistrationRequest.Id);
         }
 
         [TestCase("01/01/2017")]
         public void DateOfRequest_ShouldGetAndSetDataCorrectly(DateTime testDate)
         {
-            // Arrange & Act
             var userHotelRegistrationRequest = new UserHotelRegistrationRequest { DateOfRequest = testDate };
 
-            //Assert
             Assert.AreEqual(userHotelRegistrationRequest.DateOfRequest, testDate);
         }
 
@@ -51,55 +43,27 @@ namespace PetsWonderland.Models.Tests.RequestsTests
         [TestCase("1dw3-asd234-gdfg2342")]
         public void HotelManagerId_ShouldGetAndSetDataCorrectly(string testManagerId)
         {
-            // Arrange & Act
             var userHotelRegistrationRequest = new UserHotelRegistrationRequest { HotelManagerId = testManagerId };
 
-            //Assert
             Assert.AreEqual(userHotelRegistrationRequest.HotelManagerId, testManagerId);
         }
 
         [TestCase("rhf43232-dfge-sfedr43-afdf")]
         [TestCase("asdas23r54r-123ewf")]
         public void HotelManager_ShouldGetAndSetDataCorrectly(string testManagerId)
-        {
-            // Arrange & Act         
+        {         
             var manager = new HotelManager { Id = testManagerId };
             var userHotelRegistrationRequest = new UserHotelRegistrationRequest { HotelManager = manager };
 
-            //Assert
             Assert.AreEqual(userHotelRegistrationRequest.HotelManager.Id, testManagerId);
         }
-
-        //[TestCase(123)]
-        //public void HotelId_ShouldGetAndSetDataCorrectly(int testHotelId)
-        //{
-        //    // Arrange & Act
-        //    var userHotelRegistrationRequest = new UserHotelRegistrationRequest { HotelId = testHotelId };
-
-        //    //Assert
-        //    Assert.AreEqual(userHotelRegistrationRequest.HotelId, testHotelId);
-        //}
-
-        //[TestCase("Doggies2")]
-        //[TestCase("Doggies3")]
-        //public void Hotel_ShouldGetAndSetDataCorrectly(string testHotelName)
-        //{
-        //    // Arrange & Act         
-        //    var hotel = new Hotel { Name = testHotelName };
-        //    var userHotelRegistrationRequest = new UserHotelRegistrationRequest { Hotel = hotel };
-
-        //    //Assert
-        //    Assert.AreEqual(userHotelRegistrationRequest.Hotel.Name, testHotelName);
-        //}
            
         [TestCase(true)]
         [TestCase(false)]
         public void IsDeleted_ShouldGetAndSetDataCorrectly(bool testIsDeleted)
         {
-            // Arrange & Act
             var userHotelRegistrationRequest = new UserHotelRegistrationRequest { IsDeleted = testIsDeleted };
 
-            //Assert
             Assert.AreEqual(userHotelRegistrationRequest.IsDeleted, testIsDeleted);
         }
 
@@ -107,11 +71,44 @@ namespace PetsWonderland.Models.Tests.RequestsTests
         [TestCase(false)]
         public void IsAccepted_ShouldGetAndSetDataCorrectly(bool testIsAccepted)
         {
-            // Arrange & Act
             var userHotelRegistrationRequest = new UserHotelRegistrationRequest { IsAccepted = testIsAccepted };
 
-            //Assert
             Assert.AreEqual(userHotelRegistrationRequest.IsAccepted, testIsAccepted);
+        }
+
+        [TestCase("Marmalade")]
+        [TestCase("ChockoPie4")]
+        public void HotelName_ShouldGetAndSetDataCorrectly(string name)
+        {
+            var userHotelRegistrationRequest = new UserHotelRegistrationRequest { HotelName = name };
+
+            Assert.AreEqual(userHotelRegistrationRequest.HotelName, name);
+        }
+
+        [TestCase("loc1")]
+        [TestCase("location2")]
+        public void HotelLocation_ShouldGetAndSetDataCorrectly(string locationName)
+        {
+            var userHotelRegistrationRequest = new UserHotelRegistrationRequest { HotelLocation = locationName };
+
+            Assert.AreEqual(userHotelRegistrationRequest.HotelLocation, locationName);
+        }
+
+        [TestCase("Lotem ipsul dolro sit amet")]
+        public void HotelDescription_ShouldGetAndSetDataCorrectly(string description)
+        {
+            var userHotelRegistrationRequest = new UserHotelRegistrationRequest { HotelDescription = description };
+
+            Assert.AreEqual(userHotelRegistrationRequest.HotelDescription, description);
+        }
+
+        [TestCase("/images/uploads/hotels/1.jpg")]
+        [TestCase("/images/uploads/hotels/12.jpg")]
+        public void HotelDImageUrl_ShouldGetAndSetDataCorrectly(string url)
+        {
+            var userHotelRegistrationRequest = new UserHotelRegistrationRequest { HotelImageUrl = url };
+
+            Assert.AreEqual(userHotelRegistrationRequest.HotelImageUrl, url);
         }
     }
 }

@@ -12,10 +12,8 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [Test]
         public void Constructor_ShouldHaveParameterlessConstructor()
         {
-            // Arrange & Act
             var admin = new Admin();
 
-            // Assert
             Assert.IsInstanceOf<Admin>(admin);
         }
 
@@ -32,10 +30,8 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [TestCase("asdasf123-adasd32")]
         public void Id_ShouldGetAndSetDataCorrectly(string testId)
         {
-            // Arrange & Act
             var admin = new Admin { Id = testId };
 
-            //Assert
             Assert.AreEqual(admin.Id, testId);
         }
 
@@ -55,10 +51,8 @@ namespace PetsWonderland.Models.Tests.UsersTests
         [TestCase(false)]
         public void IsDeleted_ShouldGetAndSetDataCorrectly(bool testIsDeleted)
         {
-            // Arrange & Act
             var admin = new Admin { IsDeleted = testIsDeleted };
 
-            //Assert
             Assert.AreEqual(admin.IsDeleted, testIsDeleted);
         }
 
