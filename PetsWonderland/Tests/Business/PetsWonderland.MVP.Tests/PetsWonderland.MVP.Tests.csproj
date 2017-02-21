@@ -98,6 +98,8 @@
     <Compile Include="Requests\BoardingRequestTests\GetAllBoardingRequestsTests\GetAllBoardingRequests_Should.cs" />
     <Compile Include="Requests\HotelRegistrationRequestTests\AddHotelRequestTests\AddHotelRegistrationRequest_Should.cs" />
     <Compile Include="Requests\HotelRegistrationRequestTests\AddHotelRequestTests\Constructor_Should.cs" />
+    <Compile Include="Requests\HotelRegistrationRequestTests\DeleteHotelRequestTests\Constructor_Should.cs" />
+    <Compile Include="Requests\HotelRegistrationRequestTests\DeleteHotelRequestTests\DeleteHotelRegistrationRequest_Should.cs" />
     <Compile Include="Requests\HotelRegistrationRequestTests\GetAllHotelRequestTests\Constructor_Should.cs" />
     <Compile Include="Requests\HotelRegistrationRequestTests\GetAllHotelRequestTests\GetAllHotelRegistrationRequests_Should.cs" />
   </ItemGroup>
