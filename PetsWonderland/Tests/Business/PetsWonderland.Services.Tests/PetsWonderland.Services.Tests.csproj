@@ -113,8 +113,13 @@
     <Compile Include="RegistrationTests\CreateHotelManager_Should.cs" />
     <Compile Include="RegistrationTests\CreateRegularUser_Should.cs" />
     <Compile Include="RegistrationTests\GetAll_Should.cs" />
+    <Compile Include="SliderTests\Constructor_Should.cs" />
+    <Compile Include="SliderTests\DeleteSlider_Should.cs" />
+    <Compile Include="SliderTests\GetAllSliders_Should.cs" />
+    <Compile Include="SliderTests\GetSliderByPosition_Should.cs" />
     <Compile Include="UserTests\Constructor_Should.cs" />
     <Compile Include="UserTests\GetImageByUserId_Should.cs" />
+    <Compile Include="UserTests\UploadImage_Should.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
