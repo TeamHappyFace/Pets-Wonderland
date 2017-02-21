@@ -9,3 +9,7 @@ build:
   publish_nuget: true
   include_nuget_references: true
   verbosity: minimal
+  
+environment:
+  COVERALLS_REPO_TOKEN:
+  secure: Guh0a2if871vheS9gYclMMxnZy4KIZgLx
