@@ -13,3 +13,8 @@ build:
 environment:
   COVERALLS_REPO_TOKEN:
   secure: wwOpNVnM+8l1Nt5Lirxdiomb7EpeqNAF958XB3EeZktw8/jpgdt0Gec0qe809/Kf
+  
+after_test:
+  - PetsWonderland\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"PetsWonderland\packages\NUnit.ConsoleRunner.3.6.0\tools\nunit3-console.exe" -targetargs:"/domain:single PetsWonderland\Tests\PetsWonderland.Data.Tests\bin\Debug\PetsWonderland.Data.Tests.dll PetsWonderland\Tests\PetsWonderland.Models.Tests\bin\Debug\PetsWonderland.Models.Tests.dll PetsWonderland\Tests\PetsWonderland.Services.Tests\bin\Debug\PetsWonderland.Services.Tests.dll" -output:cover.xml
+
+  - PetsWonderland\packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover cover.xml
