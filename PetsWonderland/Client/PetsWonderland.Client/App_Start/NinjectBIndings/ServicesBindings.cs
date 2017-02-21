@@ -1,5 +1,5 @@
-﻿using Ninject.Modules;
-using Ninject.Extensions.Conventions;
+﻿using Ninject.Extensions.Conventions;
+using Ninject.Modules;
 
 namespace PetsWonderland.Client.NinjectBIndings
 {
@@ -7,7 +7,7 @@ namespace PetsWonderland.Client.NinjectBIndings
     {
         public override void Load()
         {
-			this.Bind(x => x.From("PetsWonderland.Business.Services").SelectAllClasses().BindDefaultInterface());
+            this.Bind(x => x.From("PetsWonderland.Business.Services").SelectAllClasses().BindDefaultInterface());
         }
     }
 }

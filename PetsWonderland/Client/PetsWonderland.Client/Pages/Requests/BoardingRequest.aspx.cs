@@ -12,58 +12,58 @@ using WebFormsMvp.Web;
 
 namespace PetsWonderland.Client.Pages.Requests
 {
-	[PresenterBinding(typeof(AddBoardingRequestPresenter))]
-	public partial class BoardingRequest : MvpPage<AddBoardingRequestModel>, IAddBoardingRequestView
-	{
-		public event EventHandler<AddBoardingRequestArgs> AddBoardingRequest;
+    [PresenterBinding(typeof(AddBoardingRequestPresenter))]
+    public partial class BoardingRequest : MvpPage<AddBoardingRequestModel>, IAddBoardingRequestView
+    {
+        public event EventHandler<AddBoardingRequestArgs> AddBoardingRequest;
+       
+        public void CreateUserRequest_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                var currentUserId = User.Identity.GetUserId();
+                var hotelManagerId = Request.QueryString["id"];
 
-		protected void Page_Load(object sender, EventArgs e)
-		{
-		}
+                var newBoardingRequest = new UserBoardingRequest()
+                {
+                    PetName = this.PetName.Text,
+                    Age = int.Parse(this.Age.Text),
+                    ImageUrl = this.ImageUrl.Text,
+                    DateOfRequest = DateTime.Now,
+                    FromDate = this.txtFrom.Text,
+                    ToDate = this.txtTo.Text,
+                    PetBreed = this.Breed.Text,
+                    UserId = currentUserId,
+                    HotelManagerId = hotelManagerId
+                };
 
-		public void CreateUserRequest_Click(object sender, EventArgs e)
-		{
-			if (Page.IsValid)
-			{
-				var currentUserId = User.Identity.GetUserId();
-				var hotelManagerId = Request.QueryString["id"];
+                var boardingRequestArgs = new AddBoardingRequestArgs(newBoardingRequest);
+                this.AddBoardingRequest?.Invoke(this, boardingRequestArgs);
 
-				var newBoardingRequest = new UserBoardingRequest()
-				{
-					PetName = this.PetName.Text,
-					Age = int.Parse(this.Age.Text),
-					ImageUrl = this.ImageUrl.Text,
-					DateOfRequest = DateTime.Now,
-					FromDate = this.txtFrom.Text,
-					ToDate = this.txtTo.Text,
-					PetBreed = this.Breed.Text,
-					UserId = currentUserId,
-					HotelManagerId = hotelManagerId			 
-				};
+                this.UploadImage();
+                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], this.Response);
+            }
+        }
 
-				var boardingRequestArgs = new AddBoardingRequestArgs(newBoardingRequest);
-				this.AddBoardingRequest?.Invoke(this, boardingRequestArgs);
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
 
-				UploadImage();
-				IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-			}
-		}
-
-		private void UploadImage()
-		{
-			if (Image.HasFile)
-				try
-				{
-					Image.SaveAs(Server.MapPath("~/Images/") + Image.FileName);
-				}
-				catch (Exception ex)
-				{
-					FileUploadedLabel.Text = "ERROR: " + ex.Message.ToString();
-				}
-			else
-			{
-				FileUploadedLabel.Text = "You have not specified a file.";
-			}
-		}
-	}
+        private void UploadImage()
+        {
+            if (this.Image.HasFile)
+                try
+                {
+                    this.Image.SaveAs(Server.MapPath("~/Images/") + this.Image.FileName);
+                }
+                catch (Exception ex)
+                {
+                    FileUploadedLabel.Text = "ERROR: " + ex.Message.ToString();
+                }
+            else
+            {
+                this.FileUploadedLabel.Text = "You have not specified a file.";
+            }
+        }
+    }
 }

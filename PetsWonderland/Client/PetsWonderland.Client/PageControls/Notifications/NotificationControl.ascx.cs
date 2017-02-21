@@ -3,12 +3,7 @@
 namespace PetsWonderland.Client.PageControls.Notifications
 {
     public partial class NotificationControl : System.Web.UI.UserControl
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            HideNotification();
-        }
-
+    {        
         public void DisplayErrorNotification(string errorText)
         {
             this.NotificationPanel.Visible = true;
@@ -40,8 +35,13 @@ namespace PetsWonderland.Client.PageControls.Notifications
         public void HideNotification()
         {
             this.NotificationPanel.Visible = false;
-            this.NotificationPanel.CssClass = "";
-            this.NotificationMessage.Text = "";
-        }       
+            this.NotificationPanel.CssClass = string.Empty;
+            this.NotificationMessage.Text = string.Empty;
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            this.HideNotification();
+        }
     }
 }

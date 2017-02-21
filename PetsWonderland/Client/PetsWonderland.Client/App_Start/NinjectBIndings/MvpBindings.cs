@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-
-using WebFormsMvp;
-using WebFormsMvp.Binder;
-
 using Ninject;
+using Ninject.Activation;
 using Ninject.Extensions.Factory;
 using Ninject.Modules;
-using Ninject.Activation;
-
 using PetsWonderland.Client.NinjectFactories;
 using PetsWonderland.Client.NinjectFactories.Contracts;
+using WebFormsMvp;
+using WebFormsMvp.Binder;
 
 namespace PetsWonderland.Client.NinjectBIndings
 {
@@ -52,7 +49,6 @@ namespace PetsWonderland.Client.NinjectBIndings
         private void BindInterface(Type viewInterface, IView view)
         {
             var isInterfaceBinded = this.Kernel.GetBindings(viewInterface).Any();
-
 
             if (isInterfaceBinded)
             {

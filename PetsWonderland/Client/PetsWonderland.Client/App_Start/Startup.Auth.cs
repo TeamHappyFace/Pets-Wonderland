@@ -3,18 +3,15 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.DataProtection;
-using Microsoft.Owin.Security.Google;
 using Owin;
 using PetsWonderland.Business.Data;
-using PetsWonderland.Business.Models.Users;
 using PetsWonderland.Business.Identity;
+using PetsWonderland.Business.Models.Users;
 
 namespace PetsWonderland.Client
 {
     public partial class Startup
     {
-
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301883
         public void ConfigureAuth(IAppBuilder app)
         {
@@ -38,6 +35,7 @@ namespace PetsWonderland.Client
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
             });
+
             // Use a cookie to temporarily store information about a user logging in with a third party login provider
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 

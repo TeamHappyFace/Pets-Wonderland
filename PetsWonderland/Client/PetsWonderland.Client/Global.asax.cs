@@ -12,12 +12,12 @@ namespace PetsWonderland.Client
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-			// Code that runs on application startup
-			RouteConfig.RegisterRoutes(RouteTable.Routes);
+            // Code that runs on application startup
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-			// Initialize database
-			Database.SetInitializer(new MigrateDatabaseToLatestVersion<PetsWonderlandDbContext, Configuration>());
-		}
-	}
+            // Initialize database
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<PetsWonderlandDbContext, Configuration>());
+        }
+    }
 }

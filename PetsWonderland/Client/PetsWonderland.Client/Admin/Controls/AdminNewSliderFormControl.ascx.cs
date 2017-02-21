@@ -17,6 +17,12 @@ namespace PetsWonderland.Client.Admin.Controls
     {
         public event EventHandler<CreateSliderArgs> CreateSlider;
 
+        protected int NumberOfControls
+        {
+            get { return (int)this.ViewState["NumControls"]; }
+            set { this.ViewState["NumControls"] = value; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -28,26 +34,7 @@ namespace PetsWonderland.Client.Admin.Controls
                 this.CreateControls();
             }                                 
         }
-
-        protected int NumberOfControls
-        {
-            get { return (int)ViewState["NumControls"]; }
-            set { ViewState["NumControls"] = value; }
-        }
-
-        private void CreateControls()
-        {
-            var count = this.NumberOfControls;
-
-            for (var i = 0; i < count; i++)
-            {       
-                SlideControl slide = (SlideControl)Page.LoadControl("~/Admin/Controls/SlideControl.ascx");      
-
-                slide.NameGroup = this.NumberOfControls.ToString();
-                SliderSlidesPlaceholder2.Controls.Add(slide);     
-            }
-        }
-
+                
         protected void CreateSliderBtn_Click(object sender, EventArgs e)
         {           
             // ViewModel Data
@@ -60,8 +47,8 @@ namespace PetsWonderland.Client.Admin.Controls
             for (var i = 0; i < this.SliderSlidesPlaceholder2.Controls.Count; i++)
             {
                 var currentControl = this.SliderSlidesPlaceholder2.Controls[i];
-                slidesOptions.Add(i, new List<KeyValuePair<string, string>> ());
-                slidesImages.Add(i, new List<KeyValuePair<string, HttpPostedFileBase>> ());
+                slidesOptions.Add(i, new List<KeyValuePair<string, string>>());
+                slidesImages.Add(i, new List<KeyValuePair<string, HttpPostedFileBase>>());
 
                 if (!(currentControl is SlideControl)) { continue; }
 
@@ -118,10 +105,23 @@ namespace PetsWonderland.Client.Admin.Controls
         protected void addNewSlide_Click(object sender, EventArgs e)
         {
             SlideControl slide = (SlideControl)Page.LoadControl("~/Admin/Controls/SlideControl.ascx");
-            slide.NameGroup = this.NumberOfControls.ToString();         
+            slide.NameGroup = this.NumberOfControls.ToString();
 
-            SliderSlidesPlaceholder2.Controls.Add(slide);
+            this.SliderSlidesPlaceholder2.Controls.Add(slide);
             this.NumberOfControls++;
+        }
+
+        private void CreateControls()
+        {
+            var count = this.NumberOfControls;
+
+            for (var i = 0; i < count; i++)
+            {
+                SlideControl slide = (SlideControl)Page.LoadControl("~/Admin/Controls/SlideControl.ascx");
+
+                slide.NameGroup = this.NumberOfControls.ToString();
+                this.SliderSlidesPlaceholder2.Controls.Add(slide);
+            }
         }
     }
 }

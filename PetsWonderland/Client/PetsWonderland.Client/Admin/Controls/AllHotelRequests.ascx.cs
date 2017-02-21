@@ -11,76 +11,76 @@ using WebFormsMvp.Web;
 
 namespace PetsWonderland.Client.Admin.Controls
 {
-	[PresenterBinding(typeof(GetAllHotelRequestPresenter))]
-	public partial class AllHotelRequests : MvpUserControl<GetAllHotelRequestModel>, IGetAllHotelRequestView
-	{
-		public event EventHandler<GetAllHotelRequestsArgs> GetAllHotelRequests;
+    [PresenterBinding(typeof(GetAllHotelRequestPresenter))]
+    public partial class AllHotelRequests : MvpUserControl<GetAllHotelRequestModel>, IGetAllHotelRequestView
+    {
+        public event EventHandler<GetAllHotelRequestsArgs> GetAllHotelRequests;
 
-		protected void Page_Load(object sender, EventArgs e)
-		{
-		    if (!IsPostBack)
-		    {
-                ListViewHotelRequests_GetData();
-            }			
-		}
+        public IQueryable<UserHotelRegistrationRequest> ListViewHotelRequests_GetData()
+        {
+            this.GetAllHotelRequests?.Invoke(this, new GetAllHotelRequestsArgs());
 
-		protected override void OnPreRender(EventArgs e)
-		{
-			if (Session["id"] == null)
-			{
-				Session["id"] = "";
-			}
+            return this.Model.HotelRegistrationRequests.Where(req => req.IsDeleted == false).AsQueryable();
+        }
 
-			if (Session["name"] == null)
-			{
-				Session["name"] = "";
-			}
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!this.IsPostBack)
+            {
+                this.ListViewHotelRequests_GetData();
+            }
+        }
 
-			if (Session["location"] == null)
-			{
-				Session["location"] = "";
-			}
+        protected override void OnPreRender(EventArgs e)
+        {
+            if (this.Session["id"] == null)
+            {
+                this.Session["id"] = string.Empty;
+            }
 
-			if (Session["description"] == null)
-			{
-				Session["description"] = "";
-			}
+            if (this.Session["name"] == null)
+            {
+                this.Session["name"] = string.Empty;
+            }
 
-			if (Session["image"] == null)
-			{
-				Session["image"] = "";
-			}
+            if (this.Session["location"] == null)
+            {
+                this.Session["location"] = string.Empty;
+            }
 
-			if(Session["hotelManagerId"] == null)
-			{
-				Session["hotelManagerId"] = "";
-			}
-		}
+            if (this.Session["description"] == null)
+            {
+                this.Session["description"] = string.Empty;
+            }
 
-		public IQueryable<UserHotelRegistrationRequest> ListViewHotelRequests_GetData()
-		{
-			this.GetAllHotelRequests?.Invoke(this, new GetAllHotelRequestsArgs());
+            if (this.Session["image"] == null)
+            {
+                this.Session["image"] = string.Empty;
+            }
 
-			return this.Model.HotelRegistrationRequests.Where(req=>req.IsDeleted==false).AsQueryable();
-		}
+            if (this.Session["hotelManagerId"] == null)
+            {
+                this.Session["hotelManagerId"] = string.Empty;
+            }
+        }        
 
-		protected void HotelRequests_ItemCommand(object sender, ListViewCommandEventArgs e)
-		{
-			var id = e.Item.FindControl("hidden") as HiddenField;
-			var hotelManagerId = e.Item.FindControl("hotelManagerId") as HiddenField;
-			var name = e.Item.FindControl("hotelName") as Label;
-			var location = e.Item.FindControl("location") as Label;
-			var image = e.Item.FindControl("image") as Image;
-			var description = e.Item.FindControl("description") as Panel;
+        protected void HotelRequests_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            var id = e.Item.FindControl("hidden") as HiddenField;
+            var hotelManagerId = e.Item.FindControl("hotelManagerId") as HiddenField;
+            var name = e.Item.FindControl("hotelName") as Label;
+            var location = e.Item.FindControl("location") as Label;
+            var image = e.Item.FindControl("image") as Image;
+            var description = e.Item.FindControl("description") as Panel;
 
-			Session["id"] = id.Value;
-			Session["hotelManagerId"] = hotelManagerId.Value;
-			Session["name"] = name.Text;
-			Session["location"] = location.Text;
-			Session["description"] = description.Attributes["Text"];
-			Session["image"] = image.ImageUrl;
-			
-			Response.Redirect("ApproveHotelRequest.aspx");
-		}		
-	}
+            this.Session["id"] = id.Value;
+            this.Session["hotelManagerId"] = hotelManagerId.Value;
+            this.Session["name"] = name.Text;
+            this.Session["location"] = location.Text;
+            this.Session["description"] = description.Attributes["Text"];
+            this.Session["image"] = image.ImageUrl;
+
+            Response.Redirect("ApproveHotelRequest.aspx");
+        }
+    }
 }

@@ -16,6 +16,7 @@ namespace PetsWonderland.Client.Account
     public partial class Register : MvpPage<RegistrationModel>, IRegistrationView
     {
         public event EventHandler<EventArgs> EventBindPageData;
+
         public event EventHandler<RegistrationEventArgs> EventRegisterUser;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +24,6 @@ namespace PetsWonderland.Client.Account
             if (!Page.IsPostBack)
             {
                 // Bind the roles
-
                 this.EventBindPageData(this, e);
                 this.UserType.DataSource = this.Model.UserRoles.Take(2).ToList();
                 this.UserType.DataBind();
@@ -54,11 +54,11 @@ namespace PetsWonderland.Client.Account
 
             if (result.Succeeded)
             {
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], this.Response);
             }
             else
             {
-                ErrorMessage.Text = result.Errors.FirstOrDefault();
+                this.ErrorMessage.Text = result.Errors.FirstOrDefault();
             }
         }
     }

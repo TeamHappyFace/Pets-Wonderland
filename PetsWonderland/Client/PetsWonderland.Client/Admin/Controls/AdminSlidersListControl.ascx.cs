@@ -14,13 +14,14 @@ namespace PetsWonderland.Client.Admin.Controls
     public partial class AdminSlidersListControl : MvpUserControl<ListSlidersViewModel>, IListSlidersView
     {
         public event EventHandler<GetAllSlidersArgs> GetSlidersList;
+
         public event EventHandler<DeleteSliderArgs> DeleteSlider;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!this.IsPostBack)
             {
-                BindSlidersRepeater();
+                this.BindSlidersRepeater();
             }            
         }
      
@@ -35,13 +36,13 @@ namespace PetsWonderland.Client.Admin.Controls
 
         protected void btnDeleteSlider_Click(object sender, EventArgs e)
         {
-            var btn = (LinkButton)(sender);
+            var btn = (LinkButton)sender;
             int sliderId = int.Parse(btn.CommandArgument);
 
             var deleteSliderEventArgs = new DeleteSliderArgs { SliderId = sliderId };
             this.DeleteSlider?.Invoke(this, deleteSliderEventArgs);
 
-            BindSlidersRepeater();
+            this.BindSlidersRepeater();
         }
     }
 }

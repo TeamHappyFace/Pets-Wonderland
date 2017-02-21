@@ -9,63 +9,63 @@ using WebFormsMvp.Web;
 
 namespace PetsWonderland.Client.PageControls.Homepage
 {
-	[PresenterBinding(typeof(GetAllHotelsPresenter))]
-	public partial class HomepageHotelsListControl : MvpUserControl<GetAllHotelsModel>, IGetAllHotelsView
-	{
-		public event EventHandler<GetAllHotelsArgs> GetAllHotels;
+    [PresenterBinding(typeof(GetAllHotelsPresenter))]
+    public partial class HomepageHotelsListControl : MvpUserControl<GetAllHotelsModel>, IGetAllHotelsView
+    {
+        protected const int HotelsBatchIncrease = 3;
 
-	    protected const int HotelsBatchIncrease = 3;
-
-	    protected int HotelsListStartIndex {
-            get { return (int)ViewState["HotelsListStartIndex"]; }
-            set { ViewState["HotelsListStartIndex"] = value; }
+        public event EventHandler<GetAllHotelsArgs> GetAllHotels;
+      
+        protected int HotelsListStartIndex
+        {
+            get { return (int)this.ViewState["HotelsListStartIndex"]; }
+            set { this.ViewState["HotelsListStartIndex"] = value; }
         }
 
-	    protected int HotelsListBatch
-	    {
-            get { return (int)ViewState["HotelsListBatch"]; }
-            set { ViewState["HotelsListBatch"] = value; }
-        } 
+        protected int HotelsListBatch
+        {
+            get { return (int)this.ViewState["HotelsListBatch"]; }
+            set { this.ViewState["HotelsListBatch"] = value; }
+        }
 
-		protected void Page_Load(object sender, EventArgs e)
-		{
-		    if (!IsPostBack)
-		    {
-		        this.HotelsListStartIndex = 0;
-		        this.HotelsListBatch = HotelsBatchIncrease;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!this.IsPostBack)
+            {
+                this.HotelsListStartIndex = 0;
+                this.HotelsListBatch = HotelsBatchIncrease;
 
-		        RebindHotelsList(this.HotelsListStartIndex, this.HotelsListBatch);
-		    }
-		    else
-		    {
-		        RebindHotelsList(this.HotelsListStartIndex, this.HotelsListBatch);
-		    }
-		}
+                this.RebindHotelsList(this.HotelsListStartIndex, this.HotelsListBatch);
+            }
+            else
+            {
+                this.RebindHotelsList(this.HotelsListStartIndex, this.HotelsListBatch);
+            }
+        }
 
-	    protected void RebindHotelsList(int startAt, int count)
-	    {
+        protected void RebindHotelsList(int startAt, int count)
+        {
             this.GetAllHotels?.Invoke(this, new GetAllHotelsArgs { StartAt = startAt, Count = count });
 
-            Hotels.DataSource = this.Model.Hotels;
-            Hotels.DataBind();
-        
-        }             
+            this.Hotels.DataSource = this.Model.Hotels;
+            this.Hotels.DataBind();
+        }
 
-		protected void Hotels_ItemCreated(object sender, ListViewItemEventArgs e)
-		{
-			var hyperlink = e.Item.FindControl("boardingRequest") as HyperLink;
+        protected void Hotels_ItemCreated(object sender, ListViewItemEventArgs e)
+        {
+            var hyperlink = e.Item.FindControl("boardingRequest") as HyperLink;
 
-			if (!this.Page.User.IsInRole("User") || !this.Page.User.Identity.IsAuthenticated)
-			{
-				hyperlink.Visible = false;
-			}
-		}
+            if (!this.Page.User.IsInRole("User") || !this.Page.User.Identity.IsAuthenticated)
+            {
+                hyperlink.Visible = false;
+            }
+        }
 
         protected void btnLoadMoreHotels_Click(object sender, EventArgs e)
         {
             this.HotelsListBatch += HotelsBatchIncrease;
 
-            RebindHotelsList(this.HotelsListStartIndex, this.HotelsListBatch);
+            this.RebindHotelsList(this.HotelsListStartIndex, this.HotelsListBatch);
         }
-	}
+    }
 }
