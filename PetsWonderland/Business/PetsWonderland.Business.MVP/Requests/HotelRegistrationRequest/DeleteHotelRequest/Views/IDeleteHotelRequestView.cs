@@ -5,8 +5,8 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHotelRequest.Views
 {
-	public interface IDeleteHotelRequestView : IView<DeleteHotelRequestModel>
-	{
-		event EventHandler<DeleteHotelRequestArgs> DeleteHotelRegistrationRequest;
-	}
+    public interface IDeleteHotelRequestView : IView<DeleteHotelRequestModel>
+    {
+        event EventHandler<DeleteHotelRequestArgs> DeleteHotelRegistrationRequest;
+    }
 }

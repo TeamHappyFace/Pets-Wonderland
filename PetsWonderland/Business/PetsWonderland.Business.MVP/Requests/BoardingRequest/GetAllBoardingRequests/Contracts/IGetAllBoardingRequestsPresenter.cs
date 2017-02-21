@@ -2,8 +2,8 @@
 
 namespace PetsWonderland.Business.MVP.Requests.BoardingRequest.GetAllBoardingRequests.Contracts
 {
-	public interface IGetAllBoardingRequestsPresenter
-	{
-		void GetAllBoardingRequests(object sender, GetAllBoardingRequestsArgs e);
-	}
+    public interface IGetAllBoardingRequestsPresenter
+    {
+        void GetAllBoardingRequests(object sender, GetAllBoardingRequestsArgs e);
+    }
 }

@@ -5,20 +5,19 @@ using PetsWonderland.Business.Models.Requests;
 
 namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHotelRequest.Args
 {
-	public class GetAllHotelRequestsArgs : EventArgs
-	{
-		public GetAllHotelRequestsArgs()
-		{
+    public class GetAllHotelRequestsArgs : EventArgs
+    {
+        public GetAllHotelRequestsArgs()
+        {
+        }
 
-		}
+        public GetAllHotelRequestsArgs(IQueryable<UserHotelRegistrationRequest> allHotelRequests)
+        {
+            Guard.WhenArgument(allHotelRequests, "All hotel request list is null!").IsNullOrEmpty().Throw();
 
-		public GetAllHotelRequestsArgs(IQueryable<UserHotelRegistrationRequest> allHotelRequests)
-		{
-			Guard.WhenArgument(allHotelRequests, "All hotel request list is null!").IsNullOrEmpty().Throw();
+            this.HotelRequests = allHotelRequests;
+        }
 
-			this.HotelRequests = allHotelRequests;
-		}
-
-		public IQueryable<UserHotelRegistrationRequest> HotelRequests { get; set; }
-	}
+        public IQueryable<UserHotelRegistrationRequest> HotelRequests { get; set; }
+    }
 }

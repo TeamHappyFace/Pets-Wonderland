@@ -5,8 +5,8 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Requests.BoardingRequest.GetAllBoardingRequests.Views
 {
-	public interface IGetAllBoardingRequestsView : IView<GetAllBoardingRequestsModel>
-	{
-		event EventHandler<GetAllBoardingRequestsArgs> GetAllBoardingRequests;
-	}
+    public interface IGetAllBoardingRequestsView : IView<GetAllBoardingRequestsModel>
+    {
+        event EventHandler<GetAllBoardingRequestsArgs> GetAllBoardingRequests;
+    }
 }

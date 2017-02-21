@@ -5,8 +5,8 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Identity.ChangePassword.Views
 {
-	public interface IChangePasswordView : IView<ChangePasswordModel>
-	{
-		event EventHandler<ChangePasswordEventArgs> EventChangePassword;
-	}
+    public interface IChangePasswordView : IView<ChangePasswordModel>
+    {
+        event EventHandler<ChangePasswordEventArgs> EventChangePassword;
+    }
 }

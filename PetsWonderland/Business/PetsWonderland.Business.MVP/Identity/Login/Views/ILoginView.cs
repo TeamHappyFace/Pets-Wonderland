@@ -5,8 +5,8 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Identity.Login.Views
 {
-	public interface ILoginView : IView<LoginModel>
-	{
-		event EventHandler<LoginEventArgs> EventLoginUser;
-	}
+    public interface ILoginView : IView<LoginModel>
+    {
+        event EventHandler<LoginEventArgs> EventLoginUser;
+    }
 }

@@ -11,44 +11,45 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Animals
 {
-	public class AnimalPresenter : Presenter<IAnimalView>, IAnimalPresenter
-	{
-		private readonly IAnimalService animalService;
+    public class AnimalPresenter : Presenter<IAnimalView>, IAnimalPresenter
+    {
+        private readonly IAnimalService animalService;
 
-		public AnimalPresenter(IAnimalView view, IAnimalService animalService)
-			: base(view)
-		{
-			Guard.WhenArgument(view, "View is null!").IsNull().Throw();
-			Guard.WhenArgument(animalService, "AnimalService is null!").IsNull().Throw();
+        public AnimalPresenter(IAnimalView view, IAnimalService animalService)
+            : base(view)
+        {
+            Guard.WhenArgument(view, "View is null!").IsNull().Throw();
+            Guard.WhenArgument(animalService, "AnimalService is null!").IsNull().Throw();
 
-			this.animalService = animalService;
+            this.animalService = animalService;
 
-			View.Finding += Finding;
-			View.GetAll += GetAllAnimals;
-			View.Model.Animals = new List<Animal>();
-		}
+            View.Finding += this.Finding;
+            View.GetAll += this.GetAllAnimals;
+            View.Model.Animals = new List<Animal>();
+        }
 
-		public void GetAllAnimals(object sender, GetAllAnimalsArgs e)
-		{
-			var allAnimals = this.animalService.GetAllAnimals().ToList();
+        public void GetAllAnimals(object sender, GetAllAnimalsArgs e)
+        {
+            var allAnimals = this.animalService.GetAllAnimals().ToList();
 
-			View.Model.Animals = allAnimals;
-			View.Model.ShowResults = true;
-		}
+            View.Model.Animals = allAnimals;
+            View.Model.ShowResults = true;
+        }
 
-		public void Finding(object sender, FindAnimalArgs e)
-		{
-			if ((!e.Id.HasValue || e.Id <= 0) && String.IsNullOrEmpty(e.Name))
-			{
-				return;
-			}
-			if (e.Id.HasValue && e.Id > 0)
-			{
-				Animal animal = this.animalService.GetById((int)e.Id);
-				View.Model.Animals.Add(animal);
-			}
+        public void Finding(object sender, FindAnimalArgs e)
+        {
+            if ((!e.Id.HasValue || e.Id <= 0) && string.IsNullOrEmpty(e.Name))
+            {
+                return;
+            }
 
-			View.Model.ShowResults = true;
-		}
-	}
+            if (e.Id.HasValue && e.Id > 0)
+            {
+                var animal = this.animalService.GetById((int)e.Id);
+                View.Model.Animals.Add(animal);
+            }
+
+            View.Model.ShowResults = true;
+        }
+    }
 }

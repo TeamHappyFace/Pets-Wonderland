@@ -2,8 +2,8 @@
 
 namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHotelRequest.Contracts
 {
-	public interface IDeleteHotelRequestPresenter
-	{
-		void DeleteHotelRegistrationRequest(object sender, DeleteHotelRequestArgs e);
-	}
+    public interface IDeleteHotelRequestPresenter
+    {
+        void DeleteHotelRegistrationRequest(object sender, DeleteHotelRequestArgs e);
+    }
 }

@@ -10,26 +10,27 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Hotels.GetAllHotels
 {
-	public class GetAllHotelsPresenter : Presenter<IGetAllHotelsView>, IGetAllHotelsPresenter
-	{
-		private readonly IHotelService hotelService;
+    public class GetAllHotelsPresenter : Presenter<IGetAllHotelsView>, IGetAllHotelsPresenter
+    {
+        private readonly IHotelService hotelService;
 
-		public GetAllHotelsPresenter(IGetAllHotelsView view,
-			IHotelService hotelService)
-			: base(view)
-		{
-			Guard.WhenArgument(hotelService, "hotelService").IsNull().Throw();
+        public GetAllHotelsPresenter(
+            IGetAllHotelsView view,
+            IHotelService hotelService)
+            : base(view)
+        {
+            Guard.WhenArgument(hotelService, "hotelService").IsNull().Throw();
 
-			this.hotelService = hotelService;
+            this.hotelService = hotelService;
 
-			this.View.GetAllHotels += GetAllHotels;
-			this.View.Model.Hotels = new List<Hotel>();
-		}
+            this.View.GetAllHotels += this.GetAllHotels;
+            this.View.Model.Hotels = new List<Hotel>();
+        }
 
-		public void GetAllHotels(object sender, GetAllHotelsArgs e)
-		{
-			var allRequests = this.hotelService.GetHotels(e.StartAt, e.Count).ToList();
-			this.View.Model.Hotels = allRequests;
-		}
-	}
+        public void GetAllHotels(object sender, GetAllHotelsArgs e)
+        {
+            var allRequests = this.hotelService.GetHotels(e.StartAt, e.Count).ToList();
+            this.View.Model.Hotels = allRequests;
+        }
+    }
 }

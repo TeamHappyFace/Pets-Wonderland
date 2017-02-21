@@ -18,7 +18,7 @@ namespace PetsWonderland.Business.MVP.Admin.CreateSlider
 
             this.sliderService = sliderService;
 
-            View.CreateSlider += CreateSlider;
+            View.CreateSlider += this.CreateSlider;
         }
 
         public void CreateSlider(object sender, CreateSliderArgs e)

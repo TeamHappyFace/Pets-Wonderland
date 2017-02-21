@@ -5,10 +5,10 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Identity.Registration.Views
 {
-	public interface IRegistrationView : IView<RegistrationModel>
-	{
-		event EventHandler<RegistrationEventArgs> EventRegisterUser;
+    public interface IRegistrationView : IView<RegistrationModel>
+    {
+        event EventHandler<RegistrationEventArgs> EventRegisterUser;
 
-		event EventHandler<EventArgs> EventBindPageData;
-	}
+        event EventHandler<EventArgs> EventBindPageData;
+    }
 }

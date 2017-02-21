@@ -10,26 +10,27 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHotelRequest
 {
-	public class GetAllHotelRequestPresenter : Presenter<IGetAllHotelRequestView>, IGetAllHotelRequestPresenter
-	{
-		private readonly IHotelRegistrationRequestService hotelRegistrationRequestService;
+    public class GetAllHotelRequestPresenter : Presenter<IGetAllHotelRequestView>, IGetAllHotelRequestPresenter
+    {
+        private readonly IHotelRegistrationRequestService hotelRegistrationRequestService;
 
-		public GetAllHotelRequestPresenter(IGetAllHotelRequestView view,
-			IHotelRegistrationRequestService hotelRegistrationRequestService)
-			: base(view)
-		{
-			Guard.WhenArgument(hotelRegistrationRequestService, "hotelRegistrationRequestService").IsNull().Throw();
+        public GetAllHotelRequestPresenter(
+            IGetAllHotelRequestView view,
+            IHotelRegistrationRequestService hotelRegistrationRequestService)
+            : base(view)
+        {
+            Guard.WhenArgument(hotelRegistrationRequestService, "hotelRegistrationRequestService").IsNull().Throw();
 
-			this.hotelRegistrationRequestService = hotelRegistrationRequestService;
-			
-			this.View.GetAllHotelRequests += GetAllHotelRegistrationRequests;
-			this.View.Model.HotelRegistrationRequests = new List<UserHotelRegistrationRequest>();
-		}
-		
-		public void GetAllHotelRegistrationRequests(object sender, GetAllHotelRequestsArgs e)
-		{
-			var allRequests = this.hotelRegistrationRequestService.GetAllHotelRequests().ToList();
-			this.View.Model.HotelRegistrationRequests = allRequests;
-		}
-	}
+            this.hotelRegistrationRequestService = hotelRegistrationRequestService;
+
+            this.View.GetAllHotelRequests += this.GetAllHotelRegistrationRequests;
+            this.View.Model.HotelRegistrationRequests = new List<UserHotelRegistrationRequest>();
+        }
+
+        public void GetAllHotelRegistrationRequests(object sender, GetAllHotelRequestsArgs e)
+        {
+            var allRequests = this.hotelRegistrationRequestService.GetAllHotelRequests().ToList();
+            this.View.Model.HotelRegistrationRequests = allRequests;
+        }
+    }
 }

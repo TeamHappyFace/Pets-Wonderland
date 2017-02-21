@@ -2,8 +2,8 @@
 
 namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHotelRequest.Contracts
 {
-	public interface IGetAllHotelRequestPresenter
-	{
-		void GetAllHotelRegistrationRequests(object sender, GetAllHotelRequestsArgs e);
-	}
+    public interface IGetAllHotelRequestPresenter
+    {
+        void GetAllHotelRegistrationRequests(object sender, GetAllHotelRequestsArgs e);
+    }
 }

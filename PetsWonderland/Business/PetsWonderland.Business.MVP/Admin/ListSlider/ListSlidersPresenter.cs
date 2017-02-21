@@ -7,7 +7,7 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Admin.ListSlider
 {
-    public class ListSlidersPresenter: Presenter<IListSlidersView>, IListSlidersPresenter
+    public class ListSlidersPresenter : Presenter<IListSlidersView>, IListSlidersPresenter
     {
         private readonly ISliderService sliderService;
 
@@ -18,8 +18,8 @@ namespace PetsWonderland.Business.MVP.Admin.ListSlider
 
             this.sliderService = sliderService;
 
-            View.GetSlidersList += GetAllSliders;
-            View.DeleteSlider += DeleteSlider;
+            View.GetSlidersList += this.GetAllSliders;
+            View.DeleteSlider += this.DeleteSlider;
         }     
 
         public void GetAllSliders(object sender, GetAllSlidersArgs e)

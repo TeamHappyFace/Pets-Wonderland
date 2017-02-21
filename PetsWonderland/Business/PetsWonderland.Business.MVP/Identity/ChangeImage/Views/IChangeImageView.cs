@@ -5,10 +5,10 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Identity.ChangeImage.Views
 {
-	public interface IChangeImageView : IView<ChangeImageModel>
-	{
-		event EventHandler<GetImageArgs> EventGetImage;
+    public interface IChangeImageView : IView<ChangeImageModel>
+    {
+        event EventHandler<GetImageArgs> EventGetImage;
 
-		event EventHandler<ChangeImageArgs> EventChangeImage;
-	}
+        event EventHandler<ChangeImageArgs> EventChangeImage;
+    }
 }

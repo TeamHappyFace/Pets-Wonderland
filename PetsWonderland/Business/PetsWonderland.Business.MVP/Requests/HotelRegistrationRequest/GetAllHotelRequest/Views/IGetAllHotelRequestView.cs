@@ -5,8 +5,8 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHotelRequest.Views
 {
-	public interface IGetAllHotelRequestView : IView<GetAllHotelRequestModel>
-	{
-		event EventHandler<GetAllHotelRequestsArgs> GetAllHotelRequests;
-	}
+    public interface IGetAllHotelRequestView : IView<GetAllHotelRequestModel>
+    {
+        event EventHandler<GetAllHotelRequestsArgs> GetAllHotelRequests;
+    }
 }

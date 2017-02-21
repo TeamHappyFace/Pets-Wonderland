@@ -2,8 +2,8 @@
 
 namespace PetsWonderland.Business.MVP.Identity.ChangePassword.Contracts
 {
-	public interface IChangePasswordPresenter
-	{
-		void ChangePassword(object sender, ChangePasswordEventArgs e);
-	}
+    public interface IChangePasswordPresenter
+    {
+        void ChangePassword(object sender, ChangePasswordEventArgs e);
+    }
 }

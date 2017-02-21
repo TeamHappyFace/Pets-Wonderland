@@ -9,27 +9,28 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.AddHotelRequest
 {
-	public class AddHotelRequestPresenter : Presenter<IAddHotelRequestView>, IAddHotelRequestPresenter
-	{
-		private readonly IHotelRegistrationRequestService hotelRegistrationRequestService;
+    public class AddHotelRequestPresenter : Presenter<IAddHotelRequestView>, IAddHotelRequestPresenter
+    {
+        private readonly IHotelRegistrationRequestService hotelRegistrationRequestService;
 
-		public AddHotelRequestPresenter(IAddHotelRequestView view,
-			IHotelRegistrationRequestService hotelRegistrationRequestService)
-			: base(view)
-		{
-			Guard.WhenArgument(hotelRegistrationRequestService, "hotelRegistrationRequestService").IsNull().Throw();
+        public AddHotelRequestPresenter(
+            IAddHotelRequestView view,
+            IHotelRegistrationRequestService hotelRegistrationRequestService)
+            : base(view)
+        {
+            Guard.WhenArgument(hotelRegistrationRequestService, "hotelRegistrationRequestService").IsNull().Throw();
 
-			this.hotelRegistrationRequestService = hotelRegistrationRequestService;
+            this.hotelRegistrationRequestService = hotelRegistrationRequestService;
 
-			this.View.AddHotelRegistrationRequest += AddHotelRegistrationRequest;
-			this.View.Model.HotelRegistrationRequests = new List<UserHotelRegistrationRequest>();
-		}
+            this.View.AddHotelRegistrationRequest += this.AddHotelRegistrationRequest;
+            this.View.Model.HotelRegistrationRequests = new List<UserHotelRegistrationRequest>();
+        }
 
-		public void AddHotelRegistrationRequest(object sender, AddHotelRequestArgs e)
-		{
-			this.hotelRegistrationRequestService.AddHotelRequest(e.HotelRequestToAdd);
-			this.View.Model.HotelRequestToAdd = hotelRegistrationRequestService.GetById(e.HotelRequestToAdd.Id);
-			this.View.Model.HotelRegistrationRequests.Add(e.HotelRequestToAdd);
-		}
-	}
+        public void AddHotelRegistrationRequest(object sender, AddHotelRequestArgs e)
+        {
+            this.hotelRegistrationRequestService.AddHotelRequest(e.HotelRequestToAdd);
+            this.View.Model.HotelRequestToAdd = this.hotelRegistrationRequestService.GetById(e.HotelRequestToAdd.Id);
+            this.View.Model.HotelRegistrationRequests.Add(e.HotelRequestToAdd);
+        }
+    }
 }

@@ -21,7 +21,7 @@ namespace PetsWonderland.Business.MVP.Content.Slider
 
             this.sliderService = sliderService;
         
-            View.GetSliderData += GetSliderData;
+            View.GetSliderData += this.GetSliderData;
         }
 
         public void GetSliderData(object sender, GetSliderDataArgs args)

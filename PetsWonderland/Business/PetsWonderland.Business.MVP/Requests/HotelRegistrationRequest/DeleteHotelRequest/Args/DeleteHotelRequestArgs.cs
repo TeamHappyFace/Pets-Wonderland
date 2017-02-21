@@ -1,15 +1,14 @@
 ﻿using System;
-using Bytes2you.Validation;
 
 namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHotelRequest.Args
 {
-	public class DeleteHotelRequestArgs : EventArgs
-	{
-		public DeleteHotelRequestArgs(int hotelRequestToDeleteId)
-		{
-			this.HotelRequestToDeleteId = hotelRequestToDeleteId;
-		}
+    public class DeleteHotelRequestArgs : EventArgs
+    {
+        public DeleteHotelRequestArgs(int hotelRequestToDeleteId)
+        {
+            this.HotelRequestToDeleteId = hotelRequestToDeleteId;
+        }
 
-		public int HotelRequestToDeleteId { get; set; }
-	}
+        public int HotelRequestToDeleteId { get; set; }
+    }
 }

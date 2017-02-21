@@ -2,10 +2,10 @@
 
 namespace PetsWonderland.Business.MVP.Animals.Contracts
 {
-	public interface IAnimalPresenter
-	{
-		void GetAllAnimals(object sender, GetAllAnimalsArgs e);
+    public interface IAnimalPresenter
+    {
+        void GetAllAnimals(object sender, GetAllAnimalsArgs e);
 
-		void Finding(object sender, FindAnimalArgs e);
-	}
+        void Finding(object sender, FindAnimalArgs e);
+    }
 }

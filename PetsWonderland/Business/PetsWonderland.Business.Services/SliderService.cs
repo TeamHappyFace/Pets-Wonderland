@@ -98,7 +98,7 @@ namespace PetsWonderland.Business.Services
                     result = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 result = false;
             }

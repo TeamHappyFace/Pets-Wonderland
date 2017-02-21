@@ -10,25 +10,26 @@ using WebFormsMvp;
 
 namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.DeleteHotelRequest
 {
-	public class DeleteHotelRequestPresenter : Presenter<IDeleteHotelRequestView>, IDeleteHotelRequestPresenter
-	{
-		private readonly IHotelRegistrationRequestService hotelRegistrationRequestService;
+    public class DeleteHotelRequestPresenter : Presenter<IDeleteHotelRequestView>, IDeleteHotelRequestPresenter
+    {
+        private readonly IHotelRegistrationRequestService hotelRegistrationRequestService;
 
-		public DeleteHotelRequestPresenter(IDeleteHotelRequestView view,
-			IHotelRegistrationRequestService hotelRegistrationRequestService)
-			: base(view)
-		{
-			Guard.WhenArgument(hotelRegistrationRequestService, "hotelRegistrationRequestService").IsNull().Throw();
+        public DeleteHotelRequestPresenter(
+            IDeleteHotelRequestView view,
+            IHotelRegistrationRequestService hotelRegistrationRequestService)
+            : base(view)
+        {
+            Guard.WhenArgument(hotelRegistrationRequestService, "hotelRegistrationRequestService").IsNull().Throw();
 
-			this.hotelRegistrationRequestService = hotelRegistrationRequestService;
-			
-			this.View.DeleteHotelRegistrationRequest += DeleteHotelRegistrationRequest;
-			this.View.Model.HotelRegistrationRequests = new List<UserHotelRegistrationRequest>();
-		}
+            this.hotelRegistrationRequestService = hotelRegistrationRequestService;
 
-		public void DeleteHotelRegistrationRequest(object sender, DeleteHotelRequestArgs e)
-		{
-			this.hotelRegistrationRequestService.UpdateDeleted(e.HotelRequestToDeleteId, true);
-		}
-	}
+            this.View.DeleteHotelRegistrationRequest += this.DeleteHotelRegistrationRequest;
+            this.View.Model.HotelRegistrationRequests = new List<UserHotelRegistrationRequest>();
+        }
+
+        public void DeleteHotelRegistrationRequest(object sender, DeleteHotelRequestArgs e)
+        {
+            this.hotelRegistrationRequestService.UpdateDeleted(e.HotelRequestToDeleteId, true);
+        }
+    }
 }

@@ -2,8 +2,8 @@
 
 namespace PetsWonderland.Business.MVP.Hotels.AddHotel.Contracts
 {
-	public interface IAddHotelPresenter
-	{
-		void AddHotel(object sender, AddHotelArgs e);
-	}
+    public interface IAddHotelPresenter
+    {
+        void AddHotel(object sender, AddHotelArgs e);
+    }
 }
