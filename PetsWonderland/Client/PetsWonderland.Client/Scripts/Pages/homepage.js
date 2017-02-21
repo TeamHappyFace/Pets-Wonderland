@@ -84,23 +84,24 @@ $(function () {
 });
 
 /* Hotels List Gallery */
-$(function() {
+$(function () {
     $('.grid').isotope({
         // options
         itemSelector: '.grid-item',
         layoutMode: 'fitRows',  
         percentPosition: true,
-        fitRows: {
-        },
-        getSortData: {
-            category: '[data-category]'
-        },
-        containerStyle: {
-            position: 'relative',
-            overflow: 'hidden'
-        }
+        resizesContainer: true
+                 
     });
 });
+
+function reloadGrid() {
+    $('html,body').animate({
+        scrollTop: $(".hotels-list-load-more").offset().top
+    }, 'slow');
+
+    setTimeout(function () {  }, 100);
+}
 
 /* Shows and hides Contact Btn */
 $(function () {
@@ -114,3 +115,4 @@ $(function () {
 $(function() {
     $('[data-toggle="tooltip"]').tooltip();
 });
+

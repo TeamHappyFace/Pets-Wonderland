@@ -124,6 +124,7 @@
 .hp-hotels .hotels-list .grid-item {
     margin-bottom: 20px;  
     padding-top: 15px;
+    overflow: hidden 
 }
 
 /* fluid 4% gutter */
@@ -167,6 +168,24 @@
 .hp-hotels .hotels-list .grid-item .description > p {
     text-align: justify;
     font-size: 22px;
+    min-height: 220px;
+    max-height: 220px;
+    overflow: hidden
+}
+
+.hp-hotels .hotels-list-load-more {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 55px;
+    margin: 20px 0 30px;
+}
+
+.hp-hotels .hotels-list-load-more > a{
+     width: 370px;
+    float: none;
+    margin: 0 auto;
+    display: block;
 }
 
 .hp-hotels .hotels-list .grid-item .description h4 {

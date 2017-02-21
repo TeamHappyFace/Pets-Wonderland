@@ -71,26 +71,16 @@ namespace PetsWonderland.Client.Admin.Controls
 			var name = e.Item.FindControl("hotelName") as Label;
 			var location = e.Item.FindControl("location") as Label;
 			var image = e.Item.FindControl("image") as Image;
-			var description = e.Item.FindControl("description") as TextBox;
+			var description = e.Item.FindControl("description") as Panel;
 
 			Session["id"] = id.Value;
 			Session["hotelManagerId"] = hotelManagerId.Value;
 			Session["name"] = name.Text;
 			Session["location"] = location.Text;
-			Session["description"] = description.Text;
+			Session["description"] = description.Attributes["Text"];
 			Session["image"] = image.ImageUrl;
 			
 			Response.Redirect("ApproveHotelRequest.aspx");
-		}
-
-		protected void HotelRequests_ItemCreated(object sender, ListViewItemEventArgs e)
-		{
-			var image = e.Item.FindControl("image") as Image;
-
-			if (image.ImageUrl == "")
-			{
-				image.Visible = false;
-			}
-		}
+		}		
 	}
 }
