@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Data.Contracts;
@@ -29,21 +28,16 @@ namespace PetsWonderland.Services.Tests.SliderTests
 			mockedRepository.Verify(repository => repository.GetFirst(It.IsAny<Expression<Func<Slider, bool>>>()), Times.Once);
 		}
 
-		//[Test]
-		//public void CallSaveChanges_WhenParamsAreValid()
-		//{
-		//	var mockedRepository = new Mock<IRepository<Slider>>();
-		//	var mockedUnitOfWork = new Mock<IUnitOfWork>();
-		//	var sliderService = new SliderService(mockedRepository.Object, mockedUnitOfWork.Object);
+		[Test]
+		public void ThrowException_WhenSliderIsNull()
+		{
+			var mockedRepository = new Mock<IRepository<Slider>>();
+			var mockedUnitOfWork = new Mock<IUnitOfWork>();
+			var sliderService = new SliderService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-		//	var slider = new Mock<Slider>();
-
-		//	mockedRepository.Setup(repository => repository
-		//			.GetFirst(sl => sl.Id == slider.Object.Id)).Returns(slider.Object);
-			
-		//	sliderService.DeleteSlider(slider.Object.Id);
-
-		//	mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);
-		//}
+			Mock<Slider> slider = null;
+			Assert.Throws<NullReferenceException>(
+				() => sliderService.DeleteSlider(slider.Object.Id));
+		}
 	}
 }
