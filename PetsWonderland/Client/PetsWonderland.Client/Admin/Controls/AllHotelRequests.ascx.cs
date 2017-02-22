@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHotelRequest;

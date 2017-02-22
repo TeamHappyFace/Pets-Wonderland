@@ -7,6 +7,10 @@ namespace PetsWonderland.Client.Account
     {
         protected void Page_Load()
         {
+			if (this.Page.User.IsInRole("Hotel manager"))
+			{
+				RequestsButton.Visible = true;
+			}
         }
 
         protected void ImageButton_Click(object sender, EventArgs e)
@@ -18,5 +22,10 @@ namespace PetsWonderland.Client.Account
         {
             this.MultiView.ActiveViewIndex = 1;
         }
-    }
+
+		protected void RequestsButton_Click(object sender, EventArgs e)
+		{
+			this.MultiView.ActiveViewIndex = 2;
+		}
+	}
 }

@@ -252,7 +252,6 @@
     <Content Include="Content\External\RevSlider\settings.css" />
     <Content Include="Content\External\RevSlider\style.css" />
     <Content Include="Content\Fonts.css" />
-    <Content Include="Content\Pages\allBoardingRequests.css" />
     <Content Include="Content\Pages\boardingRequest.css" />
     <Content Include="Content\Pages\homepage.css" />
     <Content Include="Content\Pages\hotelRequest.css" />
@@ -319,6 +318,7 @@
     <Content Include="Images\Pages\Homepage\About\management.png" />
     <Content Include="Images\Pages\Homepage\About\organization.png" />
     <Content Include="Images\Pages\Homepage\bone.png" />
+    <Content Include="PageControls\Account\AllBoardingRequests.ascx" />
     <Content Include="PageControls\Account\ChangeImageControl.ascx" />
     <Content Include="PageControls\Account\ChangePasswordControl.ascx" />
     <Content Include="PageControls\Homepage\HomepageAboutControl.ascx" />
@@ -326,7 +326,6 @@
     <Content Include="PageControls\Homepage\HomepageHotelsListControl.ascx" />
     <Content Include="PageControls\Homepage\QuickContactControl.ascx" />
     <Content Include="PageControls\Notifications\NotificationControl.ascx" />
-    <Content Include="Pages\Requests\AllBoardingRequests.aspx" />
     <Content Include="Pages\Requests\BoardingRequest.aspx" />
     <Content Include="Pages\Requests\HotelRequest.aspx" />
     <Content Include="Scripts\Admin\admin.main.js" />
@@ -624,6 +623,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="PageControls\Account\AllBoardingRequests.ascx.cs">
+      <DependentUpon>AllBoardingRequests.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PageControls\Account\AllBoardingRequests.ascx.designer.cs">
+      <DependentUpon>AllBoardingRequests.ascx</DependentUpon>
+    </Compile>
     <Compile Include="PageControls\Account\ChangeImageControl.ascx.cs">
       <DependentUpon>ChangeImageControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -679,13 +684,6 @@
     </Compile>
     <Compile Include="PageControls\Notifications\NotificationControl.ascx.designer.cs">
       <DependentUpon>NotificationControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Requests\AllBoardingRequests.aspx.cs">
-      <DependentUpon>AllBoardingRequests.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Requests\AllBoardingRequests.aspx.designer.cs">
-      <DependentUpon>AllBoardingRequests.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Requests\BoardingRequest.aspx.cs">
       <DependentUpon>BoardingRequest.aspx</DependentUpon>

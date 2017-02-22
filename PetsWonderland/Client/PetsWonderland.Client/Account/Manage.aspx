@@ -4,6 +4,7 @@
 
 <%@ Register Src="~/PageControls/Account/ChangePasswordControl.ascx" TagPrefix="uc" TagName="ChangePasswordControl" %>
 <%@ Register Src="~/PageControls/Account/ChangeImageControl.ascx" TagPrefix="uc" TagName="ChangeImageControl" %>
+<%@ Register Src="~/PageControls/Account/AllBoardingRequests.ascx" TagPrefix="uc" TagName="BoardingRequests" %>
 
 <asp:Content ContentPlaceHolderID="CustomStylesheets" runat="server">
     <link href="<%= ResolveUrl("~/Content/Pages/profile.css") %>" rel="stylesheet" type="text/css" />       
@@ -29,6 +30,8 @@
 							OnClick="ImageButton_Click" />
 						<asp:Button Text="Password" BorderStyle="None" ID="PasswordButton" CssClass="btn" runat="server"
 							OnClick="PasswordButton_Click" />
+						<asp:Button Text="Boarding Requests" BorderStyle="None" ID="RequestsButton" CssClass="btn special" runat="server"
+							OnClick="RequestsButton_Click" Visible ="false"/>
 					</asp:Label>
 
 					<asp:MultiView ID="MultiView" runat="server">
@@ -37,6 +40,9 @@
 						</asp:View>
 						<asp:View runat="server" ID="ChangePasswordView">
 							<uc:ChangePasswordControl runat="server"/>
+						</asp:View>
+						<asp:View runat="server" ID="ViewBoardingRequests">
+							<uc:BoardingRequests runat="server" />
 						</asp:View>
 					</asp:MultiView>
 				</ContentTemplate>

@@ -33,12 +33,12 @@ namespace PetsWonderland.MVP.Tests.Hotels.AddHotelTests
 		[Test]
 		public void ThrowArgumentNullException_WhenHotelServiceIsNull()
 		{
-			var mockedHotelRequestView = new Mock<IAddHotelView>();
+			var mockedHotelView = new Mock<IAddHotelView>();
 			var mockedHotelLocationService = new Mock<IHotelLocationService>();
 			var mockedHotelRequestService = new Mock<IHotelRegistrationRequestService>();
 
 			Assert.That(() =>
-				new AddHotelPresenter(mockedHotelRequestView.Object, 
+				new AddHotelPresenter(mockedHotelView.Object, 
 										null,
 										mockedHotelLocationService.Object,
 										mockedHotelRequestService.Object),
@@ -48,12 +48,12 @@ namespace PetsWonderland.MVP.Tests.Hotels.AddHotelTests
 		[Test]
 		public void ThrowArgumentNullException_WhenHotelLocationServiceIsNull()
 		{
-			var mockedHotelRequestView = new Mock<IAddHotelView>();
+			var mockedHotelView = new Mock<IAddHotelView>();
 			var mockedHotelService = new Mock<IHotelService>();
 			var mockedHotelRequestService = new Mock<IHotelRegistrationRequestService>();
 
 			Assert.That(() =>
-				new AddHotelPresenter(mockedHotelRequestView.Object,
+				new AddHotelPresenter(mockedHotelView.Object,
 										mockedHotelService.Object,
 										null,
 										mockedHotelRequestService.Object),
@@ -63,12 +63,12 @@ namespace PetsWonderland.MVP.Tests.Hotels.AddHotelTests
 		[Test]
 		public void ThrowArgumentNullException_WhenHotelRequestServiceIsNull()
 		{
-			var mockedHotelRequestView = new Mock<IAddHotelView>();
+			var mockedHotelView = new Mock<IAddHotelView>();
 			var mockedHotelService = new Mock<IHotelService>();
 			var mockedHotelLocationService = new Mock<IHotelLocationService>();
 
 			Assert.That(() =>
-				new AddHotelPresenter(mockedHotelRequestView.Object,
+				new AddHotelPresenter(mockedHotelView.Object,
 										mockedHotelService.Object,
 										mockedHotelLocationService.Object,
 										null),

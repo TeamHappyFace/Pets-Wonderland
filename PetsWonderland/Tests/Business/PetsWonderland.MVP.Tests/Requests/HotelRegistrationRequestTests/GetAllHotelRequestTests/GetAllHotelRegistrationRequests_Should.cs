@@ -38,7 +38,7 @@ namespace PetsWonderland.MVP.Tests.Requests.HotelRegistrationRequestTests.GetAll
 				.Setup(x => x.GetAllHotelRequests())
 				.Returns(expectedResult.AsQueryable());
 
-			var getAllBoardingRequestsPresenter = 
+			var getAllHotelRequestsPresenter = 
 				new GetAllHotelRequestPresenter(mockedHotelRequestView.Object, mockedHotelRequestService.Object);
 
 			var args = new GetAllHotelRequestsArgs()
