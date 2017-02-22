@@ -16,7 +16,7 @@ namespace PetsWonderland.MVP.Tests.Requests.BoardingRequestTests.GetAllBoardingR
 	public class GetAllBoardingRequests_Should
 	{
 		[TestMethod]
-		public void WorkProperly_WhenParamsAreValid()
+		public void SetModelRequests_WhenParamsAreValid()
 		{
 			var mockedBoardingRequestView = new Mock<IGetAllBoardingRequestsView>();
 			var mockedBoardingRequestService = new Mock<IBoardingRequestService>();

@@ -16,7 +16,7 @@ namespace PetsWonderland.MVP.Tests.Requests.HotelRegistrationRequestTests.GetAll
 	public class GetAllHotelRegistrationRequests_Should
 	{
 		[TestMethod]
-		public void WorkProperly_WhenParamsAreValid()
+		public void UpdateModel_WhenParamsAreValid()
 		{
 			var mockedHotelRequestView = new Mock<IGetAllHotelRequestView>();
 			var mockedHotelRequestService = new Mock<IHotelRegistrationRequestService>();

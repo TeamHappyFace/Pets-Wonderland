@@ -54,7 +54,6 @@
 					<div >
 						<asp:FileUpload runat="server" ID="Image"></asp:FileUpload>
 					</div>
-					<asp:Label ID="FileUploadedLabel" runat="server" CssClass="control-label col-md-12"/>
 				</div>
 				<div class="form-group col-md-12">
 					<div class="col-md-offset-2">

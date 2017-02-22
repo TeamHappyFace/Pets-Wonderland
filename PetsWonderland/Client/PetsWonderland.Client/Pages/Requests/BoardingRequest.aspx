@@ -41,6 +41,8 @@
 				<div class="form-group col-md-12">
 					<asp:Label runat="server" AssociatedControlID="Age" CssClass="control-label">Age *</asp:Label>
 					<asp:TextBox runat="server" ID="Age" CssClass="form-control"/>
+					<asp:RangeValidator ErrorMessage="Should be a number 1-50" MinimumValue="1" MaximumValue="50" 
+						ControlToValidate="Age" runat="server" CssClass="text-danger" />
 					<asp:RequiredFieldValidator runat="server" ControlToValidate="Age"
 						CssClass="text-danger" ErrorMessage="The Age field is required." />
 				</div>
@@ -58,7 +60,6 @@
 					<div>
 						<asp:FileUpload runat="server" ID="Image"></asp:FileUpload>
 					</div>
-					<asp:Label ID="FileUploadedLabel" runat="server" CssClass="control-label"/>
 				</div>
 				<div class="dates-wrapper">
 					<div class="form-group col-md-12">

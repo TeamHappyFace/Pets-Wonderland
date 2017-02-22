@@ -13,7 +13,7 @@ namespace PetsWonderland.MVP.Tests.Requests.HotelRegistrationRequestTests.AddHot
 	public class AddHotelRegistrationRequest_Should
 	{
 		[Test]
-		public void WorkProperly_WhenParamsAreValid()
+		public void AddRequest_WhenParamsAreValid()
 		{
 			var mockedHotelRequestView = new Mock<IAddHotelRequestView>();
 			var mockedHotelRequestService = new Mock<IHotelRegistrationRequestService>();

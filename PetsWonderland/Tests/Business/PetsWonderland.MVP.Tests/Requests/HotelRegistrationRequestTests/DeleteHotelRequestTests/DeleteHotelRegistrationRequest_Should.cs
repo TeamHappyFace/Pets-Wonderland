@@ -13,7 +13,7 @@ namespace PetsWonderland.MVP.Tests.Requests.HotelRegistrationRequestTests.Delete
 	public class DeleteHotelRegistrationRequest_Should
 	{
 		[Test]
-		public void WorkProperly_WhenParamsAreValid()
+		public void UpdateDeletedOnce_WhenParamsAreValid()
 		{
 			var mockedHotelRequestView = new Mock<IDeleteHotelRequestView>();
 			var mockedHotelRequestService = new Mock<IHotelRegistrationRequestService>();

@@ -16,7 +16,11 @@ namespace PetsWonderland.Client.Pages.Requests
     {
         public event EventHandler<AddHotelRequestArgs> AddHotelRegistrationRequest;
 
-        public void CreateUserRequest_Click(object sender, EventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
+		{
+		}
+
+		public void CreateUserRequest_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
@@ -26,42 +30,27 @@ namespace PetsWonderland.Client.Pages.Requests
                 {
                     HotelName = this.HotelName.Text,
                     HotelLocation = this.Location.Text,
-                    HotelImageUrl = this.ImageUrl.Text,
                     HotelManagerId = currentHotelManagerId,
                     HotelDescription = this.Description.Text,
                     DateOfRequest = DateTime.Now,
                     IsAccepted = false
                 };
 
-                var hotelRegistrationRequestArgs = new AddHotelRequestArgs(newHotelRegistrationRequest);
-                this.AddHotelRegistrationRequest?.Invoke(this, hotelRegistrationRequestArgs);
+				if (this.Image.HasFile)
+				{
+					this.Image.SaveAs(Server.MapPath("~/Images/") + this.Image.FileName);
+					newHotelRegistrationRequest.HotelImageUrl = (this.Server.MapPath("~/Images/") + this.Image.FileName);
+				}
+				else
+				{
+					newHotelRegistrationRequest.HotelImageUrl = this.ImageUrl.Text;
+				}
 
-                this.UploadImage();
+				var hotelRegistrationRequestArgs = new AddHotelRequestArgs(newHotelRegistrationRequest);
+                this.AddHotelRegistrationRequest?.Invoke(this, hotelRegistrationRequestArgs);
+				
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], this.Response);
             }
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        }        
-
-        private void UploadImage()
-        {
-            if (this.Image.HasFile)
-            {
-                try
-                {
-                    this.Image.SaveAs(Server.MapPath("~/Images/") + this.Image.FileName);
-                }
-                catch (Exception ex)
-                {
-                    this.FileUploadedLabel.Text = "ERROR: " + ex.Message.ToString();
-                }
-            }                
-            else
-            {
-                this.FileUploadedLabel.Text = "You have not specified a file.";
-            }
-        }
+        }  
     }
 }

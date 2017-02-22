@@ -14,7 +14,7 @@ namespace PetsWonderland.MVP.Tests.Requests.BoardingRequestTests.AddBoardingRequ
 	public class AddBoardingRequest_Should
 	{
 		[Test]
-		public void WorkProperly_WhenParamsAreValid()
+		public void AddRequest_WhenParamsAreValid()
 		{
 			var mockedBoardingRequestView = new Mock<IAddBoardingRequestView>();
 			var mockedBoardingRequestService = new Mock<IBoardingRequestService>();

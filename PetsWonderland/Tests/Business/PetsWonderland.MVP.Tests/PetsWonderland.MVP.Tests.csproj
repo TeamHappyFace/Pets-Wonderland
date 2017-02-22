@@ -86,6 +86,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Admin\CreateSliderTests\Constructor_Should.cs" />
+    <Compile Include="Admin\ListSliderTests\Constructor_Should.cs" />
+    <Compile Include="Admin\ListSliderTests\DeleteSlider_Should.cs" />
+    <Compile Include="Admin\ListSliderTests\GetAllSliders_Should.cs" />
     <Compile Include="Hotels\AddHotelTests\AddHotel_Should.cs" />
     <Compile Include="Hotels\AddHotelTests\Constructor_Should.cs" />
     <Compile Include="Hotels\GetAllHotels\Constructor_Should.cs" />
