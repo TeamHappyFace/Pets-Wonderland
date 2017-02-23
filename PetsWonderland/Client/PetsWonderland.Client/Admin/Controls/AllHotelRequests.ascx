@@ -46,7 +46,7 @@
 				<div class="card-header" data-background-color="blue">
 					<h5 class="title">Description</h5>			                         
 					<div class="stack-group">
-						<Panel runat="server" ID="description" Text="<%#: Item.HotelDescription %>"><%#: Item.HotelDescription %></Panel>                                                                      
+						<div runat="server" ID="description" Text="<%#: Item.HotelDescription %>"><%#: Item.HotelDescription %></div>                                                                      
 					</div>                                                       
 				</div>
 			</div>
