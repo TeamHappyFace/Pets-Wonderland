@@ -1,7 +1,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/0pfgyuxfd3o6vixo?svg=true)](https://ci.appveyor.com/project/Juveniel/pets-wonderland)
 
 
-[![Coverage Status](https://coveralls.io/repos/github/TeamHappyFace/Pets-Wonderland/badge.svg?branch=master)](https://coveralls.io/github/TeamHappyFace/Pets-Wonderland?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/TeamHappyFace/Pets-Wonderland/badge.svg?branch=master)](https://coveralls.io/github/TeamHappyFace/Pets-Wonderland?branch=masterr)
 
 <p align="center">
 <a href="http://academy.telerik.com/">
