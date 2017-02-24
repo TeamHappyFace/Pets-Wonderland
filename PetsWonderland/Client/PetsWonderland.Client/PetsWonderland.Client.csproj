@@ -625,6 +625,7 @@
     </Compile>
     <Compile Include="PageControls\Account\AllBoardingRequests.ascx.cs">
       <DependentUpon>AllBoardingRequests.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PageControls\Account\AllBoardingRequests.ascx.designer.cs">
       <DependentUpon>AllBoardingRequests.ascx</DependentUpon>

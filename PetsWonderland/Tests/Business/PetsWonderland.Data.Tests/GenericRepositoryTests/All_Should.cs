@@ -20,9 +20,9 @@ namespace PetsWonderland.Data.Tests.GenericRepositoryTests
 
             var repository = new GenericRepository<IAnimal>(mockedContext.Object);
 
-            Assert.NotNull(repository.Entities);
-            Assert.IsInstanceOf(typeof(IDbSet<IAnimal>), repository.Entities);
-            Assert.AreSame(repository.Entities, repository.DbSet);
+            Assert.NotNull(repository.All());
+            Assert.IsInstanceOf(typeof(IDbSet<IAnimal>), repository.All());
+            Assert.AreSame(repository.All(), repository.DbSet);
         }
     }
 }

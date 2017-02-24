@@ -11,21 +11,6 @@ namespace PetsWonderland.Data.Tests.GenericRepositoryTests
     [TestFixture]
     public class GetById_Should
     {
-        //[Test]
-        //public void ThrowException_WhenargumentIsInvalid()
-        //{
-        //    var mockedDbSet = new Mock<DbSet<IAnimal>>();
-        //    var mockedDbContext = new Mock<IPetsWonderlandDbContext>();
-        //    mockedDbContext.Setup(mock => mock.Set<IAnimal>()).Returns(mockedDbSet.Object);
-
-        //    var animalRepository = new GenericRepository<IAnimal>(mockedDbContext.Object);
-        //    var fakeId = -15;
-
-        //    Assert.That(
-        //        () => animalRepository.GetById(fakeId),
-        //        Throws.InstanceOf<ArgumentException>().With.Message.Contains("Id msut be a positive number!"));
-        //}
-
         [Test]
         public void ReturnCorrectResult_WhenParameterIsValid()
         {

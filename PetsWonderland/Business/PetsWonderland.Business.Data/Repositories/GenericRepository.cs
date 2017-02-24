@@ -105,21 +105,5 @@ namespace PetsWonderland.Business.Data.Repositories
                 this.dbSet.Remove(entity);
             }
         }
-
-        public virtual void Delete(object id)
-        {
-            var entity = this.GetById(id);
-
-            if (entity != null)
-            {
-                this.Delete(entity);
-            }
-        }
-
-        public virtual void Detach(T entity)
-        {
-            var entry = this.context.Entry(entity);
-            entry.State = EntityState.Detached;
-        }
     }
 }
