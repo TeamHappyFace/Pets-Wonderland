@@ -32,6 +32,6 @@ namespace PetsWonderland.MVP.Tests.Admin.ListSliderTests
 
 			mockedSliderService
 				.Verify(x => x.DeleteSlider(slider.Object.Id), Times.Once());
-		}
-	}
+		}  
+    }
 }

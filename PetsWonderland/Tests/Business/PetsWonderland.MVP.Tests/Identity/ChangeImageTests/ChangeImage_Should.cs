@@ -31,7 +31,8 @@ namespace PetsWonderland.MVP.Tests.Identity.ChangeImageTests
 			{
 				FileBase = mockedFile.Object,
 				UserId = "User1",
-				ImagePath = "~/Images"
+				ImagePath = "~/Images",
+                Location = "asdasd"                
 			};
 
 			mockedChangeImageView.Raise(x => x.EventChangeImage += null, args);
@@ -56,7 +57,7 @@ namespace PetsWonderland.MVP.Tests.Identity.ChangeImageTests
 			{
 				FileBase = mockedFile.Object,
 				UserId = "User1",
-				ImagePath = "~/Images"
+				ImagePath = "~/Images",            
 			};
 
 			mockedChangeImageView.Raise(x => x.EventChangeImage += null, args);

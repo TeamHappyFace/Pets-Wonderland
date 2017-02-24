@@ -37,8 +37,9 @@ namespace PetsWonderland.MVP.Tests.Hotels.AddHotelTests
 				HotelDescription = It.IsAny<string>(),
 				HotelManagerId = It.IsAny<string>(),
 				ImageUrl = It.IsAny<string>(),
-				RequestId = It.IsAny<int>()
-			};
+				RequestId = It.IsAny<int>(),
+                IsDeleted = It.IsAny<bool>()
+            };
 
 			mockedHotelView.Raise(x => x.AddHotel += null, args);
 			
@@ -69,7 +70,8 @@ namespace PetsWonderland.MVP.Tests.Hotels.AddHotelTests
 				HotelDescription = It.IsAny<string>(),
 				HotelManagerId = It.IsAny<string>(),
 				ImageUrl = It.IsAny<string>(),
-				RequestId = It.IsAny<int>()
+				RequestId = It.IsAny<int>(),
+                IsDeleted = It.IsAny<bool>()
 			};
 
 			mockedHotelView.Raise(x => x.AddHotel += null, args);
