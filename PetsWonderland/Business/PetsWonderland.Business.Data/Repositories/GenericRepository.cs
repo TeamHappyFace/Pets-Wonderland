@@ -50,8 +50,6 @@ namespace PetsWonderland.Business.Data.Repositories
 
         public virtual T GetById(object id)
         {
-            Guard.WhenArgument((int)id, "Id msut be a positive number!").IsLessThan(0).Throw();
-
             return this.dbSet.Find(id);
         }
 

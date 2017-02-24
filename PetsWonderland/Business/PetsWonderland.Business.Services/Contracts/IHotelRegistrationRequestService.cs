@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using PetsWonderland.Business.Models.Requests;
 
 namespace PetsWonderland.Business.Services.Contracts
@@ -9,7 +10,8 @@ namespace PetsWonderland.Business.Services.Contracts
 
         UserHotelRegistrationRequest GetById(int id);
 
-        void AddHotelRequest(UserHotelRegistrationRequest requestToAdd);
+        void AddHotelRequest(string hotelName, string hotelLocation, string hotelManagerId,
+				string hotelDescription, DateTime dateOfRequest, string ImageUrl, bool isAccepted);
 
         void UpdateAccepted(int userHotelRegistrationRequestId, bool isAccepted);
 

@@ -14,7 +14,7 @@ namespace PetsWonderland.MVP.Tests.Requests.BoardingRequestTests.AddBoardingRequ
 	public class AddBoardingRequest_Should
 	{
 		[Test]
-		public void WorkProperly_WhenParamsAreValid()
+		public void AddRequest_WhenParamsAreValid()
 		{
 			var mockedBoardingRequestView = new Mock<IAddBoardingRequestView>();
 			var mockedBoardingRequestService = new Mock<IBoardingRequestService>();
@@ -25,30 +25,23 @@ namespace PetsWonderland.MVP.Tests.Requests.BoardingRequestTests.AddBoardingRequ
 
 			var addBoardingRequestPresenter = new AddBoardingRequestPresenter(mockedBoardingRequestView.Object, mockedBoardingRequestService.Object);
 
-			var boardingRequest = new Mock<UserBoardingRequest>();
-
-			mockedBoardingRequestView.Raise(x => x.AddBoardingRequest += null, 
-				new AddBoardingRequestArgs(boardingRequest.Object));
-
-			Assert.AreEqual(1, mockedBoardingRequestView.Object.Model.BoardingRequests.Count);
-		}
-
-		[Test]
-		public void ThrowArgumentNullException_WhenNullRequest()
-		{
-			var mockedBoardingRequestView = new Mock<IAddBoardingRequestView>();
-			var mockedBoardingRequestService = new Mock<IBoardingRequestService>();
-
-			mockedBoardingRequestView
-				.SetupGet(x => x.Model)
-				.Returns(new AddBoardingRequestModel());
-
-			var addBoardingRequestPresenter = new AddBoardingRequestPresenter(mockedBoardingRequestView.Object, mockedBoardingRequestService.Object);
+			var args = new AddBoardingRequestArgs()
+			{
+				PetName = It.IsAny<string>(),
+				Age = It.IsAny<int>(),
+				DateOfRequest = It.IsAny<DateTime>(),
+				FromDate = It.IsAny<string>(),
+				ToDate = It.IsAny<string>(),
+				PetBreed = It.IsAny<string>(),
+				ImageUrl = It.IsAny<string>(),
+				UserId = It.IsAny<string>(),
+				HotelManagerId = It.IsAny<string>()
+			};
 			
-			Assert.That(() =>
-				mockedBoardingRequestView.Raise(x => x.AddBoardingRequest += null,
-				new AddBoardingRequestArgs(null)),
-				Throws.ArgumentNullException.With.Message.Contain("Boarding request to add is null!"));
+			mockedBoardingRequestView.Raise(x => x.AddBoardingRequest += null, args);
+
+			mockedBoardingRequestService.Verify(x => x.AddBoardingRequest(args.PetName, args.Age,
+					args.DateOfRequest, args.FromDate, args.ToDate, args.PetBreed, args.ImageUrl, args.UserId, args.HotelManagerId), Times.Once);
 		}
 	}
 }

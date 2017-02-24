@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.MVP.Requests.BoardingRequest.AddBoardingRequest.Args;
@@ -28,10 +29,10 @@ namespace PetsWonderland.Business.MVP.Requests.BoardingRequest.AddBoardingReques
 
         public void AddBoardingRequest(object sender, AddBoardingRequestArgs e)
         {
-            this.boardingRequestService.AddBoardingRequest(e.BoardingRequestToAdd);
-
-            this.View.Model.BoardingRequestToAdd = this.boardingRequestService.GetById(e.BoardingRequestToAdd.Id);
-            this.View.Model.BoardingRequests.Add(e.BoardingRequestToAdd);
+            this.boardingRequestService.AddBoardingRequest(e.PetName, e.Age, e.DateOfRequest, e.FromDate, e.ToDate, e.PetBreed,
+													e.ImageUrl, e.UserId, e.HotelManagerId);
+			
+            this.View.Model.BoardingRequests = this.boardingRequestService.GetAllBoardingRequests().ToList();
         }
     }
 }

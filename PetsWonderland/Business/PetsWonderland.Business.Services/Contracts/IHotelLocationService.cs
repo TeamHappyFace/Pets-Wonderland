@@ -8,6 +8,6 @@ namespace PetsWonderland.Business.Services.Contracts
 
         HotelLocation GetByAddress(string address);
 
-        void AddHotelLocation(HotelLocation locationToAdd);
+        HotelLocation AddHotelLocation(string Location);
     }
 }

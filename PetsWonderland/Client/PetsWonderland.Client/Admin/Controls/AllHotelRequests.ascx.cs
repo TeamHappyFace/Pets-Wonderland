@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.GetAllHotelRequest;
@@ -71,13 +72,13 @@ namespace PetsWonderland.Client.Admin.Controls
             var name = e.Item.FindControl("hotelName") as Label;
             var location = e.Item.FindControl("location") as Label;
             var image = e.Item.FindControl("image") as Image;
-            var description = e.Item.FindControl("description") as Panel;
+            var description = e.Item.FindControl("description") as HtmlGenericControl;
 
             this.Session["id"] = id.Value;
             this.Session["hotelManagerId"] = hotelManagerId.Value;
             this.Session["name"] = name.Text;
             this.Session["location"] = location.Text;
-            this.Session["description"] = description.Attributes["Text"];
+            this.Session["description"] = description.InnerText;
             this.Session["image"] = image.ImageUrl;
 
             Response.Redirect("ApproveHotelRequest.aspx");

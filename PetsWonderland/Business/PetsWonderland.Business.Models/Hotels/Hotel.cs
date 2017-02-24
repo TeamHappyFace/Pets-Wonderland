@@ -18,8 +18,7 @@ namespace PetsWonderland.Business.Models.Hotels
         public string Name { get; set; }
 
         public string ImageUrl { get; set; }
-
-        [MaxLength(ValidationConstants.MaxHotelDescription)]
+		
         public string Description { get; set; }
 
         public string HotelManagerId { get; set; }

@@ -3,6 +3,7 @@ using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Requests;
+using PetsWonderland.Business.MVP.Requests.BoardingRequest.AddBoardingRequest.Args;
 using PetsWonderland.Business.Services;
 
 namespace PetsWonderland.Services.Tests.BoardingRequestTests
@@ -17,10 +18,11 @@ namespace PetsWonderland.Services.Tests.BoardingRequestTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var boardingRequestService = new BoardingRequestService(mockedRepository.Object, mockedUnitOfWork.Object);
 			
-			var validUserBoardingRequest = new Mock<UserBoardingRequest>();
-			boardingRequestService.AddBoardingRequest(validUserBoardingRequest.Object);
+			var args = new Mock<AddBoardingRequestArgs>();
+			boardingRequestService.AddBoardingRequest(args.Object.PetName, args.Object.Age, args.Object.DateOfRequest, args.Object.FromDate,
+						args.Object.ToDate, args.Object.PetBreed, args.Object.ImageUrl, args.Object.UserId, args.Object.HotelManagerId);
 			
-			mockedRepository.Verify(repository => repository.Add(validUserBoardingRequest.Object));
+			mockedRepository.Verify(repository => repository.Add(It.IsAny<UserBoardingRequest>()));
 		}
 
 		[Test]
@@ -30,8 +32,9 @@ namespace PetsWonderland.Services.Tests.BoardingRequestTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var boardingRequestService = new BoardingRequestService(mockedRepository.Object, mockedUnitOfWork.Object);
 			
-			var validUserBoardingRequest = new Mock<UserBoardingRequest>();
-			boardingRequestService.AddBoardingRequest(validUserBoardingRequest.Object);
+			var args = new Mock<AddBoardingRequestArgs>();
+			boardingRequestService.AddBoardingRequest(args.Object.PetName, args.Object.Age, args.Object.DateOfRequest, args.Object.FromDate,
+						args.Object.ToDate, args.Object.PetBreed, args.Object.ImageUrl, args.Object.UserId, args.Object.HotelManagerId);
 			
 			mockedRepository.Verify(repository => repository.Add(It.IsAny<UserBoardingRequest>()), Times.Once);
 		}
@@ -43,8 +46,9 @@ namespace PetsWonderland.Services.Tests.BoardingRequestTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var boardingRequestService = new BoardingRequestService(mockedRepository.Object, mockedUnitOfWork.Object);
 			
-			var validUserBoardingRequest = new Mock<UserBoardingRequest>();
-			boardingRequestService.AddBoardingRequest(validUserBoardingRequest.Object);
+			var args = new Mock<AddBoardingRequestArgs>();
+			boardingRequestService.AddBoardingRequest(args.Object.PetName, args.Object.Age, args.Object.DateOfRequest, args.Object.FromDate,
+						args.Object.ToDate, args.Object.PetBreed, args.Object.ImageUrl, args.Object.UserId, args.Object.HotelManagerId);
 			
 			mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);
 		}
@@ -55,10 +59,11 @@ namespace PetsWonderland.Services.Tests.BoardingRequestTests
 			var mockedRepository = new Mock<IRepository<UserBoardingRequest>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var boardingRequestService = new BoardingRequestService(mockedRepository.Object, mockedUnitOfWork.Object);
-
-			Mock<UserBoardingRequest> validUserBoardingRequest = null;
 			
-			Assert.Throws<NullReferenceException>(() => boardingRequestService.AddBoardingRequest(validUserBoardingRequest.Object));
+			Mock<AddBoardingRequestArgs> args = null;
+
+			Assert.Throws<NullReferenceException>(() => boardingRequestService.AddBoardingRequest(args.Object.PetName, args.Object.Age, args.Object.DateOfRequest, args.Object.FromDate,
+						args.Object.ToDate, args.Object.PetBreed, args.Object.ImageUrl, args.Object.UserId, args.Object.HotelManagerId));
 		}
 	}
 }

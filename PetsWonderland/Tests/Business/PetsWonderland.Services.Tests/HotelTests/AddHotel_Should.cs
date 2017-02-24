@@ -3,6 +3,7 @@ using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Hotels;
+using PetsWonderland.Business.MVP.Hotels.AddHotel.Args;
 using PetsWonderland.Business.Services;
 
 namespace PetsWonderland.Business.Tests.Services.HotelServiceTests
@@ -17,10 +18,11 @@ namespace PetsWonderland.Business.Tests.Services.HotelServiceTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var hotelService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-			var validHotel = new Mock<Hotel>();
-			hotelService.AddHotel(validHotel.Object);
+			var args = new Mock<AddHotelArgs>();
+			hotelService.AddHotel(args.Object.HotelName, args.Object.HotelDescription,
+				args.Object.HotelManagerId, new HotelLocation() { Address = args.Object.Location }, args.Object.ImageUrl);
 			
-			mockedRepository.Verify(repository => repository.Add(validHotel.Object));
+			mockedRepository.Verify(repository => repository.Add(It.IsAny<Hotel>()));
 		}
 
 		[Test]
@@ -29,10 +31,11 @@ namespace PetsWonderland.Business.Tests.Services.HotelServiceTests
 			var mockedRepository = new Mock<IRepository<Hotel>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var hotelService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
-			
-			var validHotel = new Mock<Hotel>();
-			hotelService.AddHotel(validHotel.Object);
-			
+
+			var args = new Mock<AddHotelArgs>();
+			hotelService.AddHotel(args.Object.HotelName, args.Object.HotelDescription,
+				args.Object.HotelManagerId, new HotelLocation() { Address = args.Object.Location }, args.Object.ImageUrl);
+
 			mockedRepository.Verify(repository => repository.Add(It.IsAny<Hotel>()), Times.Once);
 		}
 
@@ -42,10 +45,11 @@ namespace PetsWonderland.Business.Tests.Services.HotelServiceTests
 			var mockedRepository = new Mock<IRepository<Hotel>>();
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var hotelService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
-			
-			var validHotel = new Mock<Hotel>();
-			hotelService.AddHotel(validHotel.Object);
-			
+
+			var args = new Mock<AddHotelArgs>();
+			hotelService.AddHotel(args.Object.HotelName, args.Object.HotelDescription,
+				args.Object.HotelManagerId, new HotelLocation() { Address = args.Object.Location }, args.Object.ImageUrl);
+
 			mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);
 		}
 
@@ -56,9 +60,10 @@ namespace PetsWonderland.Business.Tests.Services.HotelServiceTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var hotelService = new HotelService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-			Mock<Hotel> hotelToAdd = null;
-			
-			Assert.Throws<NullReferenceException>(() => hotelService.AddHotel(hotelToAdd.Object));
+			Mock<AddHotelArgs> args = null;
+
+			Assert.Throws<NullReferenceException>(() => hotelService.AddHotel(args.Object.HotelName, args.Object.HotelDescription,
+				args.Object.HotelManagerId, new HotelLocation() { Address = args.Object.Location }, args.Object.ImageUrl));
 		}
 	}
 }

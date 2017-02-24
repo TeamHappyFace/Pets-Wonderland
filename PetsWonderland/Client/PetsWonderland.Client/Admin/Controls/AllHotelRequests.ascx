@@ -45,8 +45,8 @@
 			<div class="card-content text-center">             
 				<div class="card-header" data-background-color="blue">
 					<h5 class="title">Description</h5>			                         
-					<div class="stack-group description">
-						<asp:TextBox runat="server" ID="TextBox1" Text="<%#: Item.HotelDescription %>"/>                                                                      
+					<div class="stack-group">
+						<div runat="server" ID="description" Text="<%#: Item.HotelDescription %>"><%#: Item.HotelDescription %></div>                                                                      
 					</div>                                                       
 				</div>
 			</div>

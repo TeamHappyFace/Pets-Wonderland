@@ -14,6 +14,7 @@ namespace PetsWonderland.Business.Services.Contracts
 
         HotelLocation GetHotelLocation(Hotel hotel);
 
-        void AddHotel(Hotel hotelToAdd);
+        void AddHotel(string hotelName, string hotelDescription, string hotelManagerId,
+				HotelLocation location, string imageUrl);
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.AspNet.Identity;
 using PetsWonderland.Business.Identity;
-using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.AddHotelRequest;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.AddHotelRequest.Args;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.AddHotelRequest.ViewModels;
@@ -16,52 +15,40 @@ namespace PetsWonderland.Client.Pages.Requests
     {
         public event EventHandler<AddHotelRequestArgs> AddHotelRegistrationRequest;
 
-        public void CreateUserRequest_Click(object sender, EventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
+		{
+		}
+
+		public void CreateUserRequest_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
                 var currentHotelManagerId = User.Identity.GetUserId();
 
-                var newHotelRegistrationRequest = new UserHotelRegistrationRequest()
+                var hotelRegistrationRequestArgs = new AddHotelRequestArgs()
                 {
                     HotelName = this.HotelName.Text,
                     HotelLocation = this.Location.Text,
-                    HotelImageUrl = this.ImageUrl.Text,
                     HotelManagerId = currentHotelManagerId,
                     HotelDescription = this.Description.Text,
                     DateOfRequest = DateTime.Now,
                     IsAccepted = false
                 };
 
-                var hotelRegistrationRequestArgs = new AddHotelRequestArgs(newHotelRegistrationRequest);
-                this.AddHotelRegistrationRequest?.Invoke(this, hotelRegistrationRequestArgs);
+				if (this.Image.HasFile)
+				{
+					this.Image.SaveAs(Server.MapPath("~/Images/") + this.Image.FileName);
+					hotelRegistrationRequestArgs.ImageUrl = (this.Server.MapPath("~/Images/") + this.Image.FileName);
+				}
+				else
+				{
+					hotelRegistrationRequestArgs.ImageUrl = this.ImageUrl.Text;
+				}
 
-                this.UploadImage();
+                this.AddHotelRegistrationRequest?.Invoke(this, hotelRegistrationRequestArgs);
+				
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], this.Response);
             }
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        }        
-
-        private void UploadImage()
-        {
-            if (this.Image.HasFile)
-            {
-                try
-                {
-                    this.Image.SaveAs(Server.MapPath("~/Images/") + this.Image.FileName);
-                }
-                catch (Exception ex)
-                {
-                    this.FileUploadedLabel.Text = "ERROR: " + ex.Message.ToString();
-                }
-            }                
-            else
-            {
-                this.FileUploadedLabel.Text = "You have not specified a file.";
-            }
-        }
+        }  
     }
 }

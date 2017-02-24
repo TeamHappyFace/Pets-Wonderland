@@ -137,6 +137,10 @@
       <Project>{33c1f9d0-befa-4992-9955-cd2613e319f7}</Project>
       <Name>PetsWonderland.Business.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.MVP\PetsWonderland.Business.MVP.csproj">
+      <Project>{91bec5de-b638-420e-9465-c47c3993e3fe}</Project>
+      <Name>PetsWonderland.Business.MVP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Business\PetsWonderland.Business.Services\PetsWonderland.Business.Services.csproj">
       <Project>{88a839d2-5bf3-443b-95f3-7c088542cc15}</Project>
       <Name>PetsWonderland.Business.Services</Name>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Models.Requests;
 using PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.AddHotelRequest.Args;
@@ -28,9 +29,9 @@ namespace PetsWonderland.Business.MVP.Requests.HotelRegistrationRequest.AddHotel
 
         public void AddHotelRegistrationRequest(object sender, AddHotelRequestArgs e)
         {
-            this.hotelRegistrationRequestService.AddHotelRequest(e.HotelRequestToAdd);
-            this.View.Model.HotelRequestToAdd = this.hotelRegistrationRequestService.GetById(e.HotelRequestToAdd.Id);
-            this.View.Model.HotelRegistrationRequests.Add(e.HotelRequestToAdd);
+            this.hotelRegistrationRequestService.AddHotelRequest(e.HotelName, e.HotelLocation,
+				e.HotelManagerId, e.HotelDescription, e.DateOfRequest, e.ImageUrl, e.IsAccepted);
+            this.View.Model.HotelRegistrationRequests = this.hotelRegistrationRequestService.GetAllHotelRequests().ToList();
         }
     }
 }

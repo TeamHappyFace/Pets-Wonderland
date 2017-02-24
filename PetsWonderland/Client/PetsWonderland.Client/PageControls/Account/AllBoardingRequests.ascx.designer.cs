@@ -7,18 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PetsWonderland.Client.Pages.Requests {
+namespace PetsWonderland.Client.PageControls.Account {
     
     
     public partial class AllBoardingRequests {
         
         /// <summary>
-        /// Hotels control.
+        /// BoardingRequests control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView Hotels;
+        protected global::System.Web.UI.WebControls.ListView BoardingRequests;
+        
+        /// <summary>
+        /// DataPager2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager DataPager2;
     }
 }
