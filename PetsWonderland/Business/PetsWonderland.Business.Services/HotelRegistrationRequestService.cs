@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Requests;
@@ -20,11 +21,21 @@ namespace PetsWonderland.Business.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public void AddHotelRequest(UserHotelRegistrationRequest requestToAdd)
+        public void AddHotelRequest(string hotelName, string hotelLocation, string hotelManagerId,
+				string hotelDescription, DateTime dateOfRequest, string ImageUrl, bool isAccepted)
         {
-            Guard.WhenArgument(requestToAdd, "Request to add is null!").IsNull().Throw();
+			var requestToAdd = new UserHotelRegistrationRequest()
+			{
+				HotelName = hotelName,
+				HotelLocation = hotelLocation,
+				HotelManagerId = hotelManagerId,
+				HotelDescription = hotelDescription,
+				DateOfRequest = dateOfRequest,
+				HotelImageUrl = ImageUrl,
+				IsAccepted = isAccepted
+			};
 
-            using (var unitOfWork = this.unitOfWork)
+			using (var unitOfWork = this.unitOfWork)
             {
                 this.hotelRequestRepository.Add(requestToAdd);
                 unitOfWork.SaveChanges();

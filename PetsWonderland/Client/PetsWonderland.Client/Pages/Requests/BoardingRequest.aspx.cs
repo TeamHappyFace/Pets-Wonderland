@@ -28,29 +28,28 @@ namespace PetsWonderland.Client.Pages.Requests
                 var currentUserId = User.Identity.GetUserId();
                 var hotelManagerId = Request.QueryString["id"];
 
-				var newBoardingRequest = new UserBoardingRequest()
-                {
-                    PetName = this.PetName.Text,
-                    Age = int.Parse(this.Age.Text),
-                    DateOfRequest = DateTime.Now,
-                    FromDate = this.txtFrom.Text,
-                    ToDate = this.txtTo.Text,
-                    PetBreed = this.Breed.Text,
-                    UserId = currentUserId,
-                    HotelManagerId = hotelManagerId
-                };
+				var boardingRequestArgs = new AddBoardingRequestArgs()
+				{
+					PetName = this.PetName.Text,
+					Age = int.Parse(this.Age.Text),
+					DateOfRequest = DateTime.Now,
+					FromDate = this.txtFrom.Text,
+					ToDate = this.txtTo.Text,
+					PetBreed = this.Breed.Text,
+					UserId = currentUserId,
+					HotelManagerId = hotelManagerId
+				};
 
 				if (this.Image.HasFile)
 				{
 					this.Image.SaveAs(Server.MapPath("~/Images/") + this.Image.FileName);
-					newBoardingRequest.ImageUrl = (this.Server.MapPath("~/Images/") + this.Image.FileName); 
+					boardingRequestArgs.ImageUrl = (this.Server.MapPath("~/Images/") + this.Image.FileName); 
 				}
 				else
 				{
-					newBoardingRequest.ImageUrl = this.ImageUrl.Text;
+					boardingRequestArgs.ImageUrl = this.ImageUrl.Text;
 				}
-
-				var boardingRequestArgs = new AddBoardingRequestArgs(newBoardingRequest);
+				
                 this.AddBoardingRequest?.Invoke(this, boardingRequestArgs);
 				
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], this.Response);

@@ -1,18 +1,25 @@
 ﻿using System;
-using Bytes2you.Validation;
-using PetsWonderland.Business.Models.Requests;
 
 namespace PetsWonderland.Business.MVP.Requests.BoardingRequest.AddBoardingRequest.Args
 {
     public class AddBoardingRequestArgs : EventArgs
     {
-        public AddBoardingRequestArgs(UserBoardingRequest boardingRequestToAdd)
-        {
-            Guard.WhenArgument(boardingRequestToAdd, "Boarding request to add is null!").IsNull().Throw();
+		public string PetName { get; set; }
 
-            this.BoardingRequestToAdd = boardingRequestToAdd;
-        }
+        public int Age { get; set; }
 
-        public UserBoardingRequest BoardingRequestToAdd { get; set; }
-    }
+        public DateTime DateOfRequest { get; set; }
+
+		public string ImageUrl { get; set; }
+
+		public string FromDate { get; set; }
+
+        public string ToDate { get; set; } 
+
+        public string PetBreed { get; set; }
+
+        public string UserId { get; set; }
+
+        public string HotelManagerId { get; set; }
+	}
 }

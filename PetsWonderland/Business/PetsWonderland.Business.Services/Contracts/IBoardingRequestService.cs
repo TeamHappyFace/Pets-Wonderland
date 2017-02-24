@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using PetsWonderland.Business.Models.Requests;
 
 namespace PetsWonderland.Business.Services.Contracts
@@ -9,6 +10,7 @@ namespace PetsWonderland.Business.Services.Contracts
 
         UserBoardingRequest GetById(int id);
 
-        void AddBoardingRequest(UserBoardingRequest requestToAdd);
+        void AddBoardingRequest(string petName, int age, DateTime dateOfRequest, string fromDate, string toDate,
+						string petBreed, string imageUrl, string userId, string hotelManagerId);
     }
 }

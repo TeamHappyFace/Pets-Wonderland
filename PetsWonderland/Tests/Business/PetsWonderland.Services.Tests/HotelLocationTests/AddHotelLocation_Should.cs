@@ -17,10 +17,10 @@ namespace PetsWonderland.Services.Tests.HotelLocationTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var hotelLocationService = new HotelLocationService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-			var validHotelLocation = new Mock<HotelLocation>();
-			hotelLocationService.AddHotelLocation(validHotelLocation.Object);
+			string location = "Bulgaria";
+			hotelLocationService.AddHotelLocation(location);
 
-			mockedRepository.Verify(repository => repository.Add(validHotelLocation.Object));
+			mockedRepository.Verify(repository => repository.Add(It.IsAny<HotelLocation>()));
 		}
 
 		[Test]
@@ -30,8 +30,8 @@ namespace PetsWonderland.Services.Tests.HotelLocationTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var hotelLocationService = new HotelLocationService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-			var validHotelLocation = new Mock<HotelLocation>();
-			hotelLocationService.AddHotelLocation(validHotelLocation.Object);
+			string location = "Bulgaria";
+			hotelLocationService.AddHotelLocation(location);
 
 			mockedRepository.Verify(repository => repository.Add(It.IsAny<HotelLocation>()), Times.Once);
 		}
@@ -43,8 +43,8 @@ namespace PetsWonderland.Services.Tests.HotelLocationTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var hotelLocationService = new HotelLocationService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-			var validHotelLocation = new Mock<HotelLocation>();
-			hotelLocationService.AddHotelLocation(validHotelLocation.Object);
+			string location = "Bulgaria";
+			hotelLocationService.AddHotelLocation(location);
 
 			mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);
 		}
@@ -56,9 +56,9 @@ namespace PetsWonderland.Services.Tests.HotelLocationTests
 			var mockedUnitOfWork = new Mock<IUnitOfWork>();
 			var hotelLocationService = new HotelLocationService(mockedRepository.Object, mockedUnitOfWork.Object);
 
-			Mock<HotelLocation> validUserBoardingRequest = null;
+			string hotelLocation = null;
 
-			Assert.Throws<NullReferenceException>(() => hotelLocationService.AddHotelLocation(validUserBoardingRequest.Object));
+			Assert.Throws<ArgumentNullException>(() => hotelLocationService.AddHotelLocation(hotelLocation));
 		}
 	}
 }

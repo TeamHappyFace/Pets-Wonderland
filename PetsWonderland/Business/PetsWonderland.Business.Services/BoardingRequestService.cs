@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Bytes2you.Validation;
 using PetsWonderland.Business.Data.Contracts;
 using PetsWonderland.Business.Models.Requests;
@@ -20,11 +21,23 @@ namespace PetsWonderland.Business.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public void AddBoardingRequest(UserBoardingRequest requestToAdd)
+        public void AddBoardingRequest(string petName, int age, DateTime dateOfRequest, string fromDate, string toDate,
+						string petBreed, string imageUrl, string userId, string hotelManagerId)
         {
-            Guard.WhenArgument(requestToAdd, "Request to add is null!").IsNull().Throw();
+			var requestToAdd = new UserBoardingRequest()
+			{
+				PetName = petName,
+				Age = age,
+				DateOfRequest = dateOfRequest,
+				FromDate = fromDate,
+				ToDate = toDate,
+				PetBreed = petBreed,
+				ImageUrl = imageUrl,
+				UserId = userId,
+				HotelManagerId = hotelManagerId
+			};
 
-            using (var unitOfWork = this.unitOfWork)
+			using (var unitOfWork = this.unitOfWork)
             {
                 this.boardingRequestRepository.Add(requestToAdd);
                 unitOfWork.SaveChanges();

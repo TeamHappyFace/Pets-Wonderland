@@ -19,15 +19,19 @@ namespace PetsWonderland.Business.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public void AddHotelLocation(HotelLocation locationToAdd)
+        public HotelLocation AddHotelLocation(string location)
         {
-            Guard.WhenArgument(locationToAdd, "Hotel location to add is null!").IsNull().Throw();
+            Guard.WhenArgument(location, "Hotel location to add is null!").IsNull().Throw();
 
-            using (var unitOfWork = this.unitOfWork)
+			var locationToAdd = new HotelLocation() { Address = location };
+
+			using (var unitOfWork = this.unitOfWork)
             {
                 this.hotelLocationRepository.Add(locationToAdd);
                 unitOfWork.SaveChanges();
             }
+
+			return locationToAdd;
         }
 
         public HotelLocation GetById(int id)
