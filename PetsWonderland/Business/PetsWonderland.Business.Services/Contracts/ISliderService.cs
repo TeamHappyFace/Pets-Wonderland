@@ -13,8 +13,9 @@ namespace PetsWonderland.Business.Services.Contracts
         bool CreateSlider(
             string name, 
             string position, 
-            Dictionary<int, List<KeyValuePair<string, string>>> slidesOptions,
-            Dictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> slidesImages);
+            string imageStoragePath,
+            IDictionary<int, List<KeyValuePair<string, string>>> slidesOptions,
+            IDictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> slidesImages);
 
         void DeleteSlider(int id);
     }

@@ -46,53 +46,32 @@ namespace PetsWonderland.Business.Services
         public bool CreateSlider(
             string name,
             string position, 
-            Dictionary<int, List<KeyValuePair<string, string>>> slidesOptions,
-            Dictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> slidesImages)
+            string imageStoragePath,
+            IDictionary<int, List<KeyValuePair<string, string>>> slidesOptions,
+            IDictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> slidesImages)
         {
-            Guard.WhenArgument(name, "Slider must have a name!").IsEmpty().Throw();
-            Guard.WhenArgument(position, "Slider must have a position!").IsEmpty().Throw();
+            Guard.WhenArgument(name, "Slider must have a name!").IsNullOrEmpty().Throw();
+            Guard.WhenArgument(position, "Slider must have a position!").IsNullOrEmpty().Throw();
+            Guard.WhenArgument(imageStoragePath, "Slider image storage path must not be empty!").IsNullOrEmpty().Throw();
+            Guard.WhenArgument(slidesOptions, "Slides options cannot be null!").IsNull().Throw();
+            Guard.WhenArgument(slidesImages, "Slides images cannot be null!").IsNull().Throw();
 
             bool result;
             try
             {
                 using (var uow = this.unitOfWork)
                 {
-                    var slides = new List<Slide>();
-                    foreach (var key in slidesOptions.Keys)
+                    var slides = this.ExtractSlidesFromCollection(slidesOptions);
+                  
+                    var slider = new Slider
                     {
-                        var slideTitle = slidesOptions[key]
-                            .Where(x => x.Key == "SlideTitle")
-                            .Select(x => x.Value).FirstOrDefault();
-                        var slideCaption = slidesOptions[key]
-                            .Where(x => x.Key == "SlideCaption")
-                            .Select(x => x.Value).FirstOrDefault();
-                        var slideImagePath = slidesOptions[key]
-                            .Where(x => x.Key == "SlideImageName")
-                            .Select(x => x.Value).FirstOrDefault();
-
-                        var slide = new Slide
-                        {
-                            Title = slideTitle,
-                            Caption = slideCaption,
-                            Image = slideImagePath
-                        };
-
-                        slides.Add(slide);
-                    }
-
-                    var storagePath = HttpContext.Current.Server.MapPath("~/Images/Pages/Homepage/Slider/");
-                    foreach (var key in slidesImages.Keys)
-                    {
-                        var slideImageFile = slidesImages[key]
-                            .Where(x => x.Key == "SlideImage")
-                            .Select(x => x.Value).FirstOrDefault();
-
-                        slideImageFile?.SaveAs(storagePath + slideImageFile.FileName);
-                    }
-
-                    var slider = new Slider { Name = name, Position = position, Slides = slides };
+                        Name = name,
+                        Position = position,
+                        Slides = slides
+                    };
 
                     this.slidersRepository.Add(slider);
+                    this.SaveSlidesImages(slidesImages, imageStoragePath);
                     uow.SaveChanges();
 
                     result = true;
@@ -105,6 +84,53 @@ namespace PetsWonderland.Business.Services
 
             return result;
         }
+
+        private IList<Slide> ExtractSlidesFromCollection(
+            IDictionary<int, List<KeyValuePair<string, string>>> slidesOptions)
+        {
+            var slides = new List<Slide>();
+
+            foreach (var key in slidesOptions.Keys)
+            {
+                var slideTitle = slidesOptions[key]
+                    .Where(x => x.Key == "SlideTitle")
+                    .Select(x => x.Value).FirstOrDefault();
+                var slideCaption = slidesOptions[key]
+                    .Where(x => x.Key == "SlideCaption")
+                    .Select(x => x.Value).FirstOrDefault();
+                var slideImagePath = slidesOptions[key]
+                    .Where(x => x.Key == "SlideImageName")
+                    .Select(x => x.Value).FirstOrDefault();
+
+                Guard.WhenArgument(slideTitle, "Slide must have a title!").IsNullOrEmpty().Throw();
+                Guard.WhenArgument(slideImagePath, "Slide must have an image!").IsNullOrEmpty().Throw();
+
+                var slide = new Slide
+                {
+                    Title = slideTitle,
+                    Caption = slideCaption,
+                    Image = slideImagePath
+                };
+
+                slides.Add(slide);
+            }
+
+            return slides;
+        }
+
+        private void SaveSlidesImages(
+            IDictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> slidesImages, 
+            string imageStoragePath)
+        {           
+            foreach (var key in slidesImages.Keys)
+            {
+                var slideImageFile = slidesImages[key]
+                    .Where(x => x.Key == "SlideImage")
+                    .Select(x => x.Value).FirstOrDefault();
+
+                slideImageFile?.SaveAs(imageStoragePath + slideImageFile.FileName);
+            }
+        }       
 
         public void DeleteSlider(int sliderId)
         {

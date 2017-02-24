@@ -40,6 +40,7 @@ namespace PetsWonderland.Client.Admin.Controls
             // ViewModel Data
             string sliderName = this.SliderName.Text;
             string sliderPosition = this.SliderPostion.Text;
+            string imageStoragePath = HttpContext.Current.Server.MapPath("~/Images/Pages/Homepage/Slider/");
             var slidesOptions = new Dictionary<int, List<KeyValuePair<string, string>>>();
             var slidesImages = new Dictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>>();
            
@@ -88,6 +89,7 @@ namespace PetsWonderland.Client.Admin.Controls
             {
                 Name = sliderName,
                 Postition = sliderPosition,
+                ImageStoragePath = imageStoragePath,
                 SlidesOptions = slidesOptions,
                 SlidesImages = slidesImages
             };

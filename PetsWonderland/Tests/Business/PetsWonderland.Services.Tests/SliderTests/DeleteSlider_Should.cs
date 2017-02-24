@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NUnit.Framework;
 using PetsWonderland.Business.Data.Contracts;
@@ -29,21 +27,45 @@ namespace PetsWonderland.Services.Tests.SliderTests
 			mockedRepository.Verify(repository => repository.GetFirst(It.IsAny<Expression<Func<Slider, bool>>>()), Times.Once);
 		}
 
-		//[Test]
-		//public void CallSaveChanges_WhenParamsAreValid()
-		//{
-		//	var mockedRepository = new Mock<IRepository<Slider>>();
-		//	var mockedUnitOfWork = new Mock<IUnitOfWork>();
-		//	var sliderService = new SliderService(mockedRepository.Object, mockedUnitOfWork.Object);
+	    [Test]
+	    public void InvokeSaveChanges_WhenParameterIsValid()
+	    {
+            // Arrange
+            var mockedSlider = new Mock<Slider>();
 
-		//	var slider = new Mock<Slider>();
+            var mockedRepository = new Mock<IRepository<Slider>>();
+            mockedRepository.SetupAllProperties();
+            mockedRepository.Setup(x => x.GetFirst(It.IsAny<Expression<Func<Slider, bool>>>()))
+                .Returns(mockedSlider.Object);
+            var mockedUnitOfWork = new Mock<IUnitOfWork>();
 
-		//	mockedRepository.Setup(repository => repository
-		//			.GetFirst(sl => sl.Id == slider.Object.Id)).Returns(slider.Object);
-			
-		//	sliderService.DeleteSlider(slider.Object.Id);
+            // Act
+            var sliderService = new SliderService(mockedRepository.Object, mockedUnitOfWork.Object);
+            sliderService.DeleteSlider(mockedSlider.Object.Id);
 
-		//	mockedUnitOfWork.Verify(unit => unit.SaveChanges(), Times.Once);
-		//}
-	}
+            // Assert
+            mockedUnitOfWork.Verify(unitOfWork => unitOfWork.SaveChanges(), Times.Once);
+        }
+
+        [Test]
+        public void UpdateDeletedProp_WhenInvoked()
+        {
+            // Arrange
+            var mockedSlider = new Mock<Slider>();
+         
+            var mockedRepository = new Mock<IRepository<Slider>>();
+            mockedRepository.SetupAllProperties();
+            mockedRepository.Setup(x => x.GetFirst(It.IsAny<Expression<Func<Slider, bool>>>()))
+                .Returns(mockedSlider.Object);
+            var mockedUnitOfWork = new Mock<IUnitOfWork>();
+           
+
+            // Act
+            var sliderService = new SliderService(mockedRepository.Object, mockedUnitOfWork.Object);           
+            sliderService.DeleteSlider(mockedSlider.Object.Id);
+
+            // Assert
+            Assert.AreEqual(mockedSlider.Object.IsDeleted, true);
+        }
+    }
 }

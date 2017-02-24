@@ -10,8 +10,10 @@ namespace PetsWonderland.Business.MVP.Admin.CreateSlider.Args
 
         public string Postition { get; set; }
 
-        public Dictionary<int, List<KeyValuePair<string, string>>> SlidesOptions { get; set; }
+        public string ImageStoragePath { get; set; }
 
-        public Dictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> SlidesImages { get; set; }
+        public IDictionary<int, List<KeyValuePair<string, string>>> SlidesOptions { get; set; }
+
+        public IDictionary<int, List<KeyValuePair<string, HttpPostedFileBase>>> SlidesImages { get; set; }
     }
 }
